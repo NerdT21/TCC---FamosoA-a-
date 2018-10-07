@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6A99F3F3-F2DA-430D-8B77-292188A762D9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FamosoAça</RootNamespace>
+    <AssemblyName>FamosoAça</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\..\AppMusica\AppMusica\conexão\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Login\UserSession.cs" />
+    <Compile Include="PlugIn\ImagemPlugIn.cs" />
+    <Compile Include="Screens\Cadastros\frmFornecedor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Cadastros\frmFornecedor.Designer.cs">
+      <DependentUpon>frmFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Cadastros\frmMenuCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Cadastros\frmMenuCadastro.Designer.cs">
+      <DependentUpon>frmMenuCadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Cadastros\frmProduto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Cadastros\frmProduto.Designer.cs">
+      <DependentUpon>frmProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Cargo\CargoBusiness.cs" />
+    <Compile Include="Classes\Cargo\CargoDataBase.cs" />
+    <Compile Include="Classes\Cargo\CargoDTO.cs" />
+    <Compile Include="Classes\Compra\CompraBusiness.cs" />
+    <Compile Include="Classes\Compra\CompraDataBase.cs" />
+    <Compile Include="Classes\Compra\CompraDTO.cs" />
+    <Compile Include="Classes\Connection\Connection.cs" />
+    <Compile Include="Classes\Connection\Database.cs" />
+    <Compile Include="Classes\Estoque\EstoqueBusiness.cs" />
+    <Compile Include="Classes\Estoque\EstoqueDataBase.cs" />
+    <Compile Include="Classes\Estoque\EstoqueDTO.cs" />
+    <Compile Include="Classes\FolhaPagamento\FolhaPagamentoBusiness.cs" />
+    <Compile Include="Classes\FolhaPagamento\FolhaPagamentoDataBase.cs" />
+    <Compile Include="Classes\FolhaPagamento\FolhaPagamentoDTO.cs" />
+    <Compile Include="Classes\Fornecedor\FornecedorBusiness.cs" />
+    <Compile Include="Classes\Fornecedor\FornecedorDataBase.cs" />
+    <Compile Include="Classes\Fornecedor\FornecedorDTO.cs" />
+    <Compile Include="Classes\Funcionarios\FuncionarioDataBase.cs" />
+    <Compile Include="Classes\Funcionarios\FuncionarioDTO.cs" />
+    <Compile Include="Classes\Funcionarios\FuncionariosBusiness.cs" />
+    <Compile Include="Classes\ImpostoRenda\ImpostoRendaBusiness.cs" />
+    <Compile Include="Classes\ImpostoRenda\ImpostoRendaDataBase.cs" />
+    <Compile Include="Classes\ImpostoRenda\ImpostoRendaDTO.cs" />
+    <Compile Include="Classes\INSS\INSSBusiness.cs" />
+    <Compile Include="Classes\INSS\INSSDataBase.cs" />
+    <Compile Include="Classes\INSS\INSSDTO.cs" />
+    <Compile Include="Classes\ItemVenda\ItemVendaBusiness.cs" />
+    <Compile Include="Classes\ItemVenda\ItemVendaDataBase.cs" />
+    <Compile Include="Classes\ItemVenda\ItemVendaDTO.cs" />
+    <Compile Include="Classes\Login\LoginBusiness.cs" />
+    <Compile Include="Classes\Login\LoginDataBase.cs" />
+    <Compile Include="Classes\Login\LoginDTO.cs" />
+    <Compile Include="Classes\Produto\ProdutoBusiness.cs" />
+    <Compile Include="Classes\Produto\ProdutoDataBase.cs" />
+    <Compile Include="Classes\Produto\ProdutoDTO.cs" />
+    <Compile Include="Classes\SalarioFamilia\SalarioFamiliaBusiness.cs" />
+    <Compile Include="Classes\SalarioFamilia\SalarioFamiliaDataBase.cs" />
+    <Compile Include="Classes\SalarioFamilia\SalarioFamiliaDTO.cs" />
+    <Compile Include="Classes\Venda\VendaBusiness.cs" />
+    <Compile Include="Classes\Venda\VendaDataBase.cs" />
+    <Compile Include="Classes\Venda\VendaDTO.cs" />
+    <Compile Include="Screens\Consultar\frmConsultaFornecedor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Consultar\frmConsultaFornecedor.Designer.cs">
+      <DependentUpon>frmConsultaFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Consultar\frmConsultarProduto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Consultar\frmConsultarProduto.Designer.cs">
+      <DependentUpon>frmConsultarProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Consultar\frmMenuConsultar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Consultar\frmMenuConsultar.Designer.cs">
+      <DependentUpon>frmMenuConsultar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Entregavel I\Controle de Funcionários\frmCadastrarFuncionario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Entregavel I\Controle de Funcionários\frmCadastrarFuncionario.Designer.cs">
+      <DependentUpon>frmCadastrarFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Entregavel I\Controle de Funcionários\frmListarFuncionarios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Entregavel I\Controle de Funcionários\frmListarFuncionarios.Designer.cs">
+      <DependentUpon>frmListarFuncionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Entregavel I\Departamentos\frmDepartamento.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Entregavel I\Departamentos\frmDepartamento.Designer.cs">
+      <DependentUpon>frmDepartamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Entregavel I\FolhaPagto.cs" />
+    <Compile Include="frmMenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenuPrincipal.Designer.cs">
+      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Entregavel I\frmFolhaPagto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Entregavel I\frmFolhaPagto.Designer.cs">
+      <DependentUpon>frmFolhaPagto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\frmPedido.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\frmPedido.Designer.cs">
+      <DependentUpon>frmPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Entregavel I\Login\frmCadastroLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Entregavel I\Login\frmCadastroLogin.Designer.cs">
+      <DependentUpon>frmCadastroLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Entregavel I\Login\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Entregavel I\Login\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Entregavel I\SplashScreen\Splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Entregavel I\SplashScreen\Splash.Designer.cs">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Screens\Cadastros\frmFornecedor.resx">
+      <DependentUpon>frmFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Cadastros\frmMenuCadastro.resx">
+      <DependentUpon>frmMenuCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Cadastros\frmProduto.resx">
+      <DependentUpon>frmProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Consultar\frmConsultaFornecedor.resx">
+      <DependentUpon>frmConsultaFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Consultar\frmConsultarProduto.resx">
+      <DependentUpon>frmConsultarProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Consultar\frmMenuConsultar.resx">
+      <DependentUpon>frmMenuConsultar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Entregavel I\Controle de Funcionários\frmCadastrarFuncionario.resx">
+      <DependentUpon>frmCadastrarFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Entregavel I\Controle de Funcionários\frmListarFuncionarios.resx">
+      <DependentUpon>frmListarFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Entregavel I\Departamentos\frmDepartamento.resx">
+      <DependentUpon>frmDepartamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenuPrincipal.resx">
+      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Entregavel I\frmFolhaPagto.resx">
+      <DependentUpon>frmFolhaPagto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\frmPedido.resx">
+      <DependentUpon>frmPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Entregavel I\Login\frmCadastroLogin.resx">
+      <DependentUpon>frmCadastroLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Entregavel I\Login\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Screens\Entregavel I\SplashScreen\Splash.resx">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Screens\Entregavel III\" />
+    <Folder Include="Screens\Entregavel II\" />
+    <Folder Include="Screens\Entregavel IV\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Script.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
