@@ -41,8 +41,8 @@ namespace FamosoAça.Screens.Entregavel_I.Departamentos
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            //try
-            //{
+            try
+            {
                 CargoDTO dto = new CargoDTO();
                 dto.Nome = txtDepto.Text;
                 dto.Descricao = txtDesc.Text;
@@ -50,12 +50,15 @@ namespace FamosoAça.Screens.Entregavel_I.Departamentos
                 CargoBusiness buss = new CargoBusiness();
                 buss.Salvar(dto);
 
-                MessageBox.Show("Departamento cadastrado com suceso!!", "SIGMA", MessageBoxButtons.OK);
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Ocorreu um erro: " + ex.Message);
-            //}
+                MessageBox.Show("Departamento cadastrado com suceso!!", "FamosoAçaí", MessageBoxButtons.OK);
+                CarregarGrid();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro: " + ex.Message);
+            }
+
+           
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
