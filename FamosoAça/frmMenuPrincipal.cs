@@ -53,32 +53,23 @@ namespace FamosoAça
                 }
             }
         }
-    
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
 
-        }
-
-        private void funcionárisToolStripMenuItem_Click(object sender, EventArgs e)
+        private void funcionariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmCadastrarFuncionario tela = new frmCadastrarFuncionario();
             OpenScreen(tela);
-        }
-
-        private void cadastroToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void consultaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void funcionáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmListarFuncionarios tela = new frmListarFuncionarios();
             OpenScreen(tela);
+        }
+
+        private void departamentosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDepartamento TELA = new frmDepartamento();
+            OpenScreen(TELA);
         }
 
         private void folhaDePagamentoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -92,17 +83,6 @@ namespace FamosoAça
             frmLogin tela = new frmLogin();
             tela.Show();
             this.Close();
-        }
-
-        private void departamentosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmDepartamento tela = new frmDepartamento();
-            OpenScreen(tela);
-        }
-
-        private void finançasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
         }
     }
 }

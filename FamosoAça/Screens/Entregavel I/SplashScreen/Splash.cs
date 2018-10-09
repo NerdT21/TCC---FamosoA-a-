@@ -18,27 +18,28 @@ namespace FamosoAça
         public Splash()
         {
             InitializeComponent();
-            timer.Start();
-        }
 
-        private void progressBar1_Click(object sender, EventArgs e)
-        {
+            Task.Factory.StartNew(() =>
+            {
+                //Espara 5000 = 2 segundos 
+                System.Threading.Thread.Sleep(5000);
 
+                Invoke(new Action(() =>
+                {
+                    //Abre a Form de login
+                    frmLogin frm = new frmLogin();
+                    frm.Show();
+                    Hide();
 
+                }));
+
+            });
 
         }
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            progressBar1.Visible = false;
-            progressBar1.Increment(1);
-            if (progressBar1.Value == 100)
-            {
-                timer.Stop();
-                frmLogin tela = new frmLogin();
-                tela.Show();
-                this.Hide();
-            }
+          
         }
 
         private void Splash_Load(object sender, EventArgs e)
