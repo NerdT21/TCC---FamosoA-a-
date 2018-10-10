@@ -162,6 +162,12 @@
     <Compile Include="Screens\Entregavel I\frmFolhaPagto.Designer.cs">
       <DependentUpon>frmFolhaPagto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\frmHome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\frmHome.Designer.cs">
+      <DependentUpon>frmHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\frmPedido.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -221,6 +227,9 @@
     <EmbeddedResource Include="Screens\Entregavel I\frmFolhaPagto.resx">
       <DependentUpon>frmFolhaPagto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screens\frmHome.resx">
+      <DependentUpon>frmHome.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\frmPedido.resx">
       <DependentUpon>frmPedido.cs</DependentUpon>
     </EmbeddedResource>
@@ -263,6 +272,23 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Famoso açaí-1.png" />
+    <None Include="Resources\green loading.gif" />
+    <None Include="Resources\icons8-excluir-48.png" />
+    <None Include="Resources\icons8-compress-30.png" />
+    <None Include="Resources\Famoso açaí Logo sem fundo.png" />
+    <None Include="Resources\icons8-add-property-26.png" />
+    <None Include="Resources\icons8-bulleted-list-40.png" />
+    <None Include="Resources\icons8-unidade-organizacional-48.png" />
+    <None Include="Resources\icons8-barato-2-16.png" />
+    <None Include="Resources\icons8-cardápio-24.png" />
+    <None Include="Resources\icons8-página-inicial-24.png" />
+    <None Include="Resources\icons8-desligar-48.png" />
+    <None Include="Resources\icons8-carteira-48.png" />
+    <None Include="Resources\icons8-add-user-male-26.png" />
+    <None Include="Resources\icons8-bulleted-list-48.png" />
+    <None Include="Resources\purple loader.gif" />
+    <None Include="Resources\loading_calc_baby loading.gif" />
+    <None Include="Resources\YGgI loadir.gif" />
     <Content Include="Script.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -8,12 +8,18 @@ namespace FamosoAça.Screens.Entregavel_I
 {
     public class FolhaPagto
     {
-        public decimal SalarioHora(decimal salario)
+        public decimal CalcularSalarioHora(decimal salario)
         {
 
-            decimal salarioH = salario / 220;
+            decimal salarioHora = salario / 220;
 
-            return salarioH;
+            return salarioHora;
+        }
+
+        public decimal CalcularHoraExtra(decimal horaExtra)
+        {
+            decimal i = 0;
+            return i;
         }
 
         public decimal ValeTransporte(decimal salario)

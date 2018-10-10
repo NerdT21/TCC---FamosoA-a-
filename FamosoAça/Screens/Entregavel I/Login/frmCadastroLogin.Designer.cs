@@ -43,7 +43,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.ckbConsulta = new System.Windows.Forms.CheckBox();
+            this.ckbConsultar = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -100,6 +100,7 @@
             this.ckbAdm.TabIndex = 54;
             this.ckbAdm.Text = "ADM";
             this.ckbAdm.UseVisualStyleBackColor = true;
+            this.ckbAdm.CheckedChanged += new System.EventHandler(this.ckbAdm_CheckedChanged);
             // 
             // txtEmail
             // 
@@ -186,15 +187,15 @@
             this.label6.TabIndex = 59;
             this.label6.Text = "Confime a senha ";
             // 
-            // ckbConsulta
+            // ckbConsultar
             // 
-            this.ckbConsulta.AutoSize = true;
-            this.ckbConsulta.Location = new System.Drawing.Point(260, 229);
-            this.ckbConsulta.Name = "ckbConsulta";
-            this.ckbConsulta.Size = new System.Drawing.Size(67, 17);
-            this.ckbConsulta.TabIndex = 61;
-            this.ckbConsulta.Text = "Consulta";
-            this.ckbConsulta.UseVisualStyleBackColor = true;
+            this.ckbConsultar.AutoSize = true;
+            this.ckbConsultar.Location = new System.Drawing.Point(260, 229);
+            this.ckbConsultar.Name = "ckbConsultar";
+            this.ckbConsultar.Size = new System.Drawing.Size(67, 17);
+            this.ckbConsultar.TabIndex = 61;
+            this.ckbConsultar.Text = "Consulta";
+            this.ckbConsultar.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -214,7 +215,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(382, 350);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.ckbConsulta);
+            this.Controls.Add(this.ckbConsultar);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnCadastrar);
@@ -256,7 +257,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.CheckBox ckbConsulta;
+        private System.Windows.Forms.CheckBox ckbConsultar;
         private System.Windows.Forms.Label label7;
     }
 }

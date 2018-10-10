@@ -50,15 +50,23 @@ namespace FamosoAça.Screens.Entregavel_I
             cboFuncionario.DataSource = lista;
         }
 
+        //public decimal FolhaCoordenadora()
+        //{
+        //    FolhaPagto folha = new FolhaPagto();
+        //    decimal salarioHora = folha.SalarioHora(Convert.ToDecimal(txtSalario.Text));
+        //    decimal valeTransporte = folha.ValeTransporte(Convert.ToDecimal(txtSalario.Text));
+        //    decimal INSS = folha.CalculoINSS(Convert.ToDecimal(txtSalario.Text), nudFaltas.Value, Convert.ToDecimal(txtAtraso.Text), Convert.ToDecimal(txtHE.Text), Convert.ToDecimal(txtHE.Text), );
+        //}
+
         void btnCalcular_Click(object sender, EventArgs e)
         {
 
-            //FuncionarioDTO funcio = cboFuncionario.SelectedItem as FuncionarioDTO;
-            //FolhaPagamentoDTO dto = new FolhaPagamentoDTO();
-            //dto.IdFuncinario = funcio.Id;
-            //txtHE.Text = dto.HoraExtra;
-            ////txtAtraso.Text = dto.A;
-            ///
+            FuncionarioDTO funcio = cboFuncionario.SelectedItem as FuncionarioDTO;
+            FolhaPagamentoDTO dto = new FolhaPagamentoDTO();
+            dto.IdFuncinario = funcio.Id;
+            txtHE.Text = dto.HoraExtra;
+            //txtAtraso.Text = dto.A;
+            
 
             MessageBox.Show("Folha de pagamento Salvo com sucesso!!", "Famoso Açaí", MessageBoxButtons.OK);
 

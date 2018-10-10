@@ -33,7 +33,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.mkbCPF = new System.Windows.Forms.MaskedTextBox();
-            this.pbxImgFuncionario = new System.Windows.Forms.PictureBox();
             this.txtSalFam = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.TxtSalLiq = new System.Windows.Forms.TextBox();
@@ -58,6 +57,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pbxImgFuncionario = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudFaltas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImgFuncionario)).BeginInit();
             this.SuspendLayout();
@@ -107,16 +107,6 @@
             this.mkbCPF.Size = new System.Drawing.Size(84, 20);
             this.mkbCPF.TabIndex = 109;
             // 
-            // pbxImgFuncionario
-            // 
-            this.pbxImgFuncionario.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pbxImgFuncionario.Location = new System.Drawing.Point(70, 17);
-            this.pbxImgFuncionario.Name = "pbxImgFuncionario";
-            this.pbxImgFuncionario.Size = new System.Drawing.Size(126, 126);
-            this.pbxImgFuncionario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxImgFuncionario.TabIndex = 108;
-            this.pbxImgFuncionario.TabStop = false;
-            // 
             // txtSalFam
             // 
             this.txtSalFam.Location = new System.Drawing.Point(180, 288);
@@ -156,7 +146,7 @@
             this.btnCalcular.BackColor = System.Drawing.Color.Transparent;
             this.btnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCalcular.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalcular.Location = new System.Drawing.Point(229, 362);
+            this.btnCalcular.Location = new System.Drawing.Point(229, 351);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(114, 41);
             this.btnCalcular.TabIndex = 103;
@@ -332,6 +322,16 @@
             this.label1.TabIndex = 84;
             this.label1.Text = "Salário ";
             // 
+            // pbxImgFuncionario
+            // 
+            this.pbxImgFuncionario.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pbxImgFuncionario.Location = new System.Drawing.Point(70, 17);
+            this.pbxImgFuncionario.Name = "pbxImgFuncionario";
+            this.pbxImgFuncionario.Size = new System.Drawing.Size(126, 126);
+            this.pbxImgFuncionario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxImgFuncionario.TabIndex = 108;
+            this.pbxImgFuncionario.TabStop = false;
+            // 
             // frmFolhaPagto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -368,7 +368,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmFolhaPagto";
-            this.Size = new System.Drawing.Size(595, 419);
+            this.Size = new System.Drawing.Size(596, 404);
             ((System.ComponentModel.ISupportInitialize)(this.nudFaltas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImgFuncionario)).EndInit();
             this.ResumeLayout(false);

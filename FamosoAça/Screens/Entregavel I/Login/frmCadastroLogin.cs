@@ -28,7 +28,7 @@ namespace FamosoAça.Login
                 dto.Senha = txtSenha.Text;
                 dto.Adm = ckbAdm.Checked;
                 dto.Cadastro = ckbCadastar.Checked;
-                dto.Consulta = ckbConsulta.Checked;
+                dto.Consulta = ckbConsultar.Checked;
                 dto.Contabilidade = ckbContabilidade.Checked;
 
 
@@ -56,6 +56,20 @@ namespace FamosoAça.Login
             frmLogin tela = new frmLogin();
             tela.Show();
             this.Close();
+        }
+
+        private void ckbAdm_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckbAdm.Checked == true)
+            {
+                ckbCadastar.Checked = true;
+                ckbConsultar.Checked = true;
+            }
+            else if (ckbConsultar.Checked == false)
+            {
+                ckbCadastar.Checked = false;
+                ckbConsultar.Checked = false;
+            }
         }
     }
 }

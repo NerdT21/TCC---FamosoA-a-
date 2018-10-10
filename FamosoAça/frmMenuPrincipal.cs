@@ -1,6 +1,7 @@
 ﻿using FamosoAça.Classes.Login;
 using FamosoAça.Consultar;
 using FamosoAça.Login;
+using FamosoAça.Screens;
 using FamosoAça.Screens.Entregavel_I;
 using FamosoAça.Screens.Entregavel_I.Controle_de_Funcionários;
 using FamosoAça.Screens.Entregavel_I.Departamentos;
@@ -22,6 +23,8 @@ namespace FamosoAça
         {
             InitializeComponent();
             Permissoes();
+            frmHome tela = new frmHome();
+            OpenScreen(tela);
         }
 
         public void OpenScreen(UserControl control)
@@ -83,6 +86,52 @@ namespace FamosoAça
             frmLogin tela = new frmLogin();
             tela.Show();
             this.Close();
+        }
+
+        private void pbxClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void pbxMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private bool mover;
+        private int cX, cY;
+
+        private void pnlBarra_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mover)
+            {
+                this.Left += e.X - (cX - pnlBarra.Left);
+                this.Top += e.Y - (cY - pnlBarra.Top);
+            }
+        }
+
+        private void pnlBarra_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                cX = e.X;
+                cY = e.Y;
+                mover = true;
+            }
+        }
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmHome tela = new frmHome();
+            OpenScreen(tela);
+        }
+
+        private void pnlBarra_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                mover = false;
+            }
         }
     }
 }
