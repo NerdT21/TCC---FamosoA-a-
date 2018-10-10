@@ -22,8 +22,13 @@ namespace FamosoAça.Login
         {
 
         }
+ 
+        private void pbxClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
 
-        private void btnEntrar_Click(object sender, EventArgs e)
+        private void btnEntrar_Click_1(object sender, EventArgs e)
         {
             LoginBusiness business = new LoginBusiness();
             string user = txtUser.Text;
@@ -46,9 +51,13 @@ namespace FamosoAça.Login
             }
         }
 
-        private void lblRegistrar_Click(object sender, EventArgs e)
+        private void panel4_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void lblRegistrar_Click(object sender, EventArgs e)
+        {
             LoginBusiness business = new LoginBusiness();
             string user = txtUser.Text;
             string pass = txtPass.Text;
@@ -68,7 +77,12 @@ namespace FamosoAça.Login
             {
                 MessageBox.Show("É preciso ser um Administraor do sistema para acessar o cadastro de logins.");
             }
-           
+
+        }
+
+        private void pbxMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

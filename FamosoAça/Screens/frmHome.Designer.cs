@@ -46,7 +46,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(119)))), ((int)(((byte)(62)))));
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.pictureBox1);
             this.Name = "frmHome";
             this.Size = new System.Drawing.Size(596, 397);
