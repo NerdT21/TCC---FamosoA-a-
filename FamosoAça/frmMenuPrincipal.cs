@@ -5,6 +5,7 @@ using FamosoAça.Screens;
 using FamosoAça.Screens.Entregavel_I;
 using FamosoAça.Screens.Entregavel_I.Controle_de_Funcionários;
 using FamosoAça.Screens.Entregavel_I.Departamentos;
+using FamosoAça.Screens.Entregavel_II.Controle_De_Compras;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -129,6 +130,12 @@ namespace FamosoAça
         private void frmMenuPrincipal_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void comprasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCompras tela = new frmCompras();
+            OpenScreen(tela);
         }
 
         private void pnlBarra_MouseUp(object sender, MouseEventArgs e)

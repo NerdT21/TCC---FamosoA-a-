@@ -29,14 +29,12 @@
         private void InitializeComponent()
         {
             this.pnlBarra = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pbxMinimize = new System.Windows.Forms.PictureBox();
-            this.pbxClose = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.pnlCentro = new System.Windows.Forms.Panel();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,13 +46,15 @@
             this.finançasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.folhaDePagamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlCentro = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbxMinimize = new System.Windows.Forms.PictureBox();
+            this.pbxClose = new System.Windows.Forms.PictureBox();
             this.pnlBarra.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxClose)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlBarra
@@ -71,40 +71,6 @@
             this.pnlBarra.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlBarra_MouseDown);
             this.pnlBarra.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlBarra_MouseMove);
             this.pnlBarra.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlBarra_MouseUp);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::FamosoAça.Properties.Resources.Logo_Famoso_açaí__nome_branco_;
-            this.pictureBox1.Location = new System.Drawing.Point(11, 1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(62, 30);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pbxMinimize
-            // 
-            this.pbxMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxMinimize.Image = global::FamosoAça.Properties.Resources.icons8_compress_30;
-            this.pbxMinimize.Location = new System.Drawing.Point(555, 5);
-            this.pbxMinimize.Name = "pbxMinimize";
-            this.pbxMinimize.Size = new System.Drawing.Size(23, 23);
-            this.pbxMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxMinimize.TabIndex = 1;
-            this.pbxMinimize.TabStop = false;
-            this.pbxMinimize.Click += new System.EventHandler(this.pbxMinimize_Click);
-            // 
-            // pbxClose
-            // 
-            this.pbxClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxClose.Image = global::FamosoAça.Properties.Resources.icons8_excluir_48;
-            this.pbxClose.Location = new System.Drawing.Point(581, 5);
-            this.pbxClose.Name = "pbxClose";
-            this.pbxClose.Size = new System.Drawing.Size(23, 23);
-            this.pbxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxClose.TabIndex = 0;
-            this.pbxClose.TabStop = false;
-            this.pbxClose.Click += new System.EventHandler(this.pbxClose_Click);
             // 
             // panel1
             // 
@@ -158,6 +124,14 @@
             this.menuStrip1.TabIndex = 15;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // pnlCentro
+            // 
+            this.pnlCentro.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlCentro.Location = new System.Drawing.Point(10, 58);
+            this.pnlCentro.Name = "pnlCentro";
+            this.pnlCentro.Size = new System.Drawing.Size(596, 397);
+            this.pnlCentro.TabIndex = 16;
+            // 
             // menuToolStripMenuItem
             // 
             this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -172,7 +146,7 @@
             // 
             this.logOutToolStripMenuItem.Image = global::FamosoAça.Properties.Resources.icons8_página_inicial_24;
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.logOutToolStripMenuItem.Text = "Home";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
@@ -180,7 +154,7 @@
             // 
             this.logOutToolStripMenuItem1.Image = global::FamosoAça.Properties.Resources.icons8_desligar_48;
             this.logOutToolStripMenuItem1.Name = "logOutToolStripMenuItem1";
-            this.logOutToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.logOutToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
             this.logOutToolStripMenuItem1.Text = "Log Out";
             this.logOutToolStripMenuItem1.Click += new System.EventHandler(this.logOutToolStripMenuItem1_Click);
             // 
@@ -197,7 +171,7 @@
             // 
             this.funcionariosToolStripMenuItem.Image = global::FamosoAça.Properties.Resources.icons8_add_user_male_26;
             this.funcionariosToolStripMenuItem.Name = "funcionariosToolStripMenuItem";
-            this.funcionariosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.funcionariosToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.funcionariosToolStripMenuItem.Text = "Funcionários";
             this.funcionariosToolStripMenuItem.Click += new System.EventHandler(this.funcionariosToolStripMenuItem_Click);
             // 
@@ -214,7 +188,7 @@
             // 
             this.funcionáriosToolStripMenuItem.Image = global::FamosoAça.Properties.Resources.icons8_bulleted_list_40;
             this.funcionáriosToolStripMenuItem.Name = "funcionáriosToolStripMenuItem";
-            this.funcionáriosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.funcionáriosToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.funcionáriosToolStripMenuItem.Text = "Funcionários";
             this.funcionáriosToolStripMenuItem.Click += new System.EventHandler(this.funcionáriosToolStripMenuItem_Click);
             // 
@@ -250,14 +224,41 @@
             this.comprasToolStripMenuItem.Name = "comprasToolStripMenuItem";
             this.comprasToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.comprasToolStripMenuItem.Text = "Compras";
+            this.comprasToolStripMenuItem.Click += new System.EventHandler(this.comprasToolStripMenuItem_Click);
             // 
-            // pnlCentro
+            // pictureBox1
             // 
-            this.pnlCentro.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlCentro.Location = new System.Drawing.Point(10, 58);
-            this.pnlCentro.Name = "pnlCentro";
-            this.pnlCentro.Size = new System.Drawing.Size(596, 397);
-            this.pnlCentro.TabIndex = 16;
+            this.pictureBox1.Image = global::FamosoAça.Properties.Resources.Logo_Famoso_açaí__nome_branco_;
+            this.pictureBox1.Location = new System.Drawing.Point(11, 1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(62, 30);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pbxMinimize
+            // 
+            this.pbxMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxMinimize.Image = global::FamosoAça.Properties.Resources.icons8_compress_30;
+            this.pbxMinimize.Location = new System.Drawing.Point(555, 5);
+            this.pbxMinimize.Name = "pbxMinimize";
+            this.pbxMinimize.Size = new System.Drawing.Size(23, 23);
+            this.pbxMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxMinimize.TabIndex = 1;
+            this.pbxMinimize.TabStop = false;
+            this.pbxMinimize.Click += new System.EventHandler(this.pbxMinimize_Click);
+            // 
+            // pbxClose
+            // 
+            this.pbxClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxClose.Image = global::FamosoAça.Properties.Resources.icons8_excluir_48;
+            this.pbxClose.Location = new System.Drawing.Point(581, 5);
+            this.pbxClose.Name = "pbxClose";
+            this.pbxClose.Size = new System.Drawing.Size(23, 23);
+            this.pbxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxClose.TabIndex = 0;
+            this.pbxClose.TabStop = false;
+            this.pbxClose.Click += new System.EventHandler(this.pbxClose_Click);
             // 
             // frmMenuPrincipal
             // 
@@ -277,12 +278,12 @@
             this.Text = "frmMenuPrincipal";
             this.Load += new System.EventHandler(this.frmMenuPrincipal_Load);
             this.pnlBarra.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxMinimize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxClose)).EndInit();
             this.panel2.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxMinimize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxClose)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
