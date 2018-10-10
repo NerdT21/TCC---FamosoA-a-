@@ -163,6 +163,16 @@ namespace FamosoAça.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_comprar_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-comprar-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_compress_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-compress-30", resourceCulture);
@@ -216,6 +226,56 @@ namespace FamosoAça.Properties {
         internal static System.Drawing.Bitmap loading_calc_baby_loading {
             get {
                 object obj = ResourceManager.GetObject("loading_calc_baby loading", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logo_Famoso__apenas_nome_ {
+            get {
+                object obj = ResourceManager.GetObject("Logo Famoso (apenas nome)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logo_Famoso__apenas_nome_1 {
+            get {
+                object obj = ResourceManager.GetObject("Logo Famoso (apenas nome)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logo_Famoso_açaí__apenas_nome_ {
+            get {
+                object obj = ResourceManager.GetObject("Logo Famoso açaí (apenas nome)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logo_Famoso_açaí__apenas_nome_1 {
+            get {
+                object obj = ResourceManager.GetObject("Logo Famoso açaí (apenas nome)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logo_Famoso_açaí__nome_branco_ {
+            get {
+                object obj = ResourceManager.GetObject("Logo Famoso açaí (nome branco)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

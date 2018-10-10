@@ -23,17 +23,17 @@ namespace FamosoAça
         {
             InitializeComponent();
             Permissoes();
-            frmHome tela = new frmHome();
-            OpenScreen(tela);
+            frmHome t = new frmHome();
+            OpenScreen(t);
         }
 
         public void OpenScreen(UserControl control)
         {
-            if (pnlScreen.Controls.Count == 1)
+            if (pnlCentro.Controls.Count == 1)
             {
-                pnlScreen.Controls.RemoveAt(0);
+                pnlCentro.Controls.RemoveAt(0);
             }
-            pnlScreen.Controls.Add(control);
+            pnlCentro.Controls.Add(control);
         }
 
         void Permissoes()
@@ -124,6 +124,11 @@ namespace FamosoAça
         {
             frmHome tela = new frmHome();
             OpenScreen(tela);
+        }
+
+        private void frmMenuPrincipal_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void pnlBarra_MouseUp(object sender, MouseEventArgs e)

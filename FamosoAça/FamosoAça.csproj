@@ -267,7 +267,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Screens\Entregavel III\" />
-    <Folder Include="Screens\Entregavel II\" />
+    <Folder Include="Screens\Entregavel II\Controle De Compras\" />
+    <Folder Include="Screens\Entregavel II\Controle De Fornecedores\" />
+    <Folder Include="Screens\Entregavel II\Controle De Produto\" />
     <Folder Include="Screens\Entregavel IV\" />
   </ItemGroup>
   <ItemGroup>
@@ -289,6 +291,12 @@
     <None Include="Resources\purple loader.gif" />
     <None Include="Resources\loading_calc_baby loading.gif" />
     <None Include="Resources\YGgI loadir.gif" />
+    <None Include="Resources\icons8-comprar-48.png" />
+    <None Include="Resources\Logo Famoso açaí %28apenas nome%29.png" />
+    <None Include="Resources\Logo Famoso açaí %28apenas nome%291.png" />
+    <None Include="Resources\Logo Famoso %28apenas nome%29.png" />
+    <None Include="Resources\Logo Famoso %28apenas nome%291.png" />
+    <None Include="Resources\Logo Famoso açaí %28nome branco%29.png" />
     <Content Include="Script.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
