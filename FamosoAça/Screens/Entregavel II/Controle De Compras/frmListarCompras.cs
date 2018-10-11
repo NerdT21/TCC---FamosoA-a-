@@ -10,12 +10,11 @@ using System.Windows.Forms;
 
 namespace FamosoAça.Screens.Entregavel_II.Controle_De_Compras
 {
-    public partial class frmCompras : UserControl
+    public partial class frmListarCompras : UserControl
     {
-        public frmCompras()
+        public frmListarCompras()
         {
             InitializeComponent();
         }
-
     }
 }

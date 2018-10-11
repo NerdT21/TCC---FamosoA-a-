@@ -137,6 +137,12 @@
     <Compile Include="Screens\Entregavel II\Controle De Compras\frmCompras.Designer.cs">
       <DependentUpon>frmCompras.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Entregavel II\Controle De Compras\frmListarCompras.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Entregavel II\Controle De Compras\frmListarCompras.Designer.cs">
+      <DependentUpon>frmListarCompras.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Entregavel I\Controle de Funcionários\frmCadastrarFuncionario.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -220,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Entregavel II\Controle De Compras\frmCompras.resx">
       <DependentUpon>frmCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Entregavel II\Controle De Compras\frmListarCompras.resx">
+      <DependentUpon>frmListarCompras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Entregavel I\Controle de Funcionários\frmCadastrarFuncionario.resx">
       <DependentUpon>frmCadastrarFuncionario.cs</DependentUpon>
@@ -305,6 +314,8 @@
     <None Include="Resources\Logo Famoso %28apenas nome%29.png" />
     <None Include="Resources\Logo Famoso %28apenas nome%291.png" />
     <None Include="Resources\Logo Famoso açaí %28nome branco%29.png" />
+    <None Include="Resources\icons8-plus-32.png" />
+    <None Include="Resources\icons8-search-26.png" />
     <Content Include="Script.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
