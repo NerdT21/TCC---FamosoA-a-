@@ -66,7 +66,7 @@ namespace FamosoAça.Classes.Compra
         }
         public List<CompraDTO> Listar()
         {
-            string script = @"SELECT * FROM tb_depto";
+            string script = @"SELECT * FROM tb_compra";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
 
@@ -91,7 +91,34 @@ namespace FamosoAça.Classes.Compra
             reader.Close();
             return produto;
         }
+        public List<CompraDTO> Consultar(int idfornecedor, string dt_compra)
+        {
+            string script = @"SELECT * FROM tb_compra WHERE id_fornecedor LIKE @id_fornecedor AND dt_compra LIKE @dt_compra";
 
+            List<MySqlParameter> parms = new List<MySqlParameter>();
+            parms.Add(new MySqlParameter("id_fornecedor", idfornecedor + "%"));
+            parms.Add(new MySqlParameter("dt_compra", dt_compra + "%"));
+
+            Database db = new Database();
+            MySqlDataReader reader = db.ExecuteSelectScript(script, parms);
+
+            List<CompraDTO> produto = new List<CompraDTO>();
+            while (reader.Read())
+            {
+                CompraDTO dto = new CompraDTO();
+                dto.Id = reader.GetInt32("id_compra");
+                dto.IdItem = reader.GetInt32("id_item");
+                dto.IdFornecedor = reader.GetInt32("id_fornecedor");
+                dto.QuantidadeComprada = reader.GetInt32("qtd_comprado");
+                dto.DataCompra = reader.GetString("dt_compra");
+                dto.Preco = reader.GetDecimal("vl_preco");
+
+                produto.Add(dto);
+
+            }
+            reader.Close();
+            return produto;
+
+        }
     }
 }
-
