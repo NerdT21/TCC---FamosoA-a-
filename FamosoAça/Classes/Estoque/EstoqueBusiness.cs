@@ -8,36 +8,36 @@ namespace FamosoAça.Classes.Estoque
 {
     public class EstoqueBusiness
     {
-         public int Salvar(ExemploDTO dto)
+         public int Salvar(EstoqueDTO dto)
         {
-            ExemploDatabase db = new ExemploDatabase();
+            EstoqueDataBase db = new EstoqueDataBase();
             int id = db.Salvar(dto);
             return id;
         }
 
-        public void Altera(ExemploDTO dto)
+        public void Altera(EstoqueDTO dto)
         {
-            ExemploDatabase db = new ExemploDatabase();
+            EstoqueDataBase db = new EstoqueDataBase();
             db.Alterar(dto);
         }
 
         public void Remover(int id)
         {
-            ExemploDatabase db= new ExemploDatabase();
+            EstoqueDataBase db = new EstoqueDataBase();
             db.Remover(id);
         }
 
        
-        public List<> Listar()
+        public List<EstoqueDTO> Listar()
         {
-            ExemploDatabase db = new ExemploDatabase();
-            List<> list = db.Listar();
+            EstoqueDataBase db = new EstoqueDataBase();
+            List<EstoqueDTO> list = db.Listar();
             return list;
         }
         
-        public List<> Consultar(string consult)
+        public List<EstoqueDTO> Consultar(string consult)
         {
-            ExemploDatabase db = new ExemploDatabase();
+            EstoqueDataBase db = new EstoqueDataBase();
             return db.Consultar(consult);
         }
 
