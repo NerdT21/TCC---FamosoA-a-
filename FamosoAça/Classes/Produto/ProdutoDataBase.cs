@@ -12,18 +12,19 @@ namespace FamosoAça.Classes.Produto
         public int Salvar(ProdutoDTO produto)
         {
             string script = @"INSERT INTO tb_produto(
-	                          nm_nome,
- 	                          vl_preco,
-	                          ds_descricao)
-                                VALUES(
-
-	                            @nm_nome,
- 	                            @vl_preco,
-	                            @ds_descricao)";
+	                                         nm_nome,
+                                             ds_marca,
+ 	                                         vl_preco,
+	                                         ds_descricao)                               
+	                                  VALUES(@nm_nome,
+                                             @ds_marca,
+ 	                                         @vl_preco,
+	                                         @ds_descricao)";
             List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("nm_nome", produto));
+            parms.Add(new MySqlParameter("nm_nome", produto.Nome));
+            parms.Add(new MySqlParameter("ds_marca", produto.Marca));
             parms.Add(new MySqlParameter("vl_preco", produto.Preco));
-            parms.Add(new MySqlParameter("ds_descricap", produto.Descricao));
+            parms.Add(new MySqlParameter("ds_descricao", produto.Descricao));
 
             Database db = new Database();
             int pk = db.ExecuteInsertScriptWithPk(script, parms);
@@ -31,13 +32,16 @@ namespace FamosoAça.Classes.Produto
         }
         public void Alterar(ProdutoDTO produto)
         {
-            string script = @"UPDATE tb_salario_familia SET 
+            string script = @"UPDATE tb_produto SET 
                              nm_produto = @nm_produto,
+                             ds_marca = @ds_marca,
                              vl_preco = @vl_preco,
-                             ds_descricao = @ds_descricao";
+                             ds_descricao = @ds_descricao 
+                             WHERE id_produto = @id_produto";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("nm_nome", produto));
+            parms.Add(new MySqlParameter("nm_nome", produto.Nome));
+            parms.Add(new MySqlParameter("ds_marca", produto.Marca));
             parms.Add(new MySqlParameter("vl_preco", produto.Preco));
             parms.Add(new MySqlParameter("ds_descricao", produto.Descricao));
 

@@ -143,6 +143,30 @@
     <Compile Include="Screens\Entregavel II\Controle De Compras\frmListarCompras.Designer.cs">
       <DependentUpon>frmListarCompras.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Entregavel II\Controle De Fornecedores\frmCadastrarFornecedor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Entregavel II\Controle De Fornecedores\frmCadastrarFornecedor.Designer.cs">
+      <DependentUpon>frmCadastrarFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Entregavel II\Controle De Fornecedores\frmConsultarFornecedores.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Entregavel II\Controle De Fornecedores\frmConsultarFornecedores.Designer.cs">
+      <DependentUpon>frmConsultarFornecedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Entregavel II\Controle De Produto\frmCadastrarProduto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Entregavel II\Controle De Produto\frmCadastrarProduto.Designer.cs">
+      <DependentUpon>frmCadastrarProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Entregavel II\Controle De Produto\frmConsultarProduto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Entregavel II\Controle De Produto\frmConsultarProduto.Designer.cs">
+      <DependentUpon>frmConsultarProduto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Entregavel I\Controle de Funcionários\frmCadastrarFuncionario.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -230,6 +254,18 @@
     <EmbeddedResource Include="Screens\Entregavel II\Controle De Compras\frmListarCompras.resx">
       <DependentUpon>frmListarCompras.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Entregavel II\Controle De Fornecedores\frmCadastrarFornecedor.resx">
+      <DependentUpon>frmCadastrarFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Entregavel II\Controle De Fornecedores\frmConsultarFornecedores.resx">
+      <DependentUpon>frmConsultarFornecedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Entregavel II\Controle De Produto\frmCadastrarProduto.resx">
+      <DependentUpon>frmCadastrarProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Entregavel II\Controle De Produto\frmConsultarProduto.resx">
+      <DependentUpon>frmConsultarProduto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\Entregavel I\Controle de Funcionários\frmCadastrarFuncionario.resx">
       <DependentUpon>frmCadastrarFuncionario.cs</DependentUpon>
     </EmbeddedResource>
@@ -285,8 +321,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Screens\Entregavel III\" />
-    <Folder Include="Screens\Entregavel II\Controle De Fornecedores\" />
-    <Folder Include="Screens\Entregavel II\Controle De Produto\" />
     <Folder Include="Screens\Entregavel IV\" />
   </ItemGroup>
   <ItemGroup>
