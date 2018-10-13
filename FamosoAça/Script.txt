@@ -1,4 +1,5 @@
-﻿CREATE DATABASE FamosoAcaiDB;
+﻿DROP DATABASE FamosoAcaiDB;
+CREATE DATABASE FamosoAcaiDB;
 USE FamosoAcaiDB;
 
 CREATE TABLE `tb_login` (
@@ -56,6 +57,7 @@ CREATE TABLE `tb_fornecedor` (
 CREATE TABLE `tb_produto` (
 	`id_produto` int NOT NULL AUTO_INCREMENT,
 	`nm_nome` varchar(150) NOT NULL,
+    `ds_marca` varchar(50) NOT NULL,
 	`vl_preco` DECIMAL(12,2) NOT NULL,
 	`ds_descricao` varchar(255),
 	PRIMARY KEY (`id_produto`)
