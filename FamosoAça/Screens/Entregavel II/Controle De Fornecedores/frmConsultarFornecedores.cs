@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FamosoAça.Classes.Fornecedor;
 
 namespace FamosoAça.Screens.Entregavel_II.Controle_De_Fornecedores
 {
@@ -15,6 +16,31 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Fornecedores
         public frmConsultarFornecedores()
         {
             InitializeComponent();
+            Autocarregar();
+        }
+
+        void Autocarregar()
+        {
+            FornecedorBusiness buss = new FornecedorBusiness();
+            List<FornecedorDTO> lista = buss.Listar();
+
+            dgvFornecedor.DataSource = lista;
+        }
+
+        void CarregarGrid()
+        {
+            string nome = txtNome.Text;
+            string cidade = txtCidade.Text;
+
+            FornecedorBusiness buss = new FornecedorBusiness();
+            List<FornecedorDTO> lista = buss.Consultar(nome, cidade);
+
+            dgvFornecedor.DataSource = lista;
+        }
+
+        private void btnProcurar_Click(object sender, EventArgs e)
+        {
+            CarregarGrid();
         }
     }
 }

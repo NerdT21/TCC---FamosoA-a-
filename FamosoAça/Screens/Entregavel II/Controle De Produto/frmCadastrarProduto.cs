@@ -16,5 +16,10 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Produto
         {
             InitializeComponent();
         }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

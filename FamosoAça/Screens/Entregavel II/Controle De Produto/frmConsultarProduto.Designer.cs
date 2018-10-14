@@ -48,6 +48,7 @@
             this.btnProcurar.TabIndex = 22;
             this.btnProcurar.Text = "Buscar";
             this.btnProcurar.UseVisualStyleBackColor = true;
+            this.btnProcurar.Click += new System.EventHandler(this.btnProcurar_Click);
             // 
             // txtNome
             // 
