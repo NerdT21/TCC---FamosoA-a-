@@ -12,21 +12,18 @@ namespace FamosoAça.Classes.Compra
         public int Salvar(CompraDTO dto)
         {
             string script = @"INSERT INTO tb_compra(
-	                          id_item,
-	                          id_fornecedor,
+	                            id_item,
                                 qtd_comprado,
                                 dt_compra,
                                 vl_preco)
                                 VALUES(
 	                            @id_item,
- 	                            @id_fornecedor,
                                 @qtd_comprado,
                                 @dt_compra,
-                                @vl_preco
-	                            )";
+                                @vl_preco)";
+
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("id_item", dto.IdItem));
-            parms.Add(new MySqlParameter("id_fornecedor", dto.IdFornecedor));
             parms.Add(new MySqlParameter("qtd_comprado", dto.QuantidadeComprada));
             parms.Add(new MySqlParameter("dt_compra", dto.DataCompra));
             parms.Add(new MySqlParameter("vl_preco", dto.Preco));
@@ -38,7 +35,6 @@ namespace FamosoAça.Classes.Compra
         public void Alterar(CompraDTO dto)
         {
             string script = @"UPDATE tb_compra SET id_item = @id_item,
-                            id_fornecedor = @id_fornecedor,
                             qtd_comprado = @qtd_comprado,
                             dt_compra = @dt_compra,
                             vl_preco = @vl_preco
@@ -46,7 +42,6 @@ namespace FamosoAça.Classes.Compra
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("id_item", dto.IdItem));
-            parms.Add(new MySqlParameter("id_fornecedor", dto.IdFornecedor));
             parms.Add(new MySqlParameter("qtd_comprado", dto.QuantidadeComprada));
             parms.Add(new MySqlParameter("dt_compra", dto.DataCompra));
             parms.Add(new MySqlParameter("vl_preco", dto.Preco));
@@ -79,7 +74,6 @@ namespace FamosoAça.Classes.Compra
                 CompraDTO dto = new CompraDTO();
                 dto.Id = reader.GetInt32("id_compra");
                 dto.IdItem = reader.GetInt32("id_item");
-                dto.IdFornecedor = reader.GetInt32("id_fornecedor");
                 dto.QuantidadeComprada = reader.GetInt32("qtd_comprado");
                 dto.DataCompra = reader.GetString("dt_compra");
                 dto.Preco = reader.GetDecimal("vl_preco");
@@ -91,12 +85,11 @@ namespace FamosoAça.Classes.Compra
             reader.Close();
             return produto;
         }
-        public List<CompraDTO> Consultar(int idfornecedor, string dt_compra)
+        public List<CompraDTO> Consultar(string dt_compra)
         {
-            string script = @"SELECT * FROM tb_compra WHERE id_fornecedor LIKE @id_fornecedor AND dt_compra LIKE @dt_compra";
+            string script = @"SELECT * FROM tb_compra WHERE dt_compra LIKE @dt_compra";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("id_fornecedor", idfornecedor + "%"));
             parms.Add(new MySqlParameter("dt_compra", dt_compra + "%"));
 
             Database db = new Database();
@@ -108,7 +101,6 @@ namespace FamosoAça.Classes.Compra
                 CompraDTO dto = new CompraDTO();
                 dto.Id = reader.GetInt32("id_compra");
                 dto.IdItem = reader.GetInt32("id_item");
-                dto.IdFornecedor = reader.GetInt32("id_fornecedor");
                 dto.QuantidadeComprada = reader.GetInt32("qtd_comprado");
                 dto.DataCompra = reader.GetString("dt_compra");
                 dto.Preco = reader.GetDecimal("vl_preco");

@@ -35,10 +35,10 @@ namespace FamosoAça.Classes.Compra
             return list;
         }
 
-        public List<CompraDTO> Consultar(int idfor, string dtcompra)
+        public List<CompraDTO> Consultar(string dtcompra)
         {
             CompraDataBase db = new CompraDataBase();
-            return db.Consultar(idfor, dtcompra);
+            return db.Consultar(dtcompra);
         }
     }
 }
