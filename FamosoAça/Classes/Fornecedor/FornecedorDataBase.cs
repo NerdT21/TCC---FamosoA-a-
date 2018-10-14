@@ -19,8 +19,7 @@ namespace FamosoAça.Classes.Fornecedor
                             ds_email,
                             id_depto,
                             ds_cidade,
-                            ds_estado,
-                            ds_bairro,
+                            ds_estado,                        
                             ds_cep,
                             img_logo
                             ) VALUES(                            
@@ -31,7 +30,6 @@ namespace FamosoAça.Classes.Fornecedor
                             @id_depto,
                             @ds_cidade,
                             @ds_estado,
-                            @ds_bairro,
                            @img_logo
                             @ds_cep
                            )";
@@ -44,8 +42,7 @@ namespace FamosoAça.Classes.Fornecedor
             parms.Add(new MySqlParameter("ds_telefone", dto.Telefone));
             parms.Add(new MySqlParameter("ds_email", dto.Email));
             parms.Add(new MySqlParameter("ds_cidade", dto.Cidade));
-            parms.Add(new MySqlParameter("ds_estado", dto.Estado));
-            parms.Add(new MySqlParameter("ds_bairro", dto.Bairro));
+            parms.Add(new MySqlParameter("ds_estado", dto.Estado));           
             parms.Add(new MySqlParameter("ds_cep", dto.Cep));
             parms.Add(new MySqlParameter("img_logo", dto.Logo));
 
@@ -74,7 +71,7 @@ namespace FamosoAça.Classes.Fornecedor
                 dto.Email = reader.GetString("ds_email");
                 dto.Cidade = reader.GetString("ds_cidade");
                 dto.Estado = reader.GetString("ds_estado");
-                dto.Bairro = reader.GetString("ds_bairro");
+             
 
                 dto.Cep = reader.GetString("ds_cep");
 
@@ -109,7 +106,7 @@ namespace FamosoAça.Classes.Fornecedor
                 dto.Email = reader.GetString("ds_email");
                 dto.Cidade = reader.GetString("ds_cidade");
                 dto.Estado = reader.GetString("ds_estado");
-                dto.Bairro = reader.GetString("ds_bairro");
+              
 
                 dto.Cep = reader.GetString("ds_cep");
 
@@ -129,8 +126,7 @@ namespace FamosoAça.Classes.Fornecedor
                             ds_telefone = @ds_telefone,
                             ds_email = @ds_email,
                             ds_cidade = @ds_cidade,
-                            ds_estado = @ds_estado,
-                            ds_bairro = @ds_bairro,
+                            ds_estado = @ds_estado,                          
                             ds_cep = @ds_cep,
                             img_logo = @img_logo
                             WHERE
@@ -143,8 +139,7 @@ namespace FamosoAça.Classes.Fornecedor
             parms.Add(new MySqlParameter("ds_telefone", dto.Telefone));
             parms.Add(new MySqlParameter("ds_email", dto.Email));
             parms.Add(new MySqlParameter("ds_cidade", dto.Cidade));
-            parms.Add(new MySqlParameter("ds_estado", dto.Estado));
-            parms.Add(new MySqlParameter("ds_bairro", dto.Bairro));
+            parms.Add(new MySqlParameter("ds_estado", dto.Estado));           
             parms.Add(new MySqlParameter("ds_cep", dto.Cep));
             parms.Add(new MySqlParameter("img_logo", dto.Logo));
 

@@ -44,7 +44,6 @@ CREATE TABLE `tb_fornecedor` (
 	`id_fornecedor` int NOT NULL AUTO_INCREMENT,
 	`ds_cnpj` varchar(25) NOT NULL UNIQUE,
 	`nm_fornecedor` varchar(150) NOT NULL,
-	`ds_bairro` varchar(150) NOT NULL,
 	`ds_cep` varchar(12) NOT NULL,
 	`ds_cidade` varchar(60) NOT NULL,
 	`ds_estado` varchar(30) NOT NULL,
@@ -165,8 +164,6 @@ ALTER TABLE `tb_funcionario` ADD CONSTRAINT `tb_funcionario_fk0` FOREIGN KEY (`i
 ALTER TABLE `tb_estoque` ADD CONSTRAINT `tb_estoque_fk0` FOREIGN KEY (`id_compra`) REFERENCES `tb_compra`(`id_compra`);
 
 ALTER TABLE `tb_compra` ADD CONSTRAINT `tb_compra_fk0` FOREIGN KEY (`id_item`) REFERENCES `tb_item`(`id_item`);
-
-ALTER TABLE `tb_compra` ADD CONSTRAINT `tb_compra_fk1` FOREIGN KEY (`id_fornecedor`) REFERENCES `tb_fornecedor`(`id_fornecedor`);
 
 ALTER TABLE `tb_venda` ADD CONSTRAINT `tb_venda_fk0` FOREIGN KEY (`id_produto`) REFERENCES `tb_produto`(`id_produto`);
 
