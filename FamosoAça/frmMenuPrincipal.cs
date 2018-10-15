@@ -138,6 +138,11 @@ namespace FamosoAça
             OpenScreen(tela);
         }
 
+        private void produtoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void pnlBarra_MouseUp(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
