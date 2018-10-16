@@ -34,12 +34,12 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Fornecedores
                 FornecedorBusiness buss= new FornecedorBusiness();
                 buss.Salvar(dto);
 
-                MessageBox.Show("Fornecedor cadatrado!","Catioro's",MessageBoxButtons.OK);
+                MessageBox.Show("Fornecedor cadatrado!", "Famoso Açai", MessageBoxButtons.OK);
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ocorreu um erro: "+ ex.Message, "Catioro's", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ocorreu um erro: "+ ex.Message, "Famoso Açai", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

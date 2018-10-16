@@ -6,6 +6,8 @@ using FamosoAça.Screens.Entregavel_I;
 using FamosoAça.Screens.Entregavel_I.Controle_de_Funcionários;
 using FamosoAça.Screens.Entregavel_I.Departamentos;
 using FamosoAça.Screens.Entregavel_II.Controle_De_Compras;
+using FamosoAça.Screens.Entregavel_II.Controle_De_Fornecedores;
+using FamosoAça.Screens.Entregavel_II.Controle_De_Produto;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -139,6 +141,50 @@ namespace FamosoAça
         }
 
         private void produtoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void produtoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmCadastrarProduto frm = new frmCadastrarProduto();
+            OpenScreen(frm);
+        }
+
+        private void fornecedorToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmCadastrarFornecedor frm = new frmCadastrarFornecedor();
+            OpenScreen(frm);
+        }
+
+        private void itemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clienteToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void cadastroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fornecedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConsultaFornecedor frm = new frmConsultaFornecedor();
+            OpenScreen(frm);
+        }
+
+        private void produtoToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Screens.Entregavel_II.Controle_De_Produto.frmConsultarProduto frm = new Screens.Entregavel_II.Controle_De_Produto.frmConsultarProduto();
+            OpenScreen(frm);
+        }
+
+        private void itensToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
