@@ -36,6 +36,8 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtMarca = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +54,7 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(148, 29);
+            this.txtNome.Location = new System.Drawing.Point(148, 21);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(192, 20);
             this.txtNome.TabIndex = 21;
@@ -61,7 +63,7 @@
             // 
             this.lblprocurar.AutoSize = true;
             this.lblprocurar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblprocurar.Location = new System.Drawing.Point(13, 27);
+            this.lblprocurar.Location = new System.Drawing.Point(13, 19);
             this.lblprocurar.Name = "lblprocurar";
             this.lblprocurar.Size = new System.Drawing.Size(129, 20);
             this.lblprocurar.TabIndex = 20;
@@ -115,10 +117,29 @@
             this.Column5.ReadOnly = true;
             this.Column5.Width = 150;
             // 
+            // txtMarca
+            // 
+            this.txtMarca.Location = new System.Drawing.Point(148, 50);
+            this.txtMarca.Name = "txtMarca";
+            this.txtMarca.Size = new System.Drawing.Size(98, 20);
+            this.txtMarca.TabIndex = 24;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(81, 48);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 20);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Marca";
+            // 
             // frmConsultarProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txtMarca);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnProcurar);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblprocurar);
@@ -141,5 +162,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.TextBox txtMarca;
+        private System.Windows.Forms.Label label1;
     }
 }

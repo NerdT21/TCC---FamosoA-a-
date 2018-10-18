@@ -211,35 +211,35 @@
             // 
             this.funcionariosToolStripMenuItem.Image = global::FamosoAça.Properties.Resources.icons8_add_user_male_26;
             this.funcionariosToolStripMenuItem.Name = "funcionariosToolStripMenuItem";
-            this.funcionariosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.funcionariosToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.funcionariosToolStripMenuItem.Text = "Funcionários";
             this.funcionariosToolStripMenuItem.Click += new System.EventHandler(this.funcionariosToolStripMenuItem_Click);
             // 
             // produtoToolStripMenuItem1
             // 
             this.produtoToolStripMenuItem1.Name = "produtoToolStripMenuItem1";
-            this.produtoToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.produtoToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
             this.produtoToolStripMenuItem1.Text = "Produto";
             this.produtoToolStripMenuItem1.Click += new System.EventHandler(this.produtoToolStripMenuItem1_Click);
             // 
             // fornecedorToolStripMenuItem1
             // 
             this.fornecedorToolStripMenuItem1.Name = "fornecedorToolStripMenuItem1";
-            this.fornecedorToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.fornecedorToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
             this.fornecedorToolStripMenuItem1.Text = "Fornecedor";
             this.fornecedorToolStripMenuItem1.Click += new System.EventHandler(this.fornecedorToolStripMenuItem1_Click);
             // 
             // itemToolStripMenuItem
             // 
             this.itemToolStripMenuItem.Name = "itemToolStripMenuItem";
-            this.itemToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.itemToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.itemToolStripMenuItem.Text = "Item";
             this.itemToolStripMenuItem.Click += new System.EventHandler(this.itemToolStripMenuItem_Click);
             // 
             // clienteToolStripMenuItem1
             // 
             this.clienteToolStripMenuItem1.Name = "clienteToolStripMenuItem1";
-            this.clienteToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.clienteToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
             this.clienteToolStripMenuItem1.Text = "Cliente";
             this.clienteToolStripMenuItem1.Click += new System.EventHandler(this.clienteToolStripMenuItem1_Click);
             // 
@@ -247,8 +247,8 @@
             // 
             this.consultaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.funcionáriosToolStripMenuItem,
-            this.fornecedorToolStripMenuItem,
             this.produtoToolStripMenuItem,
+            this.fornecedorToolStripMenuItem,
             this.clienteToolStripMenuItem,
             this.itensToolStripMenuItem});
             this.consultaToolStripMenuItem.Image = global::FamosoAça.Properties.Resources.icons8_bulleted_list_48;

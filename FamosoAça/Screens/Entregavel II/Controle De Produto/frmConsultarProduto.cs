@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FamosoAça.Classes.Produto;
 
 namespace FamosoAça.Screens.Entregavel_II.Controle_De_Produto
 {
@@ -17,6 +18,22 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Produto
             InitializeComponent();
         }
 
+        void Carregar()
+        {
+            ProdutoBusiness buss = new ProdutoBusiness();
+            List<ProdutoDTO> list = buss.Listar();
+
+            dgvProduto.DataSource = list;
+        } 
+
+        void CarregarGrid()
+        {
+            string nome = txtNome.Text;
+            string marca = txtMarca.Text;
+
+            ProdutoBusiness buss = new ProdutoBusiness();
+            List<ProdutoDTO> lista = buss.Consultar(nome, marca);
+        }
         private void btnProcurar_Click(object sender, EventArgs e)
         {
 
