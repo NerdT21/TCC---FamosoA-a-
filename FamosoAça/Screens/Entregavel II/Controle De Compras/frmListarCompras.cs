@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FamosoAça.Classes.Compra;
 
 namespace FamosoAça.Screens.Entregavel_II.Controle_De_Compras
 {
@@ -15,6 +16,33 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Compras
         public frmListarCompras()
         {
             InitializeComponent();
+            AutoCarregar();
+        }
+
+        void AutoCarregar()
+        {
+            CompraBusiness buss = new CompraBusiness();
+            List<CompraDTO> dto = buss.Listar();
+
+            dgvCompra.AutoGenerateColumns = false;
+            dgvCompra.DataSource = dto;
+        }
+
+        void CarregarGrid()
+        {
+            string data = mkbData.Text;
+
+            CompraBusiness buss = new CompraBusiness();
+            List<CompraDTO> dto = buss.Consultar(data);
+
+            dgvCompra.AutoGenerateColumns = false;
+            dgvCompra.DataSource = dto;
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            CarregarGrid();
         }
     }
 }

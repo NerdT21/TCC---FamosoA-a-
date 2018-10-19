@@ -4,17 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FamosoAça.Classes.Produto
+namespace FamosoAça.Classes.Compra.Item
 {
-    public class ProdutoDTO
+    public class ItemDTO
     {
         public int Id { get; set; }
 
         public string Nome { get; set; }
 
-        public string Marca { get; set; }
+        public int IdFornecedor { get; set; }
 
-        public decimal Preco{ get; set; }
+        public decimal Preco { get; set; }
 
         public string Descricao { get; set; }
     }

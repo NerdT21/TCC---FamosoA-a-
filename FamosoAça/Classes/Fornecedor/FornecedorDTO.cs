@@ -12,9 +12,7 @@ namespace FamosoAça.Classes.Fornecedor
 
         public string CNPJ { get; set; }
 
-        public string Nome { get; set; }
-
-        public string Bairro { get; set; }
+        public string Nome { get; set; }      
 
         public string Cep { get; set; }
 
