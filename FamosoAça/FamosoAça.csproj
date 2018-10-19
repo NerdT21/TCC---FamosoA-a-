@@ -134,6 +134,18 @@
     <Compile Include="Screens\Consultar\frmMenuConsultar.Designer.cs">
       <DependentUpon>frmMenuConsultar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Entregavel III\ConsultarVenda\FrmConsultarVenda.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Entregavel III\ConsultarVenda\FrmConsultarVenda.Designer.cs">
+      <DependentUpon>FrmConsultarVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Entregavel III\ConsultarVenda\frmVenda.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Entregavel III\ConsultarVenda\frmVenda.Designer.cs">
+      <DependentUpon>frmVenda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Entregavel II\Controle De Compras\frmCompras.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -251,6 +263,12 @@
     <EmbeddedResource Include="Screens\Consultar\frmMenuConsultar.resx">
       <DependentUpon>frmMenuConsultar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Entregavel III\ConsultarVenda\FrmConsultarVenda.resx">
+      <DependentUpon>FrmConsultarVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Entregavel III\ConsultarVenda\frmVenda.resx">
+      <DependentUpon>frmVenda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\Entregavel II\Controle De Compras\frmCompras.resx">
       <DependentUpon>frmCompras.cs</DependentUpon>
     </EmbeddedResource>
@@ -323,7 +341,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Screens\Entregavel III\" />
     <Folder Include="Screens\Entregavel IV\" />
   </ItemGroup>
   <ItemGroup>
