@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuPrincipal));
             this.pnlBarra = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pbxMinimize = new System.Windows.Forms.PictureBox();
@@ -48,8 +49,8 @@
             this.clienteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.funcionáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fornecedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.produtoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fornecedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.itensToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.departamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -94,7 +95,7 @@
             // pbxMinimize
             // 
             this.pbxMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxMinimize.Image = global::FamosoAça.Properties.Resources.icons8_compress_30;
+            this.pbxMinimize.Image = ((System.Drawing.Image)(resources.GetObject("pbxMinimize.Image")));
             this.pbxMinimize.Location = new System.Drawing.Point(555, 5);
             this.pbxMinimize.Name = "pbxMinimize";
             this.pbxMinimize.Size = new System.Drawing.Size(23, 23);
@@ -106,7 +107,7 @@
             // pbxClose
             // 
             this.pbxClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxClose.Image = global::FamosoAça.Properties.Resources.icons8_excluir_48;
+            this.pbxClose.Image = ((System.Drawing.Image)(resources.GetObject("pbxClose.Image")));
             this.pbxClose.Location = new System.Drawing.Point(581, 5);
             this.pbxClose.Name = "pbxClose";
             this.pbxClose.Size = new System.Drawing.Size(23, 23);
@@ -181,7 +182,7 @@
             // 
             this.logOutToolStripMenuItem.Image = global::FamosoAça.Properties.Resources.icons8_página_inicial_24;
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.logOutToolStripMenuItem.Text = "Home";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
@@ -189,7 +190,7 @@
             // 
             this.logOutToolStripMenuItem1.Image = global::FamosoAça.Properties.Resources.icons8_desligar_48;
             this.logOutToolStripMenuItem1.Name = "logOutToolStripMenuItem1";
-            this.logOutToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
+            this.logOutToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.logOutToolStripMenuItem1.Text = "Log Out";
             this.logOutToolStripMenuItem1.Click += new System.EventHandler(this.logOutToolStripMenuItem1_Click);
             // 
@@ -211,35 +212,39 @@
             // 
             this.funcionariosToolStripMenuItem.Image = global::FamosoAça.Properties.Resources.icons8_add_user_male_26;
             this.funcionariosToolStripMenuItem.Name = "funcionariosToolStripMenuItem";
-            this.funcionariosToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.funcionariosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.funcionariosToolStripMenuItem.Text = "Funcionários";
             this.funcionariosToolStripMenuItem.Click += new System.EventHandler(this.funcionariosToolStripMenuItem_Click);
             // 
             // produtoToolStripMenuItem1
             // 
+            this.produtoToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("produtoToolStripMenuItem1.Image")));
             this.produtoToolStripMenuItem1.Name = "produtoToolStripMenuItem1";
-            this.produtoToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
+            this.produtoToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.produtoToolStripMenuItem1.Text = "Produto";
             this.produtoToolStripMenuItem1.Click += new System.EventHandler(this.produtoToolStripMenuItem1_Click);
             // 
             // fornecedorToolStripMenuItem1
             // 
+            this.fornecedorToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("fornecedorToolStripMenuItem1.Image")));
             this.fornecedorToolStripMenuItem1.Name = "fornecedorToolStripMenuItem1";
-            this.fornecedorToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
+            this.fornecedorToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.fornecedorToolStripMenuItem1.Text = "Fornecedor";
             this.fornecedorToolStripMenuItem1.Click += new System.EventHandler(this.fornecedorToolStripMenuItem1_Click);
             // 
             // itemToolStripMenuItem
             // 
+            this.itemToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("itemToolStripMenuItem.Image")));
             this.itemToolStripMenuItem.Name = "itemToolStripMenuItem";
-            this.itemToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.itemToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.itemToolStripMenuItem.Text = "Item";
             this.itemToolStripMenuItem.Click += new System.EventHandler(this.itemToolStripMenuItem_Click);
             // 
             // clienteToolStripMenuItem1
             // 
+            this.clienteToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("clienteToolStripMenuItem1.Image")));
             this.clienteToolStripMenuItem1.Name = "clienteToolStripMenuItem1";
-            this.clienteToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
+            this.clienteToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.clienteToolStripMenuItem1.Text = "Cliente";
             this.clienteToolStripMenuItem1.Click += new System.EventHandler(this.clienteToolStripMenuItem1_Click);
             // 
@@ -264,28 +269,32 @@
             this.funcionáriosToolStripMenuItem.Text = "Funcionários";
             this.funcionáriosToolStripMenuItem.Click += new System.EventHandler(this.funcionáriosToolStripMenuItem_Click);
             // 
-            // fornecedorToolStripMenuItem
-            // 
-            this.fornecedorToolStripMenuItem.Name = "fornecedorToolStripMenuItem";
-            this.fornecedorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.fornecedorToolStripMenuItem.Text = "Fornecedor";
-            this.fornecedorToolStripMenuItem.Click += new System.EventHandler(this.fornecedorToolStripMenuItem_Click);
-            // 
             // produtoToolStripMenuItem
             // 
+            this.produtoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("produtoToolStripMenuItem.Image")));
             this.produtoToolStripMenuItem.Name = "produtoToolStripMenuItem";
             this.produtoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.produtoToolStripMenuItem.Text = "Produto";
             this.produtoToolStripMenuItem.Click += new System.EventHandler(this.produtoToolStripMenuItem_Click_1);
             // 
+            // fornecedorToolStripMenuItem
+            // 
+            this.fornecedorToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("fornecedorToolStripMenuItem.Image")));
+            this.fornecedorToolStripMenuItem.Name = "fornecedorToolStripMenuItem";
+            this.fornecedorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.fornecedorToolStripMenuItem.Text = "Fornecedor";
+            this.fornecedorToolStripMenuItem.Click += new System.EventHandler(this.fornecedorToolStripMenuItem_Click);
+            // 
             // clienteToolStripMenuItem
             // 
+            this.clienteToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("clienteToolStripMenuItem.Image")));
             this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
             this.clienteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.clienteToolStripMenuItem.Text = "Cliente";
             // 
             // itensToolStripMenuItem
             // 
+            this.itensToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("itensToolStripMenuItem.Image")));
             this.itensToolStripMenuItem.Name = "itensToolStripMenuItem";
             this.itensToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.itensToolStripMenuItem.Text = "Itens";
@@ -328,6 +337,7 @@
             // 
             // verComprasToolStripMenuItem
             // 
+            this.verComprasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("verComprasToolStripMenuItem.Image")));
             this.verComprasToolStripMenuItem.Name = "verComprasToolStripMenuItem";
             this.verComprasToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.verComprasToolStripMenuItem.Text = "Ver Compras";

@@ -92,7 +92,7 @@
             this.lbxitemproduto.FormattingEnabled = true;
             this.lbxitemproduto.Location = new System.Drawing.Point(217, 230);
             this.lbxitemproduto.Name = "lbxitemproduto";
-            this.lbxitemproduto.Size = new System.Drawing.Size(118, 108);
+            this.lbxitemproduto.Size = new System.Drawing.Size(121, 56);
             this.lbxitemproduto.TabIndex = 5;
             // 
             // numericUpDown1
