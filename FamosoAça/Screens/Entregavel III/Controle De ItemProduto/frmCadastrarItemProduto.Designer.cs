@@ -42,10 +42,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(80, 83);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 20);
+            this.label1.Size = new System.Drawing.Size(130, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome Do Produto";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -53,30 +53,30 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(127, 134);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 20);
+            this.label2.Size = new System.Drawing.Size(85, 18);
             this.label2.TabIndex = 1;
             this.label2.Text = "Fornecedor";
             // 
             // lblpreco
             // 
             this.lblpreco.AutoSize = true;
-            this.lblpreco.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblpreco.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblpreco.Location = new System.Drawing.Point(165, 183);
             this.lblpreco.Name = "lblpreco";
-            this.lblpreco.Size = new System.Drawing.Size(46, 20);
+            this.lblpreco.Size = new System.Drawing.Size(48, 18);
             this.lblpreco.TabIndex = 2;
             this.lblpreco.Text = "Preço";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(137, 230);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 20);
+            this.label4.Size = new System.Drawing.Size(76, 18);
             this.label4.TabIndex = 3;
             this.label4.Text = "Descriçao";
             // 
@@ -92,7 +92,7 @@
             this.lbxitemproduto.FormattingEnabled = true;
             this.lbxitemproduto.Location = new System.Drawing.Point(217, 230);
             this.lbxitemproduto.Name = "lbxitemproduto";
-            this.lbxitemproduto.Size = new System.Drawing.Size(118, 121);
+            this.lbxitemproduto.Size = new System.Drawing.Size(118, 108);
             this.lbxitemproduto.TabIndex = 5;
             // 
             // numericUpDown1
