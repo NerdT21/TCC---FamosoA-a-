@@ -2,25 +2,12 @@
 CREATE DATABASE FamosoAcaiDB;
 USE FamosoAcaiDB;
 
-CREATE TABLE `tb_login` (
-	`id_usuario` int NOT NULL AUTO_INCREMENT,
-	`nm_usuario` varchar(60) NOT NULL,
-	`ds_senha` varchar(50) NOT NULL,
-	`pr_permissaoAdm` bool NOT NULL,
-	`pr_permissaoCadastro` bool NOT NULL,
-	`pr_permissaoConsulta` bool NOT NULL,
-	`pr_permissaoContabilidade` bool NOT NULL,
-	PRIMARY KEY (`id_usuario`)
-);
-
-
 CREATE TABLE `tb_funcionario` (
 	`id_funcionario` int NOT NULL AUTO_INCREMENT,
 	`nm_nome` varchar(50) NOT NULL,
 	`ds_email` varchar(250) NOT NULL UNIQUE,
 	`ds_cpf` varchar(50) NOT NULL UNIQUE,
 	`ds_rg` varchar(50) NOT NULL UNIQUE,
-    `ds_salario` decimal(15,2) NOT NULL,
 	`dt_nascimento` varchar(10) NOT NULL,
 	`ds_cidade` varchar(60) NOT NULL,
 	`ds_estado` varchar(30) NOT NULL,
@@ -56,57 +43,20 @@ CREATE TABLE `tb_fornecedor` (
 CREATE TABLE `tb_produto` (
 	`id_produto` int NOT NULL AUTO_INCREMENT,
 	`nm_nome` varchar(150) NOT NULL,
-    `ds_marca` varchar(50) NOT NULL,
 	`vl_preco` DECIMAL(12,2) NOT NULL,
 	`ds_descricao` varchar(255),
 	PRIMARY KEY (`id_produto`)
 );
 
-
-CREATE TABLE `tb_item` (
-	`id_item` int NOT NULL AUTO_INCREMENT,
-	`nm_item` varchar(50) NOT NULL,
-	`id_fornecedor` int NOT NULL,
-    `vl_preco` decimal(15,2) NOT NULL,
-	`ds_item` varchar(200) NOT NULL,
-	PRIMARY KEY (`id_item`)
-);
-
-CREATE TABLE `tb_compra` (
-	`id_compra` int NOT NULL AUTO_INCREMENT,
-	`id_item` int NOT NULL,
-	`qtd_comprado` decimal(15,2) NOT NULL,
-	`dt_compra` varchar(10) NOT NULL,
-	`vl_preco` DECIMAL(15,2) NOT NULL,
-	PRIMARY KEY (`id_compra`)
-);
-
-
-CREATE TABLE `tb_item_compra`(
-	`id_item_compra` INT NOT NULL AUTO_INCREMENT, 
-	`id_item` INT,
-    `id_compra` INT,
-    PRIMARY KEY (`id_item_compra`),
-	CONSTRAINT id_item_fk0 
-    FOREIGN KEY(`id_item`) REFERENCES tb_item(id_item),
-    CONSTRAINT id_compra_fk1
-    FOREIGN KEY(`id_compra`) REFERENCES tb_compra(id_compra)
-);
-
-
-CREATE TABLE `tb_venda` (
-	`id_venda` int NOT NULL AUTO_INCREMENT,
-	`id_produto` int NOT NULL,
-	`dt_data_venda` varchar(10) NOT NULL,
-	`vl_total_venda` DECIMAL(15,2) NOT NULL,
-	PRIMARY KEY (`id_venda`)
-);
-
-CREATE TABLE `tb_produto_venda` (
-	`id_item_venda` int NOT NULL AUTO_INCREMENT,
-	`id_produto` int NOT NULL,
-	`id_venda` int NOT NULL,
-	PRIMARY KEY (`id_item_venda`)
+CREATE TABLE `tb_login` (
+	`id_usuario` int NOT NULL AUTO_INCREMENT,
+	`nm_usuario` varchar(60) NOT NULL,
+	`ds_senha` varchar(50) NOT NULL,
+	`pr_permissaoAdm` bool NOT NULL,
+	`pr_permissaoCadastro` bool NOT NULL,
+	`pr_permissaoConsulta` bool NOT NULL,
+	`pr_permissaoContabilidade` bool NOT NULL,
+	PRIMARY KEY (`id_usuario`)
 );
 
 CREATE TABLE `tb_estoque` (
@@ -118,6 +68,31 @@ CREATE TABLE `tb_estoque` (
 	PRIMARY KEY (`id_estoque`)
 );
 
+CREATE TABLE `tb_compra` (
+	`id_compra` int NOT NULL AUTO_INCREMENT,
+	`id_item` int NOT NULL,
+	`id_fornecedor` int NOT NULL,
+	`qtd_comprado` bigint(100) NOT NULL,
+	`dt_compra` varchar(10) NOT NULL,
+	`vl_preco` DECIMAL(15,2) NOT NULL,
+	PRIMARY KEY (`id_compra`)
+);
+
+CREATE TABLE `tb_venda` (
+	`id_venda` int NOT NULL AUTO_INCREMENT,
+	`id_produto` int NOT NULL,
+	`dt_data_venda` varchar NOT NULL,
+	`vl_total_venda` DECIMAL(15,2) NOT NULL,
+	`qtd_produto` int NOT NULL,
+	PRIMARY KEY (`id_venda`)
+);
+
+CREATE TABLE `tb_produto_venda` (
+	`id_item_venda` int NOT NULL AUTO_INCREMENT,
+	`id_produto` int NOT NULL,
+	`id_venda` int NOT NULL,
+	PRIMARY KEY (`id_item_venda`)
+);
 
 CREATE TABLE `tb_folha_pagamento` (
 	`id_folha_pag` int NOT NULL AUTO_INCREMENT,
@@ -125,7 +100,6 @@ CREATE TABLE `tb_folha_pagamento` (
 	`id_inss` int NOT NULL,
 	`ds_horas_extras` varchar(100) NOT NULL,
 	`int_faltas` int NOT NULL,
-    `ds_atraso` varchar(10) NOT NULL,
 	`id_imposto_renda` int NOT NULL,
 	`vl_imposto_de_renda` DECIMAL(15,2) NOT NULL,
 	`vl_fgts` DECIMAL(15,2) NOT NULL,
@@ -137,6 +111,7 @@ CREATE TABLE `tb_folha_pagamento` (
 
 CREATE TABLE `tb_inss` (
 	`id_inss` int NOT NULL AUTO_INCREMENT,
+	`id_folha_pag` int NOT NULL,
 	`vl_aliquota` DECIMAL(4,2) NOT NULL,
 	PRIMARY KEY (`id_inss`)
 );
@@ -157,13 +132,20 @@ CREATE TABLE `tb_salario_familia` (
 	PRIMARY KEY (`id_sal_familia`)
 );
 
-
+CREATE TABLE `tb_item` (
+	`id_item` int NOT NULL AUTO_INCREMENT,
+	`nm_item` varchar(50) NOT NULL,
+	`ds_item` varchar(200) NOT NULL,
+	PRIMARY KEY (`id_item`)
+);
 
 ALTER TABLE `tb_funcionario` ADD CONSTRAINT `tb_funcionario_fk0` FOREIGN KEY (`id_depto`) REFERENCES `tb_depto`(`id_depto`);
 
 ALTER TABLE `tb_estoque` ADD CONSTRAINT `tb_estoque_fk0` FOREIGN KEY (`id_compra`) REFERENCES `tb_compra`(`id_compra`);
 
 ALTER TABLE `tb_compra` ADD CONSTRAINT `tb_compra_fk0` FOREIGN KEY (`id_item`) REFERENCES `tb_item`(`id_item`);
+
+ALTER TABLE `tb_compra` ADD CONSTRAINT `tb_compra_fk1` FOREIGN KEY (`id_fornecedor`) REFERENCES `tb_fornecedor`(`id_fornecedor`);
 
 ALTER TABLE `tb_venda` ADD CONSTRAINT `tb_venda_fk0` FOREIGN KEY (`id_produto`) REFERENCES `tb_produto`(`id_produto`);
 
@@ -179,7 +161,10 @@ ALTER TABLE `tb_folha_pagamento` ADD CONSTRAINT `tb_folha_pagamento_fk2` FOREIGN
 
 ALTER TABLE `tb_folha_pagamento` ADD CONSTRAINT `tb_folha_pagamento_fk3` FOREIGN KEY (`id_sal_familia`) REFERENCES `tb_salario_familia`(`id_sal_familia`);
 
+ALTER TABLE `tb_inss` ADD CONSTRAINT `tb_inss_fk0` FOREIGN KEY (`id_folha_pag`) REFERENCES `tb_folha_pagamento`(`id_folha_pag`);
+
 ALTER TABLE `tb_imposto_renda` ADD CONSTRAINT `tb_imposto_renda_fk0` FOREIGN KEY (`id_folha_pag`) REFERENCES `tb_folha_pagamento`(`id_folha_pag`);
+
 
 
 -- INSERTS & SELECTS
