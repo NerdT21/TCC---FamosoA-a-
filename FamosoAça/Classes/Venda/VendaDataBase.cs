@@ -88,7 +88,7 @@ namespace FamosoAça.Classes.Venda
             MySqlDataReader reader = db.ExecuteSelectScript(script, parms);
 
             List<VendaDTO> venda = new List<VendaDTO>();
-            while (reader.Read()) ;
+            while (reader.Read()) 
             {
                 VendaDTO dto = new VendaDTO();
                 dto.Id = reader.GetInt32("id_venda");

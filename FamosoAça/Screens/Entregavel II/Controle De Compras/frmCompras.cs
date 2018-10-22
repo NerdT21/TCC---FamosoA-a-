@@ -83,5 +83,10 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Compras
             txtItem.Text = item.Nome;
             txtFornecedor.Text = item.IdFornecedor.ToString();
         }
+
+        private void txtItem_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

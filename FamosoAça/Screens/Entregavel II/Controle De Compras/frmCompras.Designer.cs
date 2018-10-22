@@ -73,7 +73,7 @@
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(344, 269);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 17);
+            this.label3.Size = new System.Drawing.Size(66, 17);
             this.label3.TabIndex = 7;
             this.label3.Text = "Sub. Total";
             // 
@@ -131,6 +131,7 @@
             this.txtItem.ReadOnly = true;
             this.txtItem.Size = new System.Drawing.Size(121, 20);
             this.txtItem.TabIndex = 14;
+            this.txtItem.TextChanged += new System.EventHandler(this.txtItem_TextChanged);
             // 
             // cboItem
             // 

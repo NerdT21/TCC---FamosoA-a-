@@ -35,10 +35,10 @@ namespace FamosoAça.Classes.Produto
             return list;
         }
 
-        public List<ProdutoDTO> Consultar(string consult)
+        public List<ProdutoDTO> Consultar(string nome, string marca)
         {
             ProdutoDataBase db = new ProdutoDataBase();
-            return db.Consultar(consult);
+            return db.Consultar(nome, marca);
         }
 
     }
