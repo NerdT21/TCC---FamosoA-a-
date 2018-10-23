@@ -31,8 +31,6 @@
             this.txtSalario = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.txtCep = new System.Windows.Forms.MaskedTextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.mkbEstado = new System.Windows.Forms.MaskedTextBox();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.cboDepto = new System.Windows.Forms.ComboBox();
             this.txtComplemento = new System.Windows.Forms.TextBox();
@@ -60,6 +58,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagem)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,24 +88,6 @@
             this.txtCep.Name = "txtCep";
             this.txtCep.Size = new System.Drawing.Size(59, 20);
             this.txtCep.TabIndex = 110;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(355, 234);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(38, 13);
-            this.label14.TabIndex = 109;
-            this.label14.Text = "ex: SP";
-            // 
-            // mkbEstado
-            // 
-            this.mkbEstado.Location = new System.Drawing.Point(336, 230);
-            this.mkbEstado.Mask = "AA";
-            this.mkbEstado.Name = "mkbEstado";
-            this.mkbEstado.Size = new System.Drawing.Size(16, 20);
-            this.mkbEstado.TabIndex = 88;
             // 
             // btnCadastrar
             // 
@@ -315,7 +296,7 @@
             this.label6.ForeColor = System.Drawing.Color.Blue;
             this.label6.Location = new System.Drawing.Point(235, 129);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 15);
+            this.label6.Size = new System.Drawing.Size(53, 15);
             this.label6.TabIndex = 99;
             this.label6.Text = "Telefone";
             // 
@@ -378,15 +359,23 @@
             this.label1.TabIndex = 94;
             this.label1.Text = "Nome";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(344, 229);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(35, 21);
+            this.comboBox1.TabIndex = 113;
+            // 
             // frmCadastrarFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.txtSalario);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.txtCep);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.mkbEstado);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.cboDepto);
             this.Controls.Add(this.txtComplemento);
@@ -427,8 +416,6 @@
         private System.Windows.Forms.TextBox txtSalario;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.MaskedTextBox txtCep;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.MaskedTextBox mkbEstado;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.ComboBox cboDepto;
         private System.Windows.Forms.TextBox txtComplemento;
@@ -456,5 +443,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

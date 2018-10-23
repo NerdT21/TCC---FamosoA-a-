@@ -22,6 +22,7 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Fornecedores
         {
             try
             {
+
                 FornecedorDTO dto = new FornecedorDTO();
 
                 dto.Nome = txtNome.Text;
