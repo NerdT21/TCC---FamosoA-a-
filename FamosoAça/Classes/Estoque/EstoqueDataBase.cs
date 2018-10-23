@@ -20,7 +20,7 @@ namespace FamosoAça.Classes.Estoque
 	                            @id_compra,
  	                            @nm_produto,
                                 @qtd_estocado,
-                                @qtd_minima
+                                @qtd_minimar
 	                            )";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
@@ -82,12 +82,13 @@ namespace FamosoAça.Classes.Estoque
             reader.Close();
             return produto;
         }
-        public List<EstoqueDTO> Consultar(string nome)
+        public List<EstoqueDTO> Consultar(string nome ,int quantidade)
         {
             string script = @"SELECT * FROM tb_estoque WHERE nm_produto LIKE @nm_produto";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("nm_produto", nome + "%"));
+            parms.Add(new MySqlParameter("qtd_minima", quantidade + "%"));
 
             Database db = new Database();
             MySqlDataReader reader = db.ExecuteSelectScript(script, parms);
@@ -98,6 +99,7 @@ namespace FamosoAça.Classes.Estoque
                 EstoqueDTO dto = new EstoqueDTO();
                 dto.Id = reader.GetInt32("id_estoque");
                 dto.NomeProduto = reader.GetString("nm_nome");
+                dto.QTDMinima = reader.GetInt32("qtd_minima");
 
 
                 produto.Add(dto);
