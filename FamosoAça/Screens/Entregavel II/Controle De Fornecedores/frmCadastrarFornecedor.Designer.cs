@@ -69,7 +69,7 @@
             this.lblBairro.AccessibleRole = System.Windows.Forms.AccessibleRole.IpAddress;
             this.lblBairro.AutoSize = true;
             this.lblBairro.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBairro.Location = new System.Drawing.Point(109, 215);
+            this.lblBairro.Location = new System.Drawing.Point(127, 215);
             this.lblBairro.Name = "lblBairro";
             this.lblBairro.Size = new System.Drawing.Size(45, 25);
             this.lblBairro.TabIndex = 130;
@@ -104,7 +104,7 @@
             // 
             this.lblNomeJuridico.AutoSize = true;
             this.lblNomeJuridico.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomeJuridico.Location = new System.Drawing.Point(105, 41);
+            this.lblNomeJuridico.Location = new System.Drawing.Point(104, 41);
             this.lblNomeJuridico.Name = "lblNomeJuridico";
             this.lblNomeJuridico.Size = new System.Drawing.Size(68, 25);
             this.lblNomeJuridico.TabIndex = 126;
@@ -121,7 +121,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(109, 71);
+            this.lblEmail.Location = new System.Drawing.Point(106, 72);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(66, 25);
             this.lblEmail.TabIndex = 124;
@@ -146,7 +146,7 @@
             // 
             this.lblCidadeF.AutoSize = true;
             this.lblCidadeF.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCidadeF.Location = new System.Drawing.Point(101, 185);
+            this.lblCidadeF.Location = new System.Drawing.Point(101, 186);
             this.lblCidadeF.Name = "lblCidadeF";
             this.lblCidadeF.Size = new System.Drawing.Size(71, 25);
             this.lblCidadeF.TabIndex = 121;
@@ -185,7 +185,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(185, 246);
+            this.textBox1.Location = new System.Drawing.Point(183, 251);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(215, 20);
             this.textBox1.TabIndex = 135;
@@ -194,7 +194,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(105, 246);
+            this.label1.Location = new System.Drawing.Point(123, 246);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 25);
             this.label1.TabIndex = 134;
