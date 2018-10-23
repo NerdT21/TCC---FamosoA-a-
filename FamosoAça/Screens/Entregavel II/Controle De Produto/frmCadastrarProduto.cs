@@ -23,8 +23,7 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Produto
             try
             {
                 ProdutoDTO dto = new ProdutoDTO();
-                dto.Nome = txtNome.Text;
-                dto.Marca = txtMarca.Text;
+                dto.Nome = txtNome.Text;               
                 dto.Descricao = txtDesc.Text;
                 dto.Preco = nudPreco.Value;
 
@@ -42,6 +41,26 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Produto
 
             }
             
+        }
+
+        private void txtDesc_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nudPreco_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
