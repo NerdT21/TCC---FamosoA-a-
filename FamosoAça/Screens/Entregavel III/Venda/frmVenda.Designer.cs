@@ -77,7 +77,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(164, 33);
+            this.label2.Location = new System.Drawing.Point(143, 33);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 17);
             this.label2.TabIndex = 36;
@@ -87,7 +87,7 @@
             // 
             this.cboNome.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboNome.FormattingEnabled = true;
-            this.cboNome.Location = new System.Drawing.Point(167, 53);
+            this.cboNome.Location = new System.Drawing.Point(146, 53);
             this.cboNome.Name = "cboNome";
             this.cboNome.Size = new System.Drawing.Size(121, 21);
             this.cboNome.TabIndex = 35;
