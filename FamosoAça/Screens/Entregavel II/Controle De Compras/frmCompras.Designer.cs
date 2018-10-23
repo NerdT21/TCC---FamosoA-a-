@@ -114,6 +114,7 @@
             this.txtValorTotal.ReadOnly = true;
             this.txtValorTotal.Size = new System.Drawing.Size(80, 20);
             this.txtValorTotal.TabIndex = 12;
+            this.txtValorTotal.TextChanged += new System.EventHandler(this.txtValorTotal_TextChanged);
             // 
             // mkbData
             // 

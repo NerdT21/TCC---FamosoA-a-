@@ -31,11 +31,12 @@
             this.btnProcurar = new System.Windows.Forms.Button();
             this.lblprocurar = new System.Windows.Forms.Label();
             this.dgvProduto = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboNome = new System.Windows.Forms.ComboBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,6 +49,7 @@
             this.btnProcurar.TabIndex = 28;
             this.btnProcurar.Text = "Buscar";
             this.btnProcurar.UseVisualStyleBackColor = true;
+            this.btnProcurar.Click += new System.EventHandler(this.btnProcurar_Click);
             // 
             // lblprocurar
             // 
@@ -68,7 +70,8 @@
             this.Column1,
             this.Column2,
             this.Column4,
-            this.Column5});
+            this.Column5,
+            this.Column3});
             this.dgvProduto.Location = new System.Drawing.Point(10, 79);
             this.dgvProduto.Name = "dgvProduto";
             this.dgvProduto.ReadOnly = true;
@@ -76,13 +79,13 @@
             this.dgvProduto.Size = new System.Drawing.Size(577, 303);
             this.dgvProduto.TabIndex = 25;
             // 
-            // comboBox1
+            // cboNome
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(149, 29);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(153, 21);
-            this.comboBox1.TabIndex = 29;
+            this.cboNome.FormattingEnabled = true;
+            this.cboNome.Location = new System.Drawing.Point(149, 29);
+            this.cboNome.Name = "cboNome";
+            this.cboNome.Size = new System.Drawing.Size(153, 21);
+            this.cboNome.TabIndex = 29;
             // 
             // Column1
             // 
@@ -115,11 +118,17 @@
             this.Column5.ReadOnly = true;
             this.Column5.Width = 150;
             // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Quantidade";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
             // FrmConsultarVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cboNome);
             this.Controls.Add(this.btnProcurar);
             this.Controls.Add(this.lblprocurar);
             this.Controls.Add(this.dgvProduto);
@@ -136,10 +145,11 @@
         private System.Windows.Forms.Button btnProcurar;
         private System.Windows.Forms.Label lblprocurar;
         private System.Windows.Forms.DataGridView dgvProduto;
+        private System.Windows.Forms.ComboBox cboNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
     }
 }

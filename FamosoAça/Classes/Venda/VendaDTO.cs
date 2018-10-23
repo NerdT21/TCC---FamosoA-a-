@@ -16,6 +16,6 @@ namespace FamosoAça.Classes.Venda
 
         public decimal ValorVenda { get; set; }
 
-
+        public int Quantidade { get; set; }
     }
 }
