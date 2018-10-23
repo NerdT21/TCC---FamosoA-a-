@@ -58,9 +58,9 @@
     <Compile Include="Classes\Compra\Item\ItemBusiness.cs" />
     <Compile Include="Classes\Compra\Item\ItemDatabase.cs" />
     <Compile Include="Classes\Compra\Item\ItemDTO.cs" />
-    <Compile Include="Classes\Item\ItemBussines.cs" />
-    <Compile Include="Classes\Item\ItemDataBase.cs" />
-    <Compile Include="Classes\Item\ItemDTO.cs" />
+    <Compile Include="Classes\Item!!!!\ItemBussines.cs" />
+    <Compile Include="Classes\Item!!!!\ItemDataBase.cs" />
+    <Compile Include="Classes\Item!!!!\ItemDTO.cs" />
     <Compile Include="Classes\Login\UserSession.cs" />
     <Compile Include="PlugIn\ImagemPlugIn.cs" />
     <Compile Include="Screens\Cadastros\frmFornecedor.cs">
@@ -148,6 +148,12 @@
     </Compile>
     <Compile Include="Screens\Entregavel III\Controle De ItemProduto\frmConsultarItemProduto.Designer.cs">
       <DependentUpon>frmConsultarItemProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Entregavel III\Item\FrmItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Entregavel III\Item\FrmItem.Designer.cs">
+      <DependentUpon>FrmItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Entregavel III\Venda\FrmConsultarVenda.cs">
       <SubType>UserControl</SubType>
@@ -283,6 +289,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Entregavel III\Controle De ItemProduto\frmConsultarItemProduto.resx">
       <DependentUpon>frmConsultarItemProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Entregavel III\Item\FrmItem.resx">
+      <DependentUpon>FrmItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Entregavel III\Venda\FrmConsultarVenda.resx">
       <DependentUpon>FrmConsultarVenda.cs</DependentUpon>
