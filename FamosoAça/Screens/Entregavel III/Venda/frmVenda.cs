@@ -38,11 +38,7 @@ namespace FamosoAça.Screens.Entregavel_III.ConsultarVenda
                 lbxCarrinho.Text = i;
             }
         }
-
-      
-
-
-        private void btnCadastrar_Click(object sender, EventArgs e)
+         private void btnCadastrar_Click(object sender, EventArgs e)
         {
            
         }

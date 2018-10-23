@@ -234,12 +234,6 @@
     <Compile Include="Screens\frmHome.Designer.cs">
       <DependentUpon>frmHome.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\frmPedido.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Screens\frmPedido.Designer.cs">
-      <DependentUpon>frmPedido.cs</DependentUpon>
-    </Compile>
     <Compile Include="Screens\Entregavel I\Login\frmCadastroLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -325,9 +319,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Screens\frmPedido.resx">
-      <DependentUpon>frmPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Entregavel I\Login\frmCadastroLogin.resx">
       <DependentUpon>frmCadastroLogin.cs</DependentUpon>
