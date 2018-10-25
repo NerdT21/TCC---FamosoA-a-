@@ -12,7 +12,7 @@ namespace FamosoAça.Classes
     {
         public MySqlConnection Create()
         {
-            string connectionString = "server=104.214.59.125; database=FamosoAcaiDB; uid=nsf; password=nsf@2018; SslMode=none";
+            string connectionString = "server=Localhost; database=FamosoAcaiDB; uid=root; password=1234; SslMode=none";
             MySqlConnection connection = new MySqlConnection(connectionString);
             connection.Open();
             return connection;

@@ -149,11 +149,17 @@
     <Compile Include="Screens\Entregavel III\Controle De ItemProduto\frmConsultarItemProduto.Designer.cs">
       <DependentUpon>frmConsultarItemProduto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Entregavel III\Item\FrmItem.cs">
+    <Compile Include="Screens\Entregavel III\Item\frmConsultarItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Screens\Entregavel III\Item\FrmItem.Designer.cs">
-      <DependentUpon>FrmItem.cs</DependentUpon>
+    <Compile Include="Screens\Entregavel III\Item\frmConsultarItem.Designer.cs">
+      <DependentUpon>frmConsultarItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Entregavel III\Item\frmRegistrarItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Entregavel III\Item\frmRegistrarItem.Designer.cs">
+      <DependentUpon>frmRegistrarItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Entregavel III\Venda\FrmConsultarVenda.cs">
       <SubType>UserControl</SubType>
@@ -290,8 +296,11 @@
     <EmbeddedResource Include="Screens\Entregavel III\Controle De ItemProduto\frmConsultarItemProduto.resx">
       <DependentUpon>frmConsultarItemProduto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Entregavel III\Item\FrmItem.resx">
-      <DependentUpon>FrmItem.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\Entregavel III\Item\frmConsultarItem.resx">
+      <DependentUpon>frmConsultarItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Entregavel III\Item\frmRegistrarItem.resx">
+      <DependentUpon>frmRegistrarItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Entregavel III\Venda\FrmConsultarVenda.resx">
       <DependentUpon>FrmConsultarVenda.cs</DependentUpon>

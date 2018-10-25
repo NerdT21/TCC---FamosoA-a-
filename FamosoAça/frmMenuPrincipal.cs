@@ -9,6 +9,7 @@ using FamosoAça.Screens.Entregavel_II.Controle_De_Compras;
 using FamosoAça.Screens.Entregavel_II.Controle_De_Fornecedores;
 using FamosoAça.Screens.Entregavel_II.Controle_De_Produto;
 using FamosoAça.Screens.Entregavel_III.ConsultarVenda;
+using FamosoAça.Screens.Entregavel_III.Item;
 using FamosoAça.Screens.Entregavel_IV.Estoque;
 using System;
 using System.Collections.Generic;
@@ -161,7 +162,8 @@ namespace FamosoAça
 
         private void itemToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmRegistrarItem frm = new frmRegistrarItem();
+            OpenScreen(frm);
         }
 
         private void clienteToolStripMenuItem1_Click(object sender, EventArgs e)

@@ -33,15 +33,15 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Produto
                 MessageBox.Show("Produto cadastrado com sucesso!!", "Famoso Açai", MessageBoxButtons.OK);
 
 
-            }
+        }
             catch (Exception ex)
             {
 
                 MessageBox.Show("Ocorreu um erro: " + ex.Message,"Famoso Açai",MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
-            
-        }
+
+}
 
         private void txtDesc_TextChanged(object sender, EventArgs e)
         {

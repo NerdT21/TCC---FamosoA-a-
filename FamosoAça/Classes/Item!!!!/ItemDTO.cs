@@ -8,5 +8,13 @@ namespace FamosoAça.Classes.Item
 {
     public class ItemDTO
     {
+        public int Id { get; set; }
+
+        public int IdFornecedor { get; set; }
+
+        public string Nome { get; set; }
+
+        public string Descricao { get; set; }
+
     }
 }
