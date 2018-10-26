@@ -218,6 +218,12 @@
     <Compile Include="Screens\Entregavel IV\Estoque\Estoque.Designer.cs">
       <DependentUpon>Estoque.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Entregavel IV\Gastos Adicionais\frmGastosAdicionais.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Entregavel IV\Gastos Adicionais\frmGastosAdicionais.Designer.cs">
+      <DependentUpon>frmGastosAdicionais.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Entregavel I\Controle de Funcionários\frmCadastrarFuncionario.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -331,6 +337,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Entregavel IV\Estoque\Estoque.resx">
       <DependentUpon>Estoque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Entregavel IV\Gastos Adicionais\frmGastosAdicionais.resx">
+      <DependentUpon>frmGastosAdicionais.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Entregavel I\Controle de Funcionários\frmCadastrarFuncionario.resx">
       <DependentUpon>frmCadastrarFuncionario.cs</DependentUpon>

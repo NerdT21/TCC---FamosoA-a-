@@ -147,6 +147,16 @@ CREATE TABLE `tb_estados` (
 	PRIMARY KEY (`id_estado`)
 );
 
+CREATE TABLE `tb_gastosAdicionais` (
+	`id_gasto` int NOT NULL,
+	`nm_gasto` varchar(25) NOT NULL,
+	`ds_gasto` varchar(50) NOT NULL,
+	`dt_gasto` DATE NOT NULL,
+	`vl_gasto` DECIMAL(10,2) NOT NULL,
+	PRIMARY KEY (`id_gasto`)
+);
+
+
 ALTER TABLE `tb_funcionario` ADD CONSTRAINT `tb_funcionario_fk1` FOREIGN KEY (`id_depto`) REFERENCES `tb_depto`(`id_depto`);
 
 ALTER TABLE `tb_funcionario` ADD CONSTRAINT `tb_funcionario_fk0` FOREIGN KEY (`id_estado`) REFERENCES `tb_estados`(`id_estado`);
@@ -183,6 +193,8 @@ ALTER TABLE `tb_item` ADD CONSTRAINT `tb_item_fk0` FOREIGN KEY (`id_fornecedor`)
 
 
 -- INSERTS & SELECTS
+
+
 
 INSERT INTO tb_login(`id_usuario`, `nm_usuario`, `ds_senha`, `pr_permissaoAdm`, `pr_permissaoCadastro`, `pr_permissaoConsulta`, `pr_permissaoContabilidade`)
 		      VALUES('1', 'adm', 'adm', '1', '1', '1', '1');
