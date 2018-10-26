@@ -36,6 +36,7 @@
             this.btnConsultar = new System.Windows.Forms.Button();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItem)).BeginInit();
@@ -49,12 +50,13 @@
             this.dgvItem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.Nome,
+            this.Column1,
             this.Descricao,
             this.fornecedor});
-            this.dgvItem.Location = new System.Drawing.Point(8, 91);
+            this.dgvItem.Location = new System.Drawing.Point(31, 83);
             this.dgvItem.Name = "dgvItem";
             this.dgvItem.ReadOnly = true;
-            this.dgvItem.Size = new System.Drawing.Size(581, 294);
+            this.dgvItem.Size = new System.Drawing.Size(544, 294);
             this.dgvItem.TabIndex = 0;
             // 
             // txtNome
@@ -67,7 +69,7 @@
             // cboFornecedor
             // 
             this.cboFornecedor.FormattingEnabled = true;
-            this.cboFornecedor.Location = new System.Drawing.Point(180, 56);
+            this.cboFornecedor.Location = new System.Drawing.Point(180, 49);
             this.cboFornecedor.Name = "cboFornecedor";
             this.cboFornecedor.Size = new System.Drawing.Size(178, 21);
             this.cboFornecedor.TabIndex = 2;
@@ -86,7 +88,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(18, 56);
+            this.label2.Location = new System.Drawing.Point(18, 46);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(146, 21);
             this.label2.TabIndex = 4;
@@ -95,12 +97,13 @@
             // btnConsultar
             // 
             this.btnConsultar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultar.Location = new System.Drawing.Point(484, 18);
+            this.btnConsultar.Location = new System.Drawing.Point(429, 28);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(105, 39);
             this.btnConsultar.TabIndex = 5;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // Id
             // 
@@ -110,19 +113,29 @@
             // 
             // Nome
             // 
-            this.Nome.HeaderText = "Nome do Item";
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.HeaderText = "Item";
             this.Nome.Name = "Nome";
             this.Nome.ReadOnly = true;
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Preco";
+            this.Column1.HeaderText = "Preço";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
             // Descricao
             // 
-            this.Descricao.HeaderText = "Descrição do Item";
+            this.Descricao.DataPropertyName = "Descricao";
+            this.Descricao.HeaderText = "Descrição ";
             this.Descricao.Name = "Descricao";
             this.Descricao.ReadOnly = true;
             // 
             // fornecedor
             // 
-            this.fornecedor.HeaderText = "Nome do Fornecedor";
+            this.fornecedor.DataPropertyName = "IdFornecedor";
+            this.fornecedor.HeaderText = "Fornecedor";
             this.fornecedor.Name = "fornecedor";
             this.fornecedor.ReadOnly = true;
             // 
@@ -155,6 +168,7 @@
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn fornecedor;
     }
