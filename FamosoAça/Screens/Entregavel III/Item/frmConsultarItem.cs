@@ -16,5 +16,10 @@ namespace FamosoAça.Screens.Entregavel_III.Item
         {
             InitializeComponent();
         }
+
+        private void frmConsultarItem_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

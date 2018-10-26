@@ -58,9 +58,12 @@
     <Compile Include="Classes\Compra\Item\ItemBusiness.cs" />
     <Compile Include="Classes\Compra\Item\ItemDatabase.cs" />
     <Compile Include="Classes\Compra\Item\ItemDTO.cs" />
-    <Compile Include="Classes\Item!!!!\ItemBussines.cs" />
-    <Compile Include="Classes\Item!!!!\ItemDataBase.cs" />
-    <Compile Include="Classes\Item!!!!\ItemDTO.cs" />
+    <Compile Include="Classes\Estado\EstadoBusiness.cs" />
+    <Compile Include="Classes\Estado\EstadoDataBase.cs" />
+    <Compile Include="Classes\Estado\EstadoDTO.cs" />
+    <Compile Include="Classes\Item\ItemBussines.cs" />
+    <Compile Include="Classes\Item\ItemDataBase.cs" />
+    <Compile Include="Classes\Item\ItemDTO.cs" />
     <Compile Include="Classes\Login\UserSession.cs" />
     <Compile Include="PlugIn\ImagemPlugIn.cs" />
     <Compile Include="Screens\Cadastros\frmFornecedor.cs">

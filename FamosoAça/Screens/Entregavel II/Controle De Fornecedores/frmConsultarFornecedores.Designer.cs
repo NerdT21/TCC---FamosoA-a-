@@ -102,7 +102,7 @@
             this.Column7,
             this.Column6,
             this.Column8});
-            this.dgvFornecedor.Location = new System.Drawing.Point(12, 83);
+            this.dgvFornecedor.Location = new System.Drawing.Point(11, 98);
             this.dgvFornecedor.Name = "dgvFornecedor";
             this.dgvFornecedor.RowHeadersVisible = false;
             this.dgvFornecedor.Size = new System.Drawing.Size(573, 285);
