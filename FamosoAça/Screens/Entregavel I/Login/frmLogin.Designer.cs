@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.pnlBarra = new System.Windows.Forms.Panel();
+            this.pbxMinimize = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbxClose = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pbxMinimize = new System.Windows.Forms.PictureBox();
-            this.pbxClose = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblRegistrar = new System.Windows.Forms.Label();
             this.btnEntrar = new System.Windows.Forms.Button();
@@ -43,8 +44,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.pnlBarra.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxMinimize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxClose)).BeginInit();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -60,6 +61,40 @@
             this.pnlBarra.Name = "pnlBarra";
             this.pnlBarra.Size = new System.Drawing.Size(294, 27);
             this.pnlBarra.TabIndex = 0;
+            // 
+            // pbxMinimize
+            // 
+            this.pbxMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxMinimize.Image = ((System.Drawing.Image)(resources.GetObject("pbxMinimize.Image")));
+            this.pbxMinimize.Location = new System.Drawing.Point(235, 2);
+            this.pbxMinimize.Name = "pbxMinimize";
+            this.pbxMinimize.Size = new System.Drawing.Size(23, 23);
+            this.pbxMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxMinimize.TabIndex = 31;
+            this.pbxMinimize.TabStop = false;
+            this.pbxMinimize.Click += new System.EventHandler(this.pbxMinimize_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::FamosoAça.Properties.Resources.Logo_Famoso_açaí__nome_branco_;
+            this.pictureBox1.Location = new System.Drawing.Point(9, -1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(62, 30);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pbxClose
+            // 
+            this.pbxClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxClose.Image = ((System.Drawing.Image)(resources.GetObject("pbxClose.Image")));
+            this.pbxClose.Location = new System.Drawing.Point(261, 2);
+            this.pbxClose.Name = "pbxClose";
+            this.pbxClose.Size = new System.Drawing.Size(23, 23);
+            this.pbxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxClose.TabIndex = 30;
+            this.pbxClose.TabStop = false;
+            this.pbxClose.Click += new System.EventHandler(this.pbxClose_Click);
             // 
             // panel1
             // 
@@ -87,40 +122,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(274, 10);
             this.panel3.TabIndex = 3;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::FamosoAça.Properties.Resources.Logo_Famoso_açaí__nome_branco_;
-            this.pictureBox1.Location = new System.Drawing.Point(9, -1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(62, 30);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pbxMinimize
-            // 
-            this.pbxMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxMinimize.Image = global::FamosoAça.Properties.Resources.icons8_compress_30;
-            this.pbxMinimize.Location = new System.Drawing.Point(235, 2);
-            this.pbxMinimize.Name = "pbxMinimize";
-            this.pbxMinimize.Size = new System.Drawing.Size(23, 23);
-            this.pbxMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxMinimize.TabIndex = 31;
-            this.pbxMinimize.TabStop = false;
-            this.pbxMinimize.Click += new System.EventHandler(this.pbxMinimize_Click);
-            // 
-            // pbxClose
-            // 
-            this.pbxClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxClose.Image = global::FamosoAça.Properties.Resources.icons8_excluir_48;
-            this.pbxClose.Location = new System.Drawing.Point(261, 2);
-            this.pbxClose.Name = "pbxClose";
-            this.pbxClose.Size = new System.Drawing.Size(23, 23);
-            this.pbxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxClose.TabIndex = 30;
-            this.pbxClose.TabStop = false;
-            this.pbxClose.Click += new System.EventHandler(this.pbxClose_Click);
             // 
             // panel4
             // 
@@ -215,8 +216,8 @@
             this.Text = "frmLogin";
             this.Load += new System.EventHandler(this.frmLogin_Load);
             this.pnlBarra.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxMinimize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxClose)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
