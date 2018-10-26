@@ -85,5 +85,10 @@ namespace FamosoAça.Screens.Entregavel_I.Controle_de_Funcionários
                 pbxImagem.ImageLocation = dialog.FileName;
             }
         }
+
+        private void cboEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

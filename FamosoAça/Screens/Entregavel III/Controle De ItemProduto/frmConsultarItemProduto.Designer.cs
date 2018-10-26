@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbp = new System.Windows.Forms.ComboBox();
             this.btnProcurar = new System.Windows.Forms.Button();
             this.lblprocurar = new System.Windows.Forms.Label();
             this.dgvProduto = new System.Windows.Forms.DataGridView();
@@ -40,13 +40,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // cbp
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(173, 29);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(153, 21);
-            this.comboBox1.TabIndex = 33;
+            this.cbp.FormattingEnabled = true;
+            this.cbp.Location = new System.Drawing.Point(173, 29);
+            this.cbp.Name = "cbp";
+            this.cbp.Size = new System.Drawing.Size(153, 21);
+            this.cbp.TabIndex = 33;
             // 
             // btnProcurar
             // 
@@ -64,9 +64,9 @@
             this.lblprocurar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblprocurar.Location = new System.Drawing.Point(14, 27);
             this.lblprocurar.Name = "lblprocurar";
-            this.lblprocurar.Size = new System.Drawing.Size(153, 20);
+            this.lblprocurar.Size = new System.Drawing.Size(151, 20);
             this.lblprocurar.TabIndex = 31;
-            this.lblprocurar.Text = "Nome Do Fornecedor";
+            this.lblprocurar.Text = "Nome do Fornecedor";
             // 
             // dgvProduto
             // 
@@ -129,7 +129,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbp);
             this.Controls.Add(this.btnProcurar);
             this.Controls.Add(this.lblprocurar);
             this.Controls.Add(this.dgvProduto);
@@ -143,7 +143,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbp;
         private System.Windows.Forms.Button btnProcurar;
         private System.Windows.Forms.Label lblprocurar;
         private System.Windows.Forms.DataGridView dgvProduto;

@@ -4,18 +4,18 @@ USE FamosoAcaiDB;
 
 CREATE TABLE `tb_funcionario` (
 	`id_funcionario` int NOT NULL AUTO_INCREMENT,
+	`id_depto` int NOT NULL UNIQUE,
 	`nm_nome` varchar(50) NOT NULL,
 	`ds_email` varchar(250) NOT NULL UNIQUE,
 	`ds_cpf` varchar(50) NOT NULL UNIQUE,
 	`ds_rg` varchar(50) NOT NULL UNIQUE,
 	`dt_nascimento` varchar(10) NOT NULL,
 	`ds_cidade` varchar(60) NOT NULL,
-	`ds_estado` varchar(30) NOT NULL,
+	`id_estado` int NOT NULL,
 	`ds_cep` varchar(10) NOT NULL,
 	`ds_telefone` varchar(20) NOT NULL,
 	`ds_bairro` varchar(60) NOT NULL UNIQUE,
 	`ds_rua` varchar(200) NOT NULL,
-	`id_depto` int NOT NULL UNIQUE,
 	`img_funcionario` longblob NOT NULL,
 	PRIMARY KEY (`id_funcionario`)
 );
@@ -29,11 +29,11 @@ CREATE TABLE `tb_depto` (
 
 CREATE TABLE `tb_fornecedor` (
 	`id_fornecedor` int NOT NULL AUTO_INCREMENT,
+	`id_estado` int NOT NULL,
 	`ds_cnpj` varchar(25) NOT NULL UNIQUE,
 	`nm_fornecedor` varchar(150) NOT NULL,
 	`ds_cep` varchar(12) NOT NULL,
 	`ds_cidade` varchar(60) NOT NULL,
-	`ds_estado` varchar(30) NOT NULL,
 	`ds_telefone` int(14) NOT NULL,
 	`ds_email` varchar(120) NOT NULL UNIQUE,
 	`img_logo` longblob NOT NULL,
@@ -61,8 +61,8 @@ CREATE TABLE `tb_login` (
 
 CREATE TABLE `tb_estoque` (
 	`id_estoque` int NOT NULL AUTO_INCREMENT,
-	`nm_produto` varchar(250) NOT NULL,
 	`id_compra` int NOT NULL,
+	`nm_produto` varchar(250) NOT NULL,
 	`qtd_estocado` bigint(100) NOT NULL,
 	`qtd_minima` int NOT NULL,
 	PRIMARY KEY (`id_estoque`)
@@ -81,11 +81,12 @@ CREATE TABLE `tb_compra` (
 CREATE TABLE `tb_venda` (
 	`id_venda` int NOT NULL AUTO_INCREMENT,
 	`id_produto` int NOT NULL,
-	`dt_data_venda` varchar NOT NULL,
+	`dt_data_venda` varchar(15)NOT NULL,
 	`vl_total_venda` DECIMAL(15,2) NOT NULL,
 	`qtd_produto` int NOT NULL,
 	PRIMARY KEY (`id_venda`)
 );
+
 
 CREATE TABLE `tb_produto_venda` (
 	`id_item_venda` int NOT NULL AUTO_INCREMENT,
@@ -134,12 +135,23 @@ CREATE TABLE `tb_salario_familia` (
 
 CREATE TABLE `tb_item` (
 	`id_item` int NOT NULL AUTO_INCREMENT,
+	`id_fornecedor` int NOT NULL,
 	`nm_item` varchar(50) NOT NULL,
 	`ds_item` varchar(200) NOT NULL,
 	PRIMARY KEY (`id_item`)
 );
 
-ALTER TABLE `tb_funcionario` ADD CONSTRAINT `tb_funcionario_fk0` FOREIGN KEY (`id_depto`) REFERENCES `tb_depto`(`id_depto`);
+CREATE TABLE `tb_estados` (
+	`id_estado` int NOT NULL,
+	`nm_estado` varchar(2) NOT NULL,
+	PRIMARY KEY (`id_estado`)
+);
+
+ALTER TABLE `tb_funcionario` ADD CONSTRAINT `tb_funcionario_fk1` FOREIGN KEY (`id_depto`) REFERENCES `tb_depto`(`id_depto`);
+
+ALTER TABLE `tb_funcionario` ADD CONSTRAINT `tb_funcionario_fk0` FOREIGN KEY (`id_estado`) REFERENCES `tb_estados`(`id_estado`);
+
+ALTER TABLE `tb_fornecedor` ADD CONSTRAINT `tb_fornecedor_fk0` FOREIGN KEY (`id_estado`) REFERENCES `tb_estados`(`id_estado`);
 
 ALTER TABLE `tb_estoque` ADD CONSTRAINT `tb_estoque_fk0` FOREIGN KEY (`id_compra`) REFERENCES `tb_compra`(`id_compra`);
 
@@ -165,6 +177,9 @@ ALTER TABLE `tb_inss` ADD CONSTRAINT `tb_inss_fk0` FOREIGN KEY (`id_folha_pag`) 
 
 ALTER TABLE `tb_imposto_renda` ADD CONSTRAINT `tb_imposto_renda_fk0` FOREIGN KEY (`id_folha_pag`) REFERENCES `tb_folha_pagamento`(`id_folha_pag`);
 
+ALTER TABLE `tb_item` ADD CONSTRAINT `tb_item_fk0` FOREIGN KEY (`id_fornecedor`) REFERENCES `tb_fornecedor`(`id_fornecedor`);
+
+
 
 
 -- INSERTS & SELECTS
@@ -172,5 +187,88 @@ ALTER TABLE `tb_imposto_renda` ADD CONSTRAINT `tb_imposto_renda_fk0` FOREIGN KEY
 INSERT INTO tb_login(`id_usuario`, `nm_usuario`, `ds_senha`, `pr_permissaoAdm`, `pr_permissaoCadastro`, `pr_permissaoConsulta`, `pr_permissaoContabilidade`)
 		      VALUES('1', 'adm', 'adm', '1', '1', '1', '1');
               
+		
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('1','AC');
+                
+ INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('2','AL');     
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('3','AP');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('4','AM');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('5','BA');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('6','CE');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('7','DF');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('8','ES');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('9','GO');
+                		
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('10','MA');                
+		
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('11','MT');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('12','MS');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('13','MG');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('14','PA');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('15','PB');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('16','PR');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('17','PE');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('18','PI');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('19','RJ');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('20','RN');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('21','RS');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('22','RO');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('23','RR');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('24','SC');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('25','SP');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('26','SE');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('27','TO');
+              
 SELECT * FROM tb_login;
 SELECT * FROM tb_depto;
+SELECT * FROM tb_estados;
