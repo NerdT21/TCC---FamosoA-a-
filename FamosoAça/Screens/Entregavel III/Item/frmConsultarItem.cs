@@ -32,7 +32,7 @@ namespace FamosoAça.Screens.Entregavel_III.Item
            
              
             string nome = txtNome.Text;
-            string fornecedor = txtFornecedor.Text;
+            string fornecedor =cboFornecedor.Text;
 
             ItemBusiness buss = new ItemBusiness();
             List<ItemDTO> dto = buss.Consultar(nome, fornecedor);
