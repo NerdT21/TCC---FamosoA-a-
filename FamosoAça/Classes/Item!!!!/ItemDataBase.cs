@@ -16,15 +16,18 @@ namespace FamosoAça.Classes.Item
 
             string script = @"INSERT INTO (id_fornecedor,
                                            nm_item,
-                                           ds_item)
+                                           ds_item,
+                                           vl_preco)
                                     VALUES(@id_fornecedor,
                                            @nm_item,
-                                           @ds_item)";
+                                           @ds_item,
+                                           @vl_preco)";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("id_fornecedor", dto.IdFornecedor));
             parms.Add(new MySqlParameter("nm_item", dto.Nome));
             parms.Add(new MySqlParameter("ds_item", dto.Descricao));
+            parms.Add(new MySqlParameter("vl_preco", dto.Preco));
 
             Database db = new Database();
             int pk = db.ExecuteInsertScriptWithPk(script, parms);
@@ -37,14 +40,15 @@ namespace FamosoAça.Classes.Item
 
             string script = @"UPDATE SET id_fornecedor = @id_fornecedor,
                                          nm_item = @nm_item,
-                                         ds_item = @ds_item
+                                         ds_item = @ds_item,
+                                         vl_preco = @vl_preco
                                    WHERE id_item = @id_item";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("id_item",dto.Id));
             parms.Add(new MySqlParameter("id_fornecedor", dto.IdFornecedor));
             parms.Add(new MySqlParameter("nm_item", dto.Nome));
             parms.Add(new MySqlParameter("ds_item", dto.Descricao));
+            parms.Add(new MySqlParameter("vl_preco", dto.Preco));
 
 
             Database db = new Database();
@@ -84,6 +88,7 @@ namespace FamosoAça.Classes.Item
                 add.IdFornecedor = reader.GetInt32("id_fornecedor");
                 add.Nome = reader.GetString("nm_item");
                 add.Descricao = reader.GetString("ds_item");
+                add.Preco = reader.GetDecimal("vl_preco");
 
                 lista.Add(add);
             }
@@ -117,6 +122,7 @@ namespace FamosoAça.Classes.Item
                 add.IdFornecedor = reader.GetInt32("id_fornecedor");
                 add.Nome = reader.GetString("nm_item");
                 add.Descricao = reader.GetString("ds_item");
+                add.Preco = reader.GetDecimal("vl_preco");
 
                 lista.Add(add);
             }

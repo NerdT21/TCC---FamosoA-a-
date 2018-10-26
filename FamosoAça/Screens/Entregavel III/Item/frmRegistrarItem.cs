@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FamosoAça.Classes.Fornecedor;
+using FamosoAça.Classes.Compra.Item;
 
 namespace FamosoAça.Screens.Entregavel_III.Item
 {
@@ -24,6 +26,18 @@ namespace FamosoAça.Screens.Entregavel_III.Item
 
         private void btnCadatrar_Click(object sender, EventArgs e)
         {
+            FornecedorDTO dto = cboFornecedor.SelectedItem as FornecedorDTO;
+
+            ItemDTO dt = new ItemDTO();
+            dt.Nome = txtItem.Text;
+            dt.IdFornecedor = Convert.ToInt32(cboFornecedor.Text);
+            dt.Descricao = txtDescricao.Text;
+            dt.Preco = Convert.ToDecimal(nudPreco.Value);
+
+            ItemBusiness business = new ItemBusiness();
+            business.Salvar(dt);
+
+            MessageBox.Show("Item registrado com sucesso", "Famoso Açai",MessageBoxButtons.OK);
 
         }
     }

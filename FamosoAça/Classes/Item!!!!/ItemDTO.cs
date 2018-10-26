@@ -16,5 +16,7 @@ namespace FamosoAça.Classes.Item
 
         public string Descricao { get; set; }
 
+        public decimal Preco { get; set; }
+
     }
 }
