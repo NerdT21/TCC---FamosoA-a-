@@ -35,10 +35,10 @@ namespace FamosoAça.Classes.Venda
             return list;
         }
         
-        public List<VendaDTO> Consultar(string consult)
+        public List<VendaDTO> Consultar(string produto)
         {
             VendaDataBase db = new VendaDataBase();
-            return db.Consultar(consult);
+            return db.Consultar(produto);
         }
 
        

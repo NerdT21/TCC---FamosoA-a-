@@ -8,6 +8,9 @@ using FamosoAça.Screens.Entregavel_I.Departamentos;
 using FamosoAça.Screens.Entregavel_II.Controle_De_Compras;
 using FamosoAça.Screens.Entregavel_II.Controle_De_Fornecedores;
 using FamosoAça.Screens.Entregavel_II.Controle_De_Produto;
+using FamosoAça.Screens.Entregavel_III.ConsultarVenda;
+using FamosoAça.Screens.Entregavel_III.Item;
+using FamosoAça.Screens.Entregavel_IV.Estoque;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -159,7 +162,8 @@ namespace FamosoAça
 
         private void itemToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmRegistrarItem frm = new frmRegistrarItem();
+            OpenScreen(frm);
         }
 
         private void clienteToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -187,6 +191,27 @@ namespace FamosoAça
         private void itensToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void estoqueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Estoque frm = new Estoque();
+            OpenScreen(frm);
+        }
+
+      
+          
+
+        private void vendaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmVenda frm = new frmVenda();
+            OpenScreen(frm);
+        }
+
+        private void vendaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmConsultarVenda frm = new FrmConsultarVenda();
+            OpenScreen(frm);
         }
 
         private void pnlBarra_MouseUp(object sender, MouseEventArgs e)

@@ -16,6 +16,7 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Produto
         public frmConsultarProduto()
         {
             InitializeComponent();
+            Carregar();
         }
 
         void Carregar()
@@ -29,14 +30,14 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Produto
         void CarregarGrid()
         {
             string nome = txtNome.Text;
-            string marca = txtMarca.Text;
+
 
             ProdutoBusiness buss = new ProdutoBusiness();
-            List<ProdutoDTO> lista = buss.Consultar(nome, marca);
+            List<ProdutoDTO> lista = buss.Consultar(nome);
         }
         private void btnProcurar_Click(object sender, EventArgs e)
         {
-
+            CarregarGrid();
         }
     }
 }

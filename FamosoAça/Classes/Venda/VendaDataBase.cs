@@ -14,16 +14,19 @@ namespace FamosoAça.Classes.Venda
             string script = @"INSERT INTO tb_venda(
                             id_produto,
 	                        dt_data_venda,
-	                        vl_total_venda) 
+	                        vl_total_venda,
+                            qtd_produto) 
                             VALUES(
                             @id_produto,
                             @dt_data_venda,
-	                        @vl_total_venda)";
+	                        @vl_total_venda,
+                            @qtd_produto)";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("id_produto", venda.IdProduto));
             parms.Add(new MySqlParameter("dt_data_venda", venda.DataVenda));
             parms.Add(new MySqlParameter("vl_total_venda", venda.ValorVenda));
+            parms.Add(new MySqlParameter("qtd_produto", venda.Quantidade));
 
             Database db = new Database();
             int pk = db.ExecuteInsertScriptWithPk(script, parms);
@@ -34,7 +37,8 @@ namespace FamosoAça.Classes.Venda
             string script = @"UPDATE tb_venda SET 
                           id_produto = @id_produto,
                           dt_data_venda = @dt_data_venda,
-                          vl_total_venda = @vl_total_venda WHERE
+                          vl_total_venda = @vl_total_venda,
+                          qtd_produto = @qtd_produto WHERE
                           id_venda = @id_venda";
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("id_venda", venda.Id));
@@ -71,6 +75,7 @@ namespace FamosoAça.Classes.Venda
                 dto.IdProduto = reader.GetInt32("id_produto");
                 dto.DataVenda = reader.GetString("dt_data_venda");
                 dto.ValorVenda = reader.GetDecimal("vl_total_venda");
+                dto.Quantidade = reader.GetInt32("qtd_produto");
 
                 venda.Add(dto);
             }
@@ -88,13 +93,14 @@ namespace FamosoAça.Classes.Venda
             MySqlDataReader reader = db.ExecuteSelectScript(script, parms);
 
             List<VendaDTO> venda = new List<VendaDTO>();
-            while (reader.Read()) ;
+            while (reader.Read()) 
             {
                 VendaDTO dto = new VendaDTO();
                 dto.Id = reader.GetInt32("id_venda");
                 dto.IdProduto = reader.GetInt32("id_produto");
                 dto.DataVenda = reader.GetString("dt_data_venda");
                 dto.ValorVenda = reader.GetDecimal("vl_total_venda");
+                dto.Quantidade = reader.GetInt32("qtd_produto");
 
                 venda.Add(dto);
             }

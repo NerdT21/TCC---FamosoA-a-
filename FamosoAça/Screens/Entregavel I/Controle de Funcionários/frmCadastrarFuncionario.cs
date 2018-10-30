@@ -50,7 +50,7 @@ namespace FamosoAça.Screens.Entregavel_I.Controle_de_Funcionários
                 dto.DeptoId = depto.Id;
 
                 dto.Cidade = txtCidade.Text;
-                dto.Estado = mkbEstado.Text;
+                dto.Estado = cboEstado.Text;
                 dto.Bairro = txtBairro.Text;
                 dto.Rua = txtRua.Text;
                 dto.CEP = txtCep.Text;
@@ -84,6 +84,11 @@ namespace FamosoAça.Screens.Entregavel_I.Controle_de_Funcionários
             {
                 pbxImagem.ImageLocation = dialog.FileName;
             }
+        }
+
+        private void cboEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

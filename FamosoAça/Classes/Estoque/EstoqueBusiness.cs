@@ -35,10 +35,10 @@ namespace FamosoAça.Classes.Estoque
             return list;
         }
         
-        public List<EstoqueDTO> Consultar(string consult)
+        public List<EstoqueDTO> Consultar(string nome, int quantidade)
         {
             EstoqueDataBase db = new EstoqueDataBase();
-            return db.Consultar(consult);
+            return db.Consultar(nome ,quantidade);
         }
 
        

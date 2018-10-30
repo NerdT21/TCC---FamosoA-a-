@@ -62,6 +62,7 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Compras
 
         private void button2_Click(object sender, EventArgs e)
         {
+
             ItemDTO item = cboItem.SelectedItem as ItemDTO;
 
             CompraDTO dto = new CompraDTO();
@@ -82,6 +83,16 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Compras
 
             txtItem.Text = item.Nome;
             txtFornecedor.Text = item.IdFornecedor.ToString();
+        }
+
+        private void txtItem_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtValorTotal_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
