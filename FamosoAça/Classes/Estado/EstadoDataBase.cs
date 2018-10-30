@@ -11,7 +11,7 @@ namespace FamosoAça.Classes.Estado
     {
         public List<EstadoDTO> Listar()
         {
-            string script = @"SELECT * FROM tb_estado";
+            string script = @"SELECT * FROM tb_estados";
 
             Database db = new Database();
             MySqlDataReader reader = db.ExecuteSelectScript(script, null);

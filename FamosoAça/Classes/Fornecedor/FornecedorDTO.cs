@@ -18,7 +18,7 @@ namespace FamosoAça.Classes.Fornecedor
 
         public string Cidade { get; set; }
 
-        public string Estado { get; set; }
+        public int Estado { get; set; }
 
         public string Telefone { get; set; }
 

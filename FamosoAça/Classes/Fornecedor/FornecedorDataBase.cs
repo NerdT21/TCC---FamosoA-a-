@@ -19,7 +19,7 @@ namespace FamosoAça.Classes.Fornecedor
                             ds_email,
                             id_depto,
                             ds_cidade,
-                            ds_estado,                        
+                            id_estados,                        
                             ds_cep,
                             img_logo
                             ) VALUES(                            
@@ -29,7 +29,7 @@ namespace FamosoAça.Classes.Fornecedor
                             @ds_email,
                             @id_depto,
                             @ds_cidade,
-                            @ds_estado,
+                            @id_estados,
                            @img_logo
                             @ds_cep
                            )";
@@ -42,7 +42,7 @@ namespace FamosoAça.Classes.Fornecedor
             parms.Add(new MySqlParameter("ds_telefone", dto.Telefone));
             parms.Add(new MySqlParameter("ds_email", dto.Email));
             parms.Add(new MySqlParameter("ds_cidade", dto.Cidade));
-            parms.Add(new MySqlParameter("ds_estado", dto.Estado));           
+            parms.Add(new MySqlParameter("id_estados", dto.Estado));           
             parms.Add(new MySqlParameter("ds_cep", dto.Cep));
             parms.Add(new MySqlParameter("img_logo", dto.Logo));
 

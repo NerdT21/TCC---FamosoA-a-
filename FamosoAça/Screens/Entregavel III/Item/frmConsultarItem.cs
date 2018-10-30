@@ -29,10 +29,10 @@ namespace FamosoAça.Screens.Entregavel_III.Item
         }
         void CarregarGrid()
         {
-           
-             
+
+
             string nome = txtNome.Text;
-            string fornecedor =cboFornecedor.Text;
+            string fornecedor = cboFornecedor.Text;
 
             ItemBusiness buss = new ItemBusiness();
             List<ItemDTO> dto = buss.Consultar(nome, fornecedor);
