@@ -32,9 +32,9 @@
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.nudPreco = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboNome = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.mskData = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudPreco)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,6 +61,7 @@
             this.btnCadastrar.TabIndex = 74;
             this.btnCadastrar.Text = "Confirmar";
             this.btnCadastrar.UseVisualStyleBackColor = false;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // nudPreco
             // 
@@ -93,13 +94,13 @@
             this.label3.TabIndex = 76;
             this.label3.Text = "Preço do Produto";
             // 
-            // comboBox1
+            // cboNome
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(290, 82);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(163, 21);
-            this.comboBox1.TabIndex = 79;
+            this.cboNome.FormattingEnabled = true;
+            this.cboNome.Location = new System.Drawing.Point(290, 82);
+            this.cboNome.Name = "cboNome";
+            this.cboNome.Size = new System.Drawing.Size(163, 21);
+            this.cboNome.TabIndex = 79;
             // 
             // label1
             // 
@@ -113,22 +114,22 @@
             this.label1.TabIndex = 80;
             this.label1.Text = "Data Da Venda";
             // 
-            // maskedTextBox1
+            // mskData
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(290, 154);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(81, 20);
-            this.maskedTextBox1.TabIndex = 81;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.mskData.Location = new System.Drawing.Point(290, 154);
+            this.mskData.Mask = "00/00/0000";
+            this.mskData.Name = "mskData";
+            this.mskData.Size = new System.Drawing.Size(81, 20);
+            this.mskData.TabIndex = 81;
+            this.mskData.ValidatingType = typeof(System.DateTime);
             // 
             // frmVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.mskData);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cboNome);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.nudPreco);
@@ -146,8 +147,8 @@
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.NumericUpDown nudPreco;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboNome;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox mskData;
     }
 }

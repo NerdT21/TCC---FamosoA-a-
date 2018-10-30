@@ -16,5 +16,10 @@ namespace FamosoAça.Screens.Entregavel_III.ConsultarVenda
         {
             InitializeComponent();
         }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+             
+        }
     }
 }
