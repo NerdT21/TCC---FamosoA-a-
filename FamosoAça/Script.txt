@@ -32,7 +32,7 @@ CREATE TABLE `tb_fornecedor` (
 	`id_estado` int NOT NULL,
 	`ds_cnpj` varchar(25) NOT NULL UNIQUE,
 	`nm_fornecedor` varchar(150) NOT NULL,
-	`ds_cep` varchar(12) NOT NULL,
+	`ds_cep` varchar(16) NOT NULL,
 	`ds_cidade` varchar(60) NOT NULL,
 	`ds_telefone` int(14) NOT NULL,
 	`ds_email` varchar(120) NOT NULL UNIQUE,
@@ -155,6 +155,17 @@ CREATE TABLE `tb_gastosAdicionais` (
 	`vl_gasto` DECIMAL(10,2) NOT NULL,
 	PRIMARY KEY (`id_gasto`)
 );
+
+CREATE TABLE `tb_gastos`(
+ `id_gasto` int NOT NULL AUTO_INCREMENT,
+ `nm_gasto` varchar(50) NOT NULL,
+ `vl_gasto` decimal(15,5) NOT NULL,
+ `ds_gasto` varchar (200) ,
+ `dt_gasto` Date,
+ `tp_gasto` bool NOT NULL,
+  PRIMARY KEY (`id_gasto`)
+);
+
 
 
 ALTER TABLE `tb_funcionario` ADD CONSTRAINT `tb_funcionario_fk1` FOREIGN KEY (`id_depto`) REFERENCES `tb_depto`(`id_depto`);
