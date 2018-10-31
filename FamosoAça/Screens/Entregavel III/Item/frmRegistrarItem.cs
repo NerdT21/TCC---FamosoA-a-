@@ -17,10 +17,21 @@ namespace FamosoAça.Screens.Entregavel_III.Item
         public frmRegistrarItem()
         {
             InitializeComponent();
+            CarregarCbo();
+        }
+        void CarregarCbo()
+        {
+            FornecedorBusiness buss = new FornecedorBusiness();
+            List<FornecedorDTO> list = new List<FornecedorDTO>();
+
+            cboFornecedor.ValueMember = nameof(FornecedorDTO.Id);
+            cboFornecedor.DisplayMember = nameof(FornecedorDTO.Nome);
+            cboFornecedor.DataSource = list;
         }
 
         private void FrmItem_Load(object sender, EventArgs e)
         {
+            
 
         }
 
@@ -38,6 +49,11 @@ namespace FamosoAça.Screens.Entregavel_III.Item
             business.Salvar(dt);
 
             MessageBox.Show("Item registrado com sucesso", "Famoso Açai",MessageBoxButtons.OK);
+
+        }
+
+        private void cboFornecedor_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FamosoAça.Cadastros
+namespace FamosoAça.Screens.Entregavel_I
 {
-    public partial class frmProduto : UserControl
+    public partial class frmConsultarFolha : UserControl
     {
-        public frmProduto()
+        public frmConsultarFolha()
         {
             InitializeComponent();
         }

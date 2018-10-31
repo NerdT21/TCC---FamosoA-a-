@@ -25,5 +25,10 @@ namespace FamosoAça.Classes.Compra.Item
             ItemDatabase db = new ItemDatabase();
             return db.Consultar(nome, fornecedor);
         }
+
+        internal List<ItemDTO> Consultar(string nome)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

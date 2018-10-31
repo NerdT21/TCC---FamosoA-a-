@@ -92,6 +92,7 @@
             this.cboFornecedor.Name = "cboFornecedor";
             this.cboFornecedor.Size = new System.Drawing.Size(168, 21);
             this.cboFornecedor.TabIndex = 5;
+            this.cboFornecedor.SelectedIndexChanged += new System.EventHandler(this.cboFornecedor_SelectedIndexChanged);
             // 
             // btnCadatrar
             // 

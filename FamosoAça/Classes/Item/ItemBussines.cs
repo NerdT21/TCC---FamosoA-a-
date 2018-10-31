@@ -35,10 +35,10 @@ namespace FamosoAça.Classes.Item
             return list;
         }
 
-        public List<ItemDTO> Consultar(string nome , int fornecedor)
+        public List<ItemDTO> Consultar(string nome)
         {
             ItemDataBase db = new ItemDataBase();
-            return db.Consultar(nome, fornecedor);
+            return db.Consultar(nome);
         }
     }
 }

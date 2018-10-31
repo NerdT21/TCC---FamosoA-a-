@@ -99,15 +99,14 @@ namespace FamosoAça.Classes.Item
 
         }
 
-        public List<ItemDTO> Consultar(string nome, int fornecedor)
+        public List<ItemDTO> Consultar(string nome)
         {
 
-            string script = @"SELECT * FROM tb_item WHERE nm_item LIKE @nm_item
-                                                    AND id_fornecedor LIKE @id_fornecedor";
+            string script = @"SELECT * FROM tb_item WHERE nm_item LIKE @nm_item";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("nm_item", nome + "%"));
-            parms.Add(new MySqlParameter("id_fornecedor", fornecedor + "%"));
+          
 
             Database db = new Database();
             MySqlDataReader reader = db.ExecuteSelectScript(script, null);

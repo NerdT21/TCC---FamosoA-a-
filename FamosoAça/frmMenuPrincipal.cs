@@ -1,5 +1,5 @@
 ﻿using FamosoAça.Classes.Login;
-using FamosoAça.Consultar;
+//using FamosoAça.Consultar;
 using FamosoAça.Login;
 using FamosoAça.Screens;
 using FamosoAça.Screens.Entregavel_I;
@@ -178,7 +178,7 @@ namespace FamosoAça
 
         private void fornecedorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmConsultaFornecedor frm = new frmConsultaFornecedor();
+            Screens.Entregavel_II.Controle_De_Fornecedores.frmConsultarFornecedores frm = new Screens.Entregavel_II.Controle_De_Fornecedores.frmConsultarFornecedores();
             OpenScreen(frm);
         }
 

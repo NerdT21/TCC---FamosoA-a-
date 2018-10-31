@@ -32,10 +32,9 @@ namespace FamosoAça.Screens.Entregavel_III.Item
 
 
             string nome = txtNome.Text;
-            string fornecedor = cboFornecedor.Text;
-
+            
             ItemBusiness buss = new ItemBusiness();
-            List<ItemDTO> dto = buss.Consultar(nome, fornecedor);
+            List<ItemDTO> dto = buss.Consultar(nome);
 
             dgvItem.AutoGenerateColumns = false;
             dgvItem.DataSource = dto;
