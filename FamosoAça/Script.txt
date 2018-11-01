@@ -151,8 +151,9 @@ CREATE TABLE `tb_estados` (
 CREATE TABLE `tb_gastosAdicionais` (
 	`id_gasto` int NOT NULL,
 	`nm_gasto` varchar(25) NOT NULL,
-	`ds_gasto` varchar(50) NOT NULL,
-	`dt_gasto` DATE NOT NULL, 
+	`ds_gasto` varchar(500) ,
+    
+	`dt_gasto` varchar(15) NOT NULL, 
 	`vl_gasto` DECIMAL(10,2) NOT NULL,
 	PRIMARY KEY (`id_gasto`)
 );
