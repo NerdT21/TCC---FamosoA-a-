@@ -35,6 +35,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.mktData = new System.Windows.Forms.MaskedTextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +49,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(228, 136);
+            this.textBox2.Location = new System.Drawing.Point(228, 182);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(165, 85);
@@ -55,7 +57,7 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(228, 227);
+            this.numericUpDown1.Location = new System.Drawing.Point(228, 273);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(69, 20);
             this.numericUpDown1.TabIndex = 2;
@@ -74,7 +76,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(128, 133);
+            this.label2.Location = new System.Drawing.Point(128, 179);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 25);
             this.label2.TabIndex = 4;
@@ -84,7 +86,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(154, 224);
+            this.label3.Location = new System.Drawing.Point(154, 270);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 25);
             this.label3.TabIndex = 5;
@@ -99,11 +101,33 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "Cadatrar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // mktData
+            // 
+            this.mktData.Location = new System.Drawing.Point(228, 150);
+            this.mktData.Mask = "00/00/0000";
+            this.mktData.Name = "mktData";
+            this.mktData.Size = new System.Drawing.Size(69, 20);
+            this.mktData.TabIndex = 7;
+            this.mktData.ValidatingType = typeof(System.DateTime);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(159, 144);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 25);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Data";
             // 
             // frmGastosAdicionais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.mktData);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -128,5 +152,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.MaskedTextBox mktData;
+        private System.Windows.Forms.Label label4;
     }
 }
