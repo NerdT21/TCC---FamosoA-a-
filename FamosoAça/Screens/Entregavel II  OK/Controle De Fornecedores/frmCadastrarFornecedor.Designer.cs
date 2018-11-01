@@ -50,7 +50,7 @@
             this.mkbCep.Location = new System.Drawing.Point(183, 220);
             this.mkbCep.Mask = "00000-000";
             this.mkbCep.Name = "mkbCep";
-            this.mkbCep.Size = new System.Drawing.Size(58, 20);
+            this.mkbCep.Size = new System.Drawing.Size(61, 20);
             this.mkbCep.TabIndex = 132;
             // 
             // cboEstado

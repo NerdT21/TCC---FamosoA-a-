@@ -32,12 +32,19 @@ namespace FamosoAça.Screens.Entregavel_I.Controle_de_Funcionários
             cboDepto.DisplayMember = nameof(CargoDTO.Nome);
             cboDepto.DataSource = lista;
 
-            EstadoBusiness be = new EstadoBusiness();
-            List<EstadoDTO> list = be.Listar();
+            //EstadoBusiness be = new EstadoBusiness();
+            //List<EstadoDTO> list = be.Listar();
 
-            cboDepto.ValueMember = nameof(CargoDTO.Id);
-            cboDepto.DisplayMember = nameof(CargoDTO.Nome);
-            cboDepto.DataSource = lista;
+            //cboEstado.ValueMember = nameof(EstadoDTO.IdEstado);
+            //cboEstado.DisplayMember = nameof(EstadoDTO.Estado);
+            //cboEstado.DataSource = lista;
+
+            EstadoBusiness bess = new EstadoBusiness();
+            List<EstadoDTO> li = bess.Listar();
+
+            cboEstado.ValueMember = nameof(EstadoDTO.IdEstado);
+            cboEstado.DisplayMember = nameof(EstadoDTO.Estado);
+            cboEstado.DataSource = li;
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -45,19 +52,19 @@ namespace FamosoAça.Screens.Entregavel_I.Controle_de_Funcionários
             try
             {
                 CargoDTO depto = cboDepto.SelectedItem as CargoDTO;
+
                 EstadoDTO dt = cboEstado.SelectedItem as EstadoDTO;
 
                 FuncionarioDTO dto = new FuncionarioDTO();
                 dto.Nome = txtNome.Text;
                 dto.Nascimento = mtbNasc.Text;
                 dto.RG = mtbRg.Text;
-                dto.Salario = Convert.ToDecimal(txtSalario.Text);
                 dto.CPF = mtbCpf.Text;
                 dto.Telefone = mtbTelefone.Text;
                 dto.Email = txtEmail.Text;
                 dto.DeptoId = depto.Id;
                 dto.Cidade = txtCidade.Text;
-                dto.Estado = Convert.ToInt32(dt.ID);
+                dto.Estado = dt.IdEstado;
                 dto.Bairro = txtBairro.Text;
                 dto.Rua = txtRua.Text;
                 dto.CEP = txtCep.Text;
