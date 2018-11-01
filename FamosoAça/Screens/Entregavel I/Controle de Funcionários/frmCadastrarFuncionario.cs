@@ -11,6 +11,7 @@ using FamosoAça.Classes.Cargo;
 using FamosoAça.Classes.Funcionarios;
 using MySql.Data.MySqlClient;
 using FamosoAça.PlugIn;
+using FamosoAça.Classes.Estado;
 
 namespace FamosoAça.Screens.Entregavel_I.Controle_de_Funcionários
 {
@@ -30,6 +31,13 @@ namespace FamosoAça.Screens.Entregavel_I.Controle_de_Funcionários
             cboDepto.ValueMember = nameof(CargoDTO.Id);
             cboDepto.DisplayMember = nameof(CargoDTO.Nome);
             cboDepto.DataSource = lista;
+
+            EstadoBusiness be = new EstadoBusiness();
+            List<EstadoDTO> list = be.Listar();
+
+            cboDepto.ValueMember = nameof(CargoDTO.Id);
+            cboDepto.DisplayMember = nameof(CargoDTO.Nome);
+            cboDepto.DataSource = lista;
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -37,6 +45,7 @@ namespace FamosoAça.Screens.Entregavel_I.Controle_de_Funcionários
             try
             {
                 CargoDTO depto = cboDepto.SelectedItem as CargoDTO;
+                EstadoDTO dt = cboEstado.SelectedItem as EstadoDTO;
 
                 FuncionarioDTO dto = new FuncionarioDTO();
                 dto.Nome = txtNome.Text;
@@ -46,11 +55,9 @@ namespace FamosoAça.Screens.Entregavel_I.Controle_de_Funcionários
                 dto.CPF = mtbCpf.Text;
                 dto.Telefone = mtbTelefone.Text;
                 dto.Email = txtEmail.Text;
-
                 dto.DeptoId = depto.Id;
-
                 dto.Cidade = txtCidade.Text;
-                dto.Estado = cboEstado.Text;
+                dto.Estado = Convert.ToInt32(dt.ID);
                 dto.Bairro = txtBairro.Text;
                 dto.Rua = txtRua.Text;
                 dto.CEP = txtCep.Text;
