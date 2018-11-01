@@ -49,8 +49,8 @@ namespace FamosoAça.Screens.Entregavel_I.Controle_de_Funcionários
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            try
-            {
+            //try
+            //{
                 CargoDTO depto = cboDepto.SelectedItem as CargoDTO;
 
                 EstadoDTO dt = cboEstado.SelectedItem as EstadoDTO;
@@ -66,6 +66,7 @@ namespace FamosoAça.Screens.Entregavel_I.Controle_de_Funcionários
                 dto.Cidade = txtCidade.Text;
                 dto.Estado = dt.IdEstado;
                 dto.Bairro = txtBairro.Text;
+                dto.Salario = Convert.ToInt32(txtSalario.Text); 
                 dto.Rua = txtRua.Text;
                 dto.CEP = txtCep.Text;
                 dto.Imagem = ImagemPlugIn.ConverterParaString(pbxImagem.Image);
@@ -73,20 +74,20 @@ namespace FamosoAça.Screens.Entregavel_I.Controle_de_Funcionários
                 FuncionariosBusiness buss = new FuncionariosBusiness();
                 buss.Salvar(dto);
 
-                MessageBox.Show("Funcionário cadastrado com suceso!!", "FamosoAçaí", MessageBoxButtons.OK);
-            }
-            catch (MySqlException ex)
-            {
-                if (ex.Number == 1062)
-                {
-                    MessageBox.Show("Funcionario já está cadastrado. Verifique se o RG ou CPF estão corretamento preenchidos ou se ele já esta no sistema.",
-                        "FamosoAçaí", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "FamosoAçaí", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                MessageBox.Show("Funcionário cadastrado com sucesso!!", "FamosoAçaí", MessageBoxButtons.OK);
+            //}
+            //catch (MySqlException ex)
+            //{
+            //    if (ex.Number == 1062)
+            //    {
+            //        MessageBox.Show("Funcionario já está cadastrado. Verifique se o RG ou CPF estão corretamento preenchidos ou se ele já esta no sistema.",
+            //            "FamosoAçaí", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "FamosoAçaí", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
         private void pbxImagem_Click(object sender, EventArgs e)

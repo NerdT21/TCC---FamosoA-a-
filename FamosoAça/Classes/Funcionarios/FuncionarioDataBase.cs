@@ -23,7 +23,8 @@ namespace FamosoAça.Classes.Funcionarios
                             ds_telefone,
                             ds_bairro,
                             ds_rua,
-                            img_funcionario) VALUES(
+                            img_funcionario,
+                            vl_salario) VALUES(
                             @id_depto,
                             @nm_nome,
                             @ds_email, 
@@ -36,7 +37,8 @@ namespace FamosoAça.Classes.Funcionarios
                             @ds_telefone,
                             @ds_bairro,
                             @ds_rua,
-                            @img_funcionario)";
+                            @img_funcionario,
+                            @vl_salario)";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("id_depto", dto.DeptoId));
@@ -52,6 +54,7 @@ namespace FamosoAça.Classes.Funcionarios
             parms.Add(new MySqlParameter("ds_bairro", dto.Bairro));
             parms.Add(new MySqlParameter("ds_rua", dto.Rua));            
             parms.Add(new MySqlParameter("img_funcionario", dto.Imagem));
+            parms.Add(new MySqlParameter("vl_salario", dto.Salario));
 
             Database db = new Database();
             return db.ExecuteInsertScriptWithPk(script, parms);
@@ -85,6 +88,7 @@ namespace FamosoAça.Classes.Funcionarios
                 dto.Bairro = reader.GetString("ds_bairro");
                 dto.Rua = reader.GetString("ds_rua");
                 dto.Imagem = reader.GetString("img_funcionario");
+                dto.Salario = reader.GetDecimal("vl_salario");
 
                 lista.Add(dto);
             }
@@ -122,6 +126,7 @@ namespace FamosoAça.Classes.Funcionarios
                 dto.Bairro = reader.GetString("ds_bairro");
                 dto.Rua = reader.GetString("ds_rua");
                 dto.Imagem = reader.GetString("img_funcionario");
+                dto.Salario = reader.GetDecimal("vl_salario");
 
                 lista.Add(dto);
             }
