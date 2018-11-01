@@ -8,8 +8,8 @@ namespace FamosoAça.Classes.Estado
 {
     class EstadoDTO
     {
-        public int ID { get; set; }
+        public int IdEstado { get; set; }
 
-        public string Nome { get; set; }
+        public string Estado { get; set; }
     }
 }

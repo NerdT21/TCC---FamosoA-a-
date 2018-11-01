@@ -20,8 +20,8 @@ namespace FamosoAça.Classes.Estado
             while (reader.Read())
             {
                 EstadoDTO dto = new EstadoDTO();
-                dto.ID = reader.GetInt32("id_estado");
-                dto.Nome = reader.GetString("nm_estado");
+                dto.IdEstado = reader.GetInt32("id_estado");
+                dto.Estado = reader.GetString("nm_estado");
 
                 list.Add(dto);
             }
