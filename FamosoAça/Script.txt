@@ -65,7 +65,6 @@ CREATE TABLE `tb_estoque` (
 	`id_compra` int NOT NULL,
 	`nm_produto` varchar(250) NOT NULL,
 	`qtd_estocado` bigint(100) NOT NULL,
-	`qtd_minima` int NOT NULL,
 	PRIMARY KEY (`id_estoque`)
 );
 
@@ -151,8 +150,7 @@ CREATE TABLE `tb_estados` (
 CREATE TABLE `tb_gastosAdicionais` (
 	`id_gasto` int NOT NULL,
 	`nm_gasto` varchar(25) NOT NULL,
-	`ds_gasto` varchar(500) ,
-    
+	`ds_gasto` varchar(500),
 	`dt_gasto` varchar(15) NOT NULL, 
 	`vl_gasto` DECIMAL(10,2) NOT NULL,
 	PRIMARY KEY (`id_gasto`)
@@ -190,6 +188,8 @@ ALTER TABLE `tb_inss` ADD CONSTRAINT `tb_inss_fk0` FOREIGN KEY (`id_folha_pag`) 
 ALTER TABLE `tb_imposto_renda` ADD CONSTRAINT `tb_imposto_renda_fk0` FOREIGN KEY (`id_folha_pag`) REFERENCES `tb_folha_pagamento`(`id_folha_pag`);
 
 ALTER TABLE `tb_item` ADD CONSTRAINT `tb_item_fk0` FOREIGN KEY (`id_fornecedor`) REFERENCES `tb_fornecedor`(`id_fornecedor`);
+
+
 
 
 -- VIEW DE GANHOS
@@ -276,6 +276,9 @@ select date(dt_compra)			dt_referencia,
 
 INSERT INTO tb_login(`id_usuario`, `nm_usuario`, `ds_senha`, `pr_permissaoAdm`, `pr_permissaoCadastro`, `pr_permissaoConsulta`, `pr_permissaoContabilidade`)
 		      VALUES('1', 'adm', 'adm', '1', '1', '1', '1');
+              
+ INSERT INTO tb_login(`id_usuario`, `nm_usuario`, `ds_senha`, `pr_permissaoAdm`, `pr_permissaoCadastro`, `pr_permissaoConsulta`, `pr_permissaoContabilidade`)
+		      VALUES('2', '', '', '1', '1', '1', '1');             
               
 		
 INSERT INTO tb_estados(`id_estado`,`nm_estado`)

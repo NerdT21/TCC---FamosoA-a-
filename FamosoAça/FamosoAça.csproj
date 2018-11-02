@@ -64,9 +64,9 @@
     <Compile Include="Classes\Gastos\GastosBussines.cs" />
     <Compile Include="Classes\Gastos\GastosDatabase.cs" />
     <Compile Include="Classes\Gastos\GastosDTO.cs" />
-    <Compile Include="Classes\Gatos Adicionais\GastosBusiness.cs" />
-    <Compile Include="Classes\Gatos Adicionais\GastosDataBase.cs" />
-    <Compile Include="Classes\Gatos Adicionais\GastosDTO.cs" />
+    <Compile Include="Classes\Gatos Adicionais\GastosABusiness.cs" />
+    <Compile Include="Classes\Gatos Adicionais\GastosADataBase.cs" />
+    <Compile Include="Classes\Gatos Adicionais\GastosADTO.cs" />
     <Compile Include="Classes\Item\ItemBussines.cs" />
     <Compile Include="Classes\Item\ItemDataBase.cs" />
     <Compile Include="Classes\Item\ItemDTO.cs" />
@@ -104,9 +104,9 @@
     <Compile Include="Classes\Produto\ProdutoBusiness.cs" />
     <Compile Include="Classes\Produto\ProdutoDataBase.cs" />
     <Compile Include="Classes\Produto\ProdutoDTO.cs" />
-    <Compile Include="Classes\SalarioFamilia\SalarioFamiliaBusiness.cs" />
-    <Compile Include="Classes\SalarioFamilia\SalarioFamiliaDataBase.cs" />
-    <Compile Include="Classes\SalarioFamilia\SalarioFamiliaDTO.cs" />
+    <Compile Include="Classes\SalarioFamilia\SalarioFamilhaBusiness.cs" />
+    <Compile Include="Classes\SalarioFamilia\SalarioFamilhaDataBase.cs" />
+    <Compile Include="Classes\SalarioFamilia\SalarioFamilhaDTO.cs" />
     <Compile Include="Classes\Venda\VendaBusiness.cs" />
     <Compile Include="Classes\Venda\VendaDataBase.cs" />
     <Compile Include="Classes\Venda\VendaDTO.cs" />
@@ -194,17 +194,11 @@
     <Compile Include="Screens\Entregavel IV\Gastos Adicionais\frmGastosAdicionais.Designer.cs">
       <DependentUpon>frmGastosAdicionais.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Entregavel IV\Gatos Adicionais\ConsultarGastosFixos.cs">
+    <Compile Include="Screens\Entregavel IV\Gastos Adicionais\ConsultarGastosAdicionais.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Screens\Entregavel IV\Gatos Adicionais\ConsultarGastosFixos.Designer.cs">
-      <DependentUpon>ConsultarGastosFixos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Screens\Entregavel IV\Gatos Adicionais\frmRegistrarGasto.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Screens\Entregavel IV\Gatos Adicionais\frmRegistrarGasto.Designer.cs">
-      <DependentUpon>frmRegistrarGasto.cs</DependentUpon>
+    <Compile Include="Screens\Entregavel IV\Gastos Adicionais\ConsultarGastosAdicionais.Designer.cs">
+      <DependentUpon>ConsultarGastosAdicionais.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Entregavel I\Controle de Funcionários\frmCadastrarFuncionario.cs">
       <SubType>UserControl</SubType>
@@ -311,11 +305,8 @@
     <EmbeddedResource Include="Screens\Entregavel IV\Gastos Adicionais\frmGastosAdicionais.resx">
       <DependentUpon>frmGastosAdicionais.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Entregavel IV\Gatos Adicionais\ConsultarGastosFixos.resx">
-      <DependentUpon>ConsultarGastosFixos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Entregavel IV\Gatos Adicionais\frmRegistrarGasto.resx">
-      <DependentUpon>frmRegistrarGasto.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\Entregavel IV\Gastos Adicionais\ConsultarGastosAdicionais.resx">
+      <DependentUpon>ConsultarGastosAdicionais.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Entregavel I\Controle de Funcionários\frmCadastrarFuncionario.resx">
       <DependentUpon>frmCadastrarFuncionario.cs</DependentUpon>

@@ -7,33 +7,33 @@ using System.Threading.Tasks;
 
 namespace FamosoAça.Classes.Gatos_Adicionais
 {
-    public class GastosDataBase
+    public class GastosADataBase
     {
-       public int Salvar(GastosDTO dto)
+       public int Salvar(GastosADTO dto)
         {
             string script = @"INSERT INTO tb_gastos(nm_gasto, 
                                                     vl_gasto,
                                                     ds_gasto, 
-                                                    dt_gasto,
-                                                    tp_gasto)
+                                                    dt_gasto/*,*/
+                                                 /*   tp_gasto*/)
                                              VALUES(@nm_gasto, 
                                                     @vl_gasto,
                                                     @ds_gasto, 
-                                                    @dt_gasto,
-                                                    @tp_gasto )";
+                                                    @dt_gasto/*,*/
+                                                   /* @tp_gasto */)";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("nm_gasto",dto));
             parms.Add(new MySqlParameter("vl_gasto", dto));
             parms.Add(new MySqlParameter("ds_gasto", dto));
             parms.Add(new MySqlParameter("dt_gasto", dto));
-            parms.Add(new MySqlParameter("tp_gasto", dto));
+            //parms.Add(new MySqlParameter("tp_gasto", dto));
 
             Database db = new Database();
             return db.ExecuteInsertScriptWithPk(script,parms);
         }
 
-        public List<GastosDTO> Listar()
+        public List<GastosADTO> Listar()
         {
             string script = @"SELECT * FROM tb_gastos";
 
@@ -41,17 +41,17 @@ namespace FamosoAça.Classes.Gatos_Adicionais
             Database db = new Database();
 
             MySqlDataReader reader = db.ExecuteSelectScript(script, parms);
-            List<GastosDTO> lista = new List<GastosDTO>();
+            List<GastosADTO> lista = new List<GastosADTO>();
 
             while (reader.Read())
             {
-                GastosDTO dto = new GastosDTO();
+                GastosADTO dto = new GastosADTO();
                 dto.Id = reader.GetInt32("id_gastos");
                 dto.Nome = reader.GetString("nm_gasto");
                 dto.Valor = reader.GetDecimal("vl_gasto");
                 dto.Decricao = reader.GetString("ds_gasto");
-                dto.Data = reader.GetDateTime("dt_gasto");
-                dto.Tipo = reader.GetBoolean("tp_gasto");
+                dto.Data = reader.GetString("dt_gasto");
+                //dto.Tipo = reader.GetBoolean("tp_gasto");
 
                 lista.Add(dto);
             }
@@ -60,29 +60,29 @@ namespace FamosoAça.Classes.Gatos_Adicionais
 
         }
 
-        public List<GastosDTO> Consultar(string nome , bool tipo)
+        public List<GastosADTO> Consultar(string data/* , bool tipo*/)
         {
-            string script = @"SELECT * FROM tb_gastos WHERE nm_gasto LIKE @ nm_gasto AND tp_gasto LIKE tp_gasto";
+            string script = @"SELECT * FROM tb_gastos WHERE dt_gasto LIKE @ dt_gasto /*AND tp_gasto LIKE tp_gasto*/";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("nm_gasto",nome + "%"));
-            parms.Add(new MySqlParameter("tp_gasto", tipo + "%"));
+            parms.Add(new MySqlParameter("dt_gasto", data + "%"));
+            //parms.Add(new MySqlParameter("tp_gasto", tipo + "%"));
 
 
             Database db = new Database();
 
             MySqlDataReader reader = db.ExecuteSelectScript(script, parms);
-            List<GastosDTO> lista = new List<GastosDTO>();
+            List<GastosADTO> lista = new List<GastosADTO>();
 
             while (reader.Read())
             {
-                GastosDTO dto = new GastosDTO();
+                GastosADTO dto = new GastosADTO();
                 dto.Id = reader.GetInt32("id_gastos");
                 dto.Nome = reader.GetString("nm_gasto");
                 dto.Valor = reader.GetDecimal("vl_gasto");
                 dto.Decricao = reader.GetString("ds_gasto");
-                dto.Data = reader.GetDateTime("dt_gasto");
-                dto.Tipo = reader.GetBoolean("tp_gasto");
+                dto.Data = reader.GetString("dt_gasto");
+                //dto.Tipo = reader.GetBoolean("tp_gasto");
 
                 lista.Add(dto);
             }

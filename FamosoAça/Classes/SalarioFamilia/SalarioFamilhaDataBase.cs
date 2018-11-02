@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace FamosoAça.Classes.SalarioFamilia
 {
-    public class SalarioFamiliaDataBase
+    public class SalarioFamilhaDataBase
     {
-        public int Salvar(SalarioFamiliaDTO salariof)
+        public int Salvar(SalarioFamilhaDTO salariof)
         {
             string script = @"INSERT INTO tb_salario_familia(
 	                            vl_salario_bruto,
@@ -29,7 +29,7 @@ namespace FamosoAça.Classes.SalarioFamilia
             int pk = db.ExecuteInsertScriptWithPk(script, parms);
             return pk;
         }
-        public void Alterar(SalarioFamiliaDTO salariof)
+        public void Alterar(SalarioFamilhaDTO salariof)
         {
             string script = @"UPDATE tb_salario_familia SET 
                              vl_sal_bruto = @vl_sal_bruto,
@@ -55,7 +55,7 @@ namespace FamosoAça.Classes.SalarioFamilia
             Database db = new Database();
             db.ExecuteInsertScript(script, parms);
         }
-        public List<SalarioFamiliaDTO> Listar()
+        public List<SalarioFamilhaDTO> Listar()
         {
             string script = @"SELECT * FROM tb_salario_familia";
 
@@ -64,10 +64,10 @@ namespace FamosoAça.Classes.SalarioFamilia
             Database db = new Database();
             MySqlDataReader reader = db.ExecuteSelectScript(script, parms);
 
-            List<SalarioFamiliaDTO> salariof = new List<SalarioFamiliaDTO>();
+            List<SalarioFamilhaDTO> salariof = new List<SalarioFamilhaDTO>();
             while (reader.Read())
             {
-                SalarioFamiliaDTO dto = new SalarioFamiliaDTO();
+                SalarioFamilhaDTO dto = new SalarioFamilhaDTO();
                 dto.ID = reader.GetInt32("id_sal_familia");
                 dto.SalarioBruto = reader.GetDecimal("vl_sal_bruto");
                 dto.SalarioFamilia = reader.GetDecimal("vl_sal_familia");
@@ -78,7 +78,7 @@ namespace FamosoAça.Classes.SalarioFamilia
             reader.Close();
             return salariof;
         }
-        public List<SalarioFamiliaDTO> Consultar(string nome)
+        public List<SalarioFamilhaDTO> Consultar(string nome)
         {
             string script = @"SELECT * FROM tb_salario_familia WHERE vl_sal_bruto LIKE @vl_sal_bruto";
 
@@ -88,10 +88,10 @@ namespace FamosoAça.Classes.SalarioFamilia
             Database db = new Database();
             MySqlDataReader reader = db.ExecuteSelectScript(script, parms);
 
-            List<SalarioFamiliaDTO> salariof = new List<SalarioFamiliaDTO>();
+            List<SalarioFamilhaDTO> salariof = new List<SalarioFamilhaDTO>();
             while (reader.Read())
             {
-                SalarioFamiliaDTO DTO = new SalarioFamiliaDTO();
+                SalarioFamilhaDTO DTO = new SalarioFamilhaDTO();
                 DTO.ID = reader.GetInt32("id_sal_familia");
                 DTO.SalarioBruto = reader.GetDecimal("vl_sal_bruto");
                 DTO.SalarioFamilia = reader.GetDecimal("vl_sal_familia");

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FamosoAça.Classes.SalarioFamilia
 {
-    public class SalarioFamiliaDTO
+    public class SalarioFamilhaDTO
     {
         public int ID { get; set; }
 
