@@ -194,10 +194,10 @@
     <Compile Include="Screens\Entregavel IV\Gastos Adicionais\frmGastosAdicionais.Designer.cs">
       <DependentUpon>frmGastosAdicionais.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Entregavel IV\Gastos Adicionais\ConsultarGastosFixos.cs">
+    <Compile Include="Screens\Entregavel IV\Gatos Adicionais\ConsultarGastosFixos.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Screens\Entregavel IV\Gastos Adicionais\ConsultarGastosFixos.Designer.cs">
+    <Compile Include="Screens\Entregavel IV\Gatos Adicionais\ConsultarGastosFixos.Designer.cs">
       <DependentUpon>ConsultarGastosFixos.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Entregavel IV\Gatos Adicionais\frmRegistrarGasto.cs">
@@ -311,7 +311,7 @@
     <EmbeddedResource Include="Screens\Entregavel IV\Gastos Adicionais\frmGastosAdicionais.resx">
       <DependentUpon>frmGastosAdicionais.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Entregavel IV\Gastos Adicionais\ConsultarGastosFixos.resx">
+    <EmbeddedResource Include="Screens\Entregavel IV\Gatos Adicionais\ConsultarGastosFixos.resx">
       <DependentUpon>ConsultarGastosFixos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Entregavel IV\Gatos Adicionais\frmRegistrarGasto.resx">

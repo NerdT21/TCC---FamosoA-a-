@@ -35,7 +35,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.chkGastoFixo = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,9 +55,9 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(228, 258);
+            this.numericUpDown1.Location = new System.Drawing.Point(228, 227);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(59, 20);
+            this.numericUpDown1.Size = new System.Drawing.Size(69, 20);
             this.numericUpDown1.TabIndex = 2;
             // 
             // label1
@@ -75,7 +74,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(128, 136);
+            this.label2.Location = new System.Drawing.Point(128, 133);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 25);
             this.label2.TabIndex = 4;
@@ -85,7 +84,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(159, 253);
+            this.label3.Location = new System.Drawing.Point(154, 224);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 25);
             this.label3.TabIndex = 5;
@@ -94,29 +93,17 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(228, 298);
+            this.button1.Location = new System.Drawing.Point(228, 315);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(121, 45);
             this.button1.TabIndex = 6;
             this.button1.Text = "Cadatrar";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // chkGastoFixo
-            // 
-            this.chkGastoFixo.AutoSize = true;
-            this.chkGastoFixo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkGastoFixo.Location = new System.Drawing.Point(232, 222);
-            this.chkGastoFixo.Name = "chkGastoFixo";
-            this.chkGastoFixo.Size = new System.Drawing.Size(101, 25);
-            this.chkGastoFixo.TabIndex = 8;
-            this.chkGastoFixo.Text = "Gasto Fixo";
-            this.chkGastoFixo.UseVisualStyleBackColor = true;
-            // 
             // frmGastosAdicionais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.chkGastoFixo);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -141,6 +128,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.CheckBox chkGastoFixo;
     }
 }
