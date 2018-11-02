@@ -11,51 +11,50 @@ namespace FamosoAça.Classes.Funcionarios
     {
         public int Salvar(FuncionarioDTO dto)
         {
-            string script = @"INSERT INTO tb_funcionario(
+            string script = @"INSERT INTO tb_funcionario(id_depto,
                             nm_nome,
                             ds_email, 
                             ds_cpf,
                             ds_rg,
-                            ds_salario,
-                            dt_nascimento,
+                            dt_nascimento,        
                             ds_cidade,
-                            ds_estado,
+                            id_estado,
                             ds_cep,
                             ds_telefone,
                             ds_bairro,
                             ds_rua,
-                            id_depto,
-                            img_funcionario) VALUES(
+                            img_funcionario,
+                            vl_salario) VALUES(
+                            @id_depto,
                             @nm_nome,
                             @ds_email, 
-                            @ds_cpf,                           
+                            @ds_cpf,
                             @ds_rg,
-                            @ds_salario,
-                            @dt_nascimento,
+                            @dt_nascimento,        
                             @ds_cidade,
-                            @ds_estado,
+                            @id_estado,
                             @ds_cep,
                             @ds_telefone,
                             @ds_bairro,
                             @ds_rua,
-                            @id_depto,
-                            @img_funcionario)";
+                            @img_funcionario,
+                            @vl_salario)";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
+            parms.Add(new MySqlParameter("id_depto", dto.DeptoId));
             parms.Add(new MySqlParameter("nm_nome", dto.Nome));
             parms.Add(new MySqlParameter("ds_email", dto.Email));
             parms.Add(new MySqlParameter("ds_cpf", dto.CPF));
             parms.Add(new MySqlParameter("ds_rg", dto.RG));
-            parms.Add(new MySqlParameter("ds_salario", dto.Salario));
             parms.Add(new MySqlParameter("dt_nascimento", dto.Nascimento));
             parms.Add(new MySqlParameter("ds_cidade", dto.Cidade));
-            parms.Add(new MySqlParameter("ds_estado", dto.Estado));
+            parms.Add(new MySqlParameter("id_estado", dto.Estado));
             parms.Add(new MySqlParameter("ds_cep", dto.CEP));
             parms.Add(new MySqlParameter("ds_telefone", dto.Telefone));
             parms.Add(new MySqlParameter("ds_bairro", dto.Bairro));
-            parms.Add(new MySqlParameter("ds_rua", dto.Rua));
-            parms.Add(new MySqlParameter("id_depto", dto.DeptoId));
+            parms.Add(new MySqlParameter("ds_rua", dto.Rua));            
             parms.Add(new MySqlParameter("img_funcionario", dto.Imagem));
+            parms.Add(new MySqlParameter("vl_salario", dto.Salario));
 
             Database db = new Database();
             return db.ExecuteInsertScriptWithPk(script, parms);
@@ -76,20 +75,20 @@ namespace FamosoAça.Classes.Funcionarios
             {
                 FuncionarioDTO dto = new FuncionarioDTO();
                 dto.Id = reader.GetInt32("id_funcionario");
+                dto.DeptoId = reader.GetInt32("id_depto");
                 dto.Nome = reader.GetString("nm_nome");
                 dto.Email = reader.GetString("ds_email");
                 dto.CPF = reader.GetString("ds_cpf");
                 dto.RG = reader.GetString("ds_rg");
-                dto.Salario = reader.GetDecimal("ds_salario");
                 dto.Nascimento = reader.GetString("dt_nascimento");
                 dto.Cidade = reader.GetString("ds_cidade");
-                dto.Estado = reader.GetString("ds_estado");
+                dto.Estado = reader.GetInt32("id_estado");
                 dto.CEP = reader.GetString("ds_cep");
                 dto.Telefone = reader.GetString("ds_telefone");
                 dto.Bairro = reader.GetString("ds_bairro");
                 dto.Rua = reader.GetString("ds_rua");
-                dto.DeptoId = reader.GetInt32("id_depto");
                 dto.Imagem = reader.GetString("img_funcionario");
+                dto.Salario = reader.GetDecimal("vl_salario");
 
                 lista.Add(dto);
             }
@@ -114,20 +113,20 @@ namespace FamosoAça.Classes.Funcionarios
             {
                 FuncionarioDTO dto = new FuncionarioDTO();
                 dto.Id = reader.GetInt32("id_funcionario");
+                dto.DeptoId = reader.GetInt32("id_depto");
                 dto.Nome = reader.GetString("nm_nome");
                 dto.Email = reader.GetString("ds_email");
                 dto.CPF = reader.GetString("ds_cpf");
                 dto.RG = reader.GetString("ds_rg");
-                dto.Salario = reader.GetDecimal("ds_salario");
                 dto.Nascimento = reader.GetString("dt_nascimento");
                 dto.Cidade = reader.GetString("ds_cidade");
-                dto.Estado = reader.GetString("ds_estado");
+                dto.Estado = reader.GetInt32("id_estado");
                 dto.CEP = reader.GetString("ds_cep");
                 dto.Telefone = reader.GetString("ds_telefone");
                 dto.Bairro = reader.GetString("ds_bairro");
                 dto.Rua = reader.GetString("ds_rua");
-                dto.DeptoId = reader.GetInt32("id_depto");
                 dto.Imagem = reader.GetString("img_funcionario");
+                dto.Salario = reader.GetDecimal("vl_salario");
 
                 lista.Add(dto);
             }

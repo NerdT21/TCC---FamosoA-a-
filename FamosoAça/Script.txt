@@ -4,7 +4,7 @@ USE FamosoAcaiDB;
 
 CREATE TABLE `tb_funcionario` (
 	`id_funcionario` int NOT NULL AUTO_INCREMENT,
-	`id_depto` int NOT NULL UNIQUE,
+	`id_depto` int NOT NULL,
 	`nm_nome` varchar(50) NOT NULL,
 	`ds_email` varchar(250) NOT NULL UNIQUE,
 	`ds_cpf` varchar(50) NOT NULL UNIQUE,
@@ -17,6 +17,7 @@ CREATE TABLE `tb_funcionario` (
 	`ds_bairro` varchar(60) NOT NULL UNIQUE,
 	`ds_rua` varchar(200) NOT NULL,
 	`img_funcionario` longblob NOT NULL,
+    `vl_salario` decimal NOT NULL,
 	PRIMARY KEY (`id_funcionario`)
 );
 
@@ -32,7 +33,7 @@ CREATE TABLE `tb_fornecedor` (
 	`id_estado` int NOT NULL,
 	`ds_cnpj` varchar(25) NOT NULL UNIQUE,
 	`nm_fornecedor` varchar(150) NOT NULL,
-	`ds_cep` varchar(16) NOT NULL,
+	`ds_cep` varchar(12) NOT NULL,
 	`ds_cidade` varchar(60) NOT NULL,
 	`ds_telefone` int(14) NOT NULL,
 	`ds_email` varchar(120) NOT NULL UNIQUE,
@@ -150,22 +151,12 @@ CREATE TABLE `tb_estados` (
 CREATE TABLE `tb_gastosAdicionais` (
 	`id_gasto` int NOT NULL,
 	`nm_gasto` varchar(25) NOT NULL,
-	`ds_gasto` varchar(50) NOT NULL,
-	`dt_gasto` DATE NOT NULL,
+	`ds_gasto` varchar(500) ,
+    
+	`dt_gasto` varchar(15) NOT NULL, 
 	`vl_gasto` DECIMAL(10,2) NOT NULL,
 	PRIMARY KEY (`id_gasto`)
 );
-
-CREATE TABLE `tb_gastos`(
- `id_gasto` int NOT NULL AUTO_INCREMENT,
- `nm_gasto` varchar(50) NOT NULL,
- `vl_gasto` decimal(15,5) NOT NULL,
- `ds_gasto` varchar (200) ,
- `dt_gasto` Date,
- `tp_gasto` bool NOT NULL,
-  PRIMARY KEY (`id_gasto`)
-);
-
 
 
 ALTER TABLE `tb_funcionario` ADD CONSTRAINT `tb_funcionario_fk1` FOREIGN KEY (`id_depto`) REFERENCES `tb_depto`(`id_depto`);

@@ -11,6 +11,7 @@ using FamosoAça.Classes.Cargo;
 using FamosoAça.Classes.Funcionarios;
 using MySql.Data.MySqlClient;
 using FamosoAça.PlugIn;
+using FamosoAça.Classes.Estado;
 
 namespace FamosoAça.Screens.Entregavel_I.Controle_de_Funcionários
 {
@@ -30,28 +31,42 @@ namespace FamosoAça.Screens.Entregavel_I.Controle_de_Funcionários
             cboDepto.ValueMember = nameof(CargoDTO.Id);
             cboDepto.DisplayMember = nameof(CargoDTO.Nome);
             cboDepto.DataSource = lista;
+
+            //EstadoBusiness be = new EstadoBusiness();
+            //List<EstadoDTO> list = be.Listar();
+
+            //cboEstado.ValueMember = nameof(EstadoDTO.IdEstado);
+            //cboEstado.DisplayMember = nameof(EstadoDTO.Estado);
+            //cboEstado.DataSource = lista;
+
+            EstadoBusiness bess = new EstadoBusiness();
+            List<EstadoDTO> li = bess.Listar();
+
+            cboEstado.ValueMember = nameof(EstadoDTO.IdEstado);
+            cboEstado.DisplayMember = nameof(EstadoDTO.Estado);
+            cboEstado.DataSource = li;
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            try
-            {
+            //try
+            //{
                 CargoDTO depto = cboDepto.SelectedItem as CargoDTO;
+
+                EstadoDTO dt = cboEstado.SelectedItem as EstadoDTO;
 
                 FuncionarioDTO dto = new FuncionarioDTO();
                 dto.Nome = txtNome.Text;
                 dto.Nascimento = mtbNasc.Text;
                 dto.RG = mtbRg.Text;
-                dto.Salario = Convert.ToDecimal(txtSalario.Text);
                 dto.CPF = mtbCpf.Text;
                 dto.Telefone = mtbTelefone.Text;
                 dto.Email = txtEmail.Text;
-
                 dto.DeptoId = depto.Id;
-
                 dto.Cidade = txtCidade.Text;
-                dto.Estado = cboEstado.Text;
+                dto.Estado = dt.IdEstado;
                 dto.Bairro = txtBairro.Text;
+                dto.Salario = Convert.ToInt32(txtSalario.Text); 
                 dto.Rua = txtRua.Text;
                 dto.CEP = txtCep.Text;
                 dto.Imagem = ImagemPlugIn.ConverterParaString(pbxImagem.Image);
@@ -59,20 +74,20 @@ namespace FamosoAça.Screens.Entregavel_I.Controle_de_Funcionários
                 FuncionariosBusiness buss = new FuncionariosBusiness();
                 buss.Salvar(dto);
 
-                MessageBox.Show("Funcionário cadastrado com suceso!!", "FamosoAçaí", MessageBoxButtons.OK);
-            }
-            catch (MySqlException ex)
-            {
-                if (ex.Number == 1062)
-                {
-                    MessageBox.Show("Funcionario já está cadastrado. Verifique se o RG ou CPF estão corretamento preenchidos ou se ele já esta no sistema.",
-                        "FamosoAçaí", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "FamosoAçaí", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                MessageBox.Show("Funcionário cadastrado com sucesso!!", "FamosoAçaí", MessageBoxButtons.OK);
+            //}
+            //catch (MySqlException ex)
+            //{
+            //    if (ex.Number == 1062)
+            //    {
+            //        MessageBox.Show("Funcionario já está cadastrado. Verifique se o RG ou CPF estão corretamento preenchidos ou se ele já esta no sistema.",
+            //            "FamosoAçaí", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "FamosoAçaí", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
         private void pbxImagem_Click(object sender, EventArgs e)

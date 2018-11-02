@@ -25,8 +25,8 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Fornecedores
             List<EstadoDTO> lista = biss.Listar();
 
             //DisplayMember = Motra,ValueMember=oque de verdade , DataSource = Lista
-            cboEstado.ValueMember = nameof(EstadoDTO.ID);
-            cboEstado.DisplayMember = nameof(EstadoDTO.Nome);
+            cboEstado.ValueMember = nameof(EstadoDTO.IdEstado);
+            cboEstado.DisplayMember = nameof(EstadoDTO.Estado);
             cboEstado.DataSource = lista;
             
             //EstadoBusiness buss = new EstadoBusiness();
@@ -52,7 +52,7 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Fornecedores
                 dto.Cidade = txtCidade.Text;
                 dto.Cep= mkbCep.Text;
                 dto.Telefone = txtTelefone.Text;
-                dto.IDEstado = estado.ID;
+                dto.IDEstado = estado.IdEstado;
 
                 FornecedorBusiness business = new FornecedorBusiness();
                 business.Salvar(dto);
