@@ -17,17 +17,15 @@ namespace FamosoAça.Classes.Fornecedor
                             ds_telefone,
                             ds_email,
                             ds_cidade,
-                            id_estados,                        
-                            ds_cep,
-                            img_logo
+                            id_estado,                        
+                            ds_cep
                             ) VALUES(                            
                             @nm_fornecedor,
                             @ds_cnpj,
                             @ds_telefone,
                             @ds_email,
                             @ds_cidade,
-                            @id_estados,
-                            @img_logo
+                            @id_estado,
                             @ds_cep
                            )";
 
@@ -39,9 +37,9 @@ namespace FamosoAça.Classes.Fornecedor
             parms.Add(new MySqlParameter("ds_telefone", dto.Telefone));
             parms.Add(new MySqlParameter("ds_email", dto.Email));
             parms.Add(new MySqlParameter("ds_cidade", dto.Cidade));
-            parms.Add(new MySqlParameter("id_estados", dto.IDEstado));           
+            parms.Add(new MySqlParameter("id_estado", dto.IDEstado));           
             parms.Add(new MySqlParameter("ds_cep", dto.Cep));
-            parms.Add(new MySqlParameter("img_logo", dto.Logo));
+            
 
 
             Database db = new Database();
@@ -121,8 +119,7 @@ namespace FamosoAça.Classes.Fornecedor
                             ds_cidade = @ds_cidade,
                             ds_estado = @ds_estado,                          
                             ds_cep = @ds_cep,
-                            img_logo = @img_logo
-                            WHERE
+                             WHERE
                             id_fornecedor = @id_fornecedor";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();

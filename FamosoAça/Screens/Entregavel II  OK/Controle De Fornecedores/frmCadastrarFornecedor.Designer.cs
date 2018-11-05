@@ -76,7 +76,7 @@
             // txtTelefone
             // 
             this.txtTelefone.Location = new System.Drawing.Point(184, 140);
-            this.txtTelefone.Mask = "(99)9999-9999";
+            this.txtTelefone.Mask = "(00)0000-0000";
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(77, 20);
             this.txtTelefone.TabIndex = 129;
@@ -128,7 +128,7 @@
             // txtCnpj
             // 
             this.txtCnpj.Location = new System.Drawing.Point(183, 111);
-            this.txtCnpj.Mask = "99.999.999/9999-99";
+            this.txtCnpj.Mask = "00.000.000/0000-00";
             this.txtCnpj.Name = "txtCnpj";
             this.txtCnpj.Size = new System.Drawing.Size(105, 20);
             this.txtCnpj.TabIndex = 123;
