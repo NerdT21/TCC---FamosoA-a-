@@ -61,6 +61,7 @@
     <Compile Include="Classes\Estado\EstadoBusiness.cs" />
     <Compile Include="Classes\Estado\EstadoDataBase.cs" />
     <Compile Include="Classes\Estado\EstadoDTO.cs" />
+    <Compile Include="Classes\Estoque\EstoqueView.cs" />
     <Compile Include="Classes\Gastos\GastosBussines.cs" />
     <Compile Include="Classes\Gastos\GastosDatabase.cs" />
     <Compile Include="Classes\Gastos\GastosDTO.cs" />

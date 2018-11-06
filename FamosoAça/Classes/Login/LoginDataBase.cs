@@ -14,6 +14,7 @@ namespace FamosoAça.Classes.Login
             string script = @"INSERT INTO tb_login(
 	                         nm_usuario,
 	                         ds_senha,
+                             ds_email,
 	                         pr_permissaoAdm,
 	                         pr_permissaoCadastro,
 	                         pr_permissaoConsulta,
@@ -21,6 +22,7 @@ namespace FamosoAça.Classes.Login
                              VALUES(
                              @nm_usuario,
 	                         @ds_senha,
+                             @ds_email,
 	                         @pr_permissaoAdm,
 	                         @pr_permissaoCadastro,
 	                         @pr_permissaoConsulta,
@@ -29,6 +31,7 @@ namespace FamosoAça.Classes.Login
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("nm_usuario", dto.Usuario));
             parms.Add(new MySqlParameter("ds_senha", dto.Senha));
+            parms.Add(new MySqlParameter("ds_email", dto.Email));
             parms.Add(new MySqlParameter("pr_permissaoAdm", dto.Adm));
             parms.Add(new MySqlParameter("pr_permissaoCadastro", dto.Cadastro));
             parms.Add(new MySqlParameter("pr_permissaoConsulta", dto.Consulta));
@@ -58,6 +61,7 @@ namespace FamosoAça.Classes.Login
                 dto.Id = reader.GetInt32("id_usuario");
                 dto.Usuario = reader.GetString("nm_usuario");
                 dto.Senha = reader.GetString("ds_senha");
+                dto.Email = reader.GetString("de_email");
                 dto.Adm = reader.GetBoolean("pr_permissaoAdm");
                 dto.Cadastro = reader.GetBoolean("pr_permissaoCadastro");
                 dto.Consulta = reader.GetBoolean("pr_permissaoConsulta");

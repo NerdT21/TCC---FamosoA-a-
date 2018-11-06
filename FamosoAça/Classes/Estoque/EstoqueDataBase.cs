@@ -11,109 +11,119 @@ namespace FamosoAça.Classes.Estoque
     {
         public int Salvar(EstoqueDTO dto)
         {
-            string script = @"INSERT INTO tb_estoque(
-	                          id_compra,
-	                          nm_produto,
-                              qtd_estocado,
-                              qtd_minima)
-                                VALUES(
-	                            @id_compra,
- 	                            @nm_produto,
-                                @qtd_estocado,
-                                @qtd_minimar
-	                            )";
+            string script = @"INSERT INTO tb_estoque(id_itemProduto, nm_produto, qtd_estocado)
+                                              VALUES(@id_itemProduto, @nm_produto, @qtd_estocado)";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("id_compra", dto.IdCompra));
-            parms.Add(new MySqlParameter("nm_produto", dto.NomeProduto));
-            parms.Add(new MySqlParameter("qtd_estocado", dto.QTDestocada));
-            parms.Add(new MySqlParameter("qtd_minima", dto.QTDMinima));
-
-            Database db = new Database();
-            int pk = db.ExecuteInsertScriptWithPk(script, parms);
-            return pk;
-        }
-        public void Alterar(EstoqueDTO dto)
-        {
-            string script = @"UPDATE tb_estoque SET nm_produto = @nm_produto, qtd_estocado = @qtd_estocado WHERE id_compra = @id_compra";
-
-            List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("id_compra", dto.Id));
+            parms.Add(new MySqlParameter("id_itemProduto", dto.IdItemProduto));
             parms.Add(new MySqlParameter("nm_produto", dto.NomeProduto));
             parms.Add(new MySqlParameter("qtd_estocado", dto.QTDestocada));
 
             Database db = new Database();
-            db.ExecuteInsertScript(script, parms);
+            return db.ExecuteInsertScriptWithPk(script, parms);
         }
-        public void Remover(int id)
-        {
-            string script = @"DELETE FROM tb_estoque WHERE id_estoque = @id_estoque";
 
-            List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("id_estoque", id));
+        public EstoqueDTO ListarCompraVenda()
+        {
+            string script = @"SELECT * FROM tb_estoque";
 
             Database db = new Database();
-            db.ExecuteInsertScript(script, parms);
+            MySqlDataReader reader = db.ExecuteSelectScript(script, null);
+
+            EstoqueDTO dto = null;
+            while (reader.Read())
+            {
+                dto = new EstoqueDTO();
+                dto.Id = reader.GetInt32("id_estoque");
+                dto.IdItemProduto = reader.GetInt32("id_itemProduto");
+                dto.NomeProduto = reader.GetString("nm_produto");
+                dto.QTDestocada = reader.GetInt32("qtd_estocado");
+            }
+            reader.Close();
+            return dto;
         }
 
         public List<EstoqueDTO> Listar()
         {
             string script = @"SELECT * FROM tb_estoque";
 
-            List<MySqlParameter> parms = new List<MySqlParameter>();
-
             Database db = new Database();
-            MySqlDataReader reader = db.ExecuteSelectScript(script, parms);
+            MySqlDataReader reader = db.ExecuteSelectScript(script, null);
 
-            List<EstoqueDTO> produto = new List<EstoqueDTO>();
-            while (reader.Read())
-            {
-                EstoqueDTO dto = new EstoqueDTO();
-                dto.Id = reader.GetInt32("id_");
-                dto.IdCompra = reader.GetInt32("id_compra");
-                dto.QTDestocada = reader.GetInt32("qtd_estocado");
-                dto.QTDMinima = reader.GetInt32("qtd_minima");
-                dto.NomeProduto = reader.GetString("nm_produto");
-
-                produto.Add(dto);
-
-
-            }
-            reader.Close();
-            return produto;
-        }
-        public List<EstoqueDTO> Consultar(string nome ,int quantidade)
-        {
-            string script = @"SELECT * FROM tb_estoque WHERE nm_produto LIKE @nm_produto";
-
-            List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("nm_produto", nome + "%"));
-            parms.Add(new MySqlParameter("qtd_minima", quantidade + "%"));
-
-            Database db = new Database();
-            MySqlDataReader reader = db.ExecuteSelectScript(script, parms);
-
-            List<EstoqueDTO> produto = new List<EstoqueDTO>();
+            List<EstoqueDTO> lista = new List<EstoqueDTO>();
             while (reader.Read())
             {
                 EstoqueDTO dto = new EstoqueDTO();
                 dto.Id = reader.GetInt32("id_estoque");
-                dto.NomeProduto = reader.GetString("nm_nome");
-                dto.QTDMinima = reader.GetInt32("qtd_minima");
+                dto.IdItemProduto = reader.GetInt32("id_itemProduto");
+                dto.NomeProduto = reader.GetString("nm_produto");
+                dto.QTDestocada = reader.GetInt32("qtd_estocado");
 
+                lista.Add(dto);
+            }
+            reader.Close();
+            return lista;
+        }
 
-                produto.Add(dto);
+        public List<EstoqueView> Consultar(string produto)
+        {
 
+            string script = @"SELECT * FROM vw_estoque WHERE nm_produto LIKE @nm_produto";
 
+            List<MySqlParameter> parms = new List<MySqlParameter>();
+            parms.Add(new MySqlParameter("nm_produto", produto + "%"));
+
+            Database db = new Database();
+            MySqlDataReader reader = db.ExecuteSelectScript(script, parms);
+
+            List<EstoqueView> list = new List<EstoqueView>();
+            while (reader.Read())
+            {
+
+                EstoqueView dto = new EstoqueView();
+                dto.Id = reader.GetInt32("id_estoque");
+                dto.ItemId = reader.GetInt32("id_item");
+                dto.NomeProduto = reader.GetString("nm_produto");
+                dto.QtdEstoqcada = reader.GetInt32("qtd_estocado");
+
+                list.Add(dto);
 
             }
             reader.Close();
-            return produto;
-
-
-
-
+            return list;
 
         }
+
+        public void Adicionar (int qtd, int idProduto)
+        {
+
+            string script = @"UPDATE tb_estoque SET qtd_estocado = qtd_estocado +@qtd_estocado
+                                                WHERE  id_itemProduto = @id_itemProduto";
+
+            List<MySqlParameter> parms = new List<MySqlParameter>();
+            parms.Add(new MySqlParameter("id_itemProduto",idProduto));
+            parms.Add(new MySqlParameter("qtd_estocado",qtd));
+
+            Database db = new Database();
+            db.ExecuteInsertScript(script, parms);
+        }
+
+        public void Remover(int qtd,  int idProduto)
+        {
+
+            string script = @"UPDATE tb_estoque SET qtd_estocado = qtd_estocado - @qtd_estocado
+                                              WHERE id_itemProduto = @id_itemProduto";
+
+            List<MySqlParameter> parms = new List<MySqlParameter>();
+            parms.Add(new MySqlParameter("id_itemProduto", idProduto));
+            parms.Add(new MySqlParameter("qtd_estocado", qtd));
+
+            Database db = new Database();
+            db.ExecuteInsertScript(script, parms);
+
+        }
+
+
     }
+          
 }

@@ -6,16 +6,14 @@ using System.Threading.Tasks;
 
 namespace FamosoAça.Classes.Estoque
 {
-    public class EstoqueDTO
+     public class EstoqueView
     {
         public int Id { get; set; }
 
-        public int IdItemProduto { get; set; }
-
-        public long QTDestocada { get; set; }
+        public int ItemId { get; set; }
 
         public string NomeProduto { get; set; }
 
-
+        public int QtdEstoqcada { get; set; }
     }
 }

@@ -52,6 +52,7 @@ CREATE TABLE `tb_login` (
 	`id_usuario` int NOT NULL AUTO_INCREMENT,
 	`nm_usuario` varchar(60) NOT NULL,
 	`ds_senha` varchar(50) NOT NULL,
+    `ds_email` varchar(150) NOT NUll,
 	`pr_permissaoAdm` bool NOT NULL,
 	`pr_permissaoCadastro` bool NOT NULL,
 	`pr_permissaoConsulta` bool NOT NULL,
@@ -61,9 +62,9 @@ CREATE TABLE `tb_login` (
 
 CREATE TABLE `tb_estoque` (
 	`id_estoque` int NOT NULL AUTO_INCREMENT,
-	`id_compra` int NOT NULL,
+    `id_itemProduto` int NOT NULL,
 	`nm_produto` varchar(250) NOT NULL,
-	`qtd_estocado` bigint(100) NOT NULL,
+	`qtd_estocado` bigint NOT NULL,
 	PRIMARY KEY (`id_estoque`)
 );
 
@@ -79,11 +80,12 @@ CREATE TABLE `tb_compra` (
 
 CREATE TABLE `tb_venda` (
 	`id_venda` int NOT NULL AUTO_INCREMENT,
-	`id_produto` int NOT NULL,
-	`dt_data_venda` varchar(15)NOT NULL,
-	`vl_total_venda` DECIMAL(15,2) NOT NULL,
-	`qtd_produto` int NOT NULL,
-	PRIMARY KEY (`id_venda`)
+	`id_usuario` int NOT NULL,
+	`dt_venda` varchar(15)NOT NULL,
+	`ds_formaPagamento` varchar (50) NOT NULL,
+     PRIMARY KEY (`id_venda`),
+     FOREIGN KEY (`id_usuario`)
+     REFERENCES  tb_login(`id_usuario`)
 );
 
 
@@ -155,6 +157,17 @@ CREATE TABLE `tb_gastosAdicionais` (
 	PRIMARY KEY (`id_gasto`)
 );
 
+CREATE TABLE `tb_item_compra`(
+`id_itemCompra` INT NOT NULL AUTO_INCREMENT,
+`id_item` INT NOT NULL,
+`id_venda` INT NOT NULL,
+PRIMARY KEY(`id_itemCompra`),
+FOREIGN KEY(`id_item`)
+REFERENCES tb_item (`id_item`),
+FOREIGN KEY(`id_venda`)
+REFERENCES tb_venda(`id_venda`)
+);
+
 
 ALTER TABLE `tb_funcionario` ADD CONSTRAINT `tb_funcionario_fk1` FOREIGN KEY (`id_depto`) REFERENCES `tb_depto`(`id_depto`);
 
@@ -168,7 +181,6 @@ ALTER TABLE `tb_compra` ADD CONSTRAINT `tb_compra_fk0` FOREIGN KEY (`id_item`) R
 
 ALTER TABLE `tb_compra` ADD CONSTRAINT `tb_compra_fk1` FOREIGN KEY (`id_fornecedor`) REFERENCES `tb_fornecedor`(`id_fornecedor`);
 
-ALTER TABLE `tb_venda` ADD CONSTRAINT `tb_venda_fk0` FOREIGN KEY (`id_produto`) REFERENCES `tb_produto`(`id_produto`);
 
 ALTER TABLE `tb_produto_venda` ADD CONSTRAINT `tb_produto_venda_fk0` FOREIGN KEY (`id_produto`) REFERENCES `tb_produto`(`id_produto`);
 
@@ -190,79 +202,31 @@ ALTER TABLE `tb_item` ADD CONSTRAINT `tb_item_fk0` FOREIGN KEY (`id_fornecedor`)
 
 
 
+-- ================= --
+-- ===== VIEWS ===== --
+-- ================= --
 
--- VIEW DE GANHOS
-
-
-create view vw_ganhos as
-select date(dt_venda)		dt_referencia,
-			   sum(vl_precovenda) 	vl_total
-		  from tb_pedido		pe
-		  join tb_pedido_item	pi
-			on pe.id_pedido 	= pi.id_pedido
-		  join tb_produto		p
-			on pi.id_roupa 		= p.id_roupa
-		 group
-			by date(dt_venda);
-
-
-
-
--- VIEW DE DESPESAS COM FOLHA DE PAGAMENTO
-
-
-create view vw_despesas as
-            select sum(vl_total) vl_total, dt_referencia
-            from
-            (
-select date(dt_compra)			dt_referencia,
-			   sum(vl_precocompra) 	vl_total
-		  from tb_compra		c
-		  join tb_compraitem	ci
-			on c.id_compra 		= ci.id_compra
-		  join tb_produto		p
-			on p.id_produto 		= ci.id_produto
-		 group
-			by date(dt_compra)
-         UNION
-         select date(dt_pagamento)	dt_referencia,
-			    sum(vl_gasto)		vl_total
-		   from tb_gasto
-		  group
-		  	 by date(dt_pagamento)
-             UNION
-         select date(dt_pagamento)	dt_referencia,
-			    sum(vl_salarioliquido)		vl_total
-		   from tb_folhadepagamento
-		  group
-		  	 by dt_pagamento)despesa
-             GROUP BY dt_referencia;
+CREATE VIEW  vw_estoque AS 
+      SELECT tb_estoque.id_estoque,
+             tb_item_compra.id_item,
+             tb_estoque.nm_produto,
+        sum( tb_item_compra.id_item) as qtd_estocado  
+        FROM tb_estoque
+        JOIN tb_item_compra
+          ON tb_estoque.id_itemProduto = tb_item_compra.id_itemCompra
+        GROUP 
+        BY  tb_estoque.id_estoque;
+       
+SELECT View vw_estoque;       
+		
+ SELECT * FROM tb_estoque;
+ SELECT * FROM tb_item_compra;
+ SELECT VIEW vw_estoque
+ 
 
 
--- VIEW CORDENADORA QUE PUXA AS DUAS VIEW E FAZ A CONTA DO SALDO
 
 
- create view vw_consultar_fluxodecaixa as
-   SELECT dt_referencia,
-		  ifnull(vl_total_ganhos, 0)		vl_total_ganhos,
-                  ifnull(vl_total_despesas, 0)		vl_total_despesas,
-                  ifnull(vl_total_ganhos - vl_total_despesas,0) vl_saldo
-      FROM 
-        (
-			SELECT g.dt_referencia,
-				   g.vl_total		vl_total_ganhos,
-                   d.vl_total		vl_total_despesas
-			  FROM vw_ganhos		g		
-		 LEFT JOIN vw_despesas		d
-				ON g.dt_referencia  = d.dt_referencia
-			 UNION
-			SELECT d.dt_referencia,
-				   g.vl_total		vl_total_ganhos,
-                   d.vl_total		vl_total_despesas
-			  FROM vw_ganhos		g		
-		 RIGHT JOIN vw_despesas		d
-				ON g.dt_referencia  = d.dt_referencia
-        ) tb_Fluxo;
 
 
 
@@ -360,8 +324,23 @@ INSERT INTO tb_estados(`id_estado`,`nm_estado`)
                 
 INSERT INTO tb_estados(`id_estado`,`nm_estado`)
 				VALUES('27','TO');
-              
+ 
+ 
+-- ========================= --
+-- ===== SELECT TABELAS===== --
+-- ========================= --
+ 
 SELECT * FROM tb_login;
 SELECT * FROM tb_depto;
 SELECT * FROM tb_estados;
 SELECT * FROM tb_fornecedor;
+SELECT * FROM tb_estoque;
+SELECT * FROM tb_item_compra;
+
+
+-- ======================= --
+-- ===== SELECT VIEWs===== --
+-- ======================= --
+
+SELECT * FROM vw_estoque;
+

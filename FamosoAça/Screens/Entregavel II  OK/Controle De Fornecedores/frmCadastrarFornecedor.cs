@@ -59,7 +59,7 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Fornecedores
                 business.Salvar(dto);
 
 
-                MessageBox.Show("O FILHO DA PUTA ESTÁ CADASTRADO", "FILHO DA PUTA", MessageBoxButtons.OKCancel);
+                MessageBox.Show("Forncedor cadstrado com suceso", "Famoso Açai", MessageBoxButtons.OK);
 
             }
             catch (MySqlException mex)
