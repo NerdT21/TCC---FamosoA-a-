@@ -175,11 +175,12 @@ ALTER TABLE `tb_funcionario` ADD CONSTRAINT `tb_funcionario_fk0` FOREIGN KEY (`i
 
 ALTER TABLE `tb_fornecedor` ADD CONSTRAINT `tb_fornecedor_fk0` FOREIGN KEY (`id_estado`) REFERENCES `tb_estados`(`id_estado`);
 
-ALTER TABLE `tb_estoque` ADD CONSTRAINT `tb_estoque_fk0` FOREIGN KEY (`id_compra`) REFERENCES `tb_compra`(`id_compra`);
+-- ALTER TABLE `tb_estoque` ADD CONSTRAINT `tb_estoque_fk0` FOREIGN KEY (`id_compra`) REFERENCES `tb_compra`(`id_compra`);
 
 ALTER TABLE `tb_compra` ADD CONSTRAINT `tb_compra_fk0` FOREIGN KEY (`id_item`) REFERENCES `tb_item`(`id_item`);
 
 ALTER TABLE `tb_compra` ADD CONSTRAINT `tb_compra_fk1` FOREIGN KEY (`id_fornecedor`) REFERENCES `tb_fornecedor`(`id_fornecedor`);
+
 
 ALTER TABLE `tb_produto_venda` ADD CONSTRAINT `tb_produto_venda_fk0` FOREIGN KEY (`id_produto`) REFERENCES `tb_produto`(`id_produto`);
 
@@ -204,7 +205,7 @@ ALTER TABLE `tb_item` ADD CONSTRAINT `tb_item_fk0` FOREIGN KEY (`id_fornecedor`)
 -- ================= --
 -- ===== VIEWS ===== --
 -- ================= --
-
+-- DROP VIEW vw_estoque; 
 CREATE VIEW  vw_estoque AS 
       SELECT tb_estoque.id_estoque,
              tb_item_compra.id_item,
@@ -216,11 +217,11 @@ CREATE VIEW  vw_estoque AS
         GROUP 
         BY  tb_estoque.id_estoque;
        
-SELECT View vw_estoque;       
-		
+    
+ DROP VIEW vw_estoque;   		
  SELECT * FROM tb_estoque;
  SELECT * FROM tb_item_compra;
- SELECT VIEW vw_estoque
+ SELECT VIEW vw_estoque;
  
 
 
@@ -342,4 +343,3 @@ SELECT * FROM tb_item_compra;
 -- ======================= --
 
 SELECT * FROM vw_estoque;
-
