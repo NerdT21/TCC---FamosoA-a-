@@ -147,16 +147,6 @@
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="produtoToolStripMenuItem1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABHNCSVQICAgIfAhkiAAAAAFzUkdCAK7O
-        HOkAAAAEZ0FNQQAAsY8L/GEFAAAACXBIWXMAAA3QAAAN0AEQbD0HAAAAGXRFWHRTb2Z0d2FyZQB3d3cu
-        aW5rc2NhcGUub3Jnm+48GgAAAMhJREFUWEftkk0KwjAQhXM4L6DewTvovqtW3ImKB1B6FMWzdOM6+iT4
-        l0wojCSRvgcfhZk8+BJqmMFkvRjZknBar2B4vVRFQEEtomBJOK3PYBG6UUpEOYSCPfip4KEeP/8ZieP9
-        TKgrgY7T8YNlqCTRNhNP6Jt2OQ12JdBxOn6wDJVSQkEtFNRCQS0U1EJBLRQM0Z0qu9s0tjvHZyCL4H5b
-        29l89fjGZiCLIIBMnxkFJSiYiiyCeKkY72f5glr+X7AEnA4zhBhzA9wbKSyFc+jBAAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="fornecedorToolStripMenuItem1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAFzUkdCAK7O
@@ -182,7 +172,7 @@
         RK5CYII=
 </value>
   </data>
-  <data name="produtoToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="produtoToolStripMenuItem1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABHNCSVQICAgIfAhkiAAAAAFzUkdCAK7O
         HOkAAAAEZ0FNQQAAsY8L/GEFAAAACXBIWXMAAA3QAAAN0AEQbD0HAAAAGXRFWHRTb2Z0d2FyZQB3d3cu
@@ -215,6 +205,16 @@
         aW5rc2NhcGUub3Jnm+48GgAAAFVJREFUOE9jSGuYyZVSMdE4rbhHJK2yRwPEh4nBMFwNSA6kBqQWqo4B
         LFHZ/z+9oj8NSJ+FawKKwTCMD6XPgtTC1I0aMGoACI8aQA0D4FmVrOw8kwsArPvssLIODIUAAAAASUVO
         RK5CYII=
+</value>
+  </data>
+  <data name="produtoToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABHNCSVQICAgIfAhkiAAAAAFzUkdCAK7O
+        HOkAAAAEZ0FNQQAAsY8L/GEFAAAACXBIWXMAAA3QAAAN0AEQbD0HAAAAGXRFWHRTb2Z0d2FyZQB3d3cu
+        aW5rc2NhcGUub3Jnm+48GgAAAMhJREFUWEftkk0KwjAQhXM4L6DewTvovqtW3ImKB1B6FMWzdOM6+iT4
+        l0wojCSRvgcfhZk8+BJqmMFkvRjZknBar2B4vVRFQEEtomBJOK3PYBG6UUpEOYSCPfip4KEeP/8ZieP9
+        TKgrgY7T8YNlqCTRNhNP6Jt2OQ12JdBxOn6wDJVSQkEtFNRCQS0U1EJBLRQM0Z0qu9s0tjvHZyCL4H5b
+        29l89fjGZiCLIIBMnxkFJSiYiiyCeKkY72f5glr+X7AEnA4zhBhzA9wbKSyFc+jBAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="verComprasToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
