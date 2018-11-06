@@ -395,6 +395,7 @@
     <None Include="Resources\icons8-search-26.png" />
     <None Include="Resources\icons8-dólar-americano-40.png" />
     <None Include="Resources\icons8-produto-16.png" />
+    <None Include="Resources\icons8-histórico-de-pagamento-32.png" />
     <Content Include="Script view so pra vento.txt" />
     <Content Include="Script.txt" />
   </ItemGroup>
