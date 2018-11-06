@@ -36,7 +36,7 @@ namespace FamosoAça.Classes.Compra.Item
             {
                 ItemDTO dto = new ItemDTO();
                 dto.Id = reader.GetInt32("id_item");
-                dto.Nome = reader.GetString("nm_nome");
+                dto.Nome = reader.GetString("nm_item");
                 dto.IdFornecedor = reader.GetInt32("id_fornecedor");
                 dto.Preco = reader.GetDecimal("vl_preco");
                 dto.Descricao = reader.GetString("ds_item");

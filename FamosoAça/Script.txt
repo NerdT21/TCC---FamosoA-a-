@@ -139,6 +139,7 @@ CREATE TABLE `tb_item` (
 	`id_fornecedor` int NOT NULL,
 	`nm_item` varchar(50) NOT NULL,
 	`ds_item` varchar(200) NOT NULL,
+    `vl_preco` decimal (15,2) NOT NULL,
 	PRIMARY KEY (`id_item`)
 );
 
@@ -237,11 +238,11 @@ CREATE VIEW  vw_estoque AS
 
 
 
-INSERT INTO tb_login(`id_usuario`, `nm_usuario`, `ds_senha`, `pr_permissaoAdm`, `pr_permissaoCadastro`, `pr_permissaoConsulta`, `pr_permissaoContabilidade`)
-		      VALUES('1', 'adm', 'adm', '1', '1', '1', '1');
+INSERT INTO tb_login(`id_usuario`, `nm_usuario`, `ds_senha`,`ds_email`, `pr_permissaoAdm`, `pr_permissaoCadastro`, `pr_permissaoConsulta`, `pr_permissaoContabilidade`)
+		      VALUES('1', 'adm', 'adm','adm@gmail.com', '1', '1', '1', '1');
               
- INSERT INTO tb_login(`id_usuario`, `nm_usuario`, `ds_senha`, `pr_permissaoAdm`, `pr_permissaoCadastro`, `pr_permissaoConsulta`, `pr_permissaoContabilidade`)
-		      VALUES('2', '', '', '1', '1', '1', '1');             
+ INSERT INTO tb_login(`id_usuario`, `nm_usuario`, `ds_senha`,`ds_email`, `pr_permissaoAdm`, `pr_permissaoCadastro`, `pr_permissaoConsulta`, `pr_permissaoContabilidade`)
+		      VALUES('2', '', '','adm@gmail.com',  '1', '1', '1', '1');             
               
 		
 INSERT INTO tb_estados(`id_estado`,`nm_estado`)
