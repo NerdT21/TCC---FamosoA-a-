@@ -310,6 +310,7 @@
             this.verComprasToolStripMenuItem.Name = "verComprasToolStripMenuItem";
             this.verComprasToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.verComprasToolStripMenuItem.Text = "Ver Compras";
+            this.verComprasToolStripMenuItem.Click += new System.EventHandler(this.verComprasToolStripMenuItem_Click);
             // 
             // estoqueToolStripMenuItem
             // 

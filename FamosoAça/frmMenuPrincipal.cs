@@ -214,6 +214,11 @@ namespace FamosoAça
             OpenScreen(frm);
         }
 
+        private void verComprasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void pnlBarra_MouseUp(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
