@@ -47,7 +47,13 @@ namespace FamosoAça.Screens.Entregavel_IV.Estoque
         void CarregarGrid()
         {
 
+            string produto = txtNome.Text;
 
+            EstoqueBusiness buss = new EstoqueBusiness();
+            List<EstoqueView> list = buss.Consultar(produto);
+
+            dgvEstoque.AutoGenerateColumns = false;
+            dgvEstoque.DataSource = list;
 
         }
 
@@ -79,7 +85,16 @@ namespace FamosoAça.Screens.Entregavel_IV.Estoque
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                CarregarGrid();
 
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Ocorreu um erro :"  + ex ,"Famoso açai",MessageBoxButtons.OK);
+            }
         }
     }
 }
