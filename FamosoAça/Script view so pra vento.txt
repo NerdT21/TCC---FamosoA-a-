@@ -342,5 +342,5 @@ SELECT * FROM tb_item_compra;
 -- ===== SELECT VIEWs===== --
 -- ======================= --
 
-SELECT * FROM vw_estoque;
- 
+SELECT * FROM vw_estoque;	
+                                          
