@@ -58,5 +58,10 @@ namespace FamosoAça.Screens.Entregavel_IV.Gastos_Adicionais
               MessageBox.Show("Ocorreu um erro: " + ex.Message);
             }
         }
+
+        private void frmGastosAdicionais_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

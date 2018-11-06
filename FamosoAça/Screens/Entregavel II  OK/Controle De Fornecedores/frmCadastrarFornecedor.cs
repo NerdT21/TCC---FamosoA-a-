@@ -28,13 +28,7 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Fornecedores
             cboEstado.ValueMember = nameof(EstadoDTO.IdEstado);
             cboEstado.DisplayMember = nameof(EstadoDTO.Estado);
             cboEstado.DataSource = lista;
-            
-            //EstadoBusiness buss = new EstadoBusiness();
-            //List<EstadoDTO> lista = buss.Listar();
-
-            //cboEstado.ValueMember = nameof(EstadoDTO.ID);
-            //cboEstado.DisplayMember = nameof(EstadoDTO.Nome);
-            //cboEstado.DataSource = lista;
+        
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
