@@ -393,6 +393,7 @@
     <None Include="Resources\Logo Famoso açaí %28nome branco%29.png" />
     <None Include="Resources\icons8-plus-32.png" />
     <None Include="Resources\icons8-search-26.png" />
+    <Content Include="Script view so pra vento.txt" />
     <Content Include="Script.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
