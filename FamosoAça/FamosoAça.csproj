@@ -79,8 +79,8 @@
     <Compile Include="Classes\Compra\CompraBusiness.cs" />
     <Compile Include="Classes\Compra\CompraDataBase.cs" />
     <Compile Include="Classes\Compra\CompraDTO.cs" />
-    <Compile Include="Classes\Connection\Connection.cs" />
-    <Compile Include="Classes\Connection\Database.cs" />
+    <Compile Include="Classes\Cargo\Connection\Connection.cs" />
+    <Compile Include="Classes\Cargo\Connection\Database.cs" />
     <Compile Include="Classes\Estoque\EstoqueBusiness.cs" />
     <Compile Include="Classes\Estoque\EstoqueDataBase.cs" />
     <Compile Include="Classes\Estoque\EstoqueDTO.cs" />

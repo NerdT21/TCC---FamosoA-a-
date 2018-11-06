@@ -61,7 +61,7 @@ namespace FamosoAça.Classes.Login
                 dto.Id = reader.GetInt32("id_usuario");
                 dto.Usuario = reader.GetString("nm_usuario");
                 dto.Senha = reader.GetString("ds_senha");
-                dto.Email = reader.GetString("de_email");
+                dto.Email = reader.GetString("ds_email");
                 dto.Adm = reader.GetBoolean("pr_permissaoAdm");
                 dto.Cadastro = reader.GetBoolean("pr_permissaoCadastro");
                 dto.Consulta = reader.GetBoolean("pr_permissaoConsulta");

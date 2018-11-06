@@ -34,6 +34,8 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Produto
 
             ProdutoBusiness buss = new ProdutoBusiness();
             List<ProdutoDTO> lista = buss.Consultar(nome);
+
+            dgvProduto.DataSource = lista;
         }
         private void btnProcurar_Click(object sender, EventArgs e)
         {
