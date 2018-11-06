@@ -35,21 +35,21 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnCadastrar = new System.Windows.Forms.Button();
-            this.mktData = new System.Windows.Forms.MaskedTextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.mktData = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudValor)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(228, 110);
+            this.txtNome.Location = new System.Drawing.Point(103, 142);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(165, 20);
             this.txtNome.TabIndex = 0;
             // 
             // txtDescricao
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(228, 182);
+            this.txtDescricao.Location = new System.Drawing.Point(396, 140);
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(165, 85);
@@ -57,7 +57,7 @@
             // 
             // nudValor
             // 
-            this.nudValor.Location = new System.Drawing.Point(228, 273);
+            this.nudValor.Location = new System.Drawing.Point(396, 231);
             this.nudValor.Name = "nudValor";
             this.nudValor.Size = new System.Drawing.Size(69, 20);
             this.nudValor.TabIndex = 2;
@@ -66,7 +66,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(159, 108);
+            this.label1.Location = new System.Drawing.Point(34, 140);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 25);
             this.label1.TabIndex = 3;
@@ -76,7 +76,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(128, 179);
+            this.label2.Location = new System.Drawing.Point(296, 137);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 25);
             this.label2.TabIndex = 4;
@@ -86,7 +86,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(154, 270);
+            this.label3.Location = new System.Drawing.Point(322, 228);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 25);
             this.label3.TabIndex = 5;
@@ -103,24 +103,24 @@
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(34, 199);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 25);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Data";
+            // 
             // mktData
             // 
-            this.mktData.Location = new System.Drawing.Point(228, 150);
+            this.mktData.Location = new System.Drawing.Point(103, 205);
             this.mktData.Mask = "00/00/0000";
             this.mktData.Name = "mktData";
             this.mktData.Size = new System.Drawing.Size(69, 20);
             this.mktData.TabIndex = 7;
             this.mktData.ValidatingType = typeof(System.DateTime);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(159, 144);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 25);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Data";
             // 
             // frmGastosAdicionais
             // 
@@ -137,6 +137,7 @@
             this.Controls.Add(this.txtNome);
             this.Name = "frmGastosAdicionais";
             this.Size = new System.Drawing.Size(596, 397);
+            this.Load += new System.EventHandler(this.frmGastosAdicionais_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudValor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -152,7 +153,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnCadastrar;
-        private System.Windows.Forms.MaskedTextBox mktData;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.MaskedTextBox mktData;
     }
 }
