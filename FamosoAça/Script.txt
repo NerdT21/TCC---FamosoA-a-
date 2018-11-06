@@ -31,12 +31,12 @@ CREATE TABLE `tb_depto` (
 CREATE TABLE `tb_fornecedor` (
 	`id_fornecedor` int NOT NULL AUTO_INCREMENT,
 	`id_estado` int NOT NULL,
-	`ds_cnpj` varchar(25) NOT NULL UNIQUE,
+	`ds_cnpj` varchar(50) NOT NULL UNIQUE,
 	`nm_fornecedor` varchar(150) NOT NULL,
 	`ds_cep` varchar(12) NOT NULL,
 	`ds_cidade` varchar(60) NOT NULL,
-	`ds_telefone` int(14) NOT NULL,
-	`ds_email` varchar(120) NOT NULL UNIQUE
+	`ds_telefone` varchar(24) NOT NULL,
+	`ds_email` varchar(120) NOT NULL UNIQUE,
 	PRIMARY KEY (`id_fornecedor`)
 );
 
@@ -364,3 +364,4 @@ INSERT INTO tb_estados(`id_estado`,`nm_estado`)
 SELECT * FROM tb_login;
 SELECT * FROM tb_depto;
 SELECT * FROM tb_estados;
+SELECT * FROM tb_fornecedor;

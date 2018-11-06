@@ -17,28 +17,27 @@ namespace FamosoAça.Classes.Fornecedor
                             ds_telefone,
                             ds_email,
                             ds_cidade,
-                            id_estados,                        
-                            ds_cep,
-                           
+                            id_estado,                        
+                            ds_cep
                             ) VALUES(                            
                             @nm_fornecedor,
                             @ds_cnpj,
                             @ds_telefone,
                             @ds_email,
                             @ds_cidade,
-                            @id_estados,
+                            @id_estado,
                             @ds_cep
-                            )";
+                           )";
 
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
-           // parms.Add(new MySqlParameter("id_fornecedor", dto.Id));
+            parms.Add(new MySqlParameter("id_fornecedor", dto.Id));
             parms.Add(new MySqlParameter("nm_fornecedor", dto.Nome));
             parms.Add(new MySqlParameter("ds_cnpj", dto.CNPJ));
             parms.Add(new MySqlParameter("ds_telefone", dto.Telefone));
             parms.Add(new MySqlParameter("ds_email", dto.Email));
             parms.Add(new MySqlParameter("ds_cidade", dto.Cidade));
-            parms.Add(new MySqlParameter("id_estados", dto.IDEstado));           
+            parms.Add(new MySqlParameter("id_estado", dto.IDEstado));           
             parms.Add(new MySqlParameter("ds_cep", dto.Cep));
             
 
@@ -60,7 +59,7 @@ namespace FamosoAça.Classes.Fornecedor
             while (reader.Read())
             {
                 FornecedorDTO dto = new FornecedorDTO();
-               // dto.Id = reader.GetInt32("id_fornecedor");
+                dto.Id = reader.GetInt32("id_fornecedor");
                 dto.Nome = reader.GetString("nm_fornecedor");
                 dto.CNPJ = reader.GetString("ds_cnpj");
                 dto.Telefone = reader.GetString("ds_telefone");
@@ -93,7 +92,7 @@ namespace FamosoAça.Classes.Fornecedor
             {
 
                 FornecedorDTO dto = new FornecedorDTO();
-               //dto.Id = reader.GetInt32("id_fornecedor");
+                dto.Id = reader.GetInt32("id_fornecedor");
                 dto.Nome = reader.GetString("nm_fornecedor");
                 dto.CNPJ = reader.GetString("ds_cnpj");
                 dto.Telefone = reader.GetString("ds_telefone");
@@ -120,8 +119,7 @@ namespace FamosoAça.Classes.Fornecedor
                             ds_cidade = @ds_cidade,
                             ds_estado = @ds_estado,                          
                             ds_cep = @ds_cep,
-                            img_logo = @img_logo
-                            WHERE
+                             WHERE
                             id_fornecedor = @id_fornecedor";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
