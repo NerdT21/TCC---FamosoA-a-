@@ -15,16 +15,17 @@ namespace FamosoAça.Classes.Estoque
             return id;
         }
 
-        public void Altera(EstoqueDTO dto)
+        public EstoqueDTO ListarCompraeVenda()
         {
             EstoqueDataBase db = new EstoqueDataBase();
-            db.Alterar(dto);
+            return db.ListarCompraVenda();
         }
+   
 
-        public void Remover(int id)
+        public void Remover(int qtd, int idProduto)
         {
             EstoqueDataBase db = new EstoqueDataBase();
-            db.Remover(id);
+            db.Remover(qtd, idProduto);
         }
 
        
@@ -35,12 +36,17 @@ namespace FamosoAça.Classes.Estoque
             return list;
         }
         
-        public List<EstoqueDTO> Consultar(string nome, int quantidade)
+        public List<EstoqueView> Consultar(string nome)
         {
             EstoqueDataBase db = new EstoqueDataBase();
-            return db.Consultar(nome ,quantidade);
+            return db.Consultar(nome);
         }
 
+        public void Adicionar (int qtd , int idProduto)
+        {
+            EstoqueDataBase db = new EstoqueDataBase();
+            db.Adicionar(qtd, idProduto);
+        }
        
  
     }

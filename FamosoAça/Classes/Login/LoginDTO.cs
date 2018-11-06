@@ -14,6 +14,8 @@ namespace FamosoAça.Classes.Login
 
         public string Senha { get; set; }
 
+        public  string  Email { get; set; }
+
         public bool Adm { get; set; }
 
         public bool Cadastro { get; set; }

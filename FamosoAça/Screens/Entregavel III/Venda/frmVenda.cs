@@ -45,18 +45,18 @@ namespace FamosoAça.Screens.Entregavel_III.ConsultarVenda
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ProdutoDTO cbo = cboNome.SelectedItem as ProdutoDTO;
+            //ProdutoDTO cbo = cboNome.SelectedItem as ProdutoDTO;
 
-            VendaDTO dto = new VendaDTO();
-            dto.IdProduto = cbo.Id;
-            dto.Quantidade = Convert.ToInt32(nudQtd.Value);
-            dto.DataVenda = mskData.Text;
-            dto.ValorVenda = Convert.ToDecimal(txtValorTotal.Text);
+            //VendaDTO dto = new VendaDTO();
+            //dto.IdProduto = cbo.Id;
+            //dto.Quantidade = Convert.ToInt32(nudQtd.Value);
+            //dto.DataVenda = mskData.Text;
+            //dto.ValorVenda = Convert.ToDecimal(txtValorTotal.Text);
 
-            VendaBusiness buss = new VendaBusiness();
-            buss.Salvar(dto);
+            //VendaBusiness buss = new VendaBusiness();
+            //buss.Salvar(dto);
 
-            MessageBox.Show("Venda efetuada!", "Catioro's", MessageBoxButtons.OK);
+            //MessageBox.Show("Venda efetuada!", "Catioro's", MessageBoxButtons.OK);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

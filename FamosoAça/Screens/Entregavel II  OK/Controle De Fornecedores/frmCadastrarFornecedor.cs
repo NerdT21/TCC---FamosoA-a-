@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FamosoAça.Classes.Fornecedor;
 using FamosoAça.Classes.Estado;
+using MySql.Data.MySqlClient;
 
 namespace FamosoAça.Screens.Entregavel_II.Controle_De_Fornecedores
 {
@@ -28,14 +29,20 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Fornecedores
             cboEstado.ValueMember = nameof(EstadoDTO.IdEstado);
             cboEstado.DisplayMember = nameof(EstadoDTO.Estado);
             cboEstado.DataSource = lista;
-        
+            
+            //EstadoBusiness buss = new EstadoBusiness();
+            //List<EstadoDTO> lista = buss.Listar();
+
+            //cboEstado.ValueMember = nameof(EstadoDTO.ID);
+            //cboEstado.DisplayMember = nameof(EstadoDTO.Nome);
+            //cboEstado.DataSource = lista;
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
 
-            //try
-            //{
+            try
+            {
                 EstadoDTO estado = cboEstado.SelectedItem as EstadoDTO;
 
                 FornecedorDTO dto = new FornecedorDTO();
@@ -44,49 +51,33 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Fornecedores
                 dto.Email = txtEmail.Text;
                 dto.CNPJ = txtCnpj.Text;
                 dto.Cidade = txtCidade.Text;
-                dto.Cep= mkbCep.Text;
+                dto.Cep = mkbCep.Text;
                 dto.Telefone = txtTelefone.Text;
                 dto.IDEstado = estado.IdEstado;
 
                 FornecedorBusiness business = new FornecedorBusiness();
                 business.Salvar(dto);
 
-              
 
-               
-           // }
-           
-           //catch (Exception ex)
-           // {
-           //    MessageBox.Show("Ocorreu um erro: "+ ex.Message, "Famoso Açai", MessageBoxButtons.OK, MessageBoxIcon.Error);
-           // }
-        
+                MessageBox.Show("Forncedor cadstrado com suceso", "Famoso Açai", MessageBoxButtons.OK);
 
+            }
+            catch (MySqlException mex)
+            {
+                if (mex.Number == 1062)
+                {
+                    MessageBox.Show("CNPJ já cadastrado.", "Famoso Açai", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-        //try
-        //{
-        //    EstadoDTO dt = cboEstado.SelectedItem as EstadoDTO;
-
-        //    FornecedorDTO dto = new FornecedorDTO();
-        //    dto.Nome = txtNome.Text;
-        //    dto.Email = txtEmail.Text;
-        //    dto.CNPJ = txtCnpj.Text;
-        //    dto.Cidade = txtCidade.Text;
-        //    dto.Cep = mkbCep.Text;
-        //    dto.Telefone = txtTelefone.Text;
-        //    dto.Estado = dt.ID;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro: " + ex.Message, "Famoso Açai", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
 
-        //    FornecedorBusiness buss = new FornecedorBusiness();
-        //    buss.Salvar(dto);
+            }
 
-        //    MessageBox.Show("Fornecedor Cadastrado!", "Famoso Açai", MessageBoxButtons.OK);
 
-        //}
-        //catch (Exception ex)
-        //{
-        //    MessageBox.Show("Ocorreu um erro: "+ ex.Message, "Famoso Açai", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //}
-    }
+        }
     }
 }

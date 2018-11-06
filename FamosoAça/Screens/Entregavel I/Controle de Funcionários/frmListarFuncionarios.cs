@@ -42,7 +42,16 @@ namespace FamosoAça.Screens.Entregavel_I.Controle_de_Funcionários
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            CarregarGrid();
+            try
+            {
+                CarregarGrid();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("");
+            }
+            
         }
     }
 }

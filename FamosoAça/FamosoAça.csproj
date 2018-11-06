@@ -61,6 +61,7 @@
     <Compile Include="Classes\Estado\EstadoBusiness.cs" />
     <Compile Include="Classes\Estado\EstadoDataBase.cs" />
     <Compile Include="Classes\Estado\EstadoDTO.cs" />
+    <Compile Include="Classes\Estoque\EstoqueView.cs" />
     <Compile Include="Classes\Gastos\GastosBussines.cs" />
     <Compile Include="Classes\Gastos\GastosDatabase.cs" />
     <Compile Include="Classes\Gastos\GastosDTO.cs" />
@@ -78,8 +79,8 @@
     <Compile Include="Classes\Compra\CompraBusiness.cs" />
     <Compile Include="Classes\Compra\CompraDataBase.cs" />
     <Compile Include="Classes\Compra\CompraDTO.cs" />
-    <Compile Include="Classes\Connection\Connection.cs" />
-    <Compile Include="Classes\Connection\Database.cs" />
+    <Compile Include="Classes\Cargo\Connection\Connection.cs" />
+    <Compile Include="Classes\Cargo\Connection\Database.cs" />
     <Compile Include="Classes\Estoque\EstoqueBusiness.cs" />
     <Compile Include="Classes\Estoque\EstoqueDataBase.cs" />
     <Compile Include="Classes\Estoque\EstoqueDTO.cs" />
@@ -392,6 +393,7 @@
     <None Include="Resources\Logo Famoso açaí %28nome branco%29.png" />
     <None Include="Resources\icons8-plus-32.png" />
     <None Include="Resources\icons8-search-26.png" />
+    <Content Include="Script view so pra vento.txt" />
     <Content Include="Script.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

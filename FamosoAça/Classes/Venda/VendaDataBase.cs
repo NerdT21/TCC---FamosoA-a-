@@ -12,21 +12,19 @@ namespace FamosoAça.Classes.Venda
         public int Salvar(VendaDTO venda)
         {
             string script = @"INSERT INTO tb_venda(
-                            id_produto,
-	                        dt_data_venda,
-	                        vl_total_venda,
-                            qtd_produto) 
+                            id_usuario,
+	                        dt_venda,
+	                        ds_formaPagamento) 
                             VALUES(
-                            @id_produto,
-                            @dt_data_venda,
-	                        @vl_total_venda,
-                            @qtd_produto)";
+                            @id_usuario,
+                            @dt_venda,
+	                        @ds_formaPagamento)";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("id_produto", venda.IdProduto));
-            parms.Add(new MySqlParameter("dt_data_venda", venda.DataVenda));
-            parms.Add(new MySqlParameter("vl_total_venda", venda.ValorVenda));
-            parms.Add(new MySqlParameter("qtd_produto", venda.Quantidade));
+            parms.Add(new MySqlParameter("id_usuario", venda.Id));
+            parms.Add(new MySqlParameter("dt_venda", venda.DataVenda));
+            parms.Add(new MySqlParameter("ds_formaPagamento", venda.FormaDePagamento));
+           
 
             Database db = new Database();
             int pk = db.ExecuteInsertScriptWithPk(script, parms);
@@ -35,16 +33,15 @@ namespace FamosoAça.Classes.Venda
        public void Alterar(VendaDTO venda)
         {
             string script = @"UPDATE tb_venda SET 
-                          id_produto = @id_produto,
-                          dt_data_venda = @dt_data_venda,
-                          vl_total_venda = @vl_total_venda,
-                          qtd_produto = @qtd_produto WHERE
-                          id_venda = @id_venda";
+                          id_usuario = @id_usuario,
+                          dt_venda = @dt_venda,
+                          ds_formaPagamento = @ds_formaPagamento,
+                          WHERE id_venda = @id_venda";
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("id_venda", venda.Id));
-            parms.Add(new MySqlParameter("id_produto", venda.IdProduto));
-            parms.Add(new MySqlParameter("dt_data_venda", venda.DataVenda));
-            parms.Add(new MySqlParameter("vl_total_venda", venda.ValorVenda));
+            parms.Add(new MySqlParameter("id_usuario", venda.IdUsuario));
+            parms.Add(new MySqlParameter("dt_venda", venda.DataVenda));
+            parms.Add(new MySqlParameter("ds_formaPagamento", venda.FormaDePagamento));
             Database db = new Database();
             db.ExecuteInsertScript(script, parms);
         }
@@ -72,22 +69,22 @@ namespace FamosoAça.Classes.Venda
             {
                 VendaDTO dto = new VendaDTO();
                 dto.Id = reader.GetInt32("id_venda");
-                dto.IdProduto = reader.GetInt32("id_produto");
-                dto.DataVenda = reader.GetString("dt_data_venda");
-                dto.ValorVenda = reader.GetDecimal("vl_total_venda");
-                dto.Quantidade = reader.GetInt32("qtd_produto");
+                dto.IdUsuario = reader.GetInt32("id_usuario");
+                dto.DataVenda = reader.GetString("dt_venda");
+                dto.FormaDePagamento = reader.GetString("ds_formaPagamento");
+                
 
                 venda.Add(dto);
             }
             reader.Close();
             return venda;
         }
-        public List<VendaDTO> Consultar(string produto)
+        public List<VendaDTO> Consultar(string data)
         {
-            string script = @"SELECT * FROM tb_venda WHERE id_produto LIKE @id_produto";
+            string script = @"SELECT * FROM tb_venda WHERE dt_venda LIKE @dt_venda";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("id_produto", produto + "%"));
+            parms.Add(new MySqlParameter("dt_venda", data + "%"));
 
             Database db = new Database();
             MySqlDataReader reader = db.ExecuteSelectScript(script, parms);
@@ -97,10 +94,9 @@ namespace FamosoAça.Classes.Venda
             {
                 VendaDTO dto = new VendaDTO();
                 dto.Id = reader.GetInt32("id_venda");
-                dto.IdProduto = reader.GetInt32("id_produto");
-                dto.DataVenda = reader.GetString("dt_data_venda");
-                dto.ValorVenda = reader.GetDecimal("vl_total_venda");
-                dto.Quantidade = reader.GetInt32("qtd_produto");
+                dto.IdUsuario = reader.GetInt32("id_usuario");
+                dto.DataVenda = reader.GetString("dt_venda");
+                dto.FormaDePagamento = reader.GetString("ds_formaPagamento");
 
                 venda.Add(dto);
             }

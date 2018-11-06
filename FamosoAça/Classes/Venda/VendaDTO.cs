@@ -10,12 +10,11 @@ namespace FamosoAça.Classes.Venda
     {
         public int Id { get; set; }
 
-        public int IdProduto { get; set; }
+        public int IdUsuario { get; set; }
 
         public string DataVenda { get; set; }
 
-        public decimal ValorVenda { get; set; }
+        public string FormaDePagamento { get; set; }
 
-        public int Quantidade { get; set; }
     }
 }
