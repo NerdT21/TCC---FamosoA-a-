@@ -52,6 +52,7 @@
             this.mkbCep.Name = "mkbCep";
             this.mkbCep.Size = new System.Drawing.Size(61, 20);
             this.mkbCep.TabIndex = 132;
+            this.mkbCep.KeyUp += new System.Windows.Forms.KeyEventHandler(this.mkbCep_KeyUp);
             // 
             // cboEstado
             // 

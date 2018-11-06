@@ -35,7 +35,6 @@
             this.cboDepto = new System.Windows.Forms.ComboBox();
             this.txtComplemento = new System.Windows.Forms.TextBox();
             this.txtRua = new System.Windows.Forms.TextBox();
-            this.pbxImagem = new System.Windows.Forms.PictureBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -59,6 +58,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cboEstado = new System.Windows.Forms.ComboBox();
+            this.pbxImagem = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagem)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,6 +88,7 @@
             this.txtCep.Name = "txtCep";
             this.txtCep.Size = new System.Drawing.Size(59, 20);
             this.txtCep.TabIndex = 110;
+            this.txtCep.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCep_KeyUp);
             // 
             // btnCadastrar
             // 
@@ -125,17 +126,6 @@
             this.txtRua.Name = "txtRua";
             this.txtRua.Size = new System.Drawing.Size(170, 20);
             this.txtRua.TabIndex = 90;
-            // 
-            // pbxImagem
-            // 
-            this.pbxImagem.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pbxImagem.Location = new System.Drawing.Point(391, 59);
-            this.pbxImagem.Name = "pbxImagem";
-            this.pbxImagem.Size = new System.Drawing.Size(112, 113);
-            this.pbxImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxImagem.TabIndex = 108;
-            this.pbxImagem.TabStop = false;
-            this.pbxImagem.Click += new System.EventHandler(this.pbxImagem_Click);
             // 
             // label13
             // 
@@ -371,6 +361,17 @@
             this.cboEstado.Size = new System.Drawing.Size(35, 21);
             this.cboEstado.TabIndex = 113;
             this.cboEstado.SelectedIndexChanged += new System.EventHandler(this.cboEstado_SelectedIndexChanged);
+            // 
+            // pbxImagem
+            // 
+            this.pbxImagem.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pbxImagem.Location = new System.Drawing.Point(391, 59);
+            this.pbxImagem.Name = "pbxImagem";
+            this.pbxImagem.Size = new System.Drawing.Size(112, 113);
+            this.pbxImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxImagem.TabIndex = 108;
+            this.pbxImagem.TabStop = false;
+            this.pbxImagem.Click += new System.EventHandler(this.pbxImagem_Click);
             // 
             // frmCadastrarFuncionario
             // 

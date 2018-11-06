@@ -105,5 +105,28 @@ namespace FamosoAça.Screens.Entregavel_I.Controle_de_Funcionários
         {
 
         }
+
+        private void txtCep_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            { 
+                try
+                {
+                    var ws = new WSCorreios.AtendeClienteClient();
+                    //var ws = new WSCorreios.AtendeClienteClient();
+                    var resposta = ws.consultaCEP(txtCep.Text);
+
+                    txtRua.Text = resposta.end;
+                    txtCidade.Text = resposta.cidade;
+                    cboEstado.Text = resposta.uf;
+                    txtBairro.Text = resposta.bairro;
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("O CEP não foi encontrado");
+                }
+            }
+        }
     }
 }

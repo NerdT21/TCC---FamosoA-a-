@@ -79,5 +79,29 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Fornecedores
 
 
         }
+
+        private void mkbCep_KeyUp(object sender, KeyEventArgs e)
+        {
+
+            if (e.KeyData == Keys.Enter)
+            {
+                try
+                {
+                    var ws = new WSCorreios.AtendeClienteClient();
+                    //var ws = new WSCorreios.AtendeClienteClient();
+                    var resposta = ws.consultaCEP(mkbCep.Text);
+
+                    
+                    txtCidade.Text = resposta.cidade;
+                    cboEstado.Text = resposta.uf;
+                    
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("O CEP não foi encontrado");
+                }
+            }
+        }
     }
 }
