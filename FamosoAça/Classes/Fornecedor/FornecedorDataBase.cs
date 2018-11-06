@@ -19,7 +19,7 @@ namespace FamosoAça.Classes.Fornecedor
                             ds_cidade,
                             id_estados,                        
                             ds_cep,
-                            img_logo
+                           
                             ) VALUES(                            
                             @nm_fornecedor,
                             @ds_cnpj,
@@ -27,13 +27,12 @@ namespace FamosoAça.Classes.Fornecedor
                             @ds_email,
                             @ds_cidade,
                             @id_estados,
-                            @img_logo
                             @ds_cep
-                           )";
+                            )";
 
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("id_fornecedor", dto.Id));
+           // parms.Add(new MySqlParameter("id_fornecedor", dto.Id));
             parms.Add(new MySqlParameter("nm_fornecedor", dto.Nome));
             parms.Add(new MySqlParameter("ds_cnpj", dto.CNPJ));
             parms.Add(new MySqlParameter("ds_telefone", dto.Telefone));
@@ -41,7 +40,7 @@ namespace FamosoAça.Classes.Fornecedor
             parms.Add(new MySqlParameter("ds_cidade", dto.Cidade));
             parms.Add(new MySqlParameter("id_estados", dto.IDEstado));           
             parms.Add(new MySqlParameter("ds_cep", dto.Cep));
-            parms.Add(new MySqlParameter("img_logo", dto.Logo));
+            
 
 
             Database db = new Database();
@@ -61,7 +60,7 @@ namespace FamosoAça.Classes.Fornecedor
             while (reader.Read())
             {
                 FornecedorDTO dto = new FornecedorDTO();
-                dto.Id = reader.GetInt32("id_fornecedor");
+               // dto.Id = reader.GetInt32("id_fornecedor");
                 dto.Nome = reader.GetString("nm_fornecedor");
                 dto.CNPJ = reader.GetString("ds_cnpj");
                 dto.Telefone = reader.GetString("ds_telefone");
@@ -94,7 +93,7 @@ namespace FamosoAça.Classes.Fornecedor
             {
 
                 FornecedorDTO dto = new FornecedorDTO();
-                dto.Id = reader.GetInt32("id_fornecedor");
+               //dto.Id = reader.GetInt32("id_fornecedor");
                 dto.Nome = reader.GetString("nm_fornecedor");
                 dto.CNPJ = reader.GetString("ds_cnpj");
                 dto.Telefone = reader.GetString("ds_telefone");
