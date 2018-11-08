@@ -240,6 +240,12 @@ namespace FamosoAça
             OpenScreen(frm);
         }
 
+        private void gastosAdicionaisToolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+            ConsultarGastosAdicionais frm = new ConsultarGastosAdicionais();
+            OpenScreen(frm);
+        }
+
         private void pnlBarra_MouseUp(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)

@@ -55,18 +55,18 @@
             // 
             this.dgvProduto.AllowUserToAddRows = false;
             this.dgvProduto.AllowUserToDeleteRows = false;
-            this.dgvProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvProduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.FormaPagamento,
             this.Data,
             this.Quantidade,
             this.Total});
-            this.dgvProduto.Location = new System.Drawing.Point(47, 72);
+            this.dgvProduto.Location = new System.Drawing.Point(17, 72);
             this.dgvProduto.Name = "dgvProduto";
             this.dgvProduto.ReadOnly = true;
             this.dgvProduto.RowHeadersVisible = false;
-            this.dgvProduto.Size = new System.Drawing.Size(463, 303);
+            this.dgvProduto.Size = new System.Drawing.Size(561, 303);
             this.dgvProduto.TabIndex = 25;
             // 
             // mkbData
@@ -99,6 +99,7 @@
             // 
             // FormaPagamento
             // 
+            this.FormaPagamento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.FormaPagamento.HeaderText = "Forma de Pagamneto";
             this.FormaPagamento.Name = "FormaPagamento";
             this.FormaPagamento.ReadOnly = true;
@@ -142,12 +143,12 @@
 
         private System.Windows.Forms.Button btnProcurar;
         private System.Windows.Forms.DataGridView dgvProduto;
+        private System.Windows.Forms.MaskedTextBox mkbData;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn FormaPagamento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Data;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
-        private System.Windows.Forms.MaskedTextBox mkbData;
-        private System.Windows.Forms.Label label2;
     }
 }

@@ -129,16 +129,16 @@
     <Compile Include="Screens\Entregavel III\Controle De ItemProduto\frmConsultarItemProduto.Designer.cs">
       <DependentUpon>frmConsultarItemProduto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Entregavel III\Item\frmConsultarItem.cs">
+    <Compile Include="Screens\Entregavel III\Item OK\frmConsultarItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Screens\Entregavel III\Item\frmConsultarItem.Designer.cs">
+    <Compile Include="Screens\Entregavel III\Item OK\frmConsultarItem.Designer.cs">
       <DependentUpon>frmConsultarItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Entregavel III\Item\frmRegistrarItem.cs">
+    <Compile Include="Screens\Entregavel III\Item OK\frmRegistrarItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Screens\Entregavel III\Item\frmRegistrarItem.Designer.cs">
+    <Compile Include="Screens\Entregavel III\Item OK\frmRegistrarItem.Designer.cs">
       <DependentUpon>frmRegistrarItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Entregavel III\Venda\FrmConsultarVenda.cs">
@@ -195,16 +195,16 @@
     <Compile Include="Screens\Entregavel IV\Estoque\Estoque.Designer.cs">
       <DependentUpon>Estoque.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Entregavel IV\Gastos Adicionais\frmGastosAdicionais.cs">
+    <Compile Include="Screens\Entregavel IV\Gastos Adicionais OK\frmGastosAdicionais.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Screens\Entregavel IV\Gastos Adicionais\frmGastosAdicionais.Designer.cs">
+    <Compile Include="Screens\Entregavel IV\Gastos Adicionais OK\frmGastosAdicionais.Designer.cs">
       <DependentUpon>frmGastosAdicionais.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Entregavel IV\Gastos Adicionais\ConsultarGastosAdicionais.cs">
+    <Compile Include="Screens\Entregavel IV\Gastos Adicionais OK\ConsultarGastosAdicionais.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Screens\Entregavel IV\Gastos Adicionais\ConsultarGastosAdicionais.Designer.cs">
+    <Compile Include="Screens\Entregavel IV\Gastos Adicionais OK\ConsultarGastosAdicionais.Designer.cs">
       <DependentUpon>ConsultarGastosAdicionais.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Entregavel I\Controle de Funcionários\frmCadastrarFuncionario.cs">
@@ -286,10 +286,10 @@
     <EmbeddedResource Include="Screens\Entregavel III\Controle De ItemProduto\frmConsultarItemProduto.resx">
       <DependentUpon>frmConsultarItemProduto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Entregavel III\Item\frmConsultarItem.resx">
+    <EmbeddedResource Include="Screens\Entregavel III\Item OK\frmConsultarItem.resx">
       <DependentUpon>frmConsultarItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Entregavel III\Item\frmRegistrarItem.resx">
+    <EmbeddedResource Include="Screens\Entregavel III\Item OK\frmRegistrarItem.resx">
       <DependentUpon>frmRegistrarItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Entregavel III\Venda\FrmConsultarVenda.resx">
@@ -319,10 +319,10 @@
     <EmbeddedResource Include="Screens\Entregavel IV\Estoque\Estoque.resx">
       <DependentUpon>Estoque.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Entregavel IV\Gastos Adicionais\frmGastosAdicionais.resx">
+    <EmbeddedResource Include="Screens\Entregavel IV\Gastos Adicionais OK\frmGastosAdicionais.resx">
       <DependentUpon>frmGastosAdicionais.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Entregavel IV\Gastos Adicionais\ConsultarGastosAdicionais.resx">
+    <EmbeddedResource Include="Screens\Entregavel IV\Gastos Adicionais OK\ConsultarGastosAdicionais.resx">
       <DependentUpon>ConsultarGastosAdicionais.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Entregavel I\Controle de Funcionários\frmCadastrarFuncionario.resx">

@@ -122,7 +122,7 @@ namespace FamosoAça.Screens.Entregavel_I.Controle_de_Funcionários
                     txtBairro.Text = resposta.bairro;
 
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     MessageBox.Show("O CEP não foi encontrado");
                 }

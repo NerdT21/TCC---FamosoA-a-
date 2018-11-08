@@ -11,31 +11,28 @@ namespace FamosoAça.Classes.Gatos_Adicionais
     {
        public int Salvar(GastosADTO dto)
         {
-            string script = @"INSERT INTO tb_gastos(nm_gasto, 
+            string script = @"INSERT INTO tb_gastosAdicionais(nm_gasto, 
                                                     vl_gasto,
                                                     ds_gasto, 
-                                                    dt_gasto/*,*/
-                                                 /*   tp_gasto*/)
-                                             VALUES(@nm_gasto, 
+                                                    dt_gasto)
+                                             VALUES( @nm_gasto, 
                                                     @vl_gasto,
                                                     @ds_gasto, 
-                                                    @dt_gasto/*,*/
-                                                   /* @tp_gasto */)";
+                                                    @dt_gasto)";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("nm_gasto",dto));
-            parms.Add(new MySqlParameter("vl_gasto", dto));
-            parms.Add(new MySqlParameter("ds_gasto", dto));
-            parms.Add(new MySqlParameter("dt_gasto", dto));
-            //parms.Add(new MySqlParameter("tp_gasto", dto));
-
+            parms.Add(new MySqlParameter("nm_gasto",dto.Nome));
+            parms.Add(new MySqlParameter("vl_gasto", dto.Valor));
+            parms.Add(new MySqlParameter("ds_gasto", dto.Decricao));
+            parms.Add(new MySqlParameter("dt_gasto", dto.Data));
+            
             Database db = new Database();
             return db.ExecuteInsertScriptWithPk(script,parms);
         }
 
         public List<GastosADTO> Listar()
         {
-            string script = @"SELECT * FROM tb_gastos";
+            string script = @"SELECT * FROM tb_gastosAdicionais";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             Database db = new Database();
@@ -46,12 +43,14 @@ namespace FamosoAça.Classes.Gatos_Adicionais
             while (reader.Read())
             {
                 GastosADTO dto = new GastosADTO();
-                dto.Id = reader.GetInt32("id_gastos");
+              dto.Id = reader.GetInt32("id_gasto");
                 dto.Nome = reader.GetString("nm_gasto");
                 dto.Valor = reader.GetDecimal("vl_gasto");
                 dto.Decricao = reader.GetString("ds_gasto");
                 dto.Data = reader.GetString("dt_gasto");
-                //dto.Tipo = reader.GetBoolean("tp_gasto");
+                
+                
+            
 
                 lista.Add(dto);
             }
@@ -60,13 +59,13 @@ namespace FamosoAça.Classes.Gatos_Adicionais
 
         }
 
-        public List<GastosADTO> Consultar(string data/* , bool tipo*/)
+        public List<GastosADTO> Consultar(string data)
         {
-            string script = @"SELECT * FROM tb_gastos WHERE dt_gasto LIKE @ dt_gasto /*AND tp_gasto LIKE tp_gasto*/";
+            string script = @"SELECT * FROM tb_gastosAdicionais WHERE dt_gasto LIKE @dt_gasto";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("dt_gasto", data + "%"));
-            //parms.Add(new MySqlParameter("tp_gasto", tipo + "%"));
+          
 
 
             Database db = new Database();
@@ -77,12 +76,12 @@ namespace FamosoAça.Classes.Gatos_Adicionais
             while (reader.Read())
             {
                 GastosADTO dto = new GastosADTO();
-                dto.Id = reader.GetInt32("id_gastos");
+                dto.Id = reader.GetInt32("id_gasto");
                 dto.Nome = reader.GetString("nm_gasto");
                 dto.Valor = reader.GetDecimal("vl_gasto");
                 dto.Decricao = reader.GetString("ds_gasto");
                 dto.Data = reader.GetString("dt_gasto");
-                //dto.Tipo = reader.GetBoolean("tp_gasto");
+               
 
                 lista.Add(dto);
             }
@@ -92,7 +91,7 @@ namespace FamosoAça.Classes.Gatos_Adicionais
 
         public void Remover(int id)
         {
-            string script = @"DELETE FROM tb_gasto WHERE id_gasto = @id_gasto";
+            string script = @"DELETE FROM tb_gastosAdicionais WHERE id_gasto = @id_gasto";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("id_gasto", id));

@@ -150,13 +150,15 @@ CREATE TABLE `tb_estados` (
 );
 
 CREATE TABLE `tb_gastosAdicionais` (
-	`id_gasto` int NOT NULL,
+	`id_gasto` int NOT NULL AUTO_INCREMENT,
 	`nm_gasto` varchar(25) NOT NULL,
-	`ds_gasto` varchar(500),
+	`ds_gasto` varchar(500) NOT NULL,
 	`dt_gasto` varchar(15) NOT NULL, 
 	`vl_gasto` DECIMAL(10,2) NOT NULL,
 	PRIMARY KEY (`id_gasto`)
 );
+
+-- drop table tb_gastosAdicionais;
 
 CREATE TABLE `tb_item_compra`(
 `id_itemCompra` INT NOT NULL AUTO_INCREMENT,

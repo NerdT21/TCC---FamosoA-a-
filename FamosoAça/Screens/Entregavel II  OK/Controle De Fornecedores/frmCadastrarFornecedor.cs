@@ -97,7 +97,7 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Fornecedores
                     
 
                 }
-                catch (Exception ex)
+                catch (Exception )
                 {
                     MessageBox.Show("O CEP não foi encontrado");
                 }

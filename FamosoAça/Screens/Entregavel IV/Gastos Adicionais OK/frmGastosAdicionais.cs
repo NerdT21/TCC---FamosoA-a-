@@ -16,7 +16,7 @@ namespace FamosoAça.Screens.Entregavel_IV.Gastos_Adicionais
         public frmGastosAdicionais()
         {
             InitializeComponent();
-            Data();
+            DataHoje();
         }
 
 
@@ -25,21 +25,35 @@ namespace FamosoAça.Screens.Entregavel_IV.Gastos_Adicionais
 
         }
 
-        void Data()
+        void DataHoje()
         {
-            DateTime hoje = DateTime.Now;
-            int dia = hoje.Day;
-            int mes = hoje.Month;
-            int ano = hoje.Year;
 
-            string data = dia + "/" + mes + "/" + ano;
-            mktData.Text = data;
+            DateTime hj = DateTime.Now;
+            int dia = hj.Day;
+            int mes = hj.Month;
+            int ano = hj.Year;
+
+            if (dia < 10)
+            {
+                string data = "0" + dia + "/" + mes + "/" + ano;
+                mktData.Text = data;
+
+            }
+            else
+            {
+
+                string data = dia + "/" + mes + "/" + ano;
+                mktData.Text = data;
+
+            }
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
+            //try
+            //{
                 GastosADTO dto = new GastosADTO();
                 dto.Nome = txtNome.Text;
                 dto.Decricao = txtNome.Text;
@@ -52,11 +66,11 @@ namespace FamosoAça.Screens.Entregavel_IV.Gastos_Adicionais
                 MessageBox.Show("Salvo com sucesso !" , "Famoso Açai", MessageBoxButtons.OK);
 
 
-            }
-            catch (Exception ex)
-            {
-              MessageBox.Show("Ocorreu um erro: " + ex.Message);
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //  MessageBox.Show("Ocorreu um erro: " + ex.Message);
+            //}
         }
 
         private void frmGastosAdicionais_Load(object sender, EventArgs e)

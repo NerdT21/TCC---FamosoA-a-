@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FamosoAça.Classes.Gatos_Adicionais
 {
-     public class GastosADTO
+    public class GastosADTO
     {
         public int Id { get; set; }
 
@@ -16,9 +16,6 @@ namespace FamosoAça.Classes.Gatos_Adicionais
 
         public string Decricao { get; set; }
 
-        public string Data { get; set; }
-
-        public bool Tipo { get; set; }
-
+        public string Data{ get; set; }
     }
 }
