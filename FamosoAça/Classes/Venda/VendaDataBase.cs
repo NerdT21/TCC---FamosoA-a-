@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using FamosoAça.Classes.Produto.Produto_Venda;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,58 +31,33 @@ namespace FamosoAça.Classes.Venda
             int pk = db.ExecuteInsertScriptWithPk(script, parms);
             return pk;
         }
-       public void Alterar(VendaDTO venda)
-        {
-            string script = @"UPDATE tb_venda SET 
-                          id_usuario = @id_usuario,
-                          dt_venda = @dt_venda,
-                          ds_formaPagamento = @ds_formaPagamento,
-                          WHERE id_venda = @id_venda";
-            List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("id_venda", venda.Id));
-            parms.Add(new MySqlParameter("id_usuario", venda.IdUsuario));
-            parms.Add(new MySqlParameter("dt_venda", venda.DataVenda));
-            parms.Add(new MySqlParameter("ds_formaPagamento", venda.FormaDePagamento));
-            Database db = new Database();
-            db.ExecuteInsertScript(script, parms);
-        }
-        public void Remover(int idvenda)
-        {
-            string script = @"DELETE FROM tb_venda WHERE id_venda = @id_venda";
-
-            List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("id_venda", idvenda));
-
-            Database db = new Database();
-            db.ExecuteInsertScript(script, parms);
-        }
-        public List<VendaDTO> Listar()
+       
+        public List<ProdutoVendaView> Listar()
         {
             string script = @"SELECT * FROM tb_venda";
 
-            List<MySqlParameter> parms = new List<MySqlParameter>();
-
             Database db = new Database();
-            MySqlDataReader reader = db.ExecuteSelectScript(script, parms);
+            MySqlDataReader reader = db.ExecuteSelectScript(script, null);
 
-            List<VendaDTO> venda = new List<VendaDTO>();
+            List<ProdutoVendaView> venda = new List<ProdutoVendaView>();
             while (reader.Read())
             {
-                VendaDTO dto = new VendaDTO();
-                dto.Id = reader.GetInt32("id_venda");
-                dto.IdUsuario = reader.GetInt32("id_usuario");
-                dto.DataVenda = reader.GetString("dt_venda");
-                dto.FormaDePagamento = reader.GetString("ds_formaPagamento");
-                
+                ProdutoVendaView dto = new ProdutoVendaView();
+                dto.ID = reader.GetInt32("id_venda");
+                dto.FormaPagamento = reader.GetString("ds_formaPagto");
+                dto.Data = reader.GetString("dt_venda");
+                dto.QTDItme = reader.GetInt32("qtd_item");
+                dto.Total = reader.GetDecimal("vl_total");
+
 
                 venda.Add(dto);
             }
             reader.Close();
             return venda;
         }
-        public List<VendaDTO> Consultar(string data)
+        public List<ProdutoVendaView> Consultar(string data)
         {
-            string script = @"SELECT * FROM tb_venda WHERE dt_venda LIKE @dt_venda";
+            string script = @"SELECT * FROM vw_consultar_venda WHERE dt_venda LIKE @dt_venda";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("dt_venda", data + "%"));
@@ -89,14 +65,15 @@ namespace FamosoAça.Classes.Venda
             Database db = new Database();
             MySqlDataReader reader = db.ExecuteSelectScript(script, parms);
 
-            List<VendaDTO> venda = new List<VendaDTO>();
+            List<ProdutoVendaView> venda = new List<ProdutoVendaView>();
             while (reader.Read()) 
             {
-                VendaDTO dto = new VendaDTO();
-                dto.Id = reader.GetInt32("id_venda");
-                dto.IdUsuario = reader.GetInt32("id_usuario");
-                dto.DataVenda = reader.GetString("dt_venda");
-                dto.FormaDePagamento = reader.GetString("ds_formaPagamento");
+                ProdutoVendaView dto = new ProdutoVendaView();
+                dto.ID = reader.GetInt32("id_venda");
+                dto.FormaPagamento = reader.GetString("ds_formaPagto");
+                dto.Data = reader.GetString("dt_venda");
+                dto.QTDItme = reader.GetInt32("qtd_item");
+                dto.Total = reader.GetDecimal("vl_total");
 
                 venda.Add(dto);
             }

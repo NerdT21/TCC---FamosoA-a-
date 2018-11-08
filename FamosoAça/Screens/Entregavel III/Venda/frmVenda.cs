@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FamosoAça.Classes.Produto;
 using FamosoAça.Classes.Venda;
+using FamosoAça.Classes.Login;
 
 namespace FamosoAça.Screens.Entregavel_III.ConsultarVenda
 {
@@ -18,7 +19,12 @@ namespace FamosoAça.Screens.Entregavel_III.ConsultarVenda
         {
             InitializeComponent();
             CarregarCombos();
+            DataHoje();
         }
+
+        BindingList<ProdutoDTO> carrinhoAdd = new BindingList<ProdutoDTO>();
+        BindingList<decimal> val = new BindingList<decimal>();
+
         void CarregarCombos()
         {
             ProdutoBusiness buss = new ProdutoBusiness();
@@ -28,46 +34,88 @@ namespace FamosoAça.Screens.Entregavel_III.ConsultarVenda
             cboNome.DisplayMember = nameof(ProdutoDTO.Nome);
             cboNome.DataSource = dto;
         }
-        void MandarProCarrinho(string item, string qtd, string preco)
-        {
-            List<string> addCarrinho = new List<string>();
-            addCarrinho.Add(item + ", " + qtd + ", " + preco);
 
-            foreach (string i in addCarrinho)
-            {
-                lbxCarrinho.Text = i;
-            }
+        void CarregarGrid()
+        {
+
+            dgvVendas.AutoGenerateColumns = false;
+            dgvVendas.DataSource = carrinhoAdd;
+
         }
+
+        void DataHoje()
+        {
+
+            DateTime hj = DateTime.Now;
+            int dia = hj.Day;
+            int mes = hj.Month;
+            int ano = hj.Year;
+
+            if(dia < 10)
+            {
+                string data = "0" + dia + "/" + mes + "/" + ano;
+                mktData.Text = data;
+
+            }
+            else
+            {
+
+                string data = dia + "/" + mes + "/" + ano;
+                mktData.Text = data;
+
+            }
+
+
+        }
+
+        
          private void btnCadastrar_Click(object sender, EventArgs e)
         {
-           
+            VendaDTO dto = new VendaDTO();
+            dto.IdUsuario = UserSession.UsuarioLogado.Id;
+            dto.DataVenda = mktData.Text;
+            dto.FormaDePagamento = Convert.ToString(cboTipoPag.SelectedItem);
+
+            VendaBusiness buss = new VendaBusiness();
+            buss.Salvar(dto, carrinhoAdd.ToList());
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //ProdutoDTO cbo = cboNome.SelectedItem as ProdutoDTO;
-
-            //VendaDTO dto = new VendaDTO();
-            //dto.IdProduto = cbo.Id;
-            //dto.Quantidade = Convert.ToInt32(nudQtd.Value);
-            //dto.DataVenda = mskData.Text;
-            //dto.ValorVenda = Convert.ToDecimal(txtValorTotal.Text);
-
-            //VendaBusiness buss = new VendaBusiness();
-            //buss.Salvar(dto);
-
-            //MessageBox.Show("Venda efetuada!", "Catioro's", MessageBoxButtons.OK);
+            
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            ProdutoDTO dto = cboNome.SelectedItem as ProdutoDTO;
+            try
+            {
+                ProdutoDTO dto = cboNome.SelectedItem as ProdutoDTO;
 
-            string item = txtProduto.Text;
-            string qtd = nudQtd.Value.ToString();
-            string preco = dto.Preco.ToString();
+                int quantidade = Convert.ToInt32(nudQtd.Value);
 
-            MandarProCarrinho(item, qtd, preco);
+                for (int i = 0; i < quantidade; i++)
+                {
+
+                    carrinhoAdd.Add(dto);
+
+                }
+
+                CarregarGrid();
+
+                val.Add(dto.Preco * quantidade);
+                txtValorTotal.Text = Convert.ToString(val.Sum());
+
+            }
+            catch (Exception ex)
+            {
+
+               MessageBox.Show("Ocorreu um Erro: "+ ex.Message,"Famoso Açai",MessageBoxButtons.OK);
+            }
+        }
+
+        private void cboTipoPag_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -74,6 +74,10 @@
     <Compile Include="Classes\Item\ItemDataBase.cs" />
     <Compile Include="Classes\Item\ItemDTO.cs" />
     <Compile Include="Classes\Login\UserSession.cs" />
+    <Compile Include="Classes\Produto\Produto Venda\ProdutoVendaBusiness.cs" />
+    <Compile Include="Classes\Produto\Produto Venda\ProdutoVendaDataBase.cs" />
+    <Compile Include="Classes\Produto\Produto Venda\ProdutoVendaDTO.cs" />
+    <Compile Include="Classes\Produto\Produto Venda\ProdutoVendaView.cs" />
     <Compile Include="PlugIn\ImagemPlugIn.cs" />
     <Compile Include="Classes\Cargo\CargoBusiness.cs" />
     <Compile Include="Classes\Cargo\CargoDataBase.cs" />
@@ -699,7 +703,6 @@
     <None Include="Resources\icons8-produto-16.png" />
     <None Include="Resources\icons8-histórico-de-pagamento-32.png" />
     <None Include="Resources\fundo roxo.jpg" />
-    <Content Include="Script view so pra vento.txt" />
     <Content Include="Script.txt" />
   </ItemGroup>
   <ItemGroup>

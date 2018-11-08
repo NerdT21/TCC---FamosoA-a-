@@ -89,11 +89,11 @@ CREATE TABLE `tb_venda` (
 );
 
 
-CREATE TABLE `tb_produto_venda` (
-	`id_item_venda` int NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tb_produtoVenda` (
+	`id_produtoVenda` int NOT NULL AUTO_INCREMENT,
 	`id_produto` int NOT NULL,
 	`id_venda` int NOT NULL,
-	PRIMARY KEY (`id_item_venda`)
+	PRIMARY KEY (`id_produtoVenda`)
 );
 
 CREATE TABLE `tb_folha_pagamento` (
@@ -183,9 +183,9 @@ ALTER TABLE `tb_compra` ADD CONSTRAINT `tb_compra_fk0` FOREIGN KEY (`id_item`) R
 ALTER TABLE `tb_compra` ADD CONSTRAINT `tb_compra_fk1` FOREIGN KEY (`id_fornecedor`) REFERENCES `tb_fornecedor`(`id_fornecedor`);
 
 
-ALTER TABLE `tb_produto_venda` ADD CONSTRAINT `tb_produto_venda_fk0` FOREIGN KEY (`id_produto`) REFERENCES `tb_produto`(`id_produto`);
+ALTER TABLE `tb_produtoVenda` ADD CONSTRAINT `tb_produto_venda_fk0` FOREIGN KEY (`id_produto`) REFERENCES `tb_produto`(`id_produto`);
 
-ALTER TABLE `tb_produto_venda` ADD CONSTRAINT `tb_produto_venda_fk1` FOREIGN KEY (`id_venda`) REFERENCES `tb_venda`(`id_venda`);
+ALTER TABLE `tb_produtoVenda` ADD CONSTRAINT `tb_produto_venda_fk1` FOREIGN KEY (`id_venda`) REFERENCES `tb_venda`(`id_venda`);
 
 ALTER TABLE `tb_folha_pagamento` ADD CONSTRAINT `tb_folha_pagamento_fk0` FOREIGN KEY (`id_funcionario`) REFERENCES `tb_funcionario`(`id_funcionario`);
 
@@ -217,26 +217,30 @@ CREATE VIEW  vw_estoque AS
           ON tb_estoque.id_itemProduto = tb_item_compra.id_itemCompra
         GROUP 
         BY  tb_estoque.id_estoque;
-       
-    
- DROP VIEW vw_estoque;   		
- SELECT * FROM tb_estoque;
- SELECT * FROM tb_item_compra;
- SELECT VIEW vw_estoque;
+        
+        
+-- DROP VIEW vw_consultar_venda;        
+CREATE VIEW vw_consultar_venda AS
+      SELECT tb_venda.id_venda,
+             tb_venda.dt_venda,
+             tb_venda.ds_formaPagamento,
+             COUNT(tb_produtoVenda.id_produtoVenda) AS qtd_item,
+             SUM(tb_produto.vl_preco) AS vl_total
+FROM tb_venda
+JOIN tb_produtoVenda
+  ON tb_venda.id_venda = tb_produtoVenda.id_produtoVenda
+JOIN tb_produto
+  ON tb_produtoVenda.id_produtoVenda = tb_produto.id_produto 
+GROUP
+BY tb_venda.id_venda,
+   tb_venda.dt_venda;
  
-
-
-
-
-
-
-
-
-
-
+        
 -- INSERTS & SELECTS
 
 
+INSERT INTO tb_depto(`id_depto`,`nm_depto`,`ds_depto`)
+	 VALUES ('1','Depto','Depto');
 
 INSERT INTO tb_login(`id_usuario`, `nm_usuario`, `ds_senha`,`ds_email`, `pr_permissaoAdm`, `pr_permissaoCadastro`, `pr_permissaoConsulta`, `pr_permissaoContabilidade`)
 		      VALUES('1', 'adm', 'adm','adm@gmail.com', '1', '1', '1', '1');
@@ -344,3 +348,4 @@ SELECT * FROM tb_item_compra;
 -- ======================= --
 
 SELECT * FROM vw_estoque;
+SELECT * FROM vw_consultar_venda;

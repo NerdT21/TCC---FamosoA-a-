@@ -12,6 +12,7 @@ using FamosoAça.Screens.Entregavel_III.ConsultarVenda;
 using FamosoAça.Screens.Entregavel_III.Item;
 using FamosoAça.Screens.Entregavel_IV.Estoque;
 using FamosoAça.Screens.Entregavel_IV.Gastos_Adicionais;
+using FamosoAça.Screens.Entregavel_IV.Gatos_Adicionais;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -220,7 +221,20 @@ namespace FamosoAça
 
         }
 
-        private void gastosAdicionaisToolStripMenuItem_Click(object sender, EventArgs e)
+        
+
+        private void gastosAdicionaisToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void gastosAdicionaisToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ConsultarGastosAdicionais frm = new ConsultarGastosAdicionais();
+            OpenScreen(frm);
+        }
+
+        private void gastosAdicionaisToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             frmGastosAdicionais frm = new frmGastosAdicionais();
             OpenScreen(frm);

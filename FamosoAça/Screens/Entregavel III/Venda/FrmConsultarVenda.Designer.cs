@@ -29,37 +29,27 @@
         private void InitializeComponent()
         {
             this.btnProcurar = new System.Windows.Forms.Button();
-            this.lblprocurar = new System.Windows.Forms.Label();
             this.dgvProduto = new System.Windows.Forms.DataGridView();
-            this.cboNome = new System.Windows.Forms.ComboBox();
+            this.mkbData = new System.Windows.Forms.MaskedTextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FormaPagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).BeginInit();
             this.SuspendLayout();
             // 
             // btnProcurar
             // 
             this.btnProcurar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProcurar.Location = new System.Drawing.Point(494, 14);
+            this.btnProcurar.Location = new System.Drawing.Point(447, 27);
             this.btnProcurar.Name = "btnProcurar";
-            this.btnProcurar.Size = new System.Drawing.Size(61, 47);
+            this.btnProcurar.Size = new System.Drawing.Size(63, 34);
             this.btnProcurar.TabIndex = 28;
             this.btnProcurar.Text = "Buscar";
             this.btnProcurar.UseVisualStyleBackColor = true;
             this.btnProcurar.Click += new System.EventHandler(this.btnProcurar_Click);
-            // 
-            // lblprocurar
-            // 
-            this.lblprocurar.AutoSize = true;
-            this.lblprocurar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblprocurar.Location = new System.Drawing.Point(14, 27);
-            this.lblprocurar.Name = "lblprocurar";
-            this.lblprocurar.Size = new System.Drawing.Size(129, 20);
-            this.lblprocurar.TabIndex = 26;
-            this.lblprocurar.Text = "Nome do Produto";
             // 
             // dgvProduto
             // 
@@ -68,24 +58,36 @@
             this.dgvProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
-            this.Column2,
-            this.Column4,
-            this.Column5,
-            this.Column3});
-            this.dgvProduto.Location = new System.Drawing.Point(10, 79);
+            this.FormaPagamento,
+            this.Data,
+            this.Quantidade,
+            this.Total});
+            this.dgvProduto.Location = new System.Drawing.Point(47, 72);
             this.dgvProduto.Name = "dgvProduto";
             this.dgvProduto.ReadOnly = true;
             this.dgvProduto.RowHeadersVisible = false;
-            this.dgvProduto.Size = new System.Drawing.Size(577, 303);
+            this.dgvProduto.Size = new System.Drawing.Size(463, 303);
             this.dgvProduto.TabIndex = 25;
             // 
-            // cboNome
+            // mkbData
             // 
-            this.cboNome.FormattingEnabled = true;
-            this.cboNome.Location = new System.Drawing.Point(149, 29);
-            this.cboNome.Name = "cboNome";
-            this.cboNome.Size = new System.Drawing.Size(153, 21);
-            this.cboNome.TabIndex = 29;
+            this.mkbData.Location = new System.Drawing.Point(173, 36);
+            this.mkbData.Mask = "00/00/0000";
+            this.mkbData.Name = "mkbData";
+            this.mkbData.Size = new System.Drawing.Size(68, 20);
+            this.mkbData.TabIndex = 31;
+            this.mkbData.ValidatingType = typeof(System.DateTime);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(44, 35);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(123, 21);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "Data de Compra";
             // 
             // Column1
             // 
@@ -95,45 +97,41 @@
             this.Column1.ReadOnly = true;
             this.Column1.Width = 25;
             // 
-            // Column2
+            // FormaPagamento
             // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.DataPropertyName = "Nome";
-            this.Column2.HeaderText = "Nome do Produto";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
+            this.FormaPagamento.HeaderText = "Forma de Pagamneto";
+            this.FormaPagamento.Name = "FormaPagamento";
+            this.FormaPagamento.ReadOnly = true;
             // 
-            // Column4
+            // Data
             // 
-            this.Column4.DataPropertyName = "Preco";
-            this.Column4.HeaderText = "Preço";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
+            this.Data.HeaderText = "Data";
+            this.Data.Name = "Data";
+            this.Data.ReadOnly = true;
             // 
-            // Column5
+            // Quantidade
             // 
-            this.Column5.DataPropertyName = "Data Da Venda";
-            this.Column5.HeaderText = "Descrição do Produto";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 150;
+            this.Quantidade.HeaderText = "Quantidade";
+            this.Quantidade.Name = "Quantidade";
+            this.Quantidade.ReadOnly = true;
             // 
-            // Column3
+            // Total
             // 
-            this.Column3.HeaderText = "Quantidade";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
             // 
             // FrmConsultarVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.cboNome);
+            this.Controls.Add(this.mkbData);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnProcurar);
-            this.Controls.Add(this.lblprocurar);
             this.Controls.Add(this.dgvProduto);
             this.Name = "FrmConsultarVenda";
             this.Size = new System.Drawing.Size(596, 397);
+            this.Load += new System.EventHandler(this.FrmConsultarVenda_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -143,13 +141,13 @@
         #endregion
 
         private System.Windows.Forms.Button btnProcurar;
-        private System.Windows.Forms.Label lblprocurar;
         private System.Windows.Forms.DataGridView dgvProduto;
-        private System.Windows.Forms.ComboBox cboNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FormaPagamento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Data;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.MaskedTextBox mkbData;
+        private System.Windows.Forms.Label label2;
     }
 }
