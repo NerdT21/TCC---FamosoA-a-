@@ -2,7 +2,7 @@
 CREATE DATABASE FamosoAcaiDB;
 USE FamosoAcaiDB;
 
-CREATE TABLE `tb_funcionario` (
+CREATE TABLE `tb_funcionario` (                     --  *ALTERADO*
 	`id_funcionario` int NOT NULL AUTO_INCREMENT,
 	`id_depto` int NOT NULL,
 	`nm_nome` varchar(50) NOT NULL,
@@ -15,11 +15,13 @@ CREATE TABLE `tb_funcionario` (
 	`ds_cep` varchar(10) NOT NULL,
 	`ds_telefone` varchar(20) NOT NULL,
 	`ds_bairro` varchar(60) NOT NULL UNIQUE,
-	`ds_rua` varchar(200) NOT NULL,
-	`img_funcionario` longblob NOT NULL,
-    `vl_salario` decimal NOT NULL,
+	`ds_rua` varchar(200) NOT NULL, 
+	`img_funcionario` longblob NOT NULL, 
+    `ds_complemento` varchar(500),
+    `vl_salario` decimal NOT NULL,  
 	PRIMARY KEY (`id_funcionario`)
 );
+--  drop table tb_funcionario;
 
 CREATE TABLE `tb_depto` (
 	`id_depto` int NOT NULL AUTO_INCREMENT,
@@ -34,11 +36,13 @@ CREATE TABLE `tb_fornecedor` (
 	`ds_cnpj` varchar(50) NOT NULL UNIQUE,
 	`nm_fornecedor` varchar(150) NOT NULL,
 	`ds_cep` varchar(12) NOT NULL,
-	`ds_cidade` varchar(60) NOT NULL,
+	`ds_rua` varchar(200) not null,
+    `ds_cidade` varchar(60) NOT NULL,
 	`ds_telefone` varchar(24) NOT NULL,
-	`ds_email` varchar(120) NOT NULL UNIQUE,
+	`ds_email` varchar(120) NOT NULL UNIQUE, --
 	PRIMARY KEY (`id_fornecedor`)
 );
+-- drop table tb_fornecedor;
 
 CREATE TABLE `tb_produto` (
 	`id_produto` int NOT NULL AUTO_INCREMENT,
@@ -68,15 +72,20 @@ CREATE TABLE `tb_estoque` (
 	PRIMARY KEY (`id_estoque`)
 );
 
+
+
 CREATE TABLE `tb_compra` (
 	`id_compra` int NOT NULL AUTO_INCREMENT,
-	`id_item` int NOT NULL,
-	`id_fornecedor` int NOT NULL,
-	`qtd_comprado` bigint(100) NOT NULL,
+    `id_usuario` int NOT NULL,
 	`dt_compra` varchar(10) NOT NULL,
-	`vl_preco` DECIMAL(15,2) NOT NULL,
-	PRIMARY KEY (`id_compra`)
+	`ds_formaPagamento` varchar(50) NOT NULL,
+	PRIMARY KEY (`id_compra`),
+    FOREIGN KEY(`id_usuario`)
+    REFERENCES tb_login(`id_usuario`)
 );
+
+ -- drop table tb_compra;
+
 
 CREATE TABLE `tb_venda` (
 	`id_venda` int NOT NULL AUTO_INCREMENT,
@@ -157,19 +166,21 @@ CREATE TABLE `tb_gastosAdicionais` (
 	`vl_gasto` DECIMAL(10,2) NOT NULL,
 	PRIMARY KEY (`id_gasto`)
 );
-
 -- drop table tb_gastosAdicionais;
 
 CREATE TABLE `tb_item_compra`(
 `id_itemCompra` INT NOT NULL AUTO_INCREMENT,
 `id_item` INT NOT NULL,
-`id_venda` INT NOT NULL,
+`id_compra` INT NOT NULL,
 PRIMARY KEY(`id_itemCompra`),
 FOREIGN KEY(`id_item`)
 REFERENCES tb_item (`id_item`),
-FOREIGN KEY(`id_venda`)
-REFERENCES tb_venda(`id_venda`)
+FOREIGN KEY(`id_compra`)
+REFERENCES tb_compra(`id_compra`)
 );
+-- Drop table tb_item_compra;
+
+
 
 
 ALTER TABLE `tb_funcionario` ADD CONSTRAINT `tb_funcionario_fk1` FOREIGN KEY (`id_depto`) REFERENCES `tb_depto`(`id_depto`);
@@ -180,9 +191,9 @@ ALTER TABLE `tb_fornecedor` ADD CONSTRAINT `tb_fornecedor_fk0` FOREIGN KEY (`id_
 
 -- ALTER TABLE `tb_estoque` ADD CONSTRAINT `tb_estoque_fk0` FOREIGN KEY (`id_compra`) REFERENCES `tb_compra`(`id_compra`);
 
-ALTER TABLE `tb_compra` ADD CONSTRAINT `tb_compra_fk0` FOREIGN KEY (`id_item`) REFERENCES `tb_item`(`id_item`);
+-- ALTER TABLE `tb_compra` ADD CONSTRAINT `tb_compra_fk0` FOREIGN KEY (`id_item`) REFERENCES `tb_item`(`id_item`);
 
-ALTER TABLE `tb_compra` ADD CONSTRAINT `tb_compra_fk1` FOREIGN KEY (`id_fornecedor`) REFERENCES `tb_fornecedor`(`id_fornecedor`);
+-- ALTER TABLE `tb_compra` ADD CONSTRAINT `tb_compra_fk1` FOREIGN KEY (`id_fornecedor`) REFERENCES `tb_fornecedor`(`id_fornecedor`);
 
 
 ALTER TABLE `tb_produtoVenda` ADD CONSTRAINT `tb_produto_venda_fk0` FOREIGN KEY (`id_produto`) REFERENCES `tb_produto`(`id_produto`);
@@ -208,6 +219,7 @@ ALTER TABLE `tb_item` ADD CONSTRAINT `tb_item_fk0` FOREIGN KEY (`id_fornecedor`)
 -- ================= --
 -- ===== VIEWS ===== --
 -- ================= --
+
 -- DROP VIEW vw_estoque; 
 CREATE VIEW  vw_estoque AS 
       SELECT tb_estoque.id_estoque,
@@ -236,6 +248,81 @@ JOIN tb_produto
 GROUP
 BY tb_venda.id_venda,
    tb_venda.dt_venda;
+   
+   
+-- drop view vw_compra_consultar; 
+ create view vw_consulta_Compra as
+ select  tb_compra.id_compra,
+         tb_compra.ds_formaPagamento,
+         tb_compra.dt_compra,
+count(tb_item_Compra.id_itemCompra) as qtd_item,
+sum(tb_item.vl_preco) as  vl_total  
+from tb_compra
+join tb_item_compra
+on tb_compra.id_compra = tb_item_compra.id_compra
+join tb_item
+   on tb_item_compra.id_item = tb_item_compra.id_compra
+group by
+            tb_compra.id_compra,
+            tb_compra.ds_formaPagamento,
+            tb_compra.dt_compra;
+            
+            
+
+-- Drop view vw_consultarFuncionario; 
+CREATE VIEW vw_consultarFuncionario AS
+	SELECT tb_funcionario.id_funcionario,
+		   tb_funcionario.vl_salario, 
+           tb_Depto.nm_depto,
+           tb_funcionario.nm_nome,
+           tb_funcionario.ds_email,
+           tb_funcionario.ds_cpf,
+           tb_funcionario.ds_rg,
+           tb_estados.nm_estado,
+           tb_funcionario.ds_cidade,
+		   tb_funcionario.ds_cep,
+           tb_funcionario.ds_rua,
+           tb_funcionario.ds_bairro,
+           tb_funcionario.ds_complemento,
+           tb_funcionario.ds_telefone,
+           tb_funcionario.img_funcionario
+	FROM tb_funcionario
+    JOIN tb_estados
+    ON tb_funcionario.id_estado = tb_estados.id_estado
+    JOIN tb_Depto
+    ON tb_funcionario.id_depto = tb_Depto.id_depto;
+
+
+-- drop view vw_consultarFornecedor;     
+CREATE VIEW vw_consultarFornecedor AS
+	SELECT tb_fornecedor.id_fornecedor,
+		   tb_fornecedor.nm_fornecedor,
+           tb_fornecedor.ds_cnpj,
+           tb_fornecedor.ds_email,
+           tb_fornecedor.ds_telefone,
+           tb_fornecedor.ds_cidade,
+           tb_estados.nm_estado,
+           tb_fornecedor.ds_cep,
+           tb_fornecedor.ds_rua
+	FROM tb_fornecedor
+    JOIN tb_estados
+      ON tb_fornecedor.id_estado = tb_estados.id_estado;
+      
+
+-- drop view vl_item;
+CREATE VIEW vw_item AS
+	SELECT tb_item.id_item,
+           tb_item.nm_item, 
+           tb_fornecedor.nm_fornecedor,
+           tb_item.ds_item,
+           tb_item.vl_preco
+	FROM tb_item
+    JOIN tb_fornecedor
+      ON tb_item.id_fornecedor = tb_fornecedor.id_fornecedor;    
+    
+  
+          
+  
  
         
 -- INSERTS & SELECTS
@@ -351,3 +438,7 @@ SELECT * FROM tb_item_compra;
 
 SELECT * FROM vw_estoque;
 SELECT * FROM vw_consultar_venda;
+SELECT * FROM vw_consulta_Compra;
+SELECT * FROM vw_item; 
+SELECT * FROM vw_consultarFornecedor;
+SELECT * FROM vw_consultarFuncionario;
