@@ -8,13 +8,13 @@ CREATE TABLE `tb_funcionario` (
 	`nm_nome` varchar(50) NOT NULL,
 	`ds_email` varchar(250) NOT NULL UNIQUE,
 	`ds_cpf` varchar(50) NOT NULL UNIQUE,
-	`ds_rg` varchar(50) NOT NULL UNIQUE,
+	`ds_rg` varchar(50) NOT NULL,
 	`dt_nascimento` varchar(10) NOT NULL,
 	`ds_cidade` varchar(60) NOT NULL,
 	`id_estado` int NOT NULL,
 	`ds_cep` varchar(10) NOT NULL,
 	`ds_telefone` varchar(20) NOT NULL,
-	`ds_bairro` varchar(60) NOT NULL UNIQUE,
+	`ds_bairro` varchar(60) NOT NULL,
 	`ds_rua` varchar(200) NOT NULL,
 	`img_funcionario` longblob NOT NULL,
     `vl_salario` decimal NOT NULL,
@@ -50,7 +50,7 @@ CREATE TABLE `tb_produto` (
 
 CREATE TABLE `tb_login` (
 	`id_usuario` int NOT NULL AUTO_INCREMENT,
-	`nm_usuario` varchar(60) NOT NULL,
+	`nm_usuario` varchar(60) NOT NULL UNIQUE,
 	`ds_senha` varchar(50) NOT NULL,
     `ds_email` varchar(150) NOT NUll,
 	`pr_permissaoAdm` bool NOT NULL,
@@ -343,7 +343,7 @@ SELECT * FROM tb_estados;
 SELECT * FROM tb_fornecedor;
 SELECT * FROM tb_estoque;
 SELECT * FROM tb_item_compra;
-
+SELECT * FROM tb_venda;
 
 -- ======================= --
 -- ===== SELECT VIEWs===== --
