@@ -45,6 +45,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtFornecedor = new System.Windows.Forms.TextBox();
             this.nudQtd = new System.Windows.Forms.NumericUpDown();
+            this.cboTipoPag = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQtd)).BeginInit();
             this.SuspendLayout();
@@ -208,10 +210,36 @@
             this.nudQtd.Size = new System.Drawing.Size(84, 20);
             this.nudQtd.TabIndex = 24;
             // 
+            // cboTipoPag
+            // 
+            this.cboTipoPag.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTipoPag.FormattingEnabled = true;
+            this.cboTipoPag.Items.AddRange(new object[] {
+            "A vista",
+            "Cartão",
+            "Boleto"});
+            this.cboTipoPag.Location = new System.Drawing.Point(156, 227);
+            this.cboTipoPag.Name = "cboTipoPag";
+            this.cboTipoPag.Size = new System.Drawing.Size(140, 21);
+            this.cboTipoPag.TabIndex = 26;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(11, 228);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(139, 17);
+            this.label8.TabIndex = 25;
+            this.label8.Text = "Forma De Pagamento ";
+            // 
             // frmCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cboTipoPag);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.nudQtd);
             this.Controls.Add(this.txtFornecedor);
             this.Controls.Add(this.button2);
@@ -257,5 +285,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox txtFornecedor;
         private System.Windows.Forms.NumericUpDown nudQtd;
+        private System.Windows.Forms.ComboBox cboTipoPag;
+        private System.Windows.Forms.Label label8;
     }
 }

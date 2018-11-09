@@ -192,7 +192,8 @@ namespace FamosoAça
 
         private void itensToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+           frmConsultarItem frm = new frmConsultarItem();
+            OpenScreen(frm);
         }
 
         private void estoqueToolStripMenuItem_Click(object sender, EventArgs e)

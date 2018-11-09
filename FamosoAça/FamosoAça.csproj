@@ -153,40 +153,40 @@
     <Compile Include="Screens\Entregavel III\Venda\frmVenda.Designer.cs">
       <DependentUpon>frmVenda.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Entregavel II  OK\Controle De Compras\frmCompras.cs">
+    <Compile Include="Screens\Entregavel II\Controle De Compras\frmCompras.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Screens\Entregavel II  OK\Controle De Compras\frmCompras.Designer.cs">
+    <Compile Include="Screens\Entregavel II\Controle De Compras\frmCompras.Designer.cs">
       <DependentUpon>frmCompras.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Entregavel II  OK\Controle De Compras\frmListarCompras.cs">
+    <Compile Include="Screens\Entregavel II\Controle De Compras\frmListarCompras.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Screens\Entregavel II  OK\Controle De Compras\frmListarCompras.Designer.cs">
+    <Compile Include="Screens\Entregavel II\Controle De Compras\frmListarCompras.Designer.cs">
       <DependentUpon>frmListarCompras.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Entregavel II  OK\Controle De Fornecedores\frmCadastrarFornecedor.cs">
+    <Compile Include="Screens\Entregavel II\Controle De Fornecedores OK\frmCadastrarFornecedor.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Screens\Entregavel II  OK\Controle De Fornecedores\frmCadastrarFornecedor.Designer.cs">
+    <Compile Include="Screens\Entregavel II\Controle De Fornecedores OK\frmCadastrarFornecedor.Designer.cs">
       <DependentUpon>frmCadastrarFornecedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Entregavel II  OK\Controle De Fornecedores\frmConsultarFornecedores.cs">
+    <Compile Include="Screens\Entregavel II\Controle De Fornecedores OK\frmConsultarFornecedores.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Screens\Entregavel II  OK\Controle De Fornecedores\frmConsultarFornecedores.Designer.cs">
+    <Compile Include="Screens\Entregavel II\Controle De Fornecedores OK\frmConsultarFornecedores.Designer.cs">
       <DependentUpon>frmConsultarFornecedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Entregavel II  OK\Controle De Produto\frmCadastrarProduto.cs">
+    <Compile Include="Screens\Entregavel II\Controle De Produto OK\frmCadastrarProduto.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Screens\Entregavel II  OK\Controle De Produto\frmCadastrarProduto.Designer.cs">
+    <Compile Include="Screens\Entregavel II\Controle De Produto OK\frmCadastrarProduto.Designer.cs">
       <DependentUpon>frmCadastrarProduto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Entregavel II  OK\Controle De Produto\frmConsultarProduto.cs">
+    <Compile Include="Screens\Entregavel II\Controle De Produto OK\frmConsultarProduto.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Screens\Entregavel II  OK\Controle De Produto\frmConsultarProduto.Designer.cs">
+    <Compile Include="Screens\Entregavel II\Controle De Produto OK\frmConsultarProduto.Designer.cs">
       <DependentUpon>frmConsultarProduto.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Entregavel IV\Estoque\Estoque.cs">
@@ -207,22 +207,22 @@
     <Compile Include="Screens\Entregavel IV\Gastos Adicionais OK\ConsultarGastosAdicionais.Designer.cs">
       <DependentUpon>ConsultarGastosAdicionais.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Entregavel I\Controle de Funcionários\frmCadastrarFuncionario.cs">
+    <Compile Include="Screens\Entregavel I\Controle de Funcionários OK\frmCadastrarFuncionario.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Screens\Entregavel I\Controle de Funcionários\frmCadastrarFuncionario.Designer.cs">
+    <Compile Include="Screens\Entregavel I\Controle de Funcionários OK\frmCadastrarFuncionario.Designer.cs">
       <DependentUpon>frmCadastrarFuncionario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Entregavel I\Controle de Funcionários\frmListarFuncionarios.cs">
+    <Compile Include="Screens\Entregavel I\Controle de Funcionários OK\frmListarFuncionarios.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Screens\Entregavel I\Controle de Funcionários\frmListarFuncionarios.Designer.cs">
+    <Compile Include="Screens\Entregavel I\Controle de Funcionários OK\frmListarFuncionarios.Designer.cs">
       <DependentUpon>frmListarFuncionarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Entregavel I\Departamentos\frmDepartamento.cs">
+    <Compile Include="Screens\Entregavel I\Departamentos OK\frmDepartamento.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Screens\Entregavel I\Departamentos\frmDepartamento.Designer.cs">
+    <Compile Include="Screens\Entregavel I\Departamentos OK\frmDepartamento.Designer.cs">
       <DependentUpon>frmDepartamento.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Entregavel I\Folha de pagamento\FolhaPagto.cs" />
@@ -250,22 +250,22 @@
     <Compile Include="Screens\frmHome.Designer.cs">
       <DependentUpon>frmHome.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Entregavel I\Login\frmCadastroLogin.cs">
+    <Compile Include="Screens\Entregavel I\Login OK\frmCadastroLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\Entregavel I\Login\frmCadastroLogin.Designer.cs">
+    <Compile Include="Screens\Entregavel I\Login OK\frmCadastroLogin.Designer.cs">
       <DependentUpon>frmCadastroLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Entregavel I\Login\frmLogin.cs">
+    <Compile Include="Screens\Entregavel I\Login OK\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\Entregavel I\Login\frmLogin.Designer.cs">
+    <Compile Include="Screens\Entregavel I\Login OK\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Entregavel I\SplashScreen\Splash.cs">
+    <Compile Include="Screens\Entregavel I\SplashScreen OK\Splash.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\Entregavel I\SplashScreen\Splash.Designer.cs">
+    <Compile Include="Screens\Entregavel I\SplashScreen OK\Splash.Designer.cs">
       <DependentUpon>Splash.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -298,22 +298,22 @@
     <EmbeddedResource Include="Screens\Entregavel III\Venda\frmVenda.resx">
       <DependentUpon>frmVenda.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Entregavel II  OK\Controle De Compras\frmCompras.resx">
+    <EmbeddedResource Include="Screens\Entregavel II\Controle De Compras\frmCompras.resx">
       <DependentUpon>frmCompras.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Entregavel II  OK\Controle De Compras\frmListarCompras.resx">
+    <EmbeddedResource Include="Screens\Entregavel II\Controle De Compras\frmListarCompras.resx">
       <DependentUpon>frmListarCompras.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Entregavel II  OK\Controle De Fornecedores\frmCadastrarFornecedor.resx">
+    <EmbeddedResource Include="Screens\Entregavel II\Controle De Fornecedores OK\frmCadastrarFornecedor.resx">
       <DependentUpon>frmCadastrarFornecedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Entregavel II  OK\Controle De Fornecedores\frmConsultarFornecedores.resx">
+    <EmbeddedResource Include="Screens\Entregavel II\Controle De Fornecedores OK\frmConsultarFornecedores.resx">
       <DependentUpon>frmConsultarFornecedores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Entregavel II  OK\Controle De Produto\frmCadastrarProduto.resx">
+    <EmbeddedResource Include="Screens\Entregavel II\Controle De Produto OK\frmCadastrarProduto.resx">
       <DependentUpon>frmCadastrarProduto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Entregavel II  OK\Controle De Produto\frmConsultarProduto.resx">
+    <EmbeddedResource Include="Screens\Entregavel II\Controle De Produto OK\frmConsultarProduto.resx">
       <DependentUpon>frmConsultarProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Entregavel IV\Estoque\Estoque.resx">
@@ -325,13 +325,13 @@
     <EmbeddedResource Include="Screens\Entregavel IV\Gastos Adicionais OK\ConsultarGastosAdicionais.resx">
       <DependentUpon>ConsultarGastosAdicionais.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Entregavel I\Controle de Funcionários\frmCadastrarFuncionario.resx">
+    <EmbeddedResource Include="Screens\Entregavel I\Controle de Funcionários OK\frmCadastrarFuncionario.resx">
       <DependentUpon>frmCadastrarFuncionario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Entregavel I\Controle de Funcionários\frmListarFuncionarios.resx">
+    <EmbeddedResource Include="Screens\Entregavel I\Controle de Funcionários OK\frmListarFuncionarios.resx">
       <DependentUpon>frmListarFuncionarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Entregavel I\Departamentos\frmDepartamento.resx">
+    <EmbeddedResource Include="Screens\Entregavel I\Departamentos OK\frmDepartamento.resx">
       <DependentUpon>frmDepartamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenuPrincipal.resx">
@@ -346,10 +346,10 @@
     <EmbeddedResource Include="Screens\frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Entregavel I\Login\frmCadastroLogin.resx">
+    <EmbeddedResource Include="Screens\Entregavel I\Login OK\frmCadastroLogin.resx">
       <DependentUpon>frmCadastroLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Entregavel I\Login\frmLogin.resx">
+    <EmbeddedResource Include="Screens\Entregavel I\Login OK\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -362,7 +362,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Screens\Entregavel I\SplashScreen\Splash.resx">
+    <EmbeddedResource Include="Screens\Entregavel I\SplashScreen OK\Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
