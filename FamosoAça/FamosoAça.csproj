@@ -60,6 +60,7 @@
     <Compile Include="Classes\Compra\Item\ItemBusiness.cs" />
     <Compile Include="Classes\Compra\Item\ItemDatabase.cs" />
     <Compile Include="Classes\Compra\Item\ItemDTO.cs" />
+    <Compile Include="Classes\Compra\ViewCompra.cs" />
     <Compile Include="Classes\Estado\EstadoBusiness.cs" />
     <Compile Include="Classes\Estado\EstadoDataBase.cs" />
     <Compile Include="Classes\Estado\EstadoDTO.cs" />

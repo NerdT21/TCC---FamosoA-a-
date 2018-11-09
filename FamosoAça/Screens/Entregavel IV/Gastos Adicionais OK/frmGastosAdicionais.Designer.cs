@@ -42,14 +42,14 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(103, 142);
+            this.txtNome.Location = new System.Drawing.Point(267, 73);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(165, 20);
             this.txtNome.TabIndex = 0;
             // 
             // txtDescricao
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(396, 140);
+            this.txtDescricao.Location = new System.Drawing.Point(267, 145);
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(165, 85);
@@ -57,7 +57,7 @@
             // 
             // nudValor
             // 
-            this.nudValor.Location = new System.Drawing.Point(396, 231);
+            this.nudValor.Location = new System.Drawing.Point(267, 236);
             this.nudValor.Name = "nudValor";
             this.nudValor.Size = new System.Drawing.Size(69, 20);
             this.nudValor.TabIndex = 2;
@@ -66,7 +66,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(34, 137);
+            this.label1.Location = new System.Drawing.Point(198, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 25);
             this.label1.TabIndex = 3;
@@ -77,7 +77,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(296, 134);
+            this.label2.Location = new System.Drawing.Point(167, 139);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 25);
             this.label2.TabIndex = 4;
@@ -87,7 +87,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(322, 228);
+            this.label3.Location = new System.Drawing.Point(193, 233);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 25);
             this.label3.TabIndex = 5;
@@ -96,9 +96,9 @@
             // btnCadastrar
             // 
             this.btnCadastrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrar.Location = new System.Drawing.Point(228, 315);
+            this.btnCadastrar.Location = new System.Drawing.Point(198, 301);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(121, 45);
+            this.btnCadastrar.Size = new System.Drawing.Size(138, 45);
             this.btnCadastrar.TabIndex = 6;
             this.btnCadastrar.Text = "Cadatrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
@@ -108,7 +108,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(34, 199);
+            this.label4.Location = new System.Drawing.Point(198, 104);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 25);
             this.label4.TabIndex = 8;
@@ -116,7 +116,7 @@
             // 
             // mktData
             // 
-            this.mktData.Location = new System.Drawing.Point(103, 205);
+            this.mktData.Location = new System.Drawing.Point(267, 110);
             this.mktData.Mask = "00/00/0000";
             this.mktData.Name = "mktData";
             this.mktData.Size = new System.Drawing.Size(69, 20);

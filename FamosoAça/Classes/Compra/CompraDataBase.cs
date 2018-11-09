@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace FamosoAça.Classes.Compra
 {
     public class CompraDataBase
@@ -59,7 +60,7 @@ namespace FamosoAça.Classes.Compra
             Database db = new Database();
             db.ExecuteInsertScript(script, parms);
         }
-        public List<CompraDTO> Listar()
+        public List<ViewCompra> Listar()
         {
             string script = @"SELECT * FROM tb_compra";
 
@@ -68,24 +69,22 @@ namespace FamosoAça.Classes.Compra
             Database db = new Database();
             MySqlDataReader reader = db.ExecuteSelectScript(script, parms);
 
-            List<CompraDTO> produto = new List<CompraDTO>();
+            List<ViewCompra> view = new List<ViewCompra>();
             while (reader.Read())
             {
-                CompraDTO dto = new CompraDTO();
-                dto.Id = reader.GetInt32("id_compra");
-                dto.IdItem = reader.GetInt32("id_item");
-                dto.QuantidadeComprada = reader.GetInt32("qtd_comprado");
-                dto.DataCompra = reader.GetString("dt_compra");
-                dto.Preco = reader.GetDecimal("vl_preco");
+                ViewCompra vw = new ViewCompra();
+                vw.IdCompra = reader.GetInt32("id_compra");
+                vw.QTDItem = reader.GetInt32("qtd_item");
+                vw.FormaPag = reader.GetString("ds_formaPagamento");
+                vw.Data = reader.GetString("dt_compra");
+                vw.Total = reader.GetDecimal("vl_total");
 
-                produto.Add(dto);
-
-
+                view.Add(vw);
             }
             reader.Close();
-            return produto;
+            return view;
         }
-        public List<CompraDTO> Consultar(string dt_compra)
+        public List<ViewCompra> Consultar(string dt_compra)
         {
             string script = @"SELECT * FROM tb_compra WHERE dt_compra LIKE @dt_compra";
 
@@ -95,21 +94,21 @@ namespace FamosoAça.Classes.Compra
             Database db = new Database();
             MySqlDataReader reader = db.ExecuteSelectScript(script, parms);
 
-            List<CompraDTO> produto = new List<CompraDTO>();
+            List<ViewCompra> view = new List<ViewCompra>();
             while (reader.Read())
             {
-                CompraDTO dto = new CompraDTO();
-                dto.Id = reader.GetInt32("id_compra");
-                dto.IdItem = reader.GetInt32("id_item");
-                dto.QuantidadeComprada = reader.GetInt32("qtd_comprado");
-                dto.DataCompra = reader.GetString("dt_compra");
-                dto.Preco = reader.GetDecimal("vl_preco");
+                ViewCompra vw = new ViewCompra();
+                vw.IdCompra = reader.GetInt32("id_compra");
+                vw.QTDItem = reader.GetInt32("qtd_item");
+                vw.FormaPag = reader.GetString("ds_formaPagamento");
+                vw.Data = reader.GetString("dt_compra");
+                vw.Total = reader.GetDecimal("vl_total");
 
-                produto.Add(dto);
+                view.Add(vw)
 
             }
             reader.Close();
-            return produto;
+            return view;
 
         }
     }

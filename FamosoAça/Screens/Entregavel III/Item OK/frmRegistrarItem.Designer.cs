@@ -117,6 +117,7 @@
             // 
             // nudPreco
             // 
+            this.nudPreco.DecimalPlaces = 2;
             this.nudPreco.Location = new System.Drawing.Point(229, 122);
             this.nudPreco.Name = "nudPreco";
             this.nudPreco.Size = new System.Drawing.Size(120, 20);

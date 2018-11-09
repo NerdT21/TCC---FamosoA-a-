@@ -19,6 +19,7 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Compras
             InitializeComponent();
             CarregarData();
             CarregarCombos();
+
         }
 
         void CarregarCombos()
@@ -33,20 +34,29 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Compras
 
         void CarregarData()
         {
-            DateTime ano = DateTime.Now;
-            DateTime data = ano.Date;
-            string soData = data.ToString();
+            DateTime hoje = DateTime.Now;
+            int dia = hoje.Day;
+            int mes = hoje.Month;
+            int ano = hoje.Year;
+
+            if (dia <10)
+            {
+                string dt = "0" + dia + "/" + mes + "/" + ano;
+                mkbData.Text = dt;
+
+            }
+            else
+            {
+                string dt = dia + "/" + mes + "/" + ano;
+                mkbData.Text = dt;
+
+            }
+
         }
 
         void MandarProCarrinho(string item, string qtd, string preco)
         {
-            List<string> addCarrinho = new List<string>();
-            addCarrinho.Add(item + ", " + qtd + ", " + preco);
 
-            foreach (string i in addCarrinho)
-            {
-                lbxCarrinho.Text = i;
-            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -91,6 +101,11 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Compras
         }
 
         private void txtValorTotal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbxCarrinho_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
