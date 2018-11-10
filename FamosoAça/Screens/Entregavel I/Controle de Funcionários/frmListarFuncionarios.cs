@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FamosoAça.Classes.Funcionarios;
+using FamosoAça.CustomExceptions.TelasException;
 
 namespace FamosoAça.Screens.Entregavel_I.Controle_de_Funcionários
 {
@@ -21,23 +22,43 @@ namespace FamosoAça.Screens.Entregavel_I.Controle_de_Funcionários
 
         public void CarregarGrid()
         {
-            string nome = txtNome.Text;
-            string cidade = txtCidade.Text;
+            try
+            {
+                string nome = txtNome.Text;
+                string cidade = txtCidade.Text;
 
-            FuncionariosBusiness buss = new FuncionariosBusiness();
-            List<ViewFuncionario> dto = buss.Consultar(nome, cidade);
+                FuncionariosBusiness buss = new FuncionariosBusiness();
+                List<ViewFuncionario> dto = buss.Consultar(nome, cidade);
 
-            dgvListarFuncionario.AutoGenerateColumns = false;
-            dgvListarFuncionario.DataSource = dto;
+                dgvListarFuncionario.AutoGenerateColumns = false;
+                dgvListarFuncionario.DataSource = dto;
+            }
+            catch (Exception)
+            {
+                frmException tela = new frmException();
+                tela.LoadScreen("Ocorreu um erro.\nConsulte o administrador do sistema.");
+                tela.ShowDialog();
+            }
+            
         }
 
         public void AutoCarregar()
         {
-            FuncionariosBusiness buss = new FuncionariosBusiness();
-            List<ViewFuncionario> dto = buss.Listar();
+            try
+            {
+                FuncionariosBusiness buss = new FuncionariosBusiness();
+                List<ViewFuncionario> dto = buss.Listar();
 
-            dgvListarFuncionario.AutoGenerateColumns = false;
-            dgvListarFuncionario.DataSource = dto;
+                dgvListarFuncionario.AutoGenerateColumns = false;
+                dgvListarFuncionario.DataSource = dto;
+            }
+            catch (Exception)
+            {
+                frmException tela = new frmException();
+                tela.LoadScreen("Ocorreu um erro.\nConsulte o administrador do sistema.");
+                tela.ShowDialog();
+            }
+            
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -46,10 +67,11 @@ namespace FamosoAça.Screens.Entregavel_I.Controle_de_Funcionários
             {
                 CarregarGrid();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
-                MessageBox.Show("");
+                frmException tela = new frmException();
+                tela.LoadScreen("Ocorreu um erro.\nConsulte o administrador do sistema.");
+                tela.ShowDialog();
             }
             
         }

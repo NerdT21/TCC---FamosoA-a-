@@ -1,4 +1,5 @@
 ﻿using FamosoAça.Classes.Login;
+using FamosoAça.CustomExceptions.TelasException;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,7 +48,9 @@ namespace FamosoAça.Login
             }
             else
             {
-                MessageBox.Show("Nome de usuário ou senha incorretos.");
+                frmAlert tela = new frmAlert();
+                tela.LoadScreen("Nome de usuário ou senha incorretos.");
+                tela.ShowDialog();
             }
         }
 
@@ -75,7 +78,9 @@ namespace FamosoAça.Login
             }
             else
             {
-                MessageBox.Show("É preciso ser um Administraor do sistema para acessar o cadastro de logins.");
+                frmAlert tela = new frmAlert();
+                tela.LoadScreen("É preciso ser um Administraor do sistema para acessar o cadastro de logins.");
+                tela.ShowDialog();
             }
 
         }
@@ -93,6 +98,62 @@ namespace FamosoAça.Login
         private void pbxShow_MouseUp(object sender, MouseEventArgs e)
         {
             txtPass.PasswordChar = '*';
+        }
+
+        private void btnEntrar_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                LoginBusiness business = new LoginBusiness();
+                string user = txtUser.Text;
+                string pass = txtPass.Text;
+
+                LoginDTO usuario = business.Logar(user, pass);
+
+
+                if (usuario != null)
+                {
+                    UserSession.UsuarioLogado = usuario;
+
+                    frmMenuPrincipal tela = new frmMenuPrincipal();
+                    tela.Show();
+                    this.Close();
+                }
+                else
+                {
+                    frmAlert tela = new frmAlert();
+                    tela.LoadScreen("Nome de usuário ou senha incorretos.");
+                    tela.ShowDialog();
+                }
+            }
+        }
+
+        private void txtPass_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                LoginBusiness business = new LoginBusiness();
+                string user = txtUser.Text;
+                string pass = txtPass.Text;
+
+                LoginDTO usuario = business.Logar(user, pass);
+
+
+                if (usuario != null)
+                {
+                    UserSession.UsuarioLogado = usuario;
+
+                    frmMenuPrincipal tela = new frmMenuPrincipal();
+                    tela.Show();
+                    this.Close();
+                }
+                else
+                {
+                    frmAlert tela = new frmAlert();
+                    tela.LoadScreen("Nome de usuário ou senha incorretos.");
+                    tela.ShowDialog(); MessageBox.Show("Nome de usuário ou senha incorretos.");
+                }
+            }
         }
     }
 }

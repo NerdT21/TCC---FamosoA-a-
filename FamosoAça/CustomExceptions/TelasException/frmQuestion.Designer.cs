@@ -148,6 +148,7 @@
             // 
             // pbxClose
             // 
+            this.pbxClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxClose.Image = global::FamosoAça.Properties.Resources.close_icone;
             this.pbxClose.Location = new System.Drawing.Point(305, 3);
             this.pbxClose.Name = "pbxClose";

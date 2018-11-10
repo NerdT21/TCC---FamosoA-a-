@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FamosoAça.Classes.FolhaPagamento;
+using FamosoAça.CustomExceptions.TelasException;
 
 namespace FamosoAça.Screens.Entregavel_I
 {
@@ -21,11 +22,21 @@ namespace FamosoAça.Screens.Entregavel_I
 
         void AutoCarregar()
         {
-            FolhaPagamentoBusiness buss = new FolhaPagamentoBusiness();
-            List<FolhaPagamentoDTO> lista = buss.Listar();
+            try
+            {
+                FolhaPagamentoBusiness buss = new FolhaPagamentoBusiness();
+                List<FolhaPagamentoDTO> lista = buss.Listar();
 
-            dgvFolha.AutoGenerateColumns = false;
-            dgvFolha.DataSource = lista;
+                dgvFolha.AutoGenerateColumns = false;
+                dgvFolha.DataSource = lista;
+            }
+            catch (Exception)
+            {
+                frmException tela = new frmException();
+                tela.LoadScreen("Ocorreu um erro.\nConsulte o administrador do sistema.");
+                tela.ShowDialog();
+            }
+            
         }
     }
 }

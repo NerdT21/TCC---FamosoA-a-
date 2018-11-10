@@ -1,4 +1,5 @@
 ﻿using FamosoAça.Classes.Login;
+using FamosoAça.CustomExceptions.TelasException;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -33,22 +34,27 @@ namespace FamosoAça.Login
                 dto.PermissaoEstoque = ckbEstoque.Checked;
                 dto.PermissaoFinanceiro = ckbFinanceiro.Checked;
 
-
                 LoginBusiness business = new LoginBusiness();
                 business.Salvar(dto);
 
-                MessageBox.Show("Cadastro efetuado com sucesso.", "FamosoAçaí", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                frmMessage tela = new frmMessage();
+                tela.LoadScreen("Cadastro efetuado com sucesso.");
+                tela.ShowDialog();
             }
             catch (MySqlException ex)
             {
                 if (ex.Number == 1062)
                 {
-                    MessageBox.Show("O nome de usuário já existe.", "FamosoAçaí", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    frmAlert tela = new frmAlert();
+                    tela.LoadScreen("O nome de usuário já existe.");
+                    tela.ShowDialog();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "FamosoAçaí", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                frmException tela = new frmException();
+                tela.LoadScreen("Ocorreu um erro.\nConsulte o administrador do sistema.");
+                tela.ShowDialog();
             }
            
         }
@@ -64,13 +70,31 @@ namespace FamosoAça.Login
         {
             if (ckbAdm.Checked == true)
             {
+                string msg = "Ao definir esse usuário com permissão ADM, ele terá acesso a todas as funções do sistema." +
+                   "\n Deseja mesmo torná-lo ADM?";
+
+                frmQuestion tela = new frmQuestion();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+
+                bool click = tela.BotaoYes;
+
+                if (click == true)
+                {
+                    ckbCaixa.Checked = true;
+                    ckbEstoque.Checked = true;
+                    ckbCadastros.Checked = true;
+                    ckbFinanceiro.Checked = true;
+                    ckbProdutos.Checked = true;
+                }                
+            }
+            else
+            {
                 ckbCaixa.Checked = true;
                 ckbEstoque.Checked = true;
-            }
-            else if (ckbEstoque.Checked == false)
-            {
-                ckbCaixa.Checked = false;
-                ckbEstoque.Checked = false;
+                ckbCadastros.Checked = true;
+                ckbFinanceiro.Checked = true;
+                ckbProdutos.Checked = true;
             }
         }
     }

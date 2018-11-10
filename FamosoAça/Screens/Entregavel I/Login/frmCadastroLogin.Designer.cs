@@ -46,8 +46,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.ckbCadastros = new System.Windows.Forms.CheckBox();
             this.ckbProdutos = new System.Windows.Forms.CheckBox();
+            this.ckbCadastros = new System.Windows.Forms.CheckBox();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,6 +91,7 @@
             // 
             this.ckbAdm.AutoSize = true;
             this.ckbAdm.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbAdm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.ckbAdm.Location = new System.Drawing.Point(383, 48);
             this.ckbAdm.Name = "ckbAdm";
             this.ckbAdm.Size = new System.Drawing.Size(56, 21);
@@ -232,17 +233,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Permissões";
             // 
-            // ckbCadastros
-            // 
-            this.ckbCadastros.AutoSize = true;
-            this.ckbCadastros.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbCadastros.Location = new System.Drawing.Point(21, 72);
-            this.ckbCadastros.Name = "ckbCadastros";
-            this.ckbCadastros.Size = new System.Drawing.Size(86, 21);
-            this.ckbCadastros.TabIndex = 65;
-            this.ckbCadastros.Text = "Cadastros";
-            this.ckbCadastros.UseVisualStyleBackColor = true;
-            // 
             // ckbProdutos
             // 
             this.ckbProdutos.AutoSize = true;
@@ -253,6 +243,17 @@
             this.ckbProdutos.TabIndex = 66;
             this.ckbProdutos.Text = "Produtos";
             this.ckbProdutos.UseVisualStyleBackColor = true;
+            // 
+            // ckbCadastros
+            // 
+            this.ckbCadastros.AutoSize = true;
+            this.ckbCadastros.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbCadastros.Location = new System.Drawing.Point(21, 72);
+            this.ckbCadastros.Name = "ckbCadastros";
+            this.ckbCadastros.Size = new System.Drawing.Size(86, 21);
+            this.ckbCadastros.TabIndex = 65;
+            this.ckbCadastros.Text = "Cadastros";
+            this.ckbCadastros.UseVisualStyleBackColor = true;
             // 
             // frmCadastroLogin
             // 

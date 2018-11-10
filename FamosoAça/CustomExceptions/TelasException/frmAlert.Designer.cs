@@ -112,6 +112,7 @@
             // 
             // button1
             // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Default;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(248, 8);
@@ -134,6 +135,7 @@
             // 
             // pbxClose
             // 
+            this.pbxClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxClose.Image = global::FamosoAça.Properties.Resources.close_icone;
             this.pbxClose.Location = new System.Drawing.Point(305, 3);
             this.pbxClose.Name = "pbxClose";

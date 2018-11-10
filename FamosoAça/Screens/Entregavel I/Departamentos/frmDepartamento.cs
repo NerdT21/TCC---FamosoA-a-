@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FamosoAça.Classes.Cargo;
+using FamosoAça.CustomExceptions.TelasException;
 
 namespace FamosoAça.Screens.Entregavel_I.Departamentos
 {
@@ -21,27 +22,42 @@ namespace FamosoAça.Screens.Entregavel_I.Departamentos
 
         public void CarregarGrid()
         {
-            string depto = txtProcurarDepto.Text;
+            try
+            {
+                string depto = txtProcurarDepto.Text;
 
-            CargoBusiness buss = new CargoBusiness();
-            List<CargoDTO> dto = buss.Consultar(depto);
+                CargoBusiness buss = new CargoBusiness();
+                List<CargoDTO> dto = buss.Consultar(depto);
 
-            dgvDepto.AutoGenerateColumns = false;
-            dgvDepto.DataSource = dto;
+                dgvDepto.AutoGenerateColumns = false;
+                dgvDepto.DataSource = dto;
+            }
+            catch (Exception)
+            {
+                frmException tela = new frmException();
+                tela.LoadScreen("Ocorreu um erro.\nConsulte o administrador do sistema.");
+                tela.ShowDialog();
+            }
+            
         }
 
         public void AutoCarregar()
         {
-            CargoBusiness buss = new CargoBusiness();
-            List<CargoDTO> dto = buss.Listar();
+            try
+            {
+                CargoBusiness buss = new CargoBusiness();
+                List<CargoDTO> dto = buss.Listar();
 
-            dgvDepto.AutoGenerateColumns = false;
-            dgvDepto.DataSource = dto;
-        }
-
-        private void btnSalvar_Click(object sender, EventArgs e)
-        {
-            CarregarGrid();
+                dgvDepto.AutoGenerateColumns = false;
+                dgvDepto.DataSource = dto;
+            }
+            catch (Exception)
+            {
+                frmException tela = new frmException();
+                tela.LoadScreen("Ocorreu um erro.\nConsulte o administrador do sistema.");
+                tela.ShowDialog();
+            }
+       
         }
 
         private void btnCadastrar_Click_1(object sender, EventArgs e)
@@ -55,12 +71,15 @@ namespace FamosoAça.Screens.Entregavel_I.Departamentos
                 CargoBusiness buss = new CargoBusiness();
                 buss.Salvar(dto);
 
-                MessageBox.Show("Departamento cadastrado com suceso!!", "FamosoAçaí", MessageBoxButtons.OK);
-                CarregarGrid();
+                frmMessage tela = new frmMessage();
+                tela.LoadScreen("Departamento cadastrado com suceso!");
+                tela.ShowDialog();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("Ocorreu um erro: " + ex.Message);
+                frmException tela = new frmException();
+                tela.LoadScreen("Ocorreu um erro.\nConsulte o administrador do sistema.");
+                tela.ShowDialog();
             }
 
         }

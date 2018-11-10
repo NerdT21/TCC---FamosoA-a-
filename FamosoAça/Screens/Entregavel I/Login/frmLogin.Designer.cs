@@ -179,6 +179,7 @@
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = false;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click_1);
+            this.btnEntrar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnEntrar_KeyUp);
             // 
             // txtPass
             // 
@@ -187,6 +188,7 @@
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(155, 20);
             this.txtPass.TabIndex = 33;
+            this.txtPass.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPass_KeyUp);
             // 
             // label2
             // 
