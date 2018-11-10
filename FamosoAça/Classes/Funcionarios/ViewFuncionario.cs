@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace FamosoAça.Classes.Funcionarios
 {
-    public class FuncionarioDTO
+    class ViewFuncionario
     {
 
         public int Id { get; set; }
 
         public decimal Salario { get; set; }
 
-        public int IdDepto { get; set; }
+        public string Depto { get; set; }
 
-        public int IdEstado { get; set; }
+        public string Estado { get; set; }
 
         public string Nome { get; set; }
 
@@ -38,7 +38,6 @@ namespace FamosoAça.Classes.Funcionarios
         public string Telefone { get; set; }
 
         public string Imagem { get; set; }
-
 
     }
 }

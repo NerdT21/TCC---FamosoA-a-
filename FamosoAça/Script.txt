@@ -272,7 +272,7 @@ group by
 -- Drop view vw_consultarFuncionario; 
 CREATE VIEW vw_consultarFuncionario AS
 	SELECT tb_funcionario.id_funcionario,
-		   tb_funcionario.vl_salario, 
+		   tb_funcionario.vl_salario,
            tb_Depto.nm_depto,
            tb_funcionario.nm_nome,
            tb_funcionario.ds_email,
@@ -281,11 +281,11 @@ CREATE VIEW vw_consultarFuncionario AS
            tb_estados.nm_estado,
            tb_funcionario.ds_cidade,
 		   tb_funcionario.ds_cep,
-           tb_funcionario.ds_rua,
-           tb_funcionario.ds_bairro,
+           tb_funcionario.ds_rua, 
+           tb_funcionario.ds_bairro, 
            tb_funcionario.ds_complemento,
            tb_funcionario.ds_telefone,
-           tb_funcionario.img_funcionario
+           tb_funcionario.img_funcionario 
 	FROM tb_funcionario
     JOIN tb_estados
     ON tb_funcionario.id_estado = tb_estados.id_estado

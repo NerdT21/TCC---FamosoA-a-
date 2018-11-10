@@ -14,16 +14,33 @@ namespace FamosoAça.Classes.Funcionarios
             return db.Salvar(dto);
         }
 
-        public List<FuncionarioDTO> Listar()
+
+        public void Remover(int idfuncionario)
         {
-            FuncionarioDataBase db = new FuncionarioDataBase();
-            return db.Listar();
+            FuncionarioDataBase DB = new FuncionarioDataBase();
+            DB.Remover(idfuncionario);
         }
 
-        public List<FuncionarioDTO> Consultar(string nome, string cidade)
+
+        public List<ViewFuncionario> Lista()
         {
             FuncionarioDataBase db = new FuncionarioDataBase();
-            return db.Consultar(nome, cidade);
+            List<ViewFuncionario> list = db.Listar();
+            return list; 
+        }
+
+        public List<ViewFuncionario> Listar()
+        {
+            FuncionarioDataBase DB = new FuncionarioDataBase();
+            List<ViewFuncionario> funcionario = DB.Listar();
+            return funcionario;
+        }
+
+        public List<ViewFuncionario> Consultar(string nome, string cpf)
+        {
+            FuncionarioDataBase db = new FuncionarioDataBase();
+            return db.Consultar(nome, cpf);
         }
     }
 }
+

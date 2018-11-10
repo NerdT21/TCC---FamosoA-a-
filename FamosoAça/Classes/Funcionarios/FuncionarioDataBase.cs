@@ -9,141 +9,177 @@ namespace FamosoAça.Classes.Funcionarios
 {
     public class FuncionarioDataBase
     {
-        public int Salvar(FuncionarioDTO dto)
+        public int Salvar(FuncionarioDTO funcio)
         {
-            string script = @"INSERT INTO tb_funcionario(id_depto,
-                            nm_nome,
-                            ds_email, 
-                            ds_cpf,
-                            ds_rg,
-                            dt_nascimento,        
-                            ds_cidade,
-                            id_estado,
-                            ds_cep,
-                            ds_telefone,
-                            ds_bairro,
-                            ds_rua,
-                            img_funcionario,
-                            vl_salario) VALUES(
-                            @id_depto,
-                            @nm_nome,
-                            @ds_email, 
-                            @ds_cpf,
-                            @ds_rg,
-                            @dt_nascimento,        
-                            @ds_cidade,
-                            @id_estado,
-                            @ds_cep,
-                            @ds_telefone,
-                            @ds_bairro,
-                            @ds_rua,
-                            @img_funcionario,
-                            @vl_salario)";
+            string script = @"INSERT INTO tb_funcionario   (ds_salario,
+                                                              id_depto,
+                                                              id_estado,
+                                                              nm_nome,
+                                                              ds_email,
+                                                              ds_cpf,
+                                                              ds_rg,
+                                                              ds_cep,
+                                                              ds_rua,
+                                                              ds_numero,
+                                                              ds_complemento,
+                                                              ds_cidade,
+                                                              ds_telefone,
+                                                              img_funcionario)
+                                                      VALUES (@ds_salario,
+                                                              @id_depto,
+                                                              @id_estado,
+                                                              @nm_nome,
+                                                              @ds_email,
+                                                              @ds_cpf,
+                                                              @ds_rg,
+                                                              @ds_cep,
+                                                              @ds_rua,
+                                                              @ds_numero,
+                                                              @ds_complemento,
+                                                              @ds_cidade,
+                                                              @ds_telefone,
+                                                              @img_funcionario)";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("id_depto", dto.DeptoId));
-            parms.Add(new MySqlParameter("nm_nome", dto.Nome));
-            parms.Add(new MySqlParameter("ds_email", dto.Email));
-            parms.Add(new MySqlParameter("ds_cpf", dto.CPF));
-            parms.Add(new MySqlParameter("ds_rg", dto.RG));
-            parms.Add(new MySqlParameter("dt_nascimento", dto.Nascimento));
-            parms.Add(new MySqlParameter("ds_cidade", dto.Cidade));
-            parms.Add(new MySqlParameter("id_estado", dto.Estado));
-            parms.Add(new MySqlParameter("ds_cep", dto.CEP));
-            parms.Add(new MySqlParameter("ds_telefone", dto.Telefone));
-            parms.Add(new MySqlParameter("ds_bairro", dto.Bairro));
-            parms.Add(new MySqlParameter("ds_rua", dto.Rua));            
-            parms.Add(new MySqlParameter("img_funcionario", dto.Imagem));
-            parms.Add(new MySqlParameter("vl_salario", dto.Salario));
+            parms.Add(new MySqlParameter("ds_salario", funcio.Salario));
+            parms.Add(new MySqlParameter("id_depto", funcio.IdDepto));
+            parms.Add(new MySqlParameter("id_estado", funcio.IdEstado));
+            parms.Add(new MySqlParameter("nm_nome", funcio.Nome));
+            parms.Add(new MySqlParameter("ds_email", funcio.Email));
+            parms.Add(new MySqlParameter("ds_cpf", funcio.Cpf));
+            parms.Add(new MySqlParameter("ds_rg", funcio.Rg));
+            parms.Add(new MySqlParameter("ds_cep", funcio.Cep));
+            parms.Add(new MySqlParameter("ds_rua", funcio.Rua));
+            parms.Add(new MySqlParameter("ds_numero", funcio.Numero));
+            parms.Add(new MySqlParameter("ds_complemento", funcio.Complemento));
+            parms.Add(new MySqlParameter("ds_cidade", funcio.Cidade));
+            parms.Add(new MySqlParameter("ds_telefone", funcio.Telefone));
+            parms.Add(new MySqlParameter("img_funcionario", funcio.Imagem));
 
             Database db = new Database();
-            return db.ExecuteInsertScriptWithPk(script, parms);
+            int pk = db.ExecuteInsertScriptWithPk(script, parms);
+            return pk;
 
         }
 
-        public List<FuncionarioDTO> Listar()
+        public void Alterar(FuncionarioDTO funcio)
         {
-            string script = @"SELECT * FROM tb_funcionario";
+            string script = @"UPDATE tb_funcionario SET ds_salario = @ds_salario,
+                                                        id_depto = @id_depto, 
+                                                        nm_nome = @nm_nome,
+                                                        ds_email = @ds_email,
+                                                        ds_cpf = @ds_cpf,
+                                                        ds_rg = @ds_rg,
+                                                        id_estado = @id_estado,                
+                                                        ds_cidade = @ds_cidade,
+                                                        ds_cep = @ds_cep,
+                                                        ds_rua = @ds_rua,
+                                                        ds_numero = @ds_numero,    
+                                                        ds_complemento = @ds_complemento,
+                                                        ds_telefone = @ds_telefone,
+                                                        img_funcionario = @img_funcionario
+                                                        WHERE id_funcionario = @id_funcionario";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
-            Database db = new Database();
-
-            MySqlDataReader reader = db.ExecuteSelectScript(script, parms);
-            List<FuncionarioDTO> lista = new List<FuncionarioDTO>();
-
-            while (reader.Read())
-            {
-                FuncionarioDTO dto = new FuncionarioDTO();
-                dto.Id = reader.GetInt32("id_funcionario");
-                dto.DeptoId = reader.GetInt32("id_depto");
-                dto.Nome = reader.GetString("nm_nome");
-                dto.Email = reader.GetString("ds_email");
-                dto.CPF = reader.GetString("ds_cpf");
-                dto.RG = reader.GetString("ds_rg");
-                dto.Nascimento = reader.GetString("dt_nascimento");
-                dto.Cidade = reader.GetString("ds_cidade");
-                dto.Estado = reader.GetInt32("id_estado");
-                dto.CEP = reader.GetString("ds_cep");
-                dto.Telefone = reader.GetString("ds_telefone");
-                dto.Bairro = reader.GetString("ds_bairro");
-                dto.Rua = reader.GetString("ds_rua");
-                dto.Imagem = reader.GetString("img_funcionario");
-                dto.Salario = reader.GetDecimal("vl_salario");
-
-                lista.Add(dto);
-            }
-            reader.Close();
-            return lista;
-        }
-
-        public List<FuncionarioDTO> Consultar(string nome, string cidade)
-        {
-            string script = @"SELECT * FROM tb_funcionario WHERE nm_nome LIKE @nm_nome AND ds_cidade LIKE @ ds_cidade";
-
-            List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("nm_nome", nome + "%"));
-            parms.Add(new MySqlParameter("ds_cidade", cidade + "%"));
+            parms.Add(new MySqlParameter("id_funcionario", funcio.Id));
+            parms.Add(new MySqlParameter("ds_salario", funcio.Salario));
+            parms.Add(new MySqlParameter("id_depto", funcio.IdDepto));
+            parms.Add(new MySqlParameter("nm_nome", funcio.Nome));
+            parms.Add(new MySqlParameter("ds_email", funcio.Email));
+            parms.Add(new MySqlParameter("ds_cpf", funcio.Cpf));
+            parms.Add(new MySqlParameter("ds_rg", funcio.Rg));
+            parms.Add(new MySqlParameter("id_estado", funcio.IdEstado));
+            parms.Add(new MySqlParameter("ds_cidade", funcio.Cidade));
+            parms.Add(new MySqlParameter("ds_cep", funcio.Cep));
+            parms.Add(new MySqlParameter("ds_rua", funcio.Rua));
+            parms.Add(new MySqlParameter("ds_numero", funcio.Numero));
+            parms.Add(new MySqlParameter("ds_complemento", funcio.Complemento));
+            parms.Add(new MySqlParameter("ds_telefone", funcio.Telefone));
+            parms.Add(new MySqlParameter("img_funcionario", funcio.Imagem));
 
             Database db = new Database();
-
-            MySqlDataReader reader = db.ExecuteSelectScript(script, parms);
-            List<FuncionarioDTO> lista = new List<FuncionarioDTO>();
-
-            while (reader.Read())
-            {
-                FuncionarioDTO dto = new FuncionarioDTO();
-                dto.Id = reader.GetInt32("id_funcionario");
-                dto.DeptoId = reader.GetInt32("id_depto");
-                dto.Nome = reader.GetString("nm_nome");
-                dto.Email = reader.GetString("ds_email");
-                dto.CPF = reader.GetString("ds_cpf");
-                dto.RG = reader.GetString("ds_rg");
-                dto.Nascimento = reader.GetString("dt_nascimento");
-                dto.Cidade = reader.GetString("ds_cidade");
-                dto.Estado = reader.GetInt32("id_estado");
-                dto.CEP = reader.GetString("ds_cep");
-                dto.Telefone = reader.GetString("ds_telefone");
-                dto.Bairro = reader.GetString("ds_bairro");
-                dto.Rua = reader.GetString("ds_rua");
-                dto.Imagem = reader.GetString("img_funcionario");
-                dto.Salario = reader.GetDecimal("vl_salario");
-
-                lista.Add(dto);
-            }
-            reader.Close();
-            return lista;
+            db.ExecuteInsertScript(script, parms);
         }
 
         public void Remover(int Id)
         {
-            string script = @"DELETE FROM tb_funcionario WHERE id_funcionario = @id_funcionario";
+            string script = "DELETE FROM tb_funcionario WHERE id_funcionario = @id_funcionario ";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("id_funcionario", Id));
 
             Database db = new Database();
             db.ExecuteInsertScript(script, parms);
+        }
 
+        public List<ViewFuncionario> Listar()
+        {
+            string script = @"SELECT * FROM vw_consultarFuncionario ";
+
+            Database db = new Database();
+            MySqlDataReader reader = db.ExecuteSelectScript(script, null);
+
+            List<ViewFuncionario> lista = new List<ViewFuncionario>();
+            while (reader.Read())
+            {
+                ViewFuncionario add = new ViewFuncionario();
+                add.Id = reader.GetInt32("id_funcionario");
+                add.Salario = reader.GetInt32("ds_salario");
+                add.Depto = reader.GetString("nm_depto");
+                add.Nome = reader.GetString("nm_nome");
+                add.Email = reader.GetString("ds_email");
+                add.Cpf = reader.GetString("ds_cpf");
+                add.Rg = reader.GetString("ds_rg");
+                add.Estado = reader.GetString("nm_estado");
+                add.Cidade = reader.GetString("ds_cidade");
+                add.Cep = reader.GetString("ds_cep");
+                add.Rua = reader.GetString("ds_rua");
+                add.Numero = reader.GetString("ds_numero");
+                add.Complemento = reader.GetString("ds_complemento");
+                add.Telefone = reader.GetString("ds_telefone");
+                add.Imagem = reader.GetString("img_funcionario");
+
+                lista.Add(add);
+            }
+            reader.Close();
+            return lista;
+        }
+
+        public List<ViewFuncionario> Consultar(string nome, string cpf)
+        {
+            string script = @"SELECT * FROM vw_consultarFuncionario WHERE nm_nome LIKE @nm_nome AND ds_cpf LIKE @ds_cpf";
+
+            List<MySqlParameter> parms = new List<MySqlParameter>();
+            parms.Add(new MySqlParameter("nm_nome", nome + "%"));
+            parms.Add(new MySqlParameter("ds_cpf", cpf + "%"));
+
+            Database db = new Database();
+            MySqlDataReader reader = db.ExecuteSelectScript(script, parms);
+
+            List<ViewFuncionario> lista = new List<ViewFuncionario>();
+            while (reader.Read())
+            {
+                ViewFuncionario add = new ViewFuncionario();
+                add.Id = reader.GetInt32("id_funcionario");
+                add.Salario = reader.GetInt32("ds_salario");
+                add.Depto = reader.GetString("nm_depto");
+                add.Nome = reader.GetString("nm_nome");
+                add.Email = reader.GetString("ds_email");
+                add.Cpf = reader.GetString("ds_cpf");
+                add.Rg = reader.GetString("ds_rg");
+                add.Estado = reader.GetString("nm_estado");
+                add.Cidade = reader.GetString("ds_cidade");
+                add.Cep = reader.GetString("ds_cep");
+                add.Rua = reader.GetString("ds_rua");
+                add.Numero = reader.GetString("ds_numero");
+                add.Complemento = reader.GetString("ds_complemento");
+                add.Telefone = reader.GetString("ds_telefone");
+                add.Imagem = reader.GetString("img_funcionario");
+
+                lista.Add(add);
+            }
+            reader.Close();
+            return lista;
         }
     }
 }
