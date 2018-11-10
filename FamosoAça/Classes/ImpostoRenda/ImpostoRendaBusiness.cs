@@ -10,7 +10,7 @@ namespace FamosoAça.Classes.ImpostoRenda
     {
         public ImpostoRendaDTO Consultar(decimal baseCalculo)
         {
-            ImpostoRendaDatabase db = new ImpostoRendaDatabase();
+            ImpostoRendaDataBase db = new ImpostoRendaDataBase();
             return db.Consultar(baseCalculo);
         }
     }

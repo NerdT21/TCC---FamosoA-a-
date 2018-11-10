@@ -146,6 +146,7 @@
             // 
             this.pbxShow.BackgroundImage = global::FamosoAça.Properties.Resources.icons8_invisible_filled_50;
             this.pbxShow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbxShow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbxShow.Location = new System.Drawing.Point(250, 47);
             this.pbxShow.Name = "pbxShow";
             this.pbxShow.Size = new System.Drawing.Size(34, 25);
