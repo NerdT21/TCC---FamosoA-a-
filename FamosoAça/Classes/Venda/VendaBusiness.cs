@@ -1,6 +1,7 @@
 ﻿using FamosoAça.Classes.Estoque;
-using FamosoAça.Classes.Produto;
-using FamosoAça.Classes.Produto.Produto_Venda;
+using FamosoAça.Classes.Venda.Produto;
+using FamosoAça.Classes.Venda.ProdutoVendas;
+using FamosoAça.CustomExceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,49 +13,45 @@ namespace FamosoAça.Classes.Venda
 {
     public class VendaBusiness
     {
-         public int Salvar(VendaDTO dto, List<ProdutoDTO> item)
+        public int Salvar(VendaDTO dto, List<ProdutoDTO> item)
         {
-            string pagto = dto.FormaDePagamento;
-            int qtdpagto = pagto.Count();
+            string pagto = dto.FormaPagto;
+            int qtdPagto = pagto.Count();
 
-            if (qtdpagto == 0)
+            if (qtdPagto == 0)
             {
-                MessageBox.Show("Defina uma forma de pagamento.","Famoso Açai",MessageBoxButton.OK);
+                throw new ValidacaoException("Defina uma forma de pagamento.");
             }
 
             VendaDataBase db = new VendaDataBase();
-            int idCompra = db.Salvar(dto);
+            int IdCompra = db.Salvar(dto);
 
-            ProdutoVendaBusiness buss = new ProdutoVendaBusiness();
+            ProdutoVendasBusiness buss = new ProdutoVendasBusiness();
             foreach (ProdutoDTO i in item)
             {
-                ProdutoVendaDTO itemDto = new ProdutoVendaDTO();
-                itemDto.IdVenda = idCompra;
-                itemDto.IdProduto = i.Id;
+                ProdutoVendasDTO itemDto = new ProdutoVendasDTO();
+                itemDto.VendaId = IdCompra;
+                itemDto.ProdutoId = i.Id;
 
                 buss.Salvar(itemDto);
 
-                EstoqueBusiness estoque = new EstoqueBusiness();
-                estoque.Remover(1, i.Id);
+                EstoqueBusiness EstoqueBuss = new EstoqueBusiness();
+                EstoqueBuss.Remover(1, i.Id);
             }
 
-            return idCompra;
-            
-           
+            return IdCompra;
         }
 
-   
-        public List<ProdutoVendaView> Listar()
+        public List<ProdutoVendasView> Listar()
         {
             VendaDataBase db = new VendaDataBase();
             return db.Listar();
         }
 
-        public List<ProdutoVendaView> Consultar(string data)
+        public List<ProdutoVendasView> Consultar(string data)
         {
             VendaDataBase db = new VendaDataBase();
             return db.Consultar(data);
         }
-
     }
 }

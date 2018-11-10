@@ -74,10 +74,13 @@
     <Compile Include="Classes\Gatos Adicionais\GastosADataBase.cs" />
     <Compile Include="Classes\Gatos Adicionais\GastosADTO.cs" />
     <Compile Include="Classes\Login\UserSession.cs" />
-    <Compile Include="Classes\Produto\Produto Venda\ProdutoVendaBusiness.cs" />
-    <Compile Include="Classes\Produto\Produto Venda\ProdutoVendaDataBase.cs" />
-    <Compile Include="Classes\Produto\Produto Venda\ProdutoVendaDTO.cs" />
-    <Compile Include="Classes\Produto\Produto Venda\ProdutoVendaView.cs" />
+    <Compile Include="Classes\Venda\ProdutoVendas\ProdutoVendasBusiness.cs" />
+    <Compile Include="Classes\Venda\ProdutoVendas\ProdutoVendasDatabase.cs" />
+    <Compile Include="Classes\Venda\ProdutoVendas\ProdutoVendasDTO.cs" />
+    <Compile Include="Classes\Venda\ProdutoVendas\ProdutoVendasView.cs" />
+    <Compile Include="Classes\Venda\Produto\ProdutoBusiness.cs" />
+    <Compile Include="Classes\Venda\Produto\ProdutoDatabase.cs" />
+    <Compile Include="Classes\Venda\Produto\ProdutoDTO.cs" />
     <Compile Include="CustomExceptions\ValidacaoException.cs" />
     <Compile Include="PlugIn\ImagemPlugIn.cs" />
     <Compile Include="Classes\Cargo\CargoBusiness.cs" />
@@ -109,37 +112,22 @@
     <Compile Include="Classes\Login\LoginBusiness.cs" />
     <Compile Include="Classes\Login\LoginDataBase.cs" />
     <Compile Include="Classes\Login\LoginDTO.cs" />
-    <Compile Include="Classes\Produto\ProdutoBusiness.cs" />
-    <Compile Include="Classes\Produto\ProdutoDataBase.cs" />
-    <Compile Include="Classes\Produto\ProdutoDTO.cs" />
     <Compile Include="Classes\SalarioFamilia\SalarioFamilhaBusiness.cs" />
     <Compile Include="Classes\SalarioFamilia\SalarioFamilhaDataBase.cs" />
     <Compile Include="Classes\SalarioFamilia\SalarioFamilhaDTO.cs" />
     <Compile Include="Classes\Venda\VendaBusiness.cs" />
     <Compile Include="Classes\Venda\VendaDataBase.cs" />
     <Compile Include="Classes\Venda\VendaDTO.cs" />
-    <Compile Include="Screens\Entregavel III\Controle De ItemProduto\frmCadastrarItemProduto.cs">
+    <Compile Include="Screens\Entregavel III\Produto vendas\frmConsultarItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Screens\Entregavel III\Controle De ItemProduto\frmCadastrarItemProduto.Designer.cs">
-      <DependentUpon>frmCadastrarItemProduto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Screens\Entregavel III\Controle De ItemProduto\frmConsultarItemProduto.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Screens\Entregavel III\Controle De ItemProduto\frmConsultarItemProduto.Designer.cs">
-      <DependentUpon>frmConsultarItemProduto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Screens\Entregavel III\Item OK\frmConsultarItem.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Screens\Entregavel III\Item OK\frmConsultarItem.Designer.cs">
+    <Compile Include="Screens\Entregavel III\Produto vendas\frmConsultarItem.Designer.cs">
       <DependentUpon>frmConsultarItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Entregavel III\Item OK\frmRegistrarItem.cs">
+    <Compile Include="Screens\Entregavel III\Produto vendas\frmRegistrarItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Screens\Entregavel III\Item OK\frmRegistrarItem.Designer.cs">
+    <Compile Include="Screens\Entregavel III\Produto vendas\frmRegistrarItem.Designer.cs">
       <DependentUpon>frmRegistrarItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Entregavel III\Venda\FrmConsultarVenda.cs">
@@ -281,16 +269,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Screens\Entregavel III\Controle De ItemProduto\frmCadastrarItemProduto.resx">
-      <DependentUpon>frmCadastrarItemProduto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Entregavel III\Controle De ItemProduto\frmConsultarItemProduto.resx">
-      <DependentUpon>frmConsultarItemProduto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Entregavel III\Item OK\frmConsultarItem.resx">
+    <EmbeddedResource Include="Screens\Entregavel III\Produto vendas\frmConsultarItem.resx">
       <DependentUpon>frmConsultarItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Entregavel III\Item OK\frmRegistrarItem.resx">
+    <EmbeddedResource Include="Screens\Entregavel III\Produto vendas\frmRegistrarItem.resx">
       <DependentUpon>frmRegistrarItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Entregavel III\Venda\FrmConsultarVenda.resx">

@@ -4,19 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FamosoAça.Classes.Produto.Produto_Venda
+namespace FamosoAça.Classes.Venda.ProdutoVendas
 {
-     public class ProdutoVendaView
+    public class ProdutoVendasView
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
 
-        public string FormaPagamento{ get; set; }
+        public string FormaPagto { get; set; }
 
         public string Data { get; set; }
 
-        public int QTDItme { get; set; }
+        public int QtdItem { get; set; }
 
         public decimal Total { get; set; }
-
     }
 }

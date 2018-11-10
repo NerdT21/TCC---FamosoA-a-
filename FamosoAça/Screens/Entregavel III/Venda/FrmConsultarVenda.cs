@@ -8,8 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FamosoAça.Classes.Venda;
-using FamosoAça.Classes.Produto;
-using FamosoAça.Classes.Produto.Produto_Venda;
+using FamosoAça.Classes.Venda.ProdutoVendas;
 
 namespace FamosoAça.Screens.Entregavel_III.ConsultarVenda
 {
@@ -18,19 +17,27 @@ namespace FamosoAça.Screens.Entregavel_III.ConsultarVenda
         public FrmConsultarVenda()
         {
             InitializeComponent();
-            
+            AutoCarregar();
         }
-        
+
+        void AutoCarregar()
+        {
+            VendaBusiness buss = new VendaBusiness();
+            List<ProdutoVendasView> lista = buss.Listar();
+
+            dgvProduto.AutoGenerateColumns = false;
+            dgvProduto.DataSource = lista;
+        }
+
         void CarregarGrid()
         {
             string data = mkbData.Text;
 
             VendaBusiness buss = new VendaBusiness();
-            List<ProdutoVendaView> dto = buss.Consultar(data);
+            List<ProdutoVendasView> lista = buss.Consultar(data);
 
             dgvProduto.AutoGenerateColumns = false;
-            dgvProduto.DataSource = dto;
-
+            dgvProduto.DataSource = lista;
         }
 
         private void btnProcurar_Click(object sender, EventArgs e)
