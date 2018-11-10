@@ -91,6 +91,10 @@ namespace FamosoAça.Screens.Entregavel_III.ConsultarVenda
 
                 VendaBusiness buss = new VendaBusiness();
                 buss.Salvar(dto, carrinhoAdd.ToList());
+
+                frmMessage tela = new frmMessage();
+                tela.LoadScreen("Venda realizada com sucesso.");
+                tela.ShowDialog();
             }
             catch (Exception)
             {

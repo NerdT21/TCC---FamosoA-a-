@@ -144,6 +144,9 @@ namespace FamosoAça.Screens.Entregavel_I
 
                 FolhaPagamentoBusiness buss = new FolhaPagamentoBusiness();
                 buss.Salvar(dto);
+
+                frmMessage tela = new frmMessage();
+                tela.LoadScreen("Pagamento registrado com sucesso!");
             }
             catch (Exception)
             {

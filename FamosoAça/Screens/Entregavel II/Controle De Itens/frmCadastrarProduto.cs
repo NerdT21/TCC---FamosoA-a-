@@ -64,6 +64,10 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Produto
 
                 EstoqueBusiness business = new EstoqueBusiness();
                 business.Salvar(estoque);
+
+                frmMessage tela = new frmMessage();
+                tela.LoadScreen("Produto cadastrado com sucesso.");
+                tela.ShowDialog();
             }
             catch (Exception)
             {

@@ -48,6 +48,10 @@ namespace FamosoAça.Screens.Entregavel_III.Item
 
                 EstoqueBusiness buss = new EstoqueBusiness();
                 buss.Salvar(estoque);
+
+                frmMessage tela = new frmMessage();
+                tela.LoadScreen("Produto registrado com sucesso.");
+                tela.ShowDialog();
             }
             catch (Exception)
             {

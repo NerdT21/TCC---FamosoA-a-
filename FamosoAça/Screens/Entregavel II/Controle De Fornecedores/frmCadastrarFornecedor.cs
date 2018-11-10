@@ -61,7 +61,7 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Fornecedores
                 business.Salvar(dto);
 
                 frmMessage tela = new frmMessage();
-                tela.LoadScreen("Forncedor cadstrado com suceso");
+                tela.LoadScreen("Forncedor cadastrado com sucesso.");
                 tela.ShowDialog();
             }
             catch (MySqlException mex)

@@ -72,7 +72,7 @@ namespace FamosoAça.Screens.Entregavel_I.Departamentos
                 buss.Salvar(dto);
 
                 frmMessage tela = new frmMessage();
-                tela.LoadScreen("Departamento cadastrado com suceso!");
+                tela.LoadScreen("Departamento cadastrado com sucesso!");
                 tela.ShowDialog();
             }
             catch (Exception)
