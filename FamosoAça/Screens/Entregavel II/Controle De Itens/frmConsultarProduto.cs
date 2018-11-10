@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FamosoAça.Classes.Venda.Produto;
 using FamosoAça.CustomExceptions.TelasException;
+using FamosoAça.Classes.Compra.Item;
 
 namespace FamosoAça.Screens.Entregavel_II.Controle_De_Produto
 {
@@ -25,8 +26,8 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Produto
         {
             try
             {
-                ProdutoBusiness buss = new ProdutoBusiness();
-                List<ProdutoDTO> lista = buss.Listar();
+                ItemBusiness buss = new ItemBusiness();
+                List<ItemView> lista = buss.Listar();
 
                 dgvProduto.DataSource = lista;
             }
@@ -44,10 +45,10 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Produto
             try
             {
                 string nome = txtNome.Text;
-                string marca = txtMarca.Text;
+                string fornecedor = txtMarca.Text;
 
-                ProdutoBusiness buss = new ProdutoBusiness();
-                List<ProdutoDTO> lista = buss.Consultar(nome, marca);
+                ItemBusiness buss = new ItemBusiness();
+                List<ItemView> lista = buss.Consultar(nome, fornecedor);
 
                 dgvProduto.DataSource = lista;
             }

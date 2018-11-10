@@ -86,7 +86,7 @@ CREATE TABLE `tb_folhaDePagamento` (
     `dt_pagamento` varchar(10) NOT NULL,
 	PRIMARY KEY (`id_folhaPagto`),
     FOREIGN KEY(`id_funcionario`)
-    REFERENCES tb_funcionario(`id_foncionario`)
+    REFERENCES tb_funcionario(`id_funcionario`)
 );
 
 CREATE TABLE `tb_inss` (
@@ -370,7 +370,7 @@ GROUP
 CREATE VIEW vw_consultarFuncionario AS
 	SELECT tb_funcionario.id_funcionario,
 		   tb_funcionario.ds_salario, 
-           tb_Depto.nm_depto,
+           tb_depto.nm_depto,
            tb_funcionario.nm_nome,
            tb_funcionario.ds_email,
            tb_funcionario.ds_cpf,
@@ -386,8 +386,8 @@ CREATE VIEW vw_consultarFuncionario AS
 	FROM tb_funcionario
     JOIN tb_estados
     ON tb_funcionario.id_estado = tb_estados.id_estado
-    JOIN tb_Depto
-    ON tb_funcionario.id_depto = tb_Depto.id_depto;
+    JOIN tb_depto
+    ON tb_funcionario.id_depto = tb_depto.id_depto;
 
 
 
@@ -436,7 +436,7 @@ CREATE VIEW vw_ganhos AS
         
         
 -- DROP VIEW vw_despesas;
-CREATE VIEW vw_despesas AS
+ALTER VIEW vw_despesas AS
 	SELECT sum(vl_total) vl_total, dt_referencia 
       FROM 
       ( 
@@ -450,18 +450,19 @@ CREATE VIEW vw_despesas AS
 		 GROUP
             BY (dt_compra) 
 		UNION 
-			SELECT DATE(dt_gasto) 		    		dt_referencia,
+			SELECT (dt_gasto) 		    		dt_referencia,
                     sum(vl_gasto)     				vl_total 
 			  FROM tb_gastosAdicionais 
 			 GROUP
-                BY DATE(dt_gasto) 
+                BY (dt_gasto) 
                 UNION  
-					SELECT DATE(dt_pagamento) 		dt_referencia, 
+					SELECT (dt_pagamento) 		dt_referencia, 
 							sum(vl_salarioLiq)  vl_total 
 					  FROM tb_folhaDePagamento 
 					 GROUP
                         BY dt_pagamento)despesa 
                         GROUP BY dt_referencia;
+    
     
     
 CREATE VIEW vw_consultar_fluxodecaixa AS
@@ -488,28 +489,35 @@ FROM
     GROUP BY dt_referencia, 
 			 vl_total_ganhos,
              vl_total_despesas,
-             vl_saldo;  
+             vl_saldo; 
  
- /*
+ 
 -- ========================= --
 -- ===== SELECT TABELAS===== --
 -- ========================= --
  
+/*
 SELECT * FROM tb_login;
 SELECT * FROM tb_depto;
 SELECT * FROM tb_estados;
 SELECT * FROM tb_fornecedor;
 SELECT * FROM tb_estoque;
 SELECT * FROM tb_item_compra;
-
+SELECT * FROM tb_venda;
+SELECT * FROM tb_compra;
+SELECT * FROM tb_gastosAdicionais;
 
 -- ======================= --
 -- ===== SELECT VIEWs===== --
 -- ======================= --
 
+USE FamosoAcaiDB;
 SELECT * FROM vw_estoque;
 SELECT * FROM vw_consultar_venda;
 SELECT * FROM vw_consulta_Compra;
 SELECT * FROM vw_item; 
 SELECT * FROM vw_consultarFornecedor;
 SELECT * FROM vw_consultarFuncionario;
+SELECT * FROM vw_consultar_fluxodecaixa;
+SELECT * FROM vw_despesas;
+SELECT * FROM vw_ganhos;

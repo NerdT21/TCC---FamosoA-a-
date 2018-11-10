@@ -28,6 +28,7 @@ namespace FamosoAça.Login
                 dto.Usuario = txtUsuario.Text;
                 dto.Funcionario = txtNome.Text;
                 dto.Senha = txtSenha.Text;
+                dto.Email = txtEmail.Text;
                 dto.PermissaoAdm = ckbAdm.Checked;
                 dto.PermissaoCadastros = ckbCadastros.Checked;
                 dto.PermissaoCaixa = ckbCaixa.Checked;
