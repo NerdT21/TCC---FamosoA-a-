@@ -28,25 +28,9 @@ namespace FamosoAça.Screens.Entregavel_IV.Estoque
             dgvEstoque.AutoGenerateColumns = false;
             dgvEstoque.DataSource = list;
         }
-        
-
-        public void dgvEstilo()
-        {
-            //Estilo da GV
-           
-            dgvEstoque.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dgvEstoque.RowHeadersVisible = false;
-           
-
-            //Fonte
-            dgvEstoque.RowHeadersDefaultCellStyle.Font = new Font("SegoeUI", 12);
-            dgvEstoque.RowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
-            dgvEstoque.AlternatingRowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
-        }
 
         void CarregarGrid()
         {
-
             string produto = txtNome.Text;
 
             EstoqueBusiness buss = new EstoqueBusiness();
@@ -54,12 +38,10 @@ namespace FamosoAça.Screens.Entregavel_IV.Estoque
 
             dgvEstoque.AutoGenerateColumns = false;
             dgvEstoque.DataSource = list;
-
         }
 
         private void Estoque_Load(object sender, EventArgs e)
         {
-            dgvEstilo();
 
         }
 

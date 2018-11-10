@@ -22,11 +22,10 @@ namespace FamosoAça.Screens.Entregavel_IV.Gatos_Adicionais
         void AutoCarregar()
         {
             GastosABusiness buss = new GastosABusiness();
-            List <GastosADTO> list = buss.Listar();
+            List<GastosADTO> lista = buss.Listar();
 
             dgvGastos.AutoGenerateColumns = false;
-            dgvGastos.DataSource = list;
-
+            dgvGastos.DataSource = lista;
         }
 
         void CarregarGrid()
@@ -34,10 +33,10 @@ namespace FamosoAça.Screens.Entregavel_IV.Gatos_Adicionais
             string data = mkbData.Text;
 
             GastosABusiness buss = new GastosABusiness();
-            List<GastosADTO> list = buss.Consultar(data);
+            List<GastosADTO> lista = buss.Consultar(data);
 
             dgvGastos.AutoGenerateColumns = false;
-            dgvGastos.DataSource = list;
+            dgvGastos.DataSource = lista;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
