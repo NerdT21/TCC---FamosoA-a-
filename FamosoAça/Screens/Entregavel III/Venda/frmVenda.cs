@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FamosoAça.Classes.Produto;
 using FamosoAça.Classes.Venda;
 using FamosoAça.Classes.Login;
+using FamosoAça.Classes.Venda.Produto;
 
 namespace FamosoAça.Screens.Entregavel_III.ConsultarVenda
 {
@@ -78,12 +78,11 @@ namespace FamosoAça.Screens.Entregavel_III.ConsultarVenda
         {
             VendaDTO dto = new VendaDTO();
             dto.IdUsuario = UserSession.UsuarioLogado.Id;
-            dto.DataVenda = mktData.Text;
-            dto.FormaDePagamento = Convert.ToString(cboTipoPag.SelectedItem);
+            dto.Data = mktData.Text;
+            dto.FormaPagto = Convert.ToString(cboTipoPag.SelectedItem);
 
             VendaBusiness buss = new VendaBusiness();
             buss.Salvar(dto, carrinhoAdd.ToList());
-
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

@@ -21,7 +21,12 @@ CREATE TABLE `tb_funcionario` (
     `vl_salario` decimal NOT NULL,  
 	PRIMARY KEY (`id_funcionario`)
 );
---  drop table tb_funcionario;
+
+CREATE TABLE `tb_estados` (
+	`id_estado` int NOT NULL AUTO_INCREMENT,
+	`nm_estado` varchar(2) NOT NULL,
+	PRIMARY KEY (`id_estado`)
+);
 
 CREATE TABLE `tb_depto` (
 	`id_depto` int NOT NULL AUTO_INCREMENT,
@@ -44,14 +49,6 @@ CREATE TABLE `tb_fornecedor` (
 );
 -- drop table tb_fornecedor;
 
-CREATE TABLE `tb_produto` (
-	`id_produto` int NOT NULL AUTO_INCREMENT,
-	`nm_nome` varchar(150) NOT NULL,
-	`vl_preco` DECIMAL(12,2) NOT NULL,
-	`ds_descricao` varchar(255),
-	PRIMARY KEY (`id_produto`)
-);
-
 CREATE TABLE `tb_login` (
 	`id_usuario` int NOT NULL AUTO_INCREMENT,
     `nm_funcionario` varchar(50) NOT NULL,
@@ -72,35 +69,6 @@ CREATE TABLE `tb_estoque` (
 	`nm_produto` varchar(250) NOT NULL,
 	`qtd_estocado` bigint NOT NULL,
 	PRIMARY KEY (`id_estoque`)
-);
-
-
-
-CREATE TABLE `tb_compra` (
-	`id_compra` int NOT NULL AUTO_INCREMENT,
-    `id_usuario` int NOT NULL,
-	`dt_compra` varchar(10) NOT NULL,
-	`ds_formaPagamento` varchar(50) NOT NULL,
-	PRIMARY KEY (`id_compra`),
-    FOREIGN KEY(`id_usuario`)
-    REFERENCES tb_login(`id_usuario`)
-);
-
-CREATE TABLE `tb_venda` (
-	`id_venda` int NOT NULL AUTO_INCREMENT,
-	`id_usuario` int NOT NULL,
-	`dt_venda` varchar(15)NOT NULL,
-	`ds_formaPagamento` varchar (50) NOT NULL,
-     PRIMARY KEY (`id_venda`),
-     FOREIGN KEY (`id_usuario`)
-     REFERENCES  tb_login(`id_usuario`)
-);
-
-CREATE TABLE `tb_produtoVenda` (
-	`id_produtoVenda` int NOT NULL AUTO_INCREMENT,
-	`id_produto` int NOT NULL,
-	`id_venda` int NOT NULL,
-	PRIMARY KEY (`id_produtoVenda`)
 );
 
 CREATE TABLE `tb_folhaDePagamento` (
@@ -143,62 +111,82 @@ CREATE TABLE `tb_salarioFamilia` (
 	PRIMARY KEY (`id_salFamilia`)
 );
 
-CREATE TABLE `tb_item` (
-	`id_item` int NOT NULL AUTO_INCREMENT,
-	`id_fornecedor` int NOT NULL,
-	`nm_item` varchar(50) NOT NULL,
-	`ds_item` varchar(200) NOT NULL,
-    `vl_preco` decimal (15,2) NOT NULL,
-	PRIMARY KEY (`id_item`)
+CREATE TABLE `tb_item`(
+	`id_item` INT NOT NULL AUTO_INCREMENT,
+    `nm_item` varchar(50) NOT NULL,
+    `id_fornecedor` INT NOT NULL,
+    `vl_preco` decimal(15,2) NOT NULL,
+    `ds_item` varchar(300) NOT NULL,
+    PRIMARY KEY (`id_item`),
+    FOREIGN KEY (`id_fornecedor`) 
+    REFERENCES tb_fornecedor(`id_fornecedor`)
 );
 
-CREATE TABLE `tb_estados` (
-	`id_estado` int NOT NULL AUTO_INCREMENT,
-	`nm_estado` varchar(2) NOT NULL,
-	PRIMARY KEY (`id_estado`)
+CREATE TABLE `tb_compra` (
+	`id_compra` int NOT NULL AUTO_INCREMENT,
+    `id_usuario` int NOT NULL,
+	`dt_compra` varchar(10) NOT NULL,
+	`ds_formaPagamento` varchar(50) NOT NULL,
+	PRIMARY KEY (`id_compra`),
+    FOREIGN KEY(`id_usuario`)
+    REFERENCES tb_login(`id_usuario`)
 );
-
-CREATE TABLE `tb_gastosAdicionais` (
-	`id_gasto` int NOT NULL AUTO_INCREMENT,
-	`nm_gasto` varchar(25) NOT NULL,
-	`ds_gasto` varchar(500) NOT NULL,
-	`dt_gasto` varchar(15) NOT NULL, 
-	`vl_gasto` DECIMAL(10,2) NOT NULL,
-	PRIMARY KEY (`id_gasto`)
-);
--- drop table tb_gastosAdicionais;
 
 CREATE TABLE `tb_item_compra`(
-`id_itemCompra` INT NOT NULL AUTO_INCREMENT,
-`id_item` INT NOT NULL,
-`id_compra` INT NOT NULL,
-PRIMARY KEY(`id_itemCompra`),
-FOREIGN KEY(`id_item`)
-REFERENCES tb_item (`id_item`),
-FOREIGN KEY(`id_compra`)
-REFERENCES tb_compra(`id_compra`)
+	`id_itemCompra` int NOT NULL AUTO_INCREMENT,
+    `id_item` int NOT NULL,
+    `id_compra` int NOT NULL,
+    PRIMARY KEY(`id_itemCompra`),
+    FOREIGN KEY(`id_item`)
+    REFERENCES tb_item(`id_item`),
+    FOREIGN KEY(`id_compra`)
+    REFERENCES tb_compra(`id_compra`)
 );
--- Drop table tb_item_compra;
 
+CREATE TABLE `tb_venda` (
+	`id_venda` int NOT NULL AUTO_INCREMENT,
+    `dt_venda` varchar(10)NOT NULL,
+    `id_usuario` int NOT NULL,
+    `ds_formaPagto` varchar(20) NOT NULL,
+    PRIMARY KEY(`id_venda`),
+    FOREIGN KEY(`id_usuario`)
+    REFERENCES tb_login(`id_usuario`)
+);
 
+CREATE TABLE `tb_produto` (
+	`id_produto` int NOT NULL AUTO_INCREMENT,
+	`nm_produto` varchar(50) NOT NULL,
+	`ds_marca` varchar(100) NOT NULL,
+	`ds_produto` varchar(300) NOT NULL,
+    `vl_preco` decimal(15,2) NOT NULL,
+	PRIMARY KEY (`id_produto`)
+);
 
+CREATE TABLE `tb_produtoVenda`(
+	`id_produtoVenda` int NOT NULL AUTO_INCREMENT,
+    `id_produto` int NOT NULL,
+    `id_venda` int NOT NULL,
+    PRIMARY KEY(`id_produtoVenda`),
+    FOREIGN KEY(`id_produto`)
+    REFERENCES tb_produto(`id_produto`),
+    FOREIGN KEY(`id_venda`)
+    REFERENCES tb_venda(`id_venda`)
+);
+
+CREATE TABLE `tb_gastosAdicionais`(
+	`id_gastos` int NOT NULL AUTO_INCREMENT,
+    `nm_gasto` varchar(50) NOT NULL,
+    `vl_gasto` decimal(15,2) NOT NULL,
+    `ds_gasto` varchar(500),
+    `dt_gasto` varchar(10) NOT NULL,
+    PRIMARY KEY(`id_gastos`)
+);
 
 ALTER TABLE `tb_funcionario` ADD CONSTRAINT `tb_funcionario_fk1` FOREIGN KEY (`id_depto`) REFERENCES `tb_depto`(`id_depto`);
 
 ALTER TABLE `tb_funcionario` ADD CONSTRAINT `tb_funcionario_fk0` FOREIGN KEY (`id_estado`) REFERENCES `tb_estados`(`id_estado`);
 
 ALTER TABLE `tb_fornecedor` ADD CONSTRAINT `tb_fornecedor_fk0` FOREIGN KEY (`id_estado`) REFERENCES `tb_estados`(`id_estado`);
-
--- ALTER TABLE `tb_estoque` ADD CONSTRAINT `tb_estoque_fk0` FOREIGN KEY (`id_compra`) REFERENCES `tb_compra`(`id_compra`);
-
--- ALTER TABLE `tb_compra` ADD CONSTRAINT `tb_compra_fk0` FOREIGN KEY (`id_item`) REFERENCES `tb_item`(`id_item`);
-
--- ALTER TABLE `tb_compra` ADD CONSTRAINT `tb_compra_fk1` FOREIGN KEY (`id_fornecedor`) REFERENCES `tb_fornecedor`(`id_fornecedor`);
-
-ALTER TABLE `tb_produtoVenda` ADD CONSTRAINT `tb_produto_venda_fk0` FOREIGN KEY (`id_produto`) REFERENCES `tb_produto`(`id_produto`);
-
-ALTER TABLE `tb_produtoVenda` ADD CONSTRAINT `tb_produto_venda_fk1` FOREIGN KEY (`id_venda`) REFERENCES `tb_venda`(`id_venda`);
-
 
 
 INSERT INTO tb_depto(`id_depto`,`nm_depto`,`ds_depto`)
@@ -332,55 +320,53 @@ INSERT INTO tb_estados(`id_estado`,`nm_estado`)
 -- ================= --
 
 -- DROP VIEW vw_estoque; 
-CREATE VIEW  vw_estoque AS 
-      SELECT tb_estoque.id_estoque,
-             tb_item_compra.id_item,
-             tb_estoque.nm_produto,
-        sum( tb_item_compra.id_item) as qtd_estocado  
-        FROM tb_estoque
-        JOIN tb_item_compra
-          ON tb_estoque.id_itemProduto = tb_item_compra.id_itemCompra
-        GROUP 
-        BY  tb_estoque.id_estoque;
+CREATE VIEW vw_estoque AS
+	SELECT tb_estoque.id_estoque,
+		   tb_item_compra.id_item,	
+		   tb_estoque.nm_produto,
+           sum(tb_item_compra.id_item) as qtd_estocado
+	FROM tb_estoque
+	JOIN tb_item_compra
+	  ON tb_estoque.id_itemProduto = tb_item_compra.id_itemCompra
+	GROUP 
+	BY tb_estoque.id_estoque;
+
         
         
 -- DROP VIEW vw_consultar_venda;        
-CREATE VIEW vw_consultar_venda AS
-      SELECT tb_venda.id_venda,
-             tb_venda.dt_venda,
-             tb_venda.ds_formaPagamento,
-             COUNT(tb_produtoVenda.id_produtoVenda) AS qtd_item,
-             SUM(tb_produto.vl_preco) AS vl_total
+CREATE VIEW vw_compra_consultar AS
+SELECT tb_compra.id_compra,
+       tb_compra.ds_formaPagamento,
+       tb_compra.dt_compra,
+       count(tb_item_compra.id_itemCompra)   as qtd_item,
+       sum(tb_item.vl_preco) as vl_total
+FROM tb_compra
+JOIN tb_item_compra
+  ON tb_compra.id_compra = tb_item_compra.id_compra
+JOIN tb_item
+  ON tb_item_compra.id_item = tb_item.id_item
+GROUP
+  BY tb_compra.id_compra,
+     tb_compra.ds_formaPagamento,
+	 tb_compra.dt_compra;
+
+
+CREATE VIEW vw_venda_consultar AS
+SELECT tb_venda.id_venda,
+	   tb_venda.dt_venda,
+       tb_venda.ds_formaPagto,
+       count(tb_produtoVenda.id_produtoVenda) as qtd_item,
+       sum(tb_produto.vl_preco)				   as vl_total
 FROM tb_venda
 JOIN tb_produtoVenda
   ON tb_venda.id_venda = tb_produtoVenda.id_produtoVenda
 JOIN tb_produto
-  ON tb_produtoVenda.id_produtoVenda = tb_produto.id_produto 
-GROUP
-BY tb_venda.id_venda,
-   tb_venda.dt_venda;
-   
-   
--- drop view vw_compra_consultar; 
- create view vw_consulta_Compra as
- select  tb_compra.id_compra,
-         tb_compra.ds_formaPagamento,
-         tb_compra.dt_compra,
-count(tb_item_Compra.id_itemCompra) as qtd_item,
-sum(tb_item.vl_preco) as  vl_total  
-from tb_compra
-join tb_item_compra
-on tb_compra.id_compra = tb_item_compra.id_compra
-join tb_item
-   on tb_item_compra.id_item = tb_item_compra.id_compra
-group by
-            tb_compra.id_compra,
-            tb_compra.ds_formaPagamento,
-            tb_compra.dt_compra;
+  ON tb_produtoVenda.id_produtoVenda = tb_produto.id_produto
+GROUP 
+  BY tb_venda.id_venda,
+     tb_venda.dt_venda;
             
-            
-
--- Drop view vw_consultarFuncionario; 
+		
 CREATE VIEW vw_consultarFuncionario AS
 	SELECT tb_funcionario.id_funcionario,
 		   tb_funcionario.vl_salario,
@@ -421,7 +407,7 @@ CREATE VIEW vw_consultarFornecedor AS
       
 
 -- drop view vl_item;
-CREATE VIEW vw_item AS
+ CREATE VIEW vw_item AS
 	SELECT tb_item.id_item,
            tb_item.nm_item, 
            tb_fornecedor.nm_fornecedor,
@@ -429,10 +415,78 @@ CREATE VIEW vw_item AS
            tb_item.vl_preco
 	FROM tb_item
     JOIN tb_fornecedor
-      ON tb_item.id_fornecedor = tb_fornecedor.id_fornecedor;    
+      ON tb_item.id_fornecedor = tb_fornecedor.id_fornecedor;  
     
   
-          
+         -- ============== VIEW do fluxo de caixa    
+    
+    
+CREATE VIEW vw_ganhos AS
+	SELECT (dt_venda)					 dt_referencia,
+			sum(vl_total)  		        	 vl_total 
+	  FROM vw_venda_consultar 				 pe 
+      JOIN tb_produtoVenda 					 pi 
+        ON pe.id_venda = pi.id_venda
+	  JOIN tb_produto 						 p 
+        ON pi.id_produto = p.id_produto
+	 GROUP
+        BY (dt_venda);
+        
+        
+-- DROP VIEW vw_despesas;
+CREATE VIEW vw_despesas AS
+	SELECT sum(vl_total) vl_total, dt_referencia 
+      FROM 
+      ( 
+		SELECT (dt_compra)					    dt_referencia,
+                sum(vl_total) 						vl_total 
+		  FROM vw_compra_consultar 					c 
+          JOIN tb_item_compra 						ci 
+            ON c.id_compra = ci.id_compra 
+		  JOIN tb_item 								p 
+            ON p.id_item = ci.id_item
+		 GROUP
+            BY (dt_compra) 
+		UNION 
+			SELECT DATE(dt_gasto) 		    		dt_referencia,
+                    sum(vl_gasto)     				vl_total 
+			  FROM tb_gastosAdicionais 
+			 GROUP
+                BY DATE(dt_gasto) 
+                UNION  
+					SELECT DATE(dt_pagamento) 		dt_referencia, 
+							sum(vl_salarioLiq)  vl_total 
+					  FROM tb_folhaDePagamento 
+					 GROUP
+                        BY dt_pagamento)despesa 
+                        GROUP BY dt_referencia;
+    
+    
+CREATE VIEW vw_consultar_fluxodecaixa AS
+SELECT dt_referencia,
+	ifnull(vl_total_ganhos, 0)											vl_total_ganhos,
+    ifnull(vl_total_despesas, 0)										vl_total_despesas,
+    IFNULL(vl_total_ganhos - vl_total_despesas, - vl_total_despesas) 	vl_saldo  
+FROM 
+  ( 
+		   SELECT g.dt_referencia,
+			      g.vl_total 			vl_total_ganhos,
+                  d.vl_total 		    vl_total_despesas
+             FROM vw_ganhos 			g
+        LEFT JOIN vw_despesas			d
+               ON g.dt_referencia = d.dt_referencia 
+			UNION
+		   SELECT d.dt_referencia,
+				  g.vl_total			vl_total_ganhos,
+                  d.vl_total		    vl_total_despesas
+			 FROM vw_ganhos 			g
+	   RIGHT JOIN vw_despesas			d
+			   ON g.dt_referencia = d.dt_referencia 
+	) tb_Fluxo 
+    GROUP BY dt_referencia, 
+			 vl_total_ganhos,
+             vl_total_despesas,
+             vl_saldo;  
  
  /*
 -- ========================= --

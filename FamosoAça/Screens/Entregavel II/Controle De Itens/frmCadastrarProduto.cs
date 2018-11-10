@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FamosoAça.Classes.Produto;
 using FamosoAça.Classes.Compra.Item;
 using FamosoAça.Classes.Fornecedor;
 using FamosoAça.Classes.Estoque;
