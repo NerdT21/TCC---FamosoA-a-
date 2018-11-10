@@ -12,8 +12,8 @@ namespace FamosoAça.Classes.Estoque
 
         public int ItemId { get; set; }
 
-        public string NomeProduto { get; set; }
+        public string Produto { get; set; }
 
-        public int QtdEstoqcada { get; set; }
+        public int QtdEstocado { get; set; }    
     }
 }

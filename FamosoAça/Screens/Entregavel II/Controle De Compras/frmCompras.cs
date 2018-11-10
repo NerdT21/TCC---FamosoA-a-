@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FamosoAça.Classes.Compra.Item;
 using FamosoAça.Classes.Compra;
+using FamosoAça.Classes.Login;
 
 namespace FamosoAça.Screens.Entregavel_II.Controle_De_Compras
 {
@@ -17,41 +18,66 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Compras
         public frmCompras()
         {
             InitializeComponent();
-            CarregarData();
             CarregarCombos();
-
+            DataParaHoje();
+            //CarregarTxt();
         }
 
-        void CarregarCombos()
-        {
-            ItemBusiness buss = new ItemBusiness();
-            List<ItemDTO> dto = buss.Listar();
+        BindingList<ItemView> carrinhoAdd = new BindingList<ItemView>();
+        BindingList<decimal> valor = new BindingList<decimal>();
 
-            cboItem.ValueMember = nameof(ItemDTO.Id);
-            cboItem.DisplayMember = nameof(ItemDTO.Nome);
-            cboItem.DataSource = dto;
-        }
-
-        void CarregarData()
+        void DataParaHoje()
         {
             DateTime hoje = DateTime.Now;
             int dia = hoje.Day;
             int mes = hoje.Month;
             int ano = hoje.Year;
 
-            if (dia <10)
+            if (dia < 10)
             {
-                string dt = "0" + dia + "/" + mes + "/" + ano;
-                mkbData.Text = dt;
-
+                string data = "0" + dia + "/" + mes + "/" + ano;
+                mkbData.Text = data;
             }
             else
             {
-                string dt = dia + "/" + mes + "/" + ano;
-                mkbData.Text = dt;
-
+                string data = dia + "/" + mes + "/" + ano;
+                mkbData.Text = data;
             }
 
+        }
+
+        void CarregarTxt()
+        {
+            ItemView item = cboItem.SelectedItem as ItemView;
+
+            if (item.Nome != null)
+            {
+                txtItem.Text = item.Nome;
+
+                txtValorTotal.Text = Convert.ToString(item.Preco);
+                txtFornecedor.Text = item.Fornecedor;
+            }
+            else
+            {
+                txtItem.Text = "NULL";
+            }
+
+        }
+
+        void CarregarCombos()
+        {
+            ItemBusiness buss = new ItemBusiness();
+            List<ItemView> dto = buss.Listar();
+
+            cboItem.ValueMember = nameof(ItemDTO.Id);
+            cboItem.DisplayMember = nameof(ItemDTO.Nome);
+            cboItem.DataSource = dto;
+        }
+
+        void CarregarGrid()
+        {
+            dgvCompras.AutoGenerateColumns = false;
+            dgvCompras.DataSource = carrinhoAdd;
         }
 
         void MandarProCarrinho(string item, string qtd, string preco)
@@ -61,38 +87,37 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Compras
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            ItemDTO dto = cboItem.SelectedItem as ItemDTO;
+            ItemView dto = cboItem.SelectedItem as ItemView;
 
-            string item = txtItem.Text;
-            string qtd = nudQtd.Value.ToString();
-            string preco = dto.Preco.ToString();
+            int quantidade = Convert.ToInt32(nudQtd.Value);
 
-            MandarProCarrinho(item, qtd, preco);
+            for (int i = 0; i < quantidade; i++)
+            {
+                carrinhoAdd.Add(dto);
+            }
+
+            CarregarGrid();
+
+            valor.Add(dto.Preco * quantidade);
+            txtValorTotal.Text = Convert.ToString(valor.Sum());
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
-            ItemDTO item = cboItem.SelectedItem as ItemDTO;
-
             CompraDTO dto = new CompraDTO();
-            dto.IdItem = item.Id;
-            dto.QuantidadeComprada = Convert.ToInt32(nudQtd.Value);
-            dto.DataCompra = mkbData.Text;
-            dto.Preco = Convert.ToDecimal(txtValorTotal.Text);
+            dto.UsuarioId = UserSession.UsuarioLogado.Id;
+            dto.Data = mkbData.Text;
+            dto.FormaPagto = Convert.ToString(cboTipoPag.SelectedItem);
 
             CompraBusiness buss = new CompraBusiness();
-            buss.Salvar(dto);
+            buss.Salvar(dto, carrinhoAdd.ToList());
 
             MessageBox.Show("Compra registrada com sucesso!", "Catioro's", MessageBoxButtons.OK);
         }
 
         private void cboItem_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ItemDTO item = cboItem.SelectedItem as ItemDTO;
-
-            txtItem.Text = item.Nome;
-            txtFornecedor.Text = item.IdFornecedor.ToString();
+            CarregarTxt();
         }
 
         private void txtItem_TextChanged(object sender, EventArgs e)

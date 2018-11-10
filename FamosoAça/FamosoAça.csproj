@@ -57,10 +57,11 @@
     <Compile Include="Classes\Compra\itemCompra\ItemCompraBusiness.cs" />
     <Compile Include="Classes\Compra\itemCompra\ItemCompraDatabase.cs" />
     <Compile Include="Classes\Compra\itemCompra\ItemCompraDTO.cs" />
+    <Compile Include="Classes\Compra\itemCompra\ItemComprasView.cs" />
     <Compile Include="Classes\Compra\Item\ItemBusiness.cs" />
     <Compile Include="Classes\Compra\Item\ItemDatabase.cs" />
     <Compile Include="Classes\Compra\Item\ItemDTO.cs" />
-    <Compile Include="Classes\Compra\ViewCompra.cs" />
+    <Compile Include="Classes\Compra\Item\ItemView.cs" />
     <Compile Include="Classes\Estado\EstadoBusiness.cs" />
     <Compile Include="Classes\Estado\EstadoDataBase.cs" />
     <Compile Include="Classes\Estado\EstadoDTO.cs" />
@@ -72,14 +73,12 @@
     <Compile Include="Classes\Gatos Adicionais\GastosABusiness.cs" />
     <Compile Include="Classes\Gatos Adicionais\GastosADataBase.cs" />
     <Compile Include="Classes\Gatos Adicionais\GastosADTO.cs" />
-    <Compile Include="Classes\Item\ItemBussines.cs" />
-    <Compile Include="Classes\Item\ItemDataBase.cs" />
-    <Compile Include="Classes\Item\ItemDTO.cs" />
     <Compile Include="Classes\Login\UserSession.cs" />
     <Compile Include="Classes\Produto\Produto Venda\ProdutoVendaBusiness.cs" />
     <Compile Include="Classes\Produto\Produto Venda\ProdutoVendaDataBase.cs" />
     <Compile Include="Classes\Produto\Produto Venda\ProdutoVendaDTO.cs" />
     <Compile Include="Classes\Produto\Produto Venda\ProdutoVendaView.cs" />
+    <Compile Include="CustomExceptions\ValidacaoException.cs" />
     <Compile Include="PlugIn\ImagemPlugIn.cs" />
     <Compile Include="Classes\Cargo\CargoBusiness.cs" />
     <Compile Include="Classes\Cargo\CargoDataBase.cs" />
@@ -179,16 +178,16 @@
     <Compile Include="Screens\Entregavel II\Controle De Fornecedores OK\frmConsultarFornecedores.Designer.cs">
       <DependentUpon>frmConsultarFornecedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Entregavel II\Controle De Produto OK\frmCadastrarProduto.cs">
+    <Compile Include="Screens\Entregavel II\Controle De Itens\frmCadastrarProduto.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Screens\Entregavel II\Controle De Produto OK\frmCadastrarProduto.Designer.cs">
+    <Compile Include="Screens\Entregavel II\Controle De Itens\frmCadastrarProduto.Designer.cs">
       <DependentUpon>frmCadastrarProduto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Entregavel II\Controle De Produto OK\frmConsultarProduto.cs">
+    <Compile Include="Screens\Entregavel II\Controle De Itens\frmConsultarProduto.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Screens\Entregavel II\Controle De Produto OK\frmConsultarProduto.Designer.cs">
+    <Compile Include="Screens\Entregavel II\Controle De Itens\frmConsultarProduto.Designer.cs">
       <DependentUpon>frmConsultarProduto.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Entregavel IV\Estoque\Estoque.cs">
@@ -312,10 +311,10 @@
     <EmbeddedResource Include="Screens\Entregavel II\Controle De Fornecedores OK\frmConsultarFornecedores.resx">
       <DependentUpon>frmConsultarFornecedores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Entregavel II\Controle De Produto OK\frmCadastrarProduto.resx">
+    <EmbeddedResource Include="Screens\Entregavel II\Controle De Itens\frmCadastrarProduto.resx">
       <DependentUpon>frmCadastrarProduto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Entregavel II\Controle De Produto OK\frmConsultarProduto.resx">
+    <EmbeddedResource Include="Screens\Entregavel II\Controle De Itens\frmConsultarProduto.resx">
       <DependentUpon>frmConsultarProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Entregavel IV\Estoque\Estoque.resx">

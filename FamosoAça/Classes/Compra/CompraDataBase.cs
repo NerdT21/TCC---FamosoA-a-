@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using FamosoAça.Classes.Compra.itemCompra;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,103 +14,97 @@ namespace FamosoAça.Classes.Compra
         public int Salvar(CompraDTO dto)
         {
             string script = @"INSERT INTO tb_compra(
-	                            id_item,
-                                qtd_comprado,
-                                dt_compra,
-                                vl_preco)
-                                VALUES(
-	                            @id_item,
-                                @qtd_comprado,
-                                @dt_compra,
-                                @vl_preco)";
+                                            id_usuario,
+                                            dt_compra,
+                                            ds_formaPagamento)                                                                     
+                                     VALUES(@id_usuario,
+                                            @dt_compra, 
+                                            @ds_formaPagamento)";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("id_item", dto.IdItem));
-            parms.Add(new MySqlParameter("qtd_comprado", dto.QuantidadeComprada));
-            parms.Add(new MySqlParameter("dt_compra", dto.DataCompra));
-            parms.Add(new MySqlParameter("vl_preco", dto.Preco));
+            parms.Add(new MySqlParameter("id_usuario", dto.UsuarioId));
+            parms.Add(new MySqlParameter("dt_compra", dto.Data));
+            parms.Add(new MySqlParameter("ds_formaPagamento", dto.FormaPagto));
 
             Database db = new Database();
-            int pk = db.ExecuteInsertScriptWithPk(script, parms);
-            return pk;
+            return db.ExecuteInsertScriptWithPk(script, parms);
         }
-        public void Alterar(CompraDTO dto)
-        {
-            string script = @"UPDATE tb_compra SET id_item = @id_item,
-                            qtd_comprado = @qtd_comprado,
-                            dt_compra = @dt_compra,
-                            vl_preco = @vl_preco
-                            WHERE id_compra = @id_compra";
 
-            List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("id_item", dto.IdItem));
-            parms.Add(new MySqlParameter("qtd_comprado", dto.QuantidadeComprada));
-            parms.Add(new MySqlParameter("dt_compra", dto.DataCompra));
-            parms.Add(new MySqlParameter("vl_preco", dto.Preco));
+        public List<ItemComprasView> Listar()
+        {
+            string script = @"SELECT * FROM vw_compra_consultar";
 
             Database db = new Database();
-            db.ExecuteInsertScript(script, parms);
+            MySqlDataReader reader = db.ExecuteSelectScript(script, null);
+
+            List<ItemComprasView> lista = new List<ItemComprasView>();
+            while (reader.Read())
+            {
+                ItemComprasView dto = new ItemComprasView();
+                dto.Id = reader.GetInt32("id_compra");
+                dto.FormaPagto = reader.GetString("ds_formaPagamento");
+                dto.Data = reader.GetString("dt_compra");
+                dto.QtdItem = reader.GetInt32("qtd_item");
+                dto.Total = reader.GetDecimal("vl_total");
+
+                lista.Add(dto);
+            }
+            reader.Close();
+            return lista;
         }
-        public void Remover(int id)
+
+        public List<ItemComprasView> Consultar(string data)
         {
-            string script = @"DELETE FROM tb_compra WHERE id_compra = @id_compra";
+            string script = @"SELECT * FROM vw_compra_consultar WHERE dt_compra LIKE @dt_compra";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("id_compra", id));
-
-            Database db = new Database();
-            db.ExecuteInsertScript(script, parms);
-        }
-        public List<ViewCompra> Listar()
-        {
-            string script = @"SELECT * FROM tb_compra";
-
-            List<MySqlParameter> parms = new List<MySqlParameter>();
+            parms.Add(new MySqlParameter("dt_compra", data + "%"));
 
             Database db = new Database();
             MySqlDataReader reader = db.ExecuteSelectScript(script, parms);
 
-            List<ViewCompra> view = new List<ViewCompra>();
+            List<ItemComprasView> lista = new List<ItemComprasView>();
             while (reader.Read())
             {
-                ViewCompra vw = new ViewCompra();
-                vw.IdCompra = reader.GetInt32("id_compra");
-                vw.QTDItem = reader.GetInt32("qtd_item");
-                vw.FormaPag = reader.GetString("ds_formaPagamento");
-                vw.Data = reader.GetString("dt_compra");
-                vw.Total = reader.GetDecimal("vl_total");
+                ItemComprasView view = new ItemComprasView();
+                view.Id = reader.GetInt32("id_compra");
+                view.FormaPagto = reader.GetString("ds_formaPagamento");
+                view.Data = reader.GetString("dt_compra");
+                view.QtdItem = reader.GetInt32("qtd_item");
+                view.Total = reader.GetDecimal("vl_total");
 
-                view.Add(vw);
+                lista.Add(view);
             }
+
             reader.Close();
-            return view;
+            return lista;
         }
-        public List<ViewCompra> Consultar(string dt_compra)
+
+        public List<ItemComprasView> ConsultarPorId(int id)
         {
-            string script = @"SELECT * FROM tb_compra WHERE dt_compra LIKE @dt_compra";
+            string script = @"SELECT * FROM vw_compra_consultar WHERE id_compra LIKE @id_compra";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("dt_compra", dt_compra + "%"));
+            parms.Add(new MySqlParameter("id_compra", id + "%"));
 
             Database db = new Database();
             MySqlDataReader reader = db.ExecuteSelectScript(script, parms);
 
-            List<ViewCompra> view = new List<ViewCompra>();
+            List<ItemComprasView> lista = new List<ItemComprasView>();
             while (reader.Read())
             {
-                ViewCompra vw = new ViewCompra();
-                vw.IdCompra = reader.GetInt32("id_compra");
-                vw.QTDItem = reader.GetInt32("qtd_item");
-                vw.FormaPag = reader.GetString("ds_formaPagamento");
-                vw.Data = reader.GetString("dt_compra");
-                vw.Total = reader.GetDecimal("vl_total");
+                ItemComprasView view = new ItemComprasView();
+                view.Id = reader.GetInt32("id_compra");
+                view.FormaPagto = reader.GetString("ds_formaPagamento");
+                view.Data = reader.GetString("dt_compra");
+                view.QtdItem = reader.GetInt32("qtd_item");
+                view.Total = reader.GetDecimal("vl_total");
 
-                view.Add(vw);
-
+                lista.Add(view);
             }
-            reader.Close();
-            return view;
 
+            reader.Close();
+            return lista;
         }
     }
 }

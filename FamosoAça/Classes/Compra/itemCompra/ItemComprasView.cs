@@ -6,12 +6,16 @@ using System.Threading.Tasks;
 
 namespace FamosoAça.Classes.Compra.itemCompra
 {
-    public class ItemCompraDTO
+    public class ItemComprasView
     {
         public int Id { get; set; }
 
-        public int ItemId { get; set; }
+        public string FormaPagto { get; set; }
 
-        public int CompraId { get; set; }
+        public string Data { get; set; }
+
+        public int QtdItem { get; set; }
+
+        public decimal Total { get; set; }
     }
 }

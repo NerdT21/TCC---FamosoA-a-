@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FamosoAça.Classes.Compra;
+using FamosoAça.Classes.Compra.itemCompra;
 
 namespace FamosoAça.Screens.Entregavel_II.Controle_De_Compras
 {
@@ -21,8 +22,8 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Compras
 
         void AutoCarregar()
         {
-            CompraBusiness buss = new CompraBusiness();
-            List<ViewCompra> dto = buss.Listar();
+            CompraBusiness bus = new CompraBusiness();
+            List<ItemComprasView> dto = bus.Listar();
 
             dgvCompra.AutoGenerateColumns = false;
             dgvCompra.DataSource = dto;
@@ -32,12 +33,11 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Compras
         {
             string data = mkbData.Text;
 
-            CompraBusiness buss = new CompraBusiness();
-            List<ViewCompra> dto = buss.Consultar(data);
+            CompraBusiness bus = new CompraBusiness();
+            List<ItemComprasView> dto = bus.Consultar(data);
 
             dgvCompra.AutoGenerateColumns = false;
             dgvCompra.DataSource = dto;
-
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

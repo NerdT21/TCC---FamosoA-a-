@@ -13,11 +13,5 @@ namespace FamosoAça.Classes.Compra.itemCompra
             ItemCompraDatabase db = new ItemCompraDatabase();
             return db.Salvar(dto);
         }
-
-        public List<ItemCompraDTO> Listar()
-        {
-            ItemCompraDatabase db = new ItemCompraDatabase();
-            return db.Listar();
-        }
     }
 }
