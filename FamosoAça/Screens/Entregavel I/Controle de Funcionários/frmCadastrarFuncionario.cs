@@ -12,6 +12,7 @@ using FamosoAça.Classes.Funcionarios;
 using MySql.Data.MySqlClient;
 using FamosoAça.PlugIn;
 using FamosoAça.Classes.Estado;
+using FamosoAça.CustomExceptions.TelasException;
 
 namespace FamosoAça.Screens.Entregavel_I.Controle_de_Funcionários
 {
@@ -25,26 +26,29 @@ namespace FamosoAça.Screens.Entregavel_I.Controle_de_Funcionários
 
         void CarregarCombos()
         {
-            CargoBusiness buss = new CargoBusiness();
-            List<CargoDTO> lista = buss.Listar();
+            try
+            {
+                CargoBusiness buss = new CargoBusiness();
+                List<CargoDTO> lista = buss.Listar();
 
-            cboDepto.ValueMember = nameof(CargoDTO.Id);
-            cboDepto.DisplayMember = nameof(CargoDTO.Nome);
-            cboDepto.DataSource = lista;
+                cboDepto.ValueMember = nameof(CargoDTO.Id);
+                cboDepto.DisplayMember = nameof(CargoDTO.Nome);
+                cboDepto.DataSource = lista;
 
-            //EstadoBusiness be = new EstadoBusiness();
-            //List<EstadoDTO> list = be.Listar();
+                EstadoBusiness bess = new EstadoBusiness();
+                List<EstadoDTO> li = bess.Listar();
 
-            //cboEstado.ValueMember = nameof(EstadoDTO.IdEstado);
-            //cboEstado.DisplayMember = nameof(EstadoDTO.Estado);
-            //cboEstado.DataSource = lista;
-
-            EstadoBusiness bess = new EstadoBusiness();
-            List<EstadoDTO> li = bess.Listar();
-
-            cboEstado.ValueMember = nameof(EstadoDTO.IdEstado);
-            cboEstado.DisplayMember = nameof(EstadoDTO.Estado);
-            cboEstado.DataSource = li;
+                cboEstado.ValueMember = nameof(EstadoDTO.IdEstado);
+                cboEstado.DisplayMember = nameof(EstadoDTO.Estado);
+                cboEstado.DataSource = li;
+            }
+            catch (Exception)
+            {
+                frmException tela = new frmException();
+                tela.LoadScreen("Ocorreu um erro.\nConsulte o administrador do sistema.");
+                tela.ShowDialog();
+            }
+            
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -52,7 +56,6 @@ namespace FamosoAça.Screens.Entregavel_I.Controle_de_Funcionários
             try
             {
                 CargoDTO depto = cboDepto.SelectedItem as CargoDTO;
-
                 EstadoDTO dt = cboEstado.SelectedItem as EstadoDTO;
 
                 FuncionarioDTO dto = new FuncionarioDTO();
@@ -66,7 +69,7 @@ namespace FamosoAça.Screens.Entregavel_I.Controle_de_Funcionários
                 dto.Cidade = txtCidade.Text;
                 dto.IdEstado = dt.IdEstado;
                 //dto.Bairro = txtBairro.Text;
-                dto.Salario = Convert.ToInt32(txtSalario.Text); 
+                dto.Salario = Convert.ToInt32(txtSalario.Text);
                 dto.Rua = txtRua.Text;
                 dto.Cep = txtCep.Text;
                 dto.Imagem = ImagemPlugIn.ConverterParaString(pbxImagem.Image);
@@ -74,31 +77,47 @@ namespace FamosoAça.Screens.Entregavel_I.Controle_de_Funcionários
                 FuncionariosBusiness buss = new FuncionariosBusiness();
                 buss.Salvar(dto);
 
-                MessageBox.Show("Funcionário cadastrado com sucesso!!", "FamosoAçaí", MessageBoxButtons.OK);
-        }
+                frmMessage tela = new frmMessage();
+                tela.LoadScreen("Funcionário cadastrado com sucesso!");
+                tela.ShowDialog();
+
+            }
             catch (MySqlException ex)
             {
                 if (ex.Number == 1062)
                 {
-                    MessageBox.Show("Funcionario já está cadastrado. Verifique se o RG ou CPF estão corretamento preenchidos ou se ele já esta no sistema.",
-                        "FamosoAçaí", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    frmAlert tela = new frmAlert();
+                    tela.LoadScreen("Funcionario já está cadastrado.\nVerifique se o RG ou CPF estão corretamento preenchidos ou se ele já esta no sistema.");
+                    tela.ShowDialog();
                 }
-}
+            }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "FamosoAçaí", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                frmException tela = new frmException();
+                tela.LoadScreen("Ocorreu um erro.\nConsulte o administrador do sistema.");
+                tela.ShowDialog();
             }
         }
 
         private void pbxImagem_Click(object sender, EventArgs e)
         {
-            OpenFileDialog dialog = new OpenFileDialog();
-            DialogResult result = dialog.ShowDialog();
-
-            if (result == DialogResult.OK)
+            try
             {
-                pbxImagem.ImageLocation = dialog.FileName;
+                OpenFileDialog dialog = new OpenFileDialog();
+                DialogResult result = dialog.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    pbxImagem.ImageLocation = dialog.FileName;
+                }
             }
+            catch (Exception)
+            {
+                frmException tela = new frmException();
+                tela.LoadScreen("Ocorreu um erro.\nConsulte o administrador do sistema.");
+                tela.ShowDialog();
+            }
+           
         }
 
         private void cboEstado_SelectedIndexChanged(object sender, EventArgs e)
@@ -124,7 +143,9 @@ namespace FamosoAça.Screens.Entregavel_I.Controle_de_Funcionários
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("O CEP não foi encontrado");
+                    frmAlert tela = new frmAlert();
+                    tela.LoadScreen("O CEP não foi encontrado");
+                    tela.ShowDialog();
                 }
             }
         }

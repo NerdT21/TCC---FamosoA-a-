@@ -84,6 +84,30 @@
     <Compile Include="Classes\Venda\Produto\ProdutoBusiness.cs" />
     <Compile Include="Classes\Venda\Produto\ProdutoDatabase.cs" />
     <Compile Include="Classes\Venda\Produto\ProdutoDTO.cs" />
+    <Compile Include="CustomExceptions\TelasException\frmAlert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomExceptions\TelasException\frmAlert.Designer.cs">
+      <DependentUpon>frmAlert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomExceptions\TelasException\frmException.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomExceptions\TelasException\frmException.Designer.cs">
+      <DependentUpon>frmException.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomExceptions\TelasException\frmMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomExceptions\TelasException\frmMessage.Designer.cs">
+      <DependentUpon>frmMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomExceptions\TelasException\frmQuestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomExceptions\TelasException\frmQuestion.Designer.cs">
+      <DependentUpon>frmQuestion.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomExceptions\ValidacaoException.cs" />
     <Compile Include="PlugIn\ImagemPlugIn.cs" />
     <Compile Include="Classes\Cargo\CargoBusiness.cs" />
@@ -278,6 +302,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CustomExceptions\TelasException\frmAlert.resx">
+      <DependentUpon>frmAlert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomExceptions\TelasException\frmException.resx">
+      <DependentUpon>frmException.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomExceptions\TelasException\frmMessage.resx">
+      <DependentUpon>frmMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomExceptions\TelasException\frmQuestion.resx">
+      <DependentUpon>frmQuestion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\Entregavel III\Produto vendas\frmConsultarItem.resx">
       <DependentUpon>frmConsultarItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -376,7 +412,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Screens\Diferencial\" />
+    <Folder Include="Screens\Diferenciais\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\WSCorreios\FamosoAça.WSCorreios.atualizaPagamentoNaEntregaResponse.datasource">
@@ -698,6 +734,11 @@
     <None Include="Resources\icons8-histórico-de-pagamento-32.png" />
     <None Include="Resources\fundo roxo.jpg" />
     <None Include="Resources\icons8-invisible-filled-50.png" />
+    <None Include="Resources\icons8-cancel-30.png" />
+    <None Include="Resources\icons8-cancel-48.png" />
+    <None Include="Resources\close icone.png" />
+    <None Include="Resources\icons8-error-48.png" />
+    <None Include="Resources\icons8-help-48 %281%29.png" />
     <Content Include="Script.txt" />
   </ItemGroup>
   <ItemGroup>
