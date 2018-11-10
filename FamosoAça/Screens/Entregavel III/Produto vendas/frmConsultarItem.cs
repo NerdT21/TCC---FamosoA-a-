@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using FamosoAça.Classes.Compra.Item;
 using FamosoAça.Classes.Fornecedor;
 using FamosoAça.Classes.Venda.Produto;
+using FamosoAça.CustomExceptions.TelasException;
 
 namespace FamosoAça.Screens.Entregavel_III.Item
 {
@@ -23,21 +24,41 @@ namespace FamosoAça.Screens.Entregavel_III.Item
 
         void AutoCarregar()
         {
-            ProdutoBusiness buss = new ProdutoBusiness();
-            List<ProdutoDTO> lista = buss.Listar();
+            try
+            {
+                ProdutoBusiness buss = new ProdutoBusiness();
+                List<ProdutoDTO> lista = buss.Listar();
 
-            dgvProduto.DataSource = lista;
+                dgvProduto.DataSource = lista;
+            }
+            catch (Exception)
+            {
+                frmException tela = new frmException();
+                tela.LoadScreen("Ocorreu um erro.\nConsulte o administrador do sistema.");
+                tela.ShowDialog();
+            }
+            
         }
 
         void CarregarGrid()
         {
-            string nome = txtNome.Text;
-            string marca = txtMarca.Text;
+            try
+            {
+                string nome = txtNome.Text;
+                string marca = txtMarca.Text;
 
-            ProdutoBusiness buss = new ProdutoBusiness();
-            List<ProdutoDTO> lista = buss.Consultar(nome, marca);
+                ProdutoBusiness buss = new ProdutoBusiness();
+                List<ProdutoDTO> lista = buss.Consultar(nome, marca);
 
-            dgvProduto.DataSource = lista;
+                dgvProduto.DataSource = lista;
+            }
+            catch (Exception)
+            {
+                frmException tela = new frmException();
+                tela.LoadScreen("Ocorreu um erro.\nConsulte o administrador do sistema.");
+                tela.ShowDialog();
+            }
+           
         }
 
         private void frmConsultarItem_Load(object sender, EventArgs e)

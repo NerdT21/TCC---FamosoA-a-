@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using FamosoAça.Classes.Venda;
 using FamosoAça.Classes.Login;
 using FamosoAça.Classes.Venda.Produto;
+using FamosoAça.CustomExceptions.TelasException;
 
 namespace FamosoAça.Screens.Entregavel_III.ConsultarVenda
 {
@@ -27,25 +28,32 @@ namespace FamosoAça.Screens.Entregavel_III.ConsultarVenda
 
         void CarregarCombos()
         {
-            ProdutoBusiness buss = new ProdutoBusiness();
-            List<ProdutoDTO> dto = buss.Listar();
+            try
+            {
+                ProdutoBusiness buss = new ProdutoBusiness();
+                List<ProdutoDTO> dto = buss.Listar();
 
-            cboNome.ValueMember = nameof(ProdutoDTO.Id);
-            cboNome.DisplayMember = nameof(ProdutoDTO.Nome);
-            cboNome.DataSource = dto;
+                cboNome.ValueMember = nameof(ProdutoDTO.Id);
+                cboNome.DisplayMember = nameof(ProdutoDTO.Nome);
+                cboNome.DataSource = dto;
+            }
+            catch (Exception)
+            {
+                frmException tela = new frmException();
+                tela.LoadScreen("Ocorreu um erro.\nConsulte o administrador do sistema.");
+                tela.ShowDialog();
+            }
+       
         }
 
         void CarregarGrid()
         {
-
             dgvVendas.AutoGenerateColumns = false;
             dgvVendas.DataSource = carrinhoAdd;
-
         }
 
         void DataHoje()
         {
-
             DateTime hj = DateTime.Now;
             int dia = hj.Day;
             int mes = hj.Month;
@@ -64,8 +72,6 @@ namespace FamosoAça.Screens.Entregavel_III.ConsultarVenda
                 mktData.Text = data;
 
             }
-
-
         }
 
         
@@ -76,13 +82,23 @@ namespace FamosoAça.Screens.Entregavel_III.ConsultarVenda
 
         private void button2_Click(object sender, EventArgs e)
         {
-            VendaDTO dto = new VendaDTO();
-            dto.IdUsuario = UserSession.UsuarioLogado.Id;
-            dto.Data = mktData.Text;
-            dto.FormaPagto = Convert.ToString(cboTipoPag.SelectedItem);
+            try
+            {
+                VendaDTO dto = new VendaDTO();
+                dto.IdUsuario = UserSession.UsuarioLogado.Id;
+                dto.Data = mktData.Text;
+                dto.FormaPagto = Convert.ToString(cboTipoPag.SelectedItem);
 
-            VendaBusiness buss = new VendaBusiness();
-            buss.Salvar(dto, carrinhoAdd.ToList());
+                VendaBusiness buss = new VendaBusiness();
+                buss.Salvar(dto, carrinhoAdd.ToList());
+            }
+            catch (Exception)
+            {
+                frmException tela = new frmException();
+                tela.LoadScreen("Ocorreu um erro.\nConsulte o administrador do sistema.");
+                tela.ShowDialog();
+            }
+            
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -106,10 +122,11 @@ namespace FamosoAça.Screens.Entregavel_III.ConsultarVenda
                 txtValorTotal.Text = Convert.ToString(val.Sum());
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
-               MessageBox.Show("Ocorreu um Erro: "+ ex.Message,"Famoso Açai",MessageBoxButtons.OK);
+                frmException tela = new frmException();
+                tela.LoadScreen("Ocorreu um erro.\nConsulte o administrador do sistema.");
+                tela.ShowDialog();
             }
         }
 

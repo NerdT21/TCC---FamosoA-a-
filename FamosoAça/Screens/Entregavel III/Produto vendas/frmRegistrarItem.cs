@@ -11,6 +11,7 @@ using FamosoAça.Classes.Fornecedor;
 using FamosoAça.Classes.Compra.Item;
 using FamosoAça.Classes.Venda.Produto;
 using FamosoAça.Classes.Estoque;
+using FamosoAça.CustomExceptions.TelasException;
 
 namespace FamosoAça.Screens.Entregavel_III.Item
 {
@@ -29,22 +30,32 @@ namespace FamosoAça.Screens.Entregavel_III.Item
 
         private void btnCadatrar_Click(object sender, EventArgs e)
         {
-            ProdutoDTO dto = new ProdutoDTO();
-            dto.Nome = txtNome.Text;
-            dto.Marca = txtMarca.Text;
-            dto.Descricao = txtDesc.Text;
-            dto.Preco = nudPreco.Value;
+            try
+            {
+                ProdutoDTO dto = new ProdutoDTO();
+                dto.Nome = txtNome.Text;
+                dto.Marca = txtMarca.Text;
+                dto.Descricao = txtDesc.Text;
+                dto.Preco = nudPreco.Value;
 
-            ProdutoBusiness business = new ProdutoBusiness();
-            int pk = business.Salvar(dto);
+                ProdutoBusiness business = new ProdutoBusiness();
+                int pk = business.Salvar(dto);
 
-            EstoqueDTO estoque = new EstoqueDTO();
-            estoque.Produto = txtNome.Text;
-            estoque.ItemProdutoId = pk;
-            estoque.QtdEstocado = 0;
+                EstoqueDTO estoque = new EstoqueDTO();
+                estoque.Produto = txtNome.Text;
+                estoque.ItemProdutoId = pk;
+                estoque.QtdEstocado = 0;
 
-            EstoqueBusiness buss = new EstoqueBusiness();
-            buss.Salvar(estoque);
+                EstoqueBusiness buss = new EstoqueBusiness();
+                buss.Salvar(estoque);
+            }
+            catch (Exception)
+            {
+                frmException tela = new frmException();
+                tela.LoadScreen("Ocorreu um erro.\nConsulte o administrador do sistema.");
+                tela.ShowDialog();
+            }
+           
         }
 
         private void cboFornecedor_SelectedIndexChanged(object sender, EventArgs e)

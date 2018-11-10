@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FamosoAça.Classes.Venda;
 using FamosoAça.Classes.Venda.ProdutoVendas;
+using FamosoAça.CustomExceptions.TelasException;
 
 namespace FamosoAça.Screens.Entregavel_III.ConsultarVenda
 {
@@ -22,11 +23,21 @@ namespace FamosoAça.Screens.Entregavel_III.ConsultarVenda
 
         void AutoCarregar()
         {
-            VendaBusiness buss = new VendaBusiness();
-            List<ProdutoVendasView> lista = buss.Listar();
+            try
+            {
+                VendaBusiness buss = new VendaBusiness();
+                List<ProdutoVendasView> lista = buss.Listar();
 
-            dgvProduto.AutoGenerateColumns = false;
-            dgvProduto.DataSource = lista;
+                dgvProduto.AutoGenerateColumns = false;
+                dgvProduto.DataSource = lista;
+            }
+            catch (Exception)
+            {
+                frmException tela = new frmException();
+                tela.LoadScreen("Ocorreu um erro.\nConsulte o administrador do sistema.");
+                tela.ShowDialog();
+            }
+         
         }
 
         void CarregarGrid()
@@ -48,8 +59,9 @@ namespace FamosoAça.Screens.Entregavel_III.ConsultarVenda
             }
             catch (Exception ex)
             {
-
-               MessageBox.Show("Ocorreu um erro: " + ex.Message,"Famoso Açai",MessageBoxButtons.OK);
+                frmException tela = new frmException();
+                tela.LoadScreen("Ocorreu um erro.\nConsulte o administrador do sistema.");
+                tela.ShowDialog();
             } 
         }
 
