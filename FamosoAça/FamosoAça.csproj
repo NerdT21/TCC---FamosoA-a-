@@ -11,7 +11,7 @@
     <AssemblyName>FamosoAça</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,6 +31,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Famoso-açaí.ico.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data">
@@ -753,6 +756,7 @@
     <None Include="Resources\icons8-plus-321.png" />
     <None Include="Resources\icons8-cash-48.png" />
     <None Include="Resources\icons8-fluxo-de-caixa-48.png" />
+    <Content Include="Famoso-açaí.ico.ico" />
     <Content Include="Script.txt" />
   </ItemGroup>
   <ItemGroup>
