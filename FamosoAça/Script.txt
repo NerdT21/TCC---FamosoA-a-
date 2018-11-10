@@ -54,13 +54,15 @@ CREATE TABLE `tb_produto` (
 
 CREATE TABLE `tb_login` (
 	`id_usuario` int NOT NULL AUTO_INCREMENT,
-	`nm_usuario` varchar(60) NOT NULL,
-	`ds_senha` varchar(50) NOT NULL,
-    `ds_email` varchar(150) NOT NUll,
-	`pr_permissaoAdm` bool NOT NULL,
-	`pr_permissaoCadastro` bool NOT NULL,
-	`pr_permissaoConsulta` bool NOT NULL,
-	`pr_permissaoContabilidade` bool NOT NULL,
+    `nm_funcionario` varchar(50) NOT NULL,
+	`nm_usuario` varchar(50) NOT NULL UNIQUE,
+	`ds_senha` varchar(20) NOT NULL,
+    `ds_email` varchar(150) NOT NULL,
+	`pr_permissaoADM` bool NOT NULL,
+    `pr_permissaoCaixa` bool NOT NULL,
+    `pr_permissaoFinanceiro` bool NOT NULL,
+    `pr_permissaoEstoque` bool NOT NULL,
+    `pr_permissaoCadastros` bool NOT NULL,
 	PRIMARY KEY (`id_usuario`)
 );
 
@@ -331,11 +333,9 @@ CREATE VIEW vw_item AS
 INSERT INTO tb_depto(`id_depto`,`nm_depto`,`ds_depto`)
 	 VALUES ('1','Depto','Depto');
 
-INSERT INTO tb_login(`id_usuario`, `nm_usuario`, `ds_senha`,`ds_email`, `pr_permissaoAdm`, `pr_permissaoCadastro`, `pr_permissaoConsulta`, `pr_permissaoContabilidade`)
-		      VALUES('1', 'adm', 'adm','adm@gmail.com', '1', '1', '1', '1');
               
- INSERT INTO tb_login(`id_usuario`, `nm_usuario`, `ds_senha`,`ds_email`, `pr_permissaoAdm`, `pr_permissaoCadastro`, `pr_permissaoConsulta`, `pr_permissaoContabilidade`)
-		      VALUES('2', '', '','adm@gmail.com',  '1', '1', '1', '1');             
+ INSERT INTO tb_login(`id_usuario`, `nm_funcionario`, `nm_usuario`, `ds_senha`,`ds_email`, `pr_permissaoAdm`, `pr_permissaoCaixa`, `pr_permissaoFinanceiro`, `pr_permissaoEstoque`, `pr_permissaoCadastros`)
+		      VALUES('1', 'NerdT', 'NerdT2018','nerdt21@gmai.com', '', '1', '1', '1', '1', '1');             
               
 		
 INSERT INTO tb_estados(`id_estado`,`nm_estado`)
@@ -419,7 +419,7 @@ INSERT INTO tb_estados(`id_estado`,`nm_estado`)
 INSERT INTO tb_estados(`id_estado`,`nm_estado`)
 				VALUES('27','TO');
  
- 
+ /*
 -- ========================= --
 -- ===== SELECT TABELAS===== --
 -- ========================= --
