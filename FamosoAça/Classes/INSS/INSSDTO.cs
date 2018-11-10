@@ -9,6 +9,7 @@ namespace FamosoAça.Classes.INSS
     public class INSSDTO
     {
         public int Id { get; set; }
+        public decimal SalarioContribuicao { get; set; }
         public decimal Aliquota { get; set; }
     }
 }

@@ -8,37 +8,10 @@ namespace FamosoAça.Classes.SalarioFamilia
 {
     public class SalarioFamilhaBusiness
     {
-         public int Salvar(SalarioFamilhaDTO dto)
+        public SalarioFamilhaDTO Consultar(decimal salario)
         {
-            SalarioFamilhaDataBase db = new SalarioFamilhaDataBase();
-            int id = db.Salvar(dto);
-            return id;
-        }
-
-        public void Altera(SalarioFamilhaDTO dto)
-        {
-            SalarioFamilhaDataBase db = new SalarioFamilhaDataBase();
-            db.Alterar(dto);
-        }
-
-        public void Remover(int id)
-        {
-            SalarioFamilhaDataBase db= new SalarioFamilhaDataBase();
-            db.Remover(id);
-        }
-
-       
-        public List<SalarioFamilhaDTO> Listar()
-        {
-            SalarioFamilhaDataBase db = new SalarioFamilhaDataBase();
-            List<SalarioFamilhaDTO> list = db.Listar();
-            return list;
-        }
-        
-        public List<SalarioFamilhaDTO> Consultar(decimal consult)
-        {
-            SalarioFamilhaDataBase db = new SalarioFamilhaDataBase();
-            return db.Consultar(consult);
+            SalarioFamilhaDataBase DB = new SalarioFamilhaDataBase();
+            return DB.Consultar(salario);
         }
     }
 }

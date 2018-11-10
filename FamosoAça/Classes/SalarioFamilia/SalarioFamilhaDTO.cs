@@ -8,12 +8,8 @@ namespace FamosoAça.Classes.SalarioFamilia
 {
     public class SalarioFamilhaDTO
     {
-        public int ID { get; set; }
-
-        public decimal SalarioBruto { get; set; }
-
-        public decimal SalarioFamilia { get; set; }
-
-        public int Dependentes { get; set; }
+        public int Id { get; set; }
+        public decimal SalFamilia { get; set; }
+        public decimal Valor { get; set; }
     }
 }

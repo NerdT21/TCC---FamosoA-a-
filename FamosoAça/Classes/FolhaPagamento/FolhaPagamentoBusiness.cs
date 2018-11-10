@@ -8,40 +8,30 @@ namespace FamosoAça.Classes.FolhaPagamento
 {
     public class FolhaPagamentoBusiness
     {
-         public int Salvar(FolhaPagamentoDTO dto)
+        public int Salvar(FolhaPagamentoDTO folhapag)
         {
-            FolhaPagamentoDataBase db = new FolhaPagamentoDataBase();
-            int id = db.Salvar(dto);
+            FolhaPagamentoDataBase DB = new FolhaPagamentoDataBase();
+            int id = DB.Salvar(folhapag);
             return id;
         }
 
-        //public void Altera(FolhaPagamentoDTO dto)
-        //{
-        //    FolhaPagamentoDataBase db = new FolhaPagamentoDataBase();
-        //    db.Alterar(dto);
-        //}
+        public void Remover(int idfolhapag)
+        {
+            FolhaPagamentoDataBase DB = new FolhaPagamentoDataBase();
+            DB.Remover(idfolhapag);
+        }
 
-        //public void Remover(int id)
-        //{
-        //    FolhaPagamentoDataBase db= new FolhaPagamentoDataBase();
-        //    db.Remover(id);
-        //}
+        public List<FolhaPagamentoDTO> Listar()
+        {
+            FolhaPagamentoDataBase DB = new FolhaPagamentoDataBase();
+            List<FolhaPagamentoDTO> folhapag = DB.Listar();
+            return folhapag;
+        }
 
-       
-        //public List<FolhaPagamentoDTO> Listar()
-        //{
-        //    FolhaPagamentoDataBase db = new FolhaPagamentoDataBase();
-        //    List<FolhaPagamentoDTO> list = db.Listar();
-        //    return list;
-        //}
-        
-        //public List<FolhaPagamentoDTO> Consultar(string consult)
-        //{
-        //    FolhaPagamentoDataBase db = new FolhaPagamentoDataBase();
-        //    return db.Consultar(consult);
-        //}
-
-       
- 
+        public List<FolhaPagamentoDTO> Consultar(string consult)
+        {
+            FolhaPagamentoDataBase db = new FolhaPagamentoDataBase();
+            return db.Consultar(consult);
+        }
     }
 }
