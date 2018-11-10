@@ -240,7 +240,7 @@
             this.Controls.Add(this.label13);
             this.Controls.Add(this.dgvListarFuncionario);
             this.Name = "frmListarFuncionarios";
-            this.Size = new System.Drawing.Size(596, 404);
+            this.Size = new System.Drawing.Size(596, 397);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarFuncionario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -38,7 +38,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.nudFaltas = new System.Windows.Forms.NumericUpDown();
             this.mkbCPF = new System.Windows.Forms.MaskedTextBox();
-            this.pbxImgFuncionario = new System.Windows.Forms.PictureBox();
             this.txtSalLiquido = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.TxtSalFam = new System.Windows.Forms.TextBox();
@@ -67,11 +66,12 @@
             this.mkbHE = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.pbxImgFuncionario = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudFaltas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxImgFuncionario)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImgFuncionario)).BeginInit();
             this.SuspendLayout();
             // 
             // mkbData
@@ -172,18 +172,6 @@
             this.mkbCPF.ReadOnly = true;
             this.mkbCPF.Size = new System.Drawing.Size(84, 20);
             this.mkbCPF.TabIndex = 177;
-            // 
-            // pbxImgFuncionario
-            // 
-            this.pbxImgFuncionario.BackColor = System.Drawing.Color.White;
-            this.pbxImgFuncionario.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pbxImgFuncionario.Image = ((System.Drawing.Image)(resources.GetObject("pbxImgFuncionario.Image")));
-            this.pbxImgFuncionario.Location = new System.Drawing.Point(53, 33);
-            this.pbxImgFuncionario.Name = "pbxImgFuncionario";
-            this.pbxImgFuncionario.Size = new System.Drawing.Size(126, 119);
-            this.pbxImgFuncionario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxImgFuncionario.TabIndex = 176;
-            this.pbxImgFuncionario.TabStop = false;
             // 
             // txtSalLiquido
             // 
@@ -483,6 +471,18 @@
             this.label8.TabIndex = 119;
             this.label8.Text = "FGTS ";
             // 
+            // pbxImgFuncionario
+            // 
+            this.pbxImgFuncionario.BackColor = System.Drawing.Color.White;
+            this.pbxImgFuncionario.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pbxImgFuncionario.Image = ((System.Drawing.Image)(resources.GetObject("pbxImgFuncionario.Image")));
+            this.pbxImgFuncionario.Location = new System.Drawing.Point(53, 33);
+            this.pbxImgFuncionario.Name = "pbxImgFuncionario";
+            this.pbxImgFuncionario.Size = new System.Drawing.Size(126, 119);
+            this.pbxImgFuncionario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxImgFuncionario.TabIndex = 176;
+            this.pbxImgFuncionario.TabStop = false;
+            // 
             // frmFolhaPagto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -519,13 +519,13 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
             this.Name = "frmFolhaPagto";
-            this.Size = new System.Drawing.Size(596, 404);
+            this.Size = new System.Drawing.Size(596, 397);
             ((System.ComponentModel.ISupportInitialize)(this.nudFaltas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxImgFuncionario)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImgFuncionario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

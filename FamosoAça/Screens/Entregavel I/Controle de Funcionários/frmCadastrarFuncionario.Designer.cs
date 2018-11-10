@@ -409,7 +409,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmCadastrarFuncionario";
-            this.Size = new System.Drawing.Size(596, 404);
+            this.Size = new System.Drawing.Size(596, 397);
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

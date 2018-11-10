@@ -247,7 +247,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Name = "frmDepartamento";
-            this.Size = new System.Drawing.Size(596, 404);
+            this.Size = new System.Drawing.Size(596, 397);
             this.Load += new System.EventHandler(this.frmDepartamento_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();

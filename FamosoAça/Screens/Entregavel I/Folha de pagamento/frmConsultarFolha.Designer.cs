@@ -149,7 +149,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dgvFolha);
             this.Name = "frmConsultarFolha";
-            this.Size = new System.Drawing.Size(596, 404);
+            this.Size = new System.Drawing.Size(596, 397);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFolha)).EndInit();
             this.ResumeLayout(false);
 

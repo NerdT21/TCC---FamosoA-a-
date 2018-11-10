@@ -136,7 +136,7 @@
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.Data);
             this.Name = "ConsultarGastosAdicionais";
-            this.Size = new System.Drawing.Size(596, 404);
+            this.Size = new System.Drawing.Size(596, 397);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGastos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
