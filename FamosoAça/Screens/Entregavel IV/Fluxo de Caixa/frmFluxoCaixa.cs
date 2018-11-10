@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FamosoAça.Classes.FluxoDeCaixa;
+using FamosoAça.CustomExceptions.TelasException;
 
 namespace FamosoAça.Screens.Entregavel_IV.Fluxo_de_Caixa
 {
@@ -21,11 +22,21 @@ namespace FamosoAça.Screens.Entregavel_IV.Fluxo_de_Caixa
 
         void AutoCarregar()
         {
-            FluxoBusiness buss = new FluxoBusiness();
-            List<FluxoDTO> lista = buss.Listar();
+            try
+            {
+                FluxoBusiness buss = new FluxoBusiness();
+                List<FluxoDTO> lista = buss.Listar();
 
-            dgvFluxoDeCaixa.AutoGenerateColumns = false;
-            dgvFluxoDeCaixa.DataSource = lista;
+                dgvFluxoDeCaixa.AutoGenerateColumns = false;
+                dgvFluxoDeCaixa.DataSource = lista;
+            }
+            catch (Exception)
+            {
+                frmException tela = new frmException();
+                tela.LoadScreen("Ocorreu um erro.\nConsulte o administrador do sistema.");
+                tela.ShowDialog();
+            }
+          
         }
     }
 }

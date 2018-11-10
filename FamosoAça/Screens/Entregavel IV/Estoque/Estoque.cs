@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FamosoAça.Classes.Estoque;
+using FamosoAça.CustomExceptions.TelasException;
 
 namespace FamosoAça.Screens.Entregavel_IV.Estoque
 {
@@ -22,11 +23,21 @@ namespace FamosoAça.Screens.Entregavel_IV.Estoque
 
         void AutoCarregarGrid()
         {
-            EstoqueBusiness buss = new EstoqueBusiness();
-            List<EstoqueDTO> list = buss.Listar();
+            try
+            {
+                EstoqueBusiness buss = new EstoqueBusiness();
+                List<EstoqueDTO> list = buss.Listar();
 
-            dgvEstoque.AutoGenerateColumns = false;
-            dgvEstoque.DataSource = list;
+                dgvEstoque.AutoGenerateColumns = false;
+                dgvEstoque.DataSource = list;
+            }
+            catch (Exception)
+            {
+                frmException tela = new frmException();
+                tela.LoadScreen("Ocorreu um erro.\nConsulte o administrador do sistema.");
+                tela.ShowDialog();
+            }
+
         }
 
         void CarregarGrid()
@@ -74,8 +85,9 @@ namespace FamosoAça.Screens.Entregavel_IV.Estoque
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show("Ocorreu um erro :"  + ex ,"Famoso açai",MessageBoxButtons.OK);
+                frmException tela = new frmException();
+                tela.LoadScreen("Ocorreu um erro.\nConsulte o administrador do sistema.");
+                tela.ShowDialog();
             }
         }
     }

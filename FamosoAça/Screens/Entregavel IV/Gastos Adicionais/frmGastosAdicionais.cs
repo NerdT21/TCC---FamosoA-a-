@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FamosoAça.Classes.Gatos_Adicionais;
+using FamosoAça.CustomExceptions.TelasException;
 
 namespace FamosoAça.Screens.Entregavel_IV.Gastos_Adicionais
 {
@@ -46,15 +47,28 @@ namespace FamosoAça.Screens.Entregavel_IV.Gastos_Adicionais
 
         private void button1_Click(object sender, EventArgs e)
         {
-            GastosADTO dto = new GastosADTO();
-            dto.Nome = txtNome.Text;
-            dto.Descricao = txtDescricao.Text;
-            dto.Data = mktData.Text;
-            dto.Valor = nudValor.Value;
+            try
+            {
+                GastosADTO dto = new GastosADTO();
+                dto.Nome = txtNome.Text;
+                dto.Descricao = txtDescricao.Text;
+                dto.Data = mktData.Text;
+                dto.Valor = nudValor.Value;
 
-            GastosABusiness buss = new GastosABusiness();
-            buss.Salvar(dto);
+                GastosABusiness buss = new GastosABusiness();
+                buss.Salvar(dto);
 
+                string msg = "Gasto adicionado com sucesso.";
+                frmMessage tela = new frmMessage();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }
+            catch (Exception)
+            {
+                frmException tela = new frmException();
+                tela.LoadScreen("Ocorreu um erro.\nConsulte o administrador do sistema.");
+                tela.ShowDialog();
+            }          
         }
 
         private void frmGastosAdicionais_Load(object sender, EventArgs e)
