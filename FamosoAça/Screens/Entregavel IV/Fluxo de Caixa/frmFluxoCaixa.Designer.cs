@@ -87,9 +87,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::FamosoAça.Properties.Resources.Bachground_Famoso_Açaí;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.dgvFluxoDeCaixa);
+            this.DoubleBuffered = true;
             this.Name = "frmFluxoCaixa";
             this.Size = new System.Drawing.Size(596, 397);
+            this.Load += new System.EventHandler(this.frmFluxoCaixa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFluxoDeCaixa)).EndInit();
             this.ResumeLayout(false);
 

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.mkbData = new System.Windows.Forms.MaskedTextBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.Data = new System.Windows.Forms.Label();
             this.dgvGastos = new System.Windows.Forms.DataGridView();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,24 +49,14 @@
             this.mkbData.TabIndex = 9;
             this.mkbData.ValidatingType = typeof(System.DateTime);
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(484, 36);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(88, 34);
-            this.btnBuscar.TabIndex = 8;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
             // Data
             // 
             this.Data.AutoSize = true;
-            this.Data.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Data.Location = new System.Drawing.Point(27, 38);
+            this.Data.BackColor = System.Drawing.Color.Transparent;
+            this.Data.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Data.Location = new System.Drawing.Point(27, 39);
             this.Data.Name = "Data";
-            this.Data.Size = new System.Drawing.Size(31, 15);
+            this.Data.Size = new System.Drawing.Size(32, 15);
             this.Data.TabIndex = 7;
             this.Data.Text = "Data";
             // 
@@ -88,9 +78,24 @@
             this.dgvGastos.Size = new System.Drawing.Size(549, 297);
             this.dgvGastos.TabIndex = 10;
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(26)))), ((int)(((byte)(82)))));
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.Location = new System.Drawing.Point(480, 25);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(83, 41);
+            this.btnBuscar.TabIndex = 11;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click_1);
+            // 
             // Column1
             // 
             this.Column1.DataPropertyName = "Id";
+            this.Column1.Frozen = true;
             this.Column1.HeaderText = "ID";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -131,12 +136,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::FamosoAça.Properties.Resources.Bachground_Famoso_Açaí;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.dgvGastos);
             this.Controls.Add(this.mkbData);
-            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.Data);
+            this.DoubleBuffered = true;
             this.Name = "ConsultarGastosAdicionais";
             this.Size = new System.Drawing.Size(596, 397);
+            this.Load += new System.EventHandler(this.ConsultarGastosAdicionais_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGastos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -146,7 +155,6 @@
         #endregion
 
         private System.Windows.Forms.MaskedTextBox mkbData;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label Data;
         private System.Windows.Forms.DataGridView dgvGastos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
@@ -154,5 +162,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }

@@ -174,5 +174,29 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Compras
         {
 
         }
+
+        private void frmCompras_Load(object sender, EventArgs e)
+        {
+            dgvCompras.BorderStyle = BorderStyle.None;
+            dgvCompras.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(84, 26, 82);
+            dgvCompras.RowsDefaultCellStyle.BackColor = Color.FromArgb(124, 33, 121);
+            dgvCompras.RowsDefaultCellStyle.ForeColor = Color.White;
+
+            dgvCompras.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvCompras.DefaultCellStyle.SelectionBackColor = Color.White;
+            dgvCompras.DefaultCellStyle.SelectionForeColor = Color.Black;
+            dgvCompras.BackgroundColor = Color.White;
+
+            dgvCompras.EnableHeadersVisualStyles = false;
+            dgvCompras.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvCompras.RowHeadersVisible = false;
+
+            dgvCompras.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
+            dgvCompras.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+
+            dgvCompras.RowHeadersDefaultCellStyle.Font = new Font("SegoeUI", 10);
+            dgvCompras.RowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
+            dgvCompras.AlternatingRowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
+        }
     }
 }

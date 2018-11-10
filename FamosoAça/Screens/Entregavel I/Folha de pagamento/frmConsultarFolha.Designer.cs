@@ -147,9 +147,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::FamosoAça.Properties.Resources.Bachground_Famoso_Açaí;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.dgvFolha);
+            this.DoubleBuffered = true;
             this.Name = "frmConsultarFolha";
             this.Size = new System.Drawing.Size(596, 397);
+            this.Load += new System.EventHandler(this.frmConsultarFolha_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFolha)).EndInit();
             this.ResumeLayout(false);
 

@@ -53,10 +53,11 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(26)))), ((int)(((byte)(82)))));
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(454, 53);
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.Location = new System.Drawing.Point(488, 31);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(83, 43);
             this.btnBuscar.TabIndex = 71;
@@ -66,14 +67,14 @@
             // 
             // txtCidade
             // 
-            this.txtCidade.Location = new System.Drawing.Point(110, 79);
+            this.txtCidade.Location = new System.Drawing.Point(54, 58);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(159, 20);
             this.txtCidade.TabIndex = 70;
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(110, 50);
+            this.txtNome.Location = new System.Drawing.Point(54, 29);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(159, 20);
             this.txtNome.TabIndex = 69;
@@ -82,11 +83,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(63, 81);
+            this.label3.Location = new System.Drawing.Point(7, 58);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 15);
+            this.label3.Size = new System.Drawing.Size(49, 17);
             this.label3.TabIndex = 68;
             this.label3.Text = "Cidade";
             // 
@@ -94,11 +95,11 @@
             // 
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(64, 53);
+            this.label13.Location = new System.Drawing.Point(8, 30);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(40, 15);
+            this.label13.Size = new System.Drawing.Size(45, 17);
             this.label13.TabIndex = 67;
             this.label13.Text = "Nome";
             // 
@@ -123,16 +124,17 @@
             this.Column11,
             this.Column12,
             this.Column13});
-            this.dgvListarFuncionario.Location = new System.Drawing.Point(60, 108);
+            this.dgvListarFuncionario.Location = new System.Drawing.Point(3, 86);
             this.dgvListarFuncionario.Name = "dgvListarFuncionario";
             this.dgvListarFuncionario.ReadOnly = true;
             this.dgvListarFuncionario.RowHeadersVisible = false;
-            this.dgvListarFuncionario.Size = new System.Drawing.Size(477, 262);
+            this.dgvListarFuncionario.Size = new System.Drawing.Size(590, 308);
             this.dgvListarFuncionario.TabIndex = 66;
             // 
             // Column1
             // 
             this.Column1.DataPropertyName = "Id";
+            this.Column1.Frozen = true;
             this.Column1.HeaderText = "ID";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -233,14 +235,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::FamosoAça.Properties.Resources.Bachground_Famoso_Açaí;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtCidade);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.dgvListarFuncionario);
+            this.DoubleBuffered = true;
             this.Name = "frmListarFuncionarios";
             this.Size = new System.Drawing.Size(596, 397);
+            this.Load += new System.EventHandler(this.frmListarFuncionarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarFuncionario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

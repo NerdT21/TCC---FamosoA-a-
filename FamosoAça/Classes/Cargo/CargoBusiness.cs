@@ -25,5 +25,11 @@ namespace FamosoAça.Classes.Cargo
             CargoDataBase db = new CargoDataBase();
             return db.Consultar(nome);
         }
+
+        public void Remover(int id)
+        {
+            CargoDataBase db = new CargoDataBase();
+            db.Remover(id);
+        }
     }
 }

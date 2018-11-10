@@ -43,6 +43,7 @@
             this.lblestado = new System.Windows.Forms.Label();
             this.lblCNPJ = new System.Windows.Forms.Label();
             this.btnCadastrar = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.SuspendLayout();
             // 
             // mkbCep
@@ -67,10 +68,11 @@
             // 
             this.lblBairro.AccessibleRole = System.Windows.Forms.AccessibleRole.IpAddress;
             this.lblBairro.AutoSize = true;
-            this.lblBairro.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBairro.Location = new System.Drawing.Point(122, 202);
+            this.lblBairro.BackColor = System.Drawing.Color.Transparent;
+            this.lblBairro.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBairro.Location = new System.Drawing.Point(135, 208);
             this.lblBairro.Name = "lblBairro";
-            this.lblBairro.Size = new System.Drawing.Size(45, 25);
+            this.lblBairro.Size = new System.Drawing.Size(31, 17);
             this.lblBairro.TabIndex = 130;
             this.lblBairro.Text = "CEP";
             // 
@@ -85,10 +87,11 @@
             // lbltelefone
             // 
             this.lbltelefone.AutoSize = true;
-            this.lbltelefone.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltelefone.Location = new System.Drawing.Point(82, 144);
+            this.lbltelefone.BackColor = System.Drawing.Color.Transparent;
+            this.lbltelefone.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltelefone.Location = new System.Drawing.Point(109, 150);
             this.lbltelefone.Name = "lbltelefone";
-            this.lbltelefone.Size = new System.Drawing.Size(85, 25);
+            this.lbltelefone.Size = new System.Drawing.Size(58, 17);
             this.lbltelefone.TabIndex = 128;
             this.lbltelefone.Text = "Telefone";
             // 
@@ -102,10 +105,11 @@
             // lblNomeJuridico
             // 
             this.lblNomeJuridico.AutoSize = true;
-            this.lblNomeJuridico.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomeJuridico.Location = new System.Drawing.Point(99, 45);
+            this.lblNomeJuridico.BackColor = System.Drawing.Color.Transparent;
+            this.lblNomeJuridico.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomeJuridico.Location = new System.Drawing.Point(123, 51);
             this.lblNomeJuridico.Name = "lblNomeJuridico";
-            this.lblNomeJuridico.Size = new System.Drawing.Size(68, 25);
+            this.lblNomeJuridico.Size = new System.Drawing.Size(49, 17);
             this.lblNomeJuridico.TabIndex = 126;
             this.lblNomeJuridico.Text = "Nome ";
             // 
@@ -119,10 +123,11 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(101, 81);
+            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmail.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(124, 87);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(66, 25);
+            this.lblEmail.Size = new System.Drawing.Size(45, 17);
             this.lblEmail.TabIndex = 124;
             this.lblEmail.Text = "E-mail";
             // 
@@ -144,48 +149,69 @@
             // lblCidadeF
             // 
             this.lblCidadeF.AutoSize = true;
-            this.lblCidadeF.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCidadeF.Location = new System.Drawing.Point(96, 237);
+            this.lblCidadeF.BackColor = System.Drawing.Color.Transparent;
+            this.lblCidadeF.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCidadeF.Location = new System.Drawing.Point(118, 243);
             this.lblCidadeF.Name = "lblCidadeF";
-            this.lblCidadeF.Size = new System.Drawing.Size(71, 25);
+            this.lblCidadeF.Size = new System.Drawing.Size(49, 17);
             this.lblCidadeF.TabIndex = 121;
             this.lblCidadeF.Text = "Cidade";
             // 
             // lblestado
             // 
             this.lblestado.AutoSize = true;
-            this.lblestado.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblestado.Location = new System.Drawing.Point(307, 237);
+            this.lblestado.BackColor = System.Drawing.Color.Transparent;
+            this.lblestado.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblestado.Location = new System.Drawing.Point(329, 243);
             this.lblestado.Name = "lblestado";
-            this.lblestado.Size = new System.Drawing.Size(68, 25);
+            this.lblestado.Size = new System.Drawing.Size(49, 17);
             this.lblestado.TabIndex = 120;
             this.lblestado.Text = "Estado";
             // 
             // lblCNPJ
             // 
             this.lblCNPJ.AutoSize = true;
-            this.lblCNPJ.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCNPJ.Location = new System.Drawing.Point(111, 115);
+            this.lblCNPJ.BackColor = System.Drawing.Color.Transparent;
+            this.lblCNPJ.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCNPJ.Location = new System.Drawing.Point(130, 121);
             this.lblCNPJ.Name = "lblCNPJ";
-            this.lblCNPJ.Size = new System.Drawing.Size(56, 25);
+            this.lblCNPJ.Size = new System.Drawing.Size(38, 17);
             this.lblCNPJ.TabIndex = 119;
             this.lblCNPJ.Text = "CNPJ";
             // 
             // btnCadastrar
             // 
+            this.btnCadastrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(26)))), ((int)(((byte)(82)))));
             this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastrar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrar.ForeColor = System.Drawing.Color.White;
             this.btnCadastrar.Location = new System.Drawing.Point(246, 315);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(110, 51);
             this.btnCadastrar.TabIndex = 8;
             this.btnCadastrar.Text = "Cadastrar";
-            this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.UseVisualStyleBackColor = false;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(26)))), ((int)(((byte)(82)))));
+            this.groupBox1.Location = new System.Drawing.Point(75, 18);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(438, 291);
+            this.groupBox1.TabIndex = 131;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Cadastro de Fornecedor";
+            this.groupBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox1_Paint);
             // 
             // frmCadastrarFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::FamosoAça.Properties.Resources.Bachground_Famoso_Açaí;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.mkbCep);
             this.Controls.Add(this.cboEstado);
@@ -201,6 +227,8 @@
             this.Controls.Add(this.lblCidadeF);
             this.Controls.Add(this.lblestado);
             this.Controls.Add(this.lblCNPJ);
+            this.Controls.Add(this.groupBox1);
+            this.DoubleBuffered = true;
             this.Name = "frmCadastrarFornecedor";
             this.Size = new System.Drawing.Size(596, 397);
             this.ResumeLayout(false);
@@ -225,5 +253,6 @@
         private System.Windows.Forms.Label lblestado;
         private System.Windows.Forms.Label lblCNPJ;
         private System.Windows.Forms.Button btnCadastrar;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

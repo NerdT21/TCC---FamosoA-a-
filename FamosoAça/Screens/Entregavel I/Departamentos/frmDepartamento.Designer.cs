@@ -99,6 +99,7 @@
             this.dgvDepto.RowHeadersVisible = false;
             this.dgvDepto.Size = new System.Drawing.Size(298, 146);
             this.dgvDepto.TabIndex = 19;
+            this.dgvDepto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDepto_CellContentClick);
             // 
             // Id
             // 
@@ -127,6 +128,7 @@
             // Column1
             // 
             this.Column1.HeaderText = "";
+            this.Column1.Image = global::FamosoAça.Properties.Resources.icons8_cancel_30;
             this.Column1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -147,7 +149,7 @@
             // btnSalvar
             // 
             this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(26)))), ((int)(((byte)(82)))));
-            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
             this.btnSalvar.Location = new System.Drawing.Point(47, 95);
@@ -221,7 +223,7 @@
             // btnCadastrar
             // 
             this.btnCadastrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(26)))), ((int)(((byte)(82)))));
-            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrar.ForeColor = System.Drawing.Color.White;
             this.btnCadastrar.Location = new System.Drawing.Point(404, 34);
@@ -244,8 +246,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackgroundImage = global::FamosoAça.Properties.Resources.Bachground_Famoso_Açaí;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
+            this.DoubleBuffered = true;
             this.Name = "frmDepartamento";
             this.Size = new System.Drawing.Size(596, 397);
             this.Load += new System.EventHandler(this.frmDepartamento_Load);
@@ -264,10 +270,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvDepto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Departamento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewImageColumn Column1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.TextBox txtProcurarDepto;
@@ -277,5 +279,9 @@
         private System.Windows.Forms.TextBox txtDecricao;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.TextBox txtDepto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Departamento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewImageColumn Column1;
     }
 }

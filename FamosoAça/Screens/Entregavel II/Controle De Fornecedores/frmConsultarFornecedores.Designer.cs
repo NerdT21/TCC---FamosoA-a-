@@ -55,22 +55,26 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(44, 57);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(49, 59);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 21);
+            this.label1.Size = new System.Drawing.Size(49, 17);
             this.label1.TabIndex = 21;
             this.label1.Text = "Cidade";
             // 
             // btnProcurar
             // 
+            this.btnProcurar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(26)))), ((int)(((byte)(82)))));
+            this.btnProcurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProcurar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProcurar.ForeColor = System.Drawing.Color.White;
             this.btnProcurar.Location = new System.Drawing.Point(481, 29);
             this.btnProcurar.Name = "btnProcurar";
             this.btnProcurar.Size = new System.Drawing.Size(77, 45);
             this.btnProcurar.TabIndex = 20;
             this.btnProcurar.Text = "Procurar";
-            this.btnProcurar.UseVisualStyleBackColor = true;
+            this.btnProcurar.UseVisualStyleBackColor = false;
             this.btnProcurar.Click += new System.EventHandler(this.btnProcurar_Click);
             // 
             // txtNome
@@ -83,10 +87,11 @@
             // lblnome
             // 
             this.lblnome.AutoSize = true;
-            this.lblnome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblnome.Location = new System.Drawing.Point(49, 33);
+            this.lblnome.BackColor = System.Drawing.Color.Transparent;
+            this.lblnome.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblnome.Location = new System.Drawing.Point(54, 35);
             this.lblnome.Name = "lblnome";
-            this.lblnome.Size = new System.Drawing.Size(53, 21);
+            this.lblnome.Size = new System.Drawing.Size(45, 17);
             this.lblnome.TabIndex = 18;
             this.lblnome.Text = "Nome";
             // 
@@ -114,6 +119,7 @@
             // Column1
             // 
             this.Column1.DataPropertyName = "Id";
+            this.Column1.Frozen = true;
             this.Column1.HeaderText = "ID";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -174,14 +180,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::FamosoAça.Properties.Resources.Bachground_Famoso_Açaí;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.txtCidade);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnProcurar);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblnome);
             this.Controls.Add(this.dgvFornecedor);
+            this.DoubleBuffered = true;
             this.Name = "frmConsultarFornecedores";
             this.Size = new System.Drawing.Size(596, 397);
+            this.Load += new System.EventHandler(this.frmConsultarFornecedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

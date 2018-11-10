@@ -61,5 +61,29 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Fornecedores
         {
             CarregarGrid();
         }
+
+        private void frmConsultarFornecedores_Load(object sender, EventArgs e)
+        {
+            dgvFornecedor.BorderStyle = BorderStyle.None;
+            dgvFornecedor.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(84, 26, 82);
+            dgvFornecedor.RowsDefaultCellStyle.BackColor = Color.FromArgb(124, 33, 121);
+            dgvFornecedor.RowsDefaultCellStyle.ForeColor = Color.White;
+
+            dgvFornecedor.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvFornecedor.DefaultCellStyle.SelectionBackColor = Color.White;
+            dgvFornecedor.DefaultCellStyle.SelectionForeColor = Color.Black;
+            dgvFornecedor.BackgroundColor = Color.White;
+
+            dgvFornecedor.EnableHeadersVisualStyles = false;
+            dgvFornecedor.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvFornecedor.RowHeadersVisible = false;
+
+            dgvFornecedor.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
+            dgvFornecedor.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+
+            dgvFornecedor.RowHeadersDefaultCellStyle.Font = new Font("SegoeUI", 10);
+            dgvFornecedor.RowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
+            dgvFornecedor.AlternatingRowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
+        }
     }
 }

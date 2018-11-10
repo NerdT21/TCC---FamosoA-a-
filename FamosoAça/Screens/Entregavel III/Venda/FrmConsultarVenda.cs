@@ -67,12 +67,24 @@ namespace FamosoAça.Screens.Entregavel_III.ConsultarVenda
 
         private void FrmConsultarVenda_Load(object sender, EventArgs e)
         {
-            //Cabeça da GV
+            dgvProduto.BorderStyle = BorderStyle.None;
+            dgvProduto.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(84, 26, 82);
+            dgvProduto.RowsDefaultCellStyle.BackColor = Color.FromArgb(124, 33, 121);
+            dgvProduto.RowsDefaultCellStyle.ForeColor = Color.White;
+
+            dgvProduto.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvProduto.DefaultCellStyle.SelectionBackColor = Color.White;
+            dgvProduto.DefaultCellStyle.SelectionForeColor = Color.Black;
+            dgvProduto.BackgroundColor = Color.White;
+
+            dgvProduto.EnableHeadersVisualStyles = false;
+            dgvProduto.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvProduto.RowHeadersVisible = false;
+
             dgvProduto.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
             dgvProduto.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
 
-            //Fonte
-            dgvProduto.RowHeadersDefaultCellStyle.Font = new Font("SegoeUI", 12);
+            dgvProduto.RowHeadersDefaultCellStyle.Font = new Font("SegoeUI", 10);
             dgvProduto.RowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
             dgvProduto.AlternatingRowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
         }

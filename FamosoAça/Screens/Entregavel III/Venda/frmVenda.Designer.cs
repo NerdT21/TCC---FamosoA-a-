@@ -39,16 +39,16 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvVendas = new System.Windows.Forms.DataGridView();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboTipoPag = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnAdd = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudQtd)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
             this.SuspendLayout();
             // 
             // nudQtd
@@ -60,13 +60,16 @@
             // 
             // bntVenda
             // 
+            this.bntVenda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(26)))), ((int)(((byte)(82)))));
+            this.bntVenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bntVenda.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntVenda.ForeColor = System.Drawing.Color.White;
             this.bntVenda.Location = new System.Drawing.Point(221, 315);
             this.bntVenda.Name = "bntVenda";
             this.bntVenda.Size = new System.Drawing.Size(135, 48);
             this.bntVenda.TabIndex = 39;
             this.bntVenda.Text = "Emitir";
-            this.bntVenda.UseVisualStyleBackColor = true;
+            this.bntVenda.UseVisualStyleBackColor = false;
             this.bntVenda.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel1
@@ -148,19 +151,9 @@
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(357, 278);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 17);
+            this.label3.Size = new System.Drawing.Size(65, 17);
             this.label3.TabIndex = 28;
             this.label3.Text = "Sub. Total";
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Image = global::FamosoAça.Properties.Resources.icons8_plus_32;
-            this.btnAdd.Location = new System.Drawing.Point(236, 172);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(31, 30);
-            this.btnAdd.TabIndex = 27;
-            this.btnAdd.TabStop = false;
-            this.btnAdd.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label1
             // 
@@ -228,10 +221,23 @@
             this.label4.TabIndex = 43;
             this.label4.Text = "Forma De Pagamento ";
             // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(26)))), ((int)(((byte)(82)))));
+            this.btnAdd.Image = global::FamosoAça.Properties.Resources.icons8_plus_321;
+            this.btnAdd.Location = new System.Drawing.Point(236, 172);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(31, 30);
+            this.btnAdd.TabIndex = 27;
+            this.btnAdd.TabStop = false;
+            this.btnAdd.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // frmVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::FamosoAça.Properties.Resources.Bachground_Famoso_Açaí;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.cboTipoPag);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dgvVendas);
@@ -248,11 +254,13 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
             this.Name = "frmVenda";
             this.Size = new System.Drawing.Size(596, 397);
+            this.Load += new System.EventHandler(this.frmVenda_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudQtd)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

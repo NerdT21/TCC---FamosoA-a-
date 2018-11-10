@@ -139,5 +139,49 @@ namespace FamosoAça.Screens.Entregavel_I.Departamentos
             dgvDepto.RowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
             dgvDepto.AlternatingRowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
         }
+
+        private void dgvDepto_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.ColumnIndex == 3)
+                {
+                    CargoDTO dto = dgvDepto.Rows[e.RowIndex].DataBoundItem as CargoDTO;
+
+                    string msg = "Quer mesmo apagar o registro " + dto.Id + "?" +
+                        "\n" + "obs: Ao apagar um departamento, todos os funcionários nele vinculados serão deletados.";
+
+                    frmQuestion tela = new frmQuestion();
+                    tela.LoadScreen(msg);
+                    tela.ShowDialog();
+
+                    bool botaoYes = tela.BotaoYes;
+
+                    if (botaoYes == true)
+                    {
+                        CargoBusiness buss = new CargoBusiness();
+
+                        int IdDepto = dto.Id;
+                        buss.Remover(IdDepto);
+
+                        string msgm = "Registo removido com sucesso!";
+
+                        frmMessage message = new frmMessage();
+                        message.LoadScreen(msgm);
+                        message.ShowDialog();
+
+                        CarregarGrid();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                string msg = "Ocorreu um erro: " + ex.Message;
+
+                frmException tela = new frmException();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }
+        }
     }
 }

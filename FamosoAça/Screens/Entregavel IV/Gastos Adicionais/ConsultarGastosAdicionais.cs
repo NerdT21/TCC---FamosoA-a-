@@ -60,9 +60,29 @@ namespace FamosoAça.Screens.Entregavel_IV.Gatos_Adicionais
            
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
+        private void btnBuscar_Click_1(object sender, EventArgs e)
         {
             CarregarGrid();
+        }
+
+        private void ConsultarGastosAdicionais_Load(object sender, EventArgs e)
+        {
+
+            dgvGastos.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvGastos.DefaultCellStyle.SelectionBackColor = Color.White;
+            dgvGastos.DefaultCellStyle.SelectionForeColor = Color.Black;
+            dgvGastos.BackgroundColor = Color.White;
+
+            dgvGastos.EnableHeadersVisualStyles = false;
+            dgvGastos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvGastos.RowHeadersVisible = false;
+
+            dgvGastos.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
+            dgvGastos.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+
+            dgvGastos.RowHeadersDefaultCellStyle.Font = new Font("SegoeUI", 10);
+            dgvGastos.RowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
+            dgvGastos.AlternatingRowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
         }
     }
 }

@@ -37,18 +37,22 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudPreco)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCadatrar
             // 
+            this.btnCadatrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(26)))), ((int)(((byte)(82)))));
+            this.btnCadatrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadatrar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadatrar.ForeColor = System.Drawing.Color.White;
             this.btnCadatrar.Location = new System.Drawing.Point(237, 299);
             this.btnCadatrar.Name = "btnCadatrar";
-            this.btnCadatrar.Size = new System.Drawing.Size(98, 39);
+            this.btnCadatrar.Size = new System.Drawing.Size(114, 51);
             this.btnCadatrar.TabIndex = 6;
             this.btnCadatrar.Text = "Cadastrar";
-            this.btnCadatrar.UseVisualStyleBackColor = true;
+            this.btnCadatrar.UseVisualStyleBackColor = false;
             this.btnCadatrar.Click += new System.EventHandler(this.btnCadatrar_Click);
             // 
             // txtMarca
@@ -140,10 +144,25 @@
             this.label1.TabIndex = 62;
             this.label1.Text = "Marca";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(26)))), ((int)(((byte)(82)))));
+            this.groupBox1.Location = new System.Drawing.Point(95, 23);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(397, 245);
+            this.groupBox1.TabIndex = 69;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Cadastro de Produto - Vendas";
+            this.groupBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox1_Paint);
+            // 
             // frmRegistrarItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::FamosoAça.Properties.Resources.Bachground_Famoso_Açaí;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.txtMarca);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.nudPreco);
@@ -153,6 +172,8 @@
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCadatrar);
+            this.Controls.Add(this.groupBox1);
+            this.DoubleBuffered = true;
             this.Name = "frmRegistrarItem";
             this.Size = new System.Drawing.Size(596, 397);
             this.Load += new System.EventHandler(this.FrmItem_Load);
@@ -172,5 +193,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

@@ -38,5 +38,29 @@ namespace FamosoAça.Screens.Entregavel_IV.Fluxo_de_Caixa
             }
           
         }
+
+        private void frmFluxoCaixa_Load(object sender, EventArgs e)
+        {
+            dgvFluxoDeCaixa.BorderStyle = BorderStyle.None;
+            dgvFluxoDeCaixa.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(84, 26, 82);
+            dgvFluxoDeCaixa.RowsDefaultCellStyle.BackColor = Color.FromArgb(124, 33, 121);
+            dgvFluxoDeCaixa.RowsDefaultCellStyle.ForeColor = Color.White;
+
+            dgvFluxoDeCaixa.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvFluxoDeCaixa.DefaultCellStyle.SelectionBackColor = Color.White;
+            dgvFluxoDeCaixa.DefaultCellStyle.SelectionForeColor = Color.Black;
+            dgvFluxoDeCaixa.BackgroundColor = Color.White;
+
+            dgvFluxoDeCaixa.EnableHeadersVisualStyles = false;
+            dgvFluxoDeCaixa.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvFluxoDeCaixa.RowHeadersVisible = false;
+
+            dgvFluxoDeCaixa.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
+            dgvFluxoDeCaixa.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+
+            dgvFluxoDeCaixa.RowHeadersDefaultCellStyle.Font = new Font("SegoeUI", 10);
+            dgvFluxoDeCaixa.RowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
+            dgvFluxoDeCaixa.AlternatingRowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
+        }
     }
 }

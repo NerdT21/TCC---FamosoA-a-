@@ -53,7 +53,26 @@ namespace FamosoAça.Screens.Entregavel_IV.Estoque
 
         private void Estoque_Load(object sender, EventArgs e)
         {
+            dgvEstoque.BorderStyle = BorderStyle.None;
+            dgvEstoque.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(84, 26, 82);
+            dgvEstoque.RowsDefaultCellStyle.BackColor = Color.FromArgb(124, 33, 121);
+            dgvEstoque.RowsDefaultCellStyle.ForeColor = Color.White;
 
+            dgvEstoque.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvEstoque.DefaultCellStyle.SelectionBackColor = Color.White;
+            dgvEstoque.DefaultCellStyle.SelectionForeColor = Color.Black;
+            dgvEstoque.BackgroundColor = Color.White;
+
+            dgvEstoque.EnableHeadersVisualStyles = false;
+            dgvEstoque.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvEstoque.RowHeadersVisible = false;
+
+            dgvEstoque.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
+            dgvEstoque.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+
+            dgvEstoque.RowHeadersDefaultCellStyle.Font = new Font("SegoeUI", 10);
+            dgvEstoque.RowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
+            dgvEstoque.AlternatingRowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
         }
 
         private void txtMarca_TextChanged(object sender, EventArgs e)

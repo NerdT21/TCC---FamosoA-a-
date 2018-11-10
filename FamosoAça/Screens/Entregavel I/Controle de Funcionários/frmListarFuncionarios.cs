@@ -75,5 +75,25 @@ namespace FamosoAça.Screens.Entregavel_I.Controle_de_Funcionários
             }
             
         }
+
+        private void frmListarFuncionarios_Load(object sender, EventArgs e)
+        {
+
+            dgvListarFuncionario.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvListarFuncionario.DefaultCellStyle.SelectionBackColor = Color.White;
+            dgvListarFuncionario.DefaultCellStyle.SelectionForeColor = Color.Black;
+            dgvListarFuncionario.BackgroundColor = Color.White;
+
+            dgvListarFuncionario.EnableHeadersVisualStyles = false;
+            dgvListarFuncionario.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvListarFuncionario.RowHeadersVisible = false;
+
+            dgvListarFuncionario.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
+            dgvListarFuncionario.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+
+            dgvListarFuncionario.RowHeadersDefaultCellStyle.Font = new Font("SegoeUI", 10);
+            dgvListarFuncionario.RowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
+            dgvListarFuncionario.AlternatingRowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
+        }
     }
 }

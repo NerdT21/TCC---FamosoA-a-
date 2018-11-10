@@ -38,5 +38,29 @@ namespace FamosoAça.Screens.Entregavel_I
             }
             
         }
+
+        private void frmConsultarFolha_Load(object sender, EventArgs e)
+        {
+            dgvFolha.BorderStyle = BorderStyle.None;
+            dgvFolha.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(84, 26, 82);
+            dgvFolha.RowsDefaultCellStyle.BackColor = Color.FromArgb(124, 33, 121);
+            dgvFolha.RowsDefaultCellStyle.ForeColor = Color.White;
+
+            dgvFolha.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvFolha.DefaultCellStyle.SelectionBackColor = Color.White;
+            dgvFolha.DefaultCellStyle.SelectionForeColor = Color.Black;
+            dgvFolha.BackgroundColor = Color.White;
+
+            dgvFolha.EnableHeadersVisualStyles = false;
+            dgvFolha.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvFolha.RowHeadersVisible = false;
+
+            dgvFolha.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
+            dgvFolha.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+
+            dgvFolha.RowHeadersDefaultCellStyle.Font = new Font("SegoeUI", 10);
+            dgvFolha.RowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
+            dgvFolha.AlternatingRowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
+        }
     }
 }

@@ -44,13 +44,16 @@
             // 
             // btnConsultar
             // 
+            this.btnConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(26)))), ((int)(((byte)(82)))));
+            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConsultar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultar.ForeColor = System.Drawing.Color.White;
             this.btnConsultar.Location = new System.Drawing.Point(429, 28);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(105, 39);
+            this.btnConsultar.Size = new System.Drawing.Size(105, 50);
             this.btnConsultar.TabIndex = 5;
             this.btnConsultar.Text = "Consultar";
-            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.UseVisualStyleBackColor = false;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // dgvProduto
@@ -64,11 +67,11 @@
             this.Column3,
             this.Column4,
             this.Column5});
-            this.dgvProduto.Location = new System.Drawing.Point(3, 99);
+            this.dgvProduto.Location = new System.Drawing.Point(14, 99);
             this.dgvProduto.Name = "dgvProduto";
             this.dgvProduto.ReadOnly = true;
             this.dgvProduto.RowHeadersVisible = false;
-            this.dgvProduto.Size = new System.Drawing.Size(577, 261);
+            this.dgvProduto.Size = new System.Drawing.Size(566, 280);
             this.dgvProduto.TabIndex = 16;
             // 
             // Column1
@@ -151,12 +154,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::FamosoAça.Properties.Resources.Bachground_Famoso_Açaí;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.txtMarca);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblprocurar);
             this.Controls.Add(this.dgvProduto);
             this.Controls.Add(this.btnConsultar);
+            this.DoubleBuffered = true;
             this.Name = "frmConsultarItem";
             this.Size = new System.Drawing.Size(596, 397);
             this.Load += new System.EventHandler(this.frmConsultarItem_Load);

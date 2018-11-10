@@ -66,5 +66,16 @@ namespace FamosoAça.Classes.Cargo
             reader.Close();
             return lista;
         }
+
+        public void Remover(int id)
+        {
+            string script = @"DELETE FROM tb_depto WHERE id_depto = @id_depto";
+
+            List<MySqlParameter> parms = new List<MySqlParameter>();
+            parms.Add(new MySqlParameter("id_depto", id));
+
+            Database db = new Database();
+            db.ExecuteInsertScript(script, parms);
+        }
     }
 }

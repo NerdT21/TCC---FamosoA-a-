@@ -739,6 +739,13 @@
     <None Include="Resources\close icone.png" />
     <None Include="Resources\icons8-error-48.png" />
     <None Include="Resources\icons8-help-48 %281%29.png" />
+    <None Include="Resources\Back 01.jpg" />
+    <None Include="Resources\Back 02.jpg" />
+    <None Include="Resources\Back 03.jpg" />
+    <None Include="Resources\Back 04.jpg" />
+    <None Include="Resources\Bachground Famoso.png" />
+    <None Include="Resources\Bachground Famoso Açaí.png" />
+    <None Include="Resources\icons8-plus-321.png" />
     <Content Include="Script.txt" />
   </ItemGroup>
   <ItemGroup>

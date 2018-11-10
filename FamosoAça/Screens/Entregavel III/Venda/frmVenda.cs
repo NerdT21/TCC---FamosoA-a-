@@ -143,5 +143,29 @@ namespace FamosoAça.Screens.Entregavel_III.ConsultarVenda
         {
             txtProduto.Text = cboNome.Text;
         }
+
+        private void frmVenda_Load(object sender, EventArgs e)
+        {
+            dgvVendas.BorderStyle = BorderStyle.None;
+            dgvVendas.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(84, 26, 82);
+            dgvVendas.RowsDefaultCellStyle.BackColor = Color.FromArgb(124, 33, 121);
+            dgvVendas.RowsDefaultCellStyle.ForeColor = Color.White;
+
+            dgvVendas.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvVendas.DefaultCellStyle.SelectionBackColor = Color.White;
+            dgvVendas.DefaultCellStyle.SelectionForeColor = Color.Black;
+            dgvVendas.BackgroundColor = Color.White;
+
+            dgvVendas.EnableHeadersVisualStyles = false;
+            dgvVendas.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvVendas.RowHeadersVisible = false;
+
+            dgvVendas.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
+            dgvVendas.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+
+            dgvVendas.RowHeadersDefaultCellStyle.Font = new Font("SegoeUI", 10);
+            dgvVendas.RowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
+            dgvVendas.AlternatingRowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
+        }
     }
 }

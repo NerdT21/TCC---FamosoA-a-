@@ -32,24 +32,27 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblprocurar = new System.Windows.Forms.Label();
             this.dgvProduto = new System.Windows.Forms.DataGridView();
+            this.txtMarca = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtMarca = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).BeginInit();
             this.SuspendLayout();
             // 
             // btnProcurar
             // 
-            this.btnProcurar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProcurar.Location = new System.Drawing.Point(494, 14);
+            this.btnProcurar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(26)))), ((int)(((byte)(82)))));
+            this.btnProcurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProcurar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProcurar.ForeColor = System.Drawing.Color.White;
+            this.btnProcurar.Location = new System.Drawing.Point(478, 14);
             this.btnProcurar.Name = "btnProcurar";
-            this.btnProcurar.Size = new System.Drawing.Size(61, 47);
+            this.btnProcurar.Size = new System.Drawing.Size(77, 47);
             this.btnProcurar.TabIndex = 22;
             this.btnProcurar.Text = "Buscar";
-            this.btnProcurar.UseVisualStyleBackColor = true;
+            this.btnProcurar.UseVisualStyleBackColor = false;
             this.btnProcurar.Click += new System.EventHandler(this.btnProcurar_Click);
             // 
             // txtNome
@@ -62,10 +65,11 @@
             // lblprocurar
             // 
             this.lblprocurar.AutoSize = true;
-            this.lblprocurar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblprocurar.BackColor = System.Drawing.Color.Transparent;
+            this.lblprocurar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblprocurar.Location = new System.Drawing.Point(13, 19);
             this.lblprocurar.Name = "lblprocurar";
-            this.lblprocurar.Size = new System.Drawing.Size(129, 20);
+            this.lblprocurar.Size = new System.Drawing.Size(119, 17);
             this.lblprocurar.TabIndex = 20;
             this.lblprocurar.Text = "Nome do Produto";
             // 
@@ -86,9 +90,28 @@
             this.dgvProduto.Size = new System.Drawing.Size(577, 303);
             this.dgvProduto.TabIndex = 19;
             // 
+            // txtMarca
+            // 
+            this.txtMarca.Location = new System.Drawing.Point(148, 50);
+            this.txtMarca.Name = "txtMarca";
+            this.txtMarca.Size = new System.Drawing.Size(98, 20);
+            this.txtMarca.TabIndex = 24;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(81, 48);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 17);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Marca";
+            // 
             // Column1
             // 
             this.Column1.DataPropertyName = "Id";
+            this.Column1.Frozen = true;
             this.Column1.HeaderText = "ID";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -117,35 +140,22 @@
             this.Column5.ReadOnly = true;
             this.Column5.Width = 150;
             // 
-            // txtMarca
-            // 
-            this.txtMarca.Location = new System.Drawing.Point(148, 50);
-            this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(98, 20);
-            this.txtMarca.TabIndex = 24;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(81, 48);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 20);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "Marca";
-            // 
             // frmConsultarProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::FamosoAça.Properties.Resources.Bachground_Famoso_Açaí;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.txtMarca);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnProcurar);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblprocurar);
             this.Controls.Add(this.dgvProduto);
+            this.DoubleBuffered = true;
             this.Name = "frmConsultarProduto";
             this.Size = new System.Drawing.Size(596, 397);
+            this.Load += new System.EventHandler(this.frmConsultarProduto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -158,11 +168,11 @@
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblprocurar;
         private System.Windows.Forms.DataGridView dgvProduto;
+        private System.Windows.Forms.TextBox txtMarca;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.TextBox txtMarca;
-        private System.Windows.Forms.Label label1;
     }
 }

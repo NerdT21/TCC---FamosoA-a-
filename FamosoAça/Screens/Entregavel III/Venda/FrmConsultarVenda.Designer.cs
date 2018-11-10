@@ -42,13 +42,16 @@
             // 
             // btnProcurar
             // 
+            this.btnProcurar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(26)))), ((int)(((byte)(82)))));
+            this.btnProcurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProcurar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProcurar.Location = new System.Drawing.Point(447, 27);
+            this.btnProcurar.ForeColor = System.Drawing.Color.White;
+            this.btnProcurar.Location = new System.Drawing.Point(447, 23);
             this.btnProcurar.Name = "btnProcurar";
-            this.btnProcurar.Size = new System.Drawing.Size(63, 34);
+            this.btnProcurar.Size = new System.Drawing.Size(91, 38);
             this.btnProcurar.TabIndex = 28;
             this.btnProcurar.Text = "Buscar";
-            this.btnProcurar.UseVisualStyleBackColor = true;
+            this.btnProcurar.UseVisualStyleBackColor = false;
             this.btnProcurar.Click += new System.EventHandler(this.btnProcurar_Click);
             // 
             // dgvProduto
@@ -71,7 +74,7 @@
             // 
             // mkbData
             // 
-            this.mkbData.Location = new System.Drawing.Point(173, 36);
+            this.mkbData.Location = new System.Drawing.Point(157, 35);
             this.mkbData.Mask = "00/00/0000";
             this.mkbData.Name = "mkbData";
             this.mkbData.Size = new System.Drawing.Size(68, 20);
@@ -82,16 +85,17 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(44, 35);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 21);
+            this.label2.Size = new System.Drawing.Size(107, 17);
             this.label2.TabIndex = 30;
             this.label2.Text = "Data de Compra";
             // 
             // Column1
             // 
             this.Column1.DataPropertyName = "Id";
+            this.Column1.Frozen = true;
             this.Column1.HeaderText = "ID";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -126,10 +130,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::FamosoAça.Properties.Resources.Bachground_Famoso_Açaí;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.mkbData);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnProcurar);
             this.Controls.Add(this.dgvProduto);
+            this.DoubleBuffered = true;
             this.Name = "FrmConsultarVenda";
             this.Size = new System.Drawing.Size(596, 397);
             this.Load += new System.EventHandler(this.FrmConsultarVenda_Load);
