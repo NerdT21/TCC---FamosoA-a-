@@ -39,6 +39,6 @@ namespace FamosoAça.Classes.Funcionarios
 
         public string Imagem { get; set; }
 
-
+        public string Nascimento { get; set; }
     }
 }

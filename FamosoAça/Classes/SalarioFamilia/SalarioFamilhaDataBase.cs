@@ -78,7 +78,7 @@ namespace FamosoAça.Classes.SalarioFamilia
             reader.Close();
             return salariof;
         }
-        public List<SalarioFamilhaDTO> Consultar(string nome)
+        public List<SalarioFamilhaDTO> Consultar(decimal nome)
         {
             string script = @"SELECT * FROM tb_salario_familia WHERE vl_sal_bruto LIKE @vl_sal_bruto";
 

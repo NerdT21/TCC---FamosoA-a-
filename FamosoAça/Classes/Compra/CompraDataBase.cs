@@ -104,7 +104,7 @@ namespace FamosoAça.Classes.Compra
                 vw.Data = reader.GetString("dt_compra");
                 vw.Total = reader.GetDecimal("vl_total");
 
-                view.Add(vw)
+                view.Add(vw);
 
             }
             reader.Close();

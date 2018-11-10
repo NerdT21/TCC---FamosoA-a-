@@ -33,9 +33,9 @@ namespace FamosoAça.Screens.Entregavel_I
             }
             else
             {
-                mkbCPF.Text = dto.CPF;
+                mkbCPF.Text = dto.Cpf;
                 txtSalario.Text = dto.Salario.ToString();
-                txtDepto.Text = dto.DeptoId.ToString();
+                txtDepto.Text = dto.IdDepto.ToString();
                 pbxImgFuncionario.Image = ImagemPlugIn.ConverterParaImagem(dto.Imagem);
             }
 
@@ -43,7 +43,7 @@ namespace FamosoAça.Screens.Entregavel_I
         void CarregarCombos()
         {
             FuncionariosBusiness buss = new FuncionariosBusiness();
-            List<FuncionarioDTO> lista = buss.Listar();
+            List<ViewFuncionario> lista = buss.Listar();
 
             cboFuncionario.ValueMember = nameof(FuncionarioDTO.Id);
             cboFuncionario.DisplayMember = nameof(FuncionarioDTO.Nome);

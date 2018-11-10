@@ -25,12 +25,13 @@ namespace FamosoAça.Login
             {
                 LoginDTO dto = new LoginDTO();
                 dto.Usuario = txtUsuario.Text;
+                dto.Funcionario = txtNome.Text;
                 dto.Senha = txtSenha.Text;
-                dto.Adm = ckbAdm.Checked;
-                dto.Email = txtEmail.Text;
-                dto.Cadastro = ckbCadastar.Checked;
-                dto.Consulta = ckbConsultar.Checked;
-                dto.Contabilidade = ckbContabilidade.Checked;
+                dto.PermissaoAdm = ckbAdm.Checked;
+                dto.PermissaoCadastros = ckbCadastros.Checked;
+                dto.PermissaoCaixa = ckbCaixa.Checked;
+                dto.PermissaoEstoque = ckbEstoque.Checked;
+                dto.PermissaoFinanceiro = ckbFinanceiro.Checked;
 
 
                 LoginBusiness business = new LoginBusiness();
@@ -63,13 +64,13 @@ namespace FamosoAça.Login
         {
             if (ckbAdm.Checked == true)
             {
-                ckbCadastar.Checked = true;
-                ckbConsultar.Checked = true;
+                ckbCaixa.Checked = true;
+                ckbEstoque.Checked = true;
             }
-            else if (ckbConsultar.Checked == false)
+            else if (ckbEstoque.Checked == false)
             {
-                ckbCadastar.Checked = false;
-                ckbConsultar.Checked = false;
+                ckbCaixa.Checked = false;
+                ckbEstoque.Checked = false;
             }
         }
     }

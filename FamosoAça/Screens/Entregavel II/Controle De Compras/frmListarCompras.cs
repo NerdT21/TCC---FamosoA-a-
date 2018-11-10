@@ -22,7 +22,7 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Compras
         void AutoCarregar()
         {
             CompraBusiness buss = new CompraBusiness();
-            List<CompraDTO> dto = buss.Listar();
+            List<ViewCompra> dto = buss.Listar();
 
             dgvCompra.AutoGenerateColumns = false;
             dgvCompra.DataSource = dto;
@@ -33,7 +33,7 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Compras
             string data = mkbData.Text;
 
             CompraBusiness buss = new CompraBusiness();
-            List<CompraDTO> dto = buss.Consultar(data);
+            List<ViewCompra> dto = buss.Consultar(data);
 
             dgvCompra.AutoGenerateColumns = false;
             dgvCompra.DataSource = dto;

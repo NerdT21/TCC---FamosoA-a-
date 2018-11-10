@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.btnCadastrar = new System.Windows.Forms.Button();
-            this.ckbContabilidade = new System.Windows.Forms.CheckBox();
-            this.ckbCadastar = new System.Windows.Forms.CheckBox();
+            this.ckbFinanceiro = new System.Windows.Forms.CheckBox();
+            this.ckbCaixa = new System.Windows.Forms.CheckBox();
             this.ckbAdm = new System.Windows.Forms.CheckBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
@@ -42,12 +42,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.ckbConsultar = new System.Windows.Forms.CheckBox();
+            this.ckbEstoque = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.ckbCadastros = new System.Windows.Forms.CheckBox();
+            this.ckbProdutos = new System.Windows.Forms.CheckBox();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,27 +65,27 @@
             this.btnCadastrar.UseVisualStyleBackColor = false;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
-            // ckbContabilidade
+            // ckbFinanceiro
             // 
-            this.ckbContabilidade.AutoSize = true;
-            this.ckbContabilidade.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbContabilidade.Location = new System.Drawing.Point(383, 71);
-            this.ckbContabilidade.Name = "ckbContabilidade";
-            this.ckbContabilidade.Size = new System.Drawing.Size(86, 21);
-            this.ckbContabilidade.TabIndex = 57;
-            this.ckbContabilidade.Text = "Financeiro";
-            this.ckbContabilidade.UseVisualStyleBackColor = true;
+            this.ckbFinanceiro.AutoSize = true;
+            this.ckbFinanceiro.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbFinanceiro.Location = new System.Drawing.Point(383, 71);
+            this.ckbFinanceiro.Name = "ckbFinanceiro";
+            this.ckbFinanceiro.Size = new System.Drawing.Size(86, 21);
+            this.ckbFinanceiro.TabIndex = 57;
+            this.ckbFinanceiro.Text = "Financeiro";
+            this.ckbFinanceiro.UseVisualStyleBackColor = true;
             // 
-            // ckbCadastar
+            // ckbCaixa
             // 
-            this.ckbCadastar.AutoSize = true;
-            this.ckbCadastar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbCadastar.Location = new System.Drawing.Point(494, 48);
-            this.ckbCadastar.Name = "ckbCadastar";
-            this.ckbCadastar.Size = new System.Drawing.Size(58, 21);
-            this.ckbCadastar.TabIndex = 56;
-            this.ckbCadastar.Text = "Caixa";
-            this.ckbCadastar.UseVisualStyleBackColor = true;
+            this.ckbCaixa.AutoSize = true;
+            this.ckbCaixa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbCaixa.Location = new System.Drawing.Point(494, 48);
+            this.ckbCaixa.Name = "ckbCaixa";
+            this.ckbCaixa.Size = new System.Drawing.Size(58, 21);
+            this.ckbCaixa.TabIndex = 56;
+            this.ckbCaixa.Text = "Caixa";
+            this.ckbCaixa.UseVisualStyleBackColor = true;
             // 
             // ckbAdm
             // 
@@ -186,16 +186,16 @@
             this.label6.TabIndex = 59;
             this.label6.Text = "Confime a senha ";
             // 
-            // ckbConsultar
+            // ckbEstoque
             // 
-            this.ckbConsultar.AutoSize = true;
-            this.ckbConsultar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbConsultar.Location = new System.Drawing.Point(494, 71);
-            this.ckbConsultar.Name = "ckbConsultar";
-            this.ckbConsultar.Size = new System.Drawing.Size(74, 21);
-            this.ckbConsultar.TabIndex = 61;
-            this.ckbConsultar.Text = "Estoque";
-            this.ckbConsultar.UseVisualStyleBackColor = true;
+            this.ckbEstoque.AutoSize = true;
+            this.ckbEstoque.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbEstoque.Location = new System.Drawing.Point(494, 71);
+            this.ckbEstoque.Name = "ckbEstoque";
+            this.ckbEstoque.Size = new System.Drawing.Size(74, 21);
+            this.ckbEstoque.TabIndex = 61;
+            this.ckbEstoque.Text = "Estoque";
+            this.ckbEstoque.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -222,8 +222,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.checkBox2);
-            this.groupBox2.Controls.Add(this.checkBox1);
+            this.groupBox2.Controls.Add(this.ckbProdutos);
+            this.groupBox2.Controls.Add(this.ckbCadastros);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(362, 22);
             this.groupBox2.Name = "groupBox2";
@@ -232,27 +232,27 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Permissões";
             // 
-            // checkBox1
+            // ckbCadastros
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(21, 72);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(86, 21);
-            this.checkBox1.TabIndex = 65;
-            this.checkBox1.Text = "Cadastros";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.ckbCadastros.AutoSize = true;
+            this.ckbCadastros.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbCadastros.Location = new System.Drawing.Point(21, 72);
+            this.ckbCadastros.Name = "ckbCadastros";
+            this.ckbCadastros.Size = new System.Drawing.Size(86, 21);
+            this.ckbCadastros.TabIndex = 65;
+            this.ckbCadastros.Text = "Cadastros";
+            this.ckbCadastros.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // ckbProdutos
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(132, 73);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(80, 21);
-            this.checkBox2.TabIndex = 66;
-            this.checkBox2.Text = "Produtos";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.ckbProdutos.AutoSize = true;
+            this.ckbProdutos.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbProdutos.Location = new System.Drawing.Point(132, 73);
+            this.ckbProdutos.Name = "ckbProdutos";
+            this.ckbProdutos.Size = new System.Drawing.Size(80, 21);
+            this.ckbProdutos.TabIndex = 66;
+            this.ckbProdutos.Text = "Produtos";
+            this.ckbProdutos.UseVisualStyleBackColor = true;
             // 
             // frmCadastroLogin
             // 
@@ -260,12 +260,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(595, 215);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.ckbConsultar);
+            this.Controls.Add(this.ckbEstoque);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnCadastrar);
-            this.Controls.Add(this.ckbContabilidade);
-            this.Controls.Add(this.ckbCadastar);
+            this.Controls.Add(this.ckbFinanceiro);
+            this.Controls.Add(this.ckbCaixa);
             this.Controls.Add(this.ckbAdm);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtNome);
@@ -291,8 +291,8 @@
         #endregion
 
         private System.Windows.Forms.Button btnCadastrar;
-        private System.Windows.Forms.CheckBox ckbContabilidade;
-        private System.Windows.Forms.CheckBox ckbCadastar;
+        private System.Windows.Forms.CheckBox ckbFinanceiro;
+        private System.Windows.Forms.CheckBox ckbCaixa;
         private System.Windows.Forms.CheckBox ckbAdm;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtNome;
@@ -304,11 +304,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.CheckBox ckbConsultar;
+        private System.Windows.Forms.CheckBox ckbEstoque;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox ckbProdutos;
+        private System.Windows.Forms.CheckBox ckbCadastros;
     }
 }

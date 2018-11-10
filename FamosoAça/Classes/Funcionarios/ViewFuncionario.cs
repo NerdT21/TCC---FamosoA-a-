@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FamosoAça.Classes.Funcionarios
 {
-    class ViewFuncionario
+    public class ViewFuncionario
     {
 
         public int Id { get; set; }

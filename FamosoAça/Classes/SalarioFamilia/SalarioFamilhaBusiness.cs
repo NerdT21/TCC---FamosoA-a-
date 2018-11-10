@@ -35,13 +35,10 @@ namespace FamosoAça.Classes.SalarioFamilia
             return list;
         }
         
-        public List<SalarioFamilhaDTO> Consultar(string consult)
+        public List<SalarioFamilhaDTO> Consultar(decimal consult)
         {
             SalarioFamilhaDataBase db = new SalarioFamilhaDataBase();
             return db.Consultar(consult);
         }
-
-       
- 
     }
 }

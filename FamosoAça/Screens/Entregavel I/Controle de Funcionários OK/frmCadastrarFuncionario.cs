@@ -58,17 +58,17 @@ namespace FamosoAça.Screens.Entregavel_I.Controle_de_Funcionários
                 FuncionarioDTO dto = new FuncionarioDTO();
                 dto.Nome = txtNome.Text;
                 dto.Nascimento = mtbNasc.Text;
-                dto.RG = mtbRg.Text;
-                dto.CPF = mtbCpf.Text;
+                dto.Rg = mtbRg.Text;
+                dto.Cpf = mtbCpf.Text;
                 dto.Telefone = mtbTelefone.Text;
                 dto.Email = txtEmail.Text;
-                dto.DeptoId = depto.Id;
+                dto.IdDepto = depto.Id;
                 dto.Cidade = txtCidade.Text;
-                dto.Estado = dt.IdEstado;
-                dto.Bairro = txtBairro.Text;
+                dto.IdEstado = dt.IdEstado;
+                //dto.Bairro = txtBairro.Text;
                 dto.Salario = Convert.ToInt32(txtSalario.Text); 
                 dto.Rua = txtRua.Text;
-                dto.CEP = txtCep.Text;
+                dto.Cep = txtCep.Text;
                 dto.Imagem = ImagemPlugIn.ConverterParaString(pbxImagem.Image);
 
                 FuncionariosBusiness buss = new FuncionariosBusiness();

@@ -28,14 +28,14 @@ namespace FamosoAça.Classes.Compra
         }
 
 
-        public List<CompraDTO> Listar()
+        public List<ViewCompra> Listar()
         {
             CompraDataBase db = new CompraDataBase();
-            List<CompraDTO> list = db.Listar();
+            List<ViewCompra> list = db.Listar();
             return list;
         }
 
-        public List<CompraDTO> Consultar(string dtcompra)
+        public List<ViewCompra> Consultar(string dtcompra)
         {
             CompraDataBase db = new CompraDataBase();
             return db.Consultar(dtcompra);

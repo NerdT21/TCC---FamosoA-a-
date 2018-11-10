@@ -25,7 +25,7 @@ namespace FamosoAça.Screens.Entregavel_I.Controle_de_Funcionários
             string cidade = txtCidade.Text;
 
             FuncionariosBusiness buss = new FuncionariosBusiness();
-            List<FuncionarioDTO> dto = buss.Consultar(nome, cidade);
+            List<ViewFuncionario> dto = buss.Consultar(nome, cidade);
 
             dgvListarFuncionario.AutoGenerateColumns = false;
             dgvListarFuncionario.DataSource = dto;
@@ -34,7 +34,7 @@ namespace FamosoAça.Screens.Entregavel_I.Controle_de_Funcionários
         public void AutoCarregar()
         {
             FuncionariosBusiness buss = new FuncionariosBusiness();
-            List<FuncionarioDTO> dto = buss.Listar();
+            List<ViewFuncionario> dto = buss.Listar();
 
             dgvListarFuncionario.AutoGenerateColumns = false;
             dgvListarFuncionario.DataSource = dto;
