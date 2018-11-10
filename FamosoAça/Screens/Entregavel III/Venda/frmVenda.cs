@@ -71,6 +71,11 @@ namespace FamosoAça.Screens.Entregavel_III.ConsultarVenda
         
          private void btnCadastrar_Click(object sender, EventArgs e)
         {
+          
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
             VendaDTO dto = new VendaDTO();
             dto.IdUsuario = UserSession.UsuarioLogado.Id;
             dto.DataVenda = mktData.Text;
@@ -78,11 +83,7 @@ namespace FamosoAça.Screens.Entregavel_III.ConsultarVenda
 
             VendaBusiness buss = new VendaBusiness();
             buss.Salvar(dto, carrinhoAdd.ToList());
-        }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -116,6 +117,11 @@ namespace FamosoAça.Screens.Entregavel_III.ConsultarVenda
         private void cboTipoPag_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void cboNome_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtProduto.Text = cboNome.Text;
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using FamosoAça.Classes.Produto.Produto_Venda;
+﻿    using FamosoAça.Classes.Produto.Produto_Venda;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -22,7 +22,7 @@ namespace FamosoAça.Classes.Venda
 	                        @ds_formaPagamento)";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("id_usuario", venda.Id));
+            parms.Add(new MySqlParameter("id_usuario", venda.IdUsuario));
             parms.Add(new MySqlParameter("dt_venda", venda.DataVenda));
             parms.Add(new MySqlParameter("ds_formaPagamento", venda.FormaDePagamento));
            
@@ -34,7 +34,7 @@ namespace FamosoAça.Classes.Venda
        
         public List<ProdutoVendaView> Listar()
         {
-            string script = @"SELECT * FROM tb_venda";
+            string script = @"SELECT * FROM vw_consultar_venda";
 
             Database db = new Database();
             MySqlDataReader reader = db.ExecuteSelectScript(script, null);

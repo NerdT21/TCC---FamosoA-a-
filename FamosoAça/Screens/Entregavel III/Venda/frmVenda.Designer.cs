@@ -95,6 +95,7 @@
             this.cboNome.Name = "cboNome";
             this.cboNome.Size = new System.Drawing.Size(121, 21);
             this.cboNome.TabIndex = 35;
+            this.cboNome.SelectedIndexChanged += new System.EventHandler(this.cboNome_SelectedIndexChanged);
             // 
             // txtProduto
             // 
