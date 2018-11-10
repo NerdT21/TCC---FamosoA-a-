@@ -263,6 +263,16 @@ namespace FamosoAça.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_cash_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-cash-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_comprar_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-comprar-48", resourceCulture);
@@ -316,6 +326,16 @@ namespace FamosoAça.Properties {
         internal static System.Drawing.Bitmap icons8_excluir_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-excluir-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_fluxo_de_caixa_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-fluxo-de-caixa-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

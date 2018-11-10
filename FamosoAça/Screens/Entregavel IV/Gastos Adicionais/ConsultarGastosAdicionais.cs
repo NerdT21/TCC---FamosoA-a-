@@ -67,6 +67,10 @@ namespace FamosoAça.Screens.Entregavel_IV.Gatos_Adicionais
 
         private void ConsultarGastosAdicionais_Load(object sender, EventArgs e)
         {
+            dgvGastos.BorderStyle = BorderStyle.None;
+            dgvGastos.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(84, 26, 82);
+            dgvGastos.RowsDefaultCellStyle.BackColor = Color.FromArgb(124, 33, 121);
+            dgvGastos.RowsDefaultCellStyle.ForeColor = Color.White;
 
             dgvGastos.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvGastos.DefaultCellStyle.SelectionBackColor = Color.White;

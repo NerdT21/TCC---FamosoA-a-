@@ -25,7 +25,7 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Fornecedores
             try
             {
                 FornecedorBusiness buss = new FornecedorBusiness();
-                List<FornecedorDTO> lista = buss.Listar();
+                List<FornecedorView> lista = buss.ListarPraGrid();
 
                 dgvFornecedor.DataSource = lista;
             }
@@ -45,7 +45,7 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Fornecedores
                 string cidade = txtCidade.Text;
 
                 FornecedorBusiness buss = new FornecedorBusiness();
-                List<FornecedorDTO> lista = buss.Consultar(nome, cidade);
+                List<FornecedorView> lista = buss.Consultar(nome, cidade);
 
                 dgvFornecedor.DataSource = lista;
             }

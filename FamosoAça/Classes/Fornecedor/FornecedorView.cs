@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace FamosoAça.Classes.Fornecedor
 {
-    public class FornecedorDTO
+    public class FornecedorView
     {
         public int Id { get; set; }
 
-        public int IdEstado { get; set; }
+        public string Estado { get; set; }
 
         public string Nome { get; set; }
 
@@ -27,6 +27,5 @@ namespace FamosoAça.Classes.Fornecedor
         public string Rua { get; set; }
 
         public string Numero { get; set; }
-
     }
 }

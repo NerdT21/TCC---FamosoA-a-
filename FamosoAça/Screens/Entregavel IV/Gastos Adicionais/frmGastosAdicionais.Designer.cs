@@ -58,7 +58,18 @@
             // 
             // nudValor
             // 
+            this.nudValor.DecimalPlaces = 2;
+            this.nudValor.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             this.nudValor.Location = new System.Drawing.Point(267, 236);
+            this.nudValor.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this.nudValor.Name = "nudValor";
             this.nudValor.Size = new System.Drawing.Size(69, 20);
             this.nudValor.TabIndex = 2;

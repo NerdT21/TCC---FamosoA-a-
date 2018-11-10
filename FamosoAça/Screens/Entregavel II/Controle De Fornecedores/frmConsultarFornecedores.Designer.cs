@@ -39,9 +39,11 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,15 +108,17 @@
             this.Column3,
             this.Column4,
             this.Column5,
+            this.Column8,
             this.Column7,
             this.Column6,
-            this.Column8});
-            this.dgvFornecedor.Location = new System.Drawing.Point(11, 98);
+            this.Column9,
+            this.Column10});
+            this.dgvFornecedor.Location = new System.Drawing.Point(23, 106);
             this.dgvFornecedor.Name = "dgvFornecedor";
             this.dgvFornecedor.ReadOnly = true;
             this.dgvFornecedor.RowHeadersVisible = false;
-            this.dgvFornecedor.Size = new System.Drawing.Size(573, 285);
-            this.dgvFornecedor.TabIndex = 17;
+            this.dgvFornecedor.Size = new System.Drawing.Size(552, 275);
+            this.dgvFornecedor.TabIndex = 23;
             // 
             // Column1
             // 
@@ -155,6 +159,13 @@
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "CEP";
+            this.Column8.HeaderText = "CEP";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            // 
             // Column7
             // 
             this.Column7.DataPropertyName = "Cidade";
@@ -164,17 +175,24 @@
             // 
             // Column6
             // 
-            this.Column6.DataPropertyName = "IdEstado";
+            this.Column6.DataPropertyName = "Estado";
             this.Column6.HeaderText = "Estado";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
             // 
-            // Column8
+            // Column9
             // 
-            this.Column8.DataPropertyName = "CEP";
-            this.Column8.HeaderText = "CEP";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
+            this.Column9.DataPropertyName = "Rua";
+            this.Column9.HeaderText = "Rua";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "Numero";
+            this.Column10.HeaderText = "Número";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
             // 
             // frmConsultarFornecedores
             // 
@@ -182,12 +200,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FamosoAça.Properties.Resources.Bachground_Famoso_Açaí;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.dgvFornecedor);
             this.Controls.Add(this.txtCidade);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnProcurar);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblnome);
-            this.Controls.Add(this.dgvFornecedor);
             this.DoubleBuffered = true;
             this.Name = "frmConsultarFornecedores";
             this.Size = new System.Drawing.Size(596, 397);
@@ -211,8 +229,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
     }
 }

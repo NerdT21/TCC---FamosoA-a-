@@ -11,6 +11,7 @@ using FamosoAça.Classes.Fornecedor;
 using FamosoAça.Classes.Estado;
 using MySql.Data.MySqlClient;
 using FamosoAça.CustomExceptions.TelasException;
+using FamosoAça.CustomExceptions;
 
 namespace FamosoAça.Screens.Entregavel_II.Controle_De_Fornecedores
 {
@@ -53,23 +54,38 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Fornecedores
                 dto.Email = txtEmail.Text;
                 dto.CNPJ = txtCnpj.Text;
                 dto.Cidade = txtCidade.Text;
-                dto.Cep = mkbCep.Text;
+                dto.CEP = mkbCep.Text;
                 dto.Telefone = txtTelefone.Text;
-                dto.IDEstado = estado.IdEstado;
+                dto.IdEstado = estado.IdEstado;
+                dto.Rua = txtRua.Text;
+                dto.Numero = txtNumero.Text;
 
                 FornecedorBusiness business = new FornecedorBusiness();
                 business.Salvar(dto);
 
+                string msg = "Fornecedor cadastrado com sucesso!";
+
                 frmMessage tela = new frmMessage();
-                tela.LoadScreen("Forncedor cadastrado com sucesso.");
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }
+            catch (ValidacaoException vex)
+            {
+                string msg = vex.Message;
+
+                frmAlert tela = new frmAlert();
+                tela.LoadScreen(msg);
                 tela.ShowDialog();
             }
             catch (MySqlException mex)
             {
                 if (mex.Number == 1062)
                 {
+                    string msg = "Esse fornecedor já está cadastrado. " +
+                        "Verifique se o CNPJ está corretamente preenchido ou se ele já está cadastrado no sistema.";
+
                     frmAlert tela = new frmAlert();
-                    tela.LoadScreen("CNPJ já cadastrado.");
+                    tela.LoadScreen(msg);
                     tela.ShowDialog();
                 }
             }
@@ -92,7 +108,8 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Fornecedores
                     var resposta = ws.consultaCEP(mkbCep.Text);
                     
                     txtCidade.Text = resposta.cidade;
-                    cboEstado.Text = resposta.uf;                   
+                    cboEstado.Text = resposta.uf;
+                    txtRua.Text = resposta.end;
                 }
                 catch (Exception)
                 {

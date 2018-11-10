@@ -104,24 +104,28 @@
             // FormaPagamento
             // 
             this.FormaPagamento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.FormaPagamento.DataPropertyName = "FormaPagto";
             this.FormaPagamento.HeaderText = "Forma de Pagamneto";
             this.FormaPagamento.Name = "FormaPagamento";
             this.FormaPagamento.ReadOnly = true;
             // 
             // Data
             // 
+            this.Data.DataPropertyName = "Data";
             this.Data.HeaderText = "Data";
             this.Data.Name = "Data";
             this.Data.ReadOnly = true;
             // 
             // Quantidade
             // 
+            this.Quantidade.DataPropertyName = "QtdItem";
             this.Quantidade.HeaderText = "Quantidade";
             this.Quantidade.Name = "Quantidade";
             this.Quantidade.ReadOnly = true;
             // 
             // Total
             // 
+            this.Total.DataPropertyName = "Total";
             this.Total.HeaderText = "Total";
             this.Total.Name = "Total";
             this.Total.ReadOnly = true;

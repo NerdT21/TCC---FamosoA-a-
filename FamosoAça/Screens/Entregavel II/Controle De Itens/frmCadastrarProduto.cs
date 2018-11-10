@@ -28,7 +28,7 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Produto
             try
             {
                 FornecedorBusiness buss = new FornecedorBusiness();
-                List<FornecedorDTO> lista = buss.Listar();
+                List<FornecedorDTO> lista = buss.ListarPraCombo();
 
                 cboFornecedor.ValueMember = nameof(FornecedorDTO.Id);
                 cboFornecedor.DisplayMember = nameof(FornecedorDTO.Nome);

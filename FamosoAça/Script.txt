@@ -2,25 +2,25 @@
 CREATE DATABASE FamosoAcaiDB;
 USE FamosoAcaiDB;
 
-CREATE TABLE `tb_funcionario` (                     
+CREATE TABLE `tb_funcionario` (
 	`id_funcionario` int NOT NULL AUTO_INCREMENT,
+	`ds_salario` DECIMAL(15,2) NOT NULL,
 	`id_depto` int NOT NULL,
 	`nm_nome` varchar(50) NOT NULL,
-	`ds_email` varchar(250) NOT NULL UNIQUE,
+	`ds_email` varchar(50) NOT NULL UNIQUE,
 	`ds_cpf` varchar(50) NOT NULL UNIQUE,
 	`ds_rg` varchar(50) NOT NULL,
-	`dt_nascimento` varchar(10) NOT NULL,
-	`ds_cidade` varchar(60) NOT NULL,
 	`id_estado` int NOT NULL,
+	`ds_cidade` varchar(50) NOT NULL,
 	`ds_cep` varchar(10) NOT NULL,
-	`ds_telefone` varchar(20) NOT NULL,
-	`ds_bairro` varchar(60) NOT NULL,
-	`ds_rua` varchar(200) NOT NULL, 
-	`img_funcionario` longblob NOT NULL, 
-    `ds_complemento` varchar(500),
-    `vl_salario` decimal NOT NULL,  
+    `ds_rua` varchar(200) NOT NULL,
+    `ds_numero` varchar(6),
+    `ds_complemento` varchar(5),
+	`ds_telefone` varchar(15) NOT NULL,
+	`img_funcionario` longblob NOT NULL,
 	PRIMARY KEY (`id_funcionario`)
 );
+
 
 CREATE TABLE `tb_estados` (
 	`id_estado` int NOT NULL AUTO_INCREMENT,
@@ -37,17 +37,17 @@ CREATE TABLE `tb_depto` (
 
 CREATE TABLE `tb_fornecedor` (
 	`id_fornecedor` int NOT NULL AUTO_INCREMENT,
+	`nm_fornecedor` varchar(200) NOT NULL,
+	`ds_email` varchar(100) NOT NULL,
+	`ds_cnpj` varchar(25) NOT NULL UNIQUE,
+	`ds_telefone` varchar(14) NOT NULL,
 	`id_estado` int NOT NULL,
-	`ds_cnpj` varchar(50) NOT NULL UNIQUE,
-	`nm_fornecedor` varchar(150) NOT NULL,
-	`ds_cep` varchar(12) NOT NULL,
-	`ds_rua` varchar(200) not null,
-    `ds_cidade` varchar(60) NOT NULL,
-	`ds_telefone` varchar(24) NOT NULL,
-	`ds_email` varchar(120) NOT NULL UNIQUE, --
+	`ds_cidade` varchar(50) NOT NULL,
+	`ds_cep` varchar(50) NOT NULL,
+    `ds_rua` varchar(200) NOT NULL,
+    `ds_numero` varchar(6),
 	PRIMARY KEY (`id_fornecedor`)
 );
--- drop table tb_fornecedor;
 
 CREATE TABLE `tb_login` (
 	`id_usuario` int NOT NULL AUTO_INCREMENT,
@@ -369,7 +369,7 @@ GROUP
 		
 CREATE VIEW vw_consultarFuncionario AS
 	SELECT tb_funcionario.id_funcionario,
-		   tb_funcionario.vl_salario,
+		   tb_funcionario.ds_salario, 
            tb_Depto.nm_depto,
            tb_funcionario.nm_nome,
            tb_funcionario.ds_email,
@@ -378,16 +378,17 @@ CREATE VIEW vw_consultarFuncionario AS
            tb_estados.nm_estado,
            tb_funcionario.ds_cidade,
 		   tb_funcionario.ds_cep,
-           tb_funcionario.ds_rua, 
-           tb_funcionario.ds_bairro, 
+           tb_funcionario.ds_rua,
+           tb_funcionario.ds_numero,
            tb_funcionario.ds_complemento,
            tb_funcionario.ds_telefone,
-           tb_funcionario.img_funcionario 
+           tb_funcionario.img_funcionario
 	FROM tb_funcionario
     JOIN tb_estados
     ON tb_funcionario.id_estado = tb_estados.id_estado
     JOIN tb_Depto
     ON tb_funcionario.id_depto = tb_Depto.id_depto;
+
 
 
 -- drop view vw_consultarFornecedor;     
@@ -400,7 +401,8 @@ CREATE VIEW vw_consultarFornecedor AS
            tb_fornecedor.ds_cidade,
            tb_estados.nm_estado,
            tb_fornecedor.ds_cep,
-           tb_fornecedor.ds_rua
+           tb_fornecedor.ds_rua,
+		   tb_fornecedor.ds_numero
 	FROM tb_fornecedor
     JOIN tb_estados
       ON tb_fornecedor.id_estado = tb_estados.id_estado;

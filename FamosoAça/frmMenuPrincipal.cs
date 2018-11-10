@@ -11,6 +11,7 @@ using FamosoAça.Screens.Entregavel_II.Controle_De_Produto;
 using FamosoAça.Screens.Entregavel_III.ConsultarVenda;
 using FamosoAça.Screens.Entregavel_III.Item;
 using FamosoAça.Screens.Entregavel_IV.Estoque;
+using FamosoAça.Screens.Entregavel_IV.Fluxo_de_Caixa;
 using FamosoAça.Screens.Entregavel_IV.Gastos_Adicionais;
 using FamosoAça.Screens.Entregavel_IV.Gatos_Adicionais;
 using System;
@@ -278,6 +279,18 @@ namespace FamosoAça
         {
             ConsultarGastosAdicionais frm = new ConsultarGastosAdicionais();
             OpenScreen(frm);
+        }
+
+        private void pagamentosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConsultarFolha tela = new frmConsultarFolha();
+            OpenScreen(tela);
+        }
+
+        private void fluxoDeCaixaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmFluxoCaixa tela = new frmFluxoCaixa();
+            OpenScreen(tela);
         }
 
         private void pnlBarra_MouseUp(object sender, MouseEventArgs e)

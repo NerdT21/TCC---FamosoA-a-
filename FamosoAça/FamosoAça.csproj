@@ -69,6 +69,7 @@
     <Compile Include="Classes\FluxoDeCaixa\FluxoBusiness.cs" />
     <Compile Include="Classes\FluxoDeCaixa\FluxoDatabase.cs" />
     <Compile Include="Classes\FluxoDeCaixa\FluxoDTO.cs" />
+    <Compile Include="Classes\Fornecedor\FornecedorView.cs" />
     <Compile Include="Classes\Funcionarios\ViewFuncionario.cs" />
     <Compile Include="Classes\Gastos\GastosBussines.cs" />
     <Compile Include="Classes\Gastos\GastosDatabase.cs" />
@@ -750,6 +751,8 @@
     <None Include="Resources\Bachground Famoso.png" />
     <None Include="Resources\Bachground Famoso Açaí.png" />
     <None Include="Resources\icons8-plus-321.png" />
+    <None Include="Resources\icons8-cash-48.png" />
+    <None Include="Resources\icons8-fluxo-de-caixa-48.png" />
     <Content Include="Script.txt" />
   </ItemGroup>
   <ItemGroup>
