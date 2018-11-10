@@ -92,6 +92,8 @@
             // 
             // dgvFornecedor
             // 
+            this.dgvFornecedor.AllowUserToAddRows = false;
+            this.dgvFornecedor.AllowUserToDeleteRows = false;
             this.dgvFornecedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFornecedor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -104,6 +106,7 @@
             this.Column8});
             this.dgvFornecedor.Location = new System.Drawing.Point(11, 98);
             this.dgvFornecedor.Name = "dgvFornecedor";
+            this.dgvFornecedor.ReadOnly = true;
             this.dgvFornecedor.RowHeadersVisible = false;
             this.dgvFornecedor.Size = new System.Drawing.Size(573, 285);
             this.dgvFornecedor.TabIndex = 17;
@@ -113,6 +116,7 @@
             this.Column1.DataPropertyName = "Id";
             this.Column1.HeaderText = "ID";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             this.Column1.Width = 30;
             // 
             // Column2
@@ -120,6 +124,7 @@
             this.Column2.DataPropertyName = "Nome";
             this.Column2.HeaderText = "Nome";
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             this.Column2.Width = 150;
             // 
             // Column3
@@ -127,6 +132,7 @@
             this.Column3.DataPropertyName = "Email";
             this.Column3.HeaderText = "E-mail";
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             this.Column3.Width = 200;
             // 
             // Column4
@@ -134,30 +140,35 @@
             this.Column4.DataPropertyName = "CNPJ";
             this.Column4.HeaderText = "CNPJ";
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // Column5
             // 
             this.Column5.DataPropertyName = "Telefone";
             this.Column5.HeaderText = "Telefone";
             this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // Column7
             // 
             this.Column7.DataPropertyName = "Cidade";
             this.Column7.HeaderText = "Cidade";
             this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
             // 
             // Column6
             // 
             this.Column6.DataPropertyName = "IdEstado";
             this.Column6.HeaderText = "Estado";
             this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             // 
             // Column8
             // 
             this.Column8.DataPropertyName = "CEP";
             this.Column8.HeaderText = "CEP";
             this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
             // 
             // frmConsultarFornecedores
             // 

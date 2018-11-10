@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using FamosoAça.Classes.Compra.Item;
 using FamosoAça.Classes.Fornecedor;
 using FamosoAça.Classes.Estoque;
+using FamosoAça.CustomExceptions.TelasException;
 
 namespace FamosoAça.Screens.Entregavel_II.Controle_De_Produto
 {
@@ -24,12 +25,21 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Produto
 
         void CarregarCombos()
         {
-            FornecedorBusiness buss = new FornecedorBusiness();
-            List<FornecedorDTO> lista = buss.Listar();
+            try
+            {
+                FornecedorBusiness buss = new FornecedorBusiness();
+                List<FornecedorDTO> lista = buss.Listar();
 
-            cboFornecedor.ValueMember = nameof(FornecedorDTO.Id);
-            cboFornecedor.DisplayMember = nameof(FornecedorDTO.Nome);
-            cboFornecedor.DataSource = lista;
+                cboFornecedor.ValueMember = nameof(FornecedorDTO.Id);
+                cboFornecedor.DisplayMember = nameof(FornecedorDTO.Nome);
+                cboFornecedor.DataSource = lista;
+            }
+            catch (Exception)
+            {
+                frmException tela = new frmException();
+                tela.LoadScreen("Ocorreu um erro.\nConsulte o administrador do sistema.");
+                tela.ShowDialog();
+            }           
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -55,11 +65,11 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Produto
                 EstoqueBusiness business = new EstoqueBusiness();
                 business.Salvar(estoque);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
-                MessageBox.Show("Ocorreu um erro: " + ex.Message, "Famoso Açai", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                frmException tela = new frmException();
+                tela.LoadScreen("Ocorreu um erro.\nConsulte o administrador do sistema.");
+                tela.ShowDialog();
             }
 
         }

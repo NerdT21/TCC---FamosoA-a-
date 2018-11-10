@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FamosoAça.Classes.Fornecedor;
+using FamosoAça.CustomExceptions.TelasException;
 
 namespace FamosoAça.Screens.Entregavel_II.Controle_De_Fornecedores
 {
@@ -21,21 +22,39 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Fornecedores
 
         void Autocarregar()
         {
-            FornecedorBusiness buss = new FornecedorBusiness();
-            List<FornecedorDTO> lista = buss.Listar();
+            try
+            {
+                FornecedorBusiness buss = new FornecedorBusiness();
+                List<FornecedorDTO> lista = buss.Listar();
 
-            dgvFornecedor.DataSource = lista;
+                dgvFornecedor.DataSource = lista;
+            }
+            catch (Exception)
+            {
+                frmException tela = new frmException();
+                tela.LoadScreen("Ocorreu um erro.\nConsulte o administrador do sistema.");
+                tela.ShowDialog();
+            }           
         }
 
         void CarregarGrid()
         {
-            string nome = txtNome.Text;
-            string cidade = txtCidade.Text;
+            try
+            {
+                string nome = txtNome.Text;
+                string cidade = txtCidade.Text;
 
-            FornecedorBusiness buss = new FornecedorBusiness();
-            List<FornecedorDTO> lista = buss.Consultar(nome, cidade);
+                FornecedorBusiness buss = new FornecedorBusiness();
+                List<FornecedorDTO> lista = buss.Consultar(nome, cidade);
 
-            dgvFornecedor.DataSource = lista;
+                dgvFornecedor.DataSource = lista;
+            }
+            catch (Exception)
+            {
+                frmException tela = new frmException();
+                tela.LoadScreen("Ocorreu um erro.\nConsulte o administrador do sistema.");
+                tela.ShowDialog();
+            }           
         }
 
         private void btnProcurar_Click(object sender, EventArgs e)

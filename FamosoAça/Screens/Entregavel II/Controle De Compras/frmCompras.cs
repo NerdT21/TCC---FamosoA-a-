@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using FamosoAça.Classes.Compra.Item;
 using FamosoAça.Classes.Compra;
 using FamosoAça.Classes.Login;
+using FamosoAça.CustomExceptions.TelasException;
 
 namespace FamosoAça.Screens.Entregavel_II.Controle_De_Compras
 {
@@ -48,30 +49,47 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Compras
 
         void CarregarTxt()
         {
-            ItemView item = cboItem.SelectedItem as ItemView;
-
-            if (item.Nome != null)
+            try
             {
-                txtItem.Text = item.Nome;
+                ItemView item = cboItem.SelectedItem as ItemView;
 
-                txtValorTotal.Text = Convert.ToString(item.Preco);
-                txtFornecedor.Text = item.Fornecedor;
+                if (item.Nome != null)
+                {
+                    txtItem.Text = item.Nome;
+
+                    txtValorTotal.Text = Convert.ToString(item.Preco);
+                    txtFornecedor.Text = item.Fornecedor;
+                }
+                else
+                {
+                    txtItem.Text = "NULL";
+                }
             }
-            else
+            catch (Exception)
             {
-                txtItem.Text = "NULL";
-            }
-
+                frmException tela = new frmException();
+                tela.LoadScreen("Ocorreu um erro.\nConsulte o administrador do sistema.");
+                tela.ShowDialog();
+            }          
         }
 
         void CarregarCombos()
         {
-            ItemBusiness buss = new ItemBusiness();
-            List<ItemView> dto = buss.Listar();
+            try
+            {
+                ItemBusiness buss = new ItemBusiness();
+                List<ItemView> dto = buss.Listar();
 
-            cboItem.ValueMember = nameof(ItemDTO.Id);
-            cboItem.DisplayMember = nameof(ItemDTO.Nome);
-            cboItem.DataSource = dto;
+                cboItem.ValueMember = nameof(ItemDTO.Id);
+                cboItem.DisplayMember = nameof(ItemDTO.Nome);
+                cboItem.DataSource = dto;
+            }
+            catch (Exception)
+            {
+                frmException tela = new frmException();
+                tela.LoadScreen("Ocorreu um erro.\nConsulte o administrador do sistema.");
+                tela.ShowDialog();
+            }          
         }
 
         void CarregarGrid()
@@ -87,32 +105,54 @@ namespace FamosoAça.Screens.Entregavel_II.Controle_De_Compras
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            ItemView dto = cboItem.SelectedItem as ItemView;
-
-            int quantidade = Convert.ToInt32(nudQtd.Value);
-
-            for (int i = 0; i < quantidade; i++)
+            try
             {
-                carrinhoAdd.Add(dto);
+                ItemView dto = cboItem.SelectedItem as ItemView;
+
+                int quantidade = Convert.ToInt32(nudQtd.Value);
+
+                for (int i = 0; i < quantidade; i++)
+                {
+                    carrinhoAdd.Add(dto);
+                }
+
+                CarregarGrid();
+
+                valor.Add(dto.Preco * quantidade);
+                txtValorTotal.Text = Convert.ToString(valor.Sum());
             }
-
-            CarregarGrid();
-
-            valor.Add(dto.Preco * quantidade);
-            txtValorTotal.Text = Convert.ToString(valor.Sum());
+            catch (Exception)
+            {
+                frmException tela = new frmException();
+                tela.LoadScreen("Ocorreu um erro.\nConsulte o administrador do sistema.");
+                tela.ShowDialog();
+            }
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            CompraDTO dto = new CompraDTO();
-            dto.UsuarioId = UserSession.UsuarioLogado.Id;
-            dto.Data = mkbData.Text;
-            dto.FormaPagto = Convert.ToString(cboTipoPag.SelectedItem);
+            try
+            {
+                CompraDTO dto = new CompraDTO();
+                dto.UsuarioId = UserSession.UsuarioLogado.Id;
+                dto.Data = mkbData.Text;
+                dto.FormaPagto = Convert.ToString(cboTipoPag.SelectedItem);
 
-            CompraBusiness buss = new CompraBusiness();
-            buss.Salvar(dto, carrinhoAdd.ToList());
+                CompraBusiness buss = new CompraBusiness();
+                buss.Salvar(dto, carrinhoAdd.ToList());
 
-            MessageBox.Show("Compra registrada com sucesso!", "Catioro's", MessageBoxButtons.OK);
+                frmMessage tela = new frmMessage();
+                tela.LoadScreen("Compra registrada com sucesso!");
+                tela.ShowDialog();
+            }
+            catch (Exception)
+            {
+                frmException tela = new frmException();
+                tela.LoadScreen("Ocorreu um erro.\nConsulte o administrador do sistema.");
+                tela.ShowDialog();
+            }
+            
         }
 
         private void cboItem_SelectedIndexChanged(object sender, EventArgs e)
