@@ -50,7 +50,7 @@ namespace FamosoAça.Login
                     tela.ShowDialog();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 frmException tela = new frmException();
                 tela.LoadScreen("Ocorreu um erro.\nConsulte o administrador do sistema.");

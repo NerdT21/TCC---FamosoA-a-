@@ -102,7 +102,7 @@ namespace FamosoAça.Screens.Entregavel_IV.Estoque
                 CarregarGrid();
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 frmException tela = new frmException();
                 tela.LoadScreen("Ocorreu um erro.\nConsulte o administrador do sistema.");

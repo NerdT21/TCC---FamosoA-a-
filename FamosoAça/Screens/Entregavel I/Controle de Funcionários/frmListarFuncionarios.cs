@@ -78,6 +78,10 @@ namespace FamosoAça.Screens.Entregavel_I.Controle_de_Funcionários
 
         private void frmListarFuncionarios_Load(object sender, EventArgs e)
         {
+            dgvListarFuncionario.BorderStyle = BorderStyle.None;
+            dgvListarFuncionario.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(84, 26, 82);
+            dgvListarFuncionario.RowsDefaultCellStyle.BackColor = Color.FromArgb(124, 33, 121);
+            dgvListarFuncionario.RowsDefaultCellStyle.ForeColor = Color.White;
 
             dgvListarFuncionario.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvListarFuncionario.DefaultCellStyle.SelectionBackColor = Color.White;

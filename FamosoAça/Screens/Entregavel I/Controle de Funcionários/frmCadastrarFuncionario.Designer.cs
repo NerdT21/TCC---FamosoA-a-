@@ -28,27 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtSalario = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.txtCep = new System.Windows.Forms.MaskedTextBox();
+            this.mkbCep = new System.Windows.Forms.MaskedTextBox();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.cboDepto = new System.Windows.Forms.ComboBox();
             this.txtComplemento = new System.Windows.Forms.TextBox();
-            this.txtRua = new System.Windows.Forms.TextBox();
+            this.txtEndereco = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtCidade = new System.Windows.Forms.TextBox();
-            this.txtBairro = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.mtbNasc = new System.Windows.Forms.MaskedTextBox();
+            this.mkbNascimento = new System.Windows.Forms.MaskedTextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.mtbTelefone = new System.Windows.Forms.MaskedTextBox();
-            this.mtbCpf = new System.Windows.Forms.MaskedTextBox();
-            this.mtbRg = new System.Windows.Forms.MaskedTextBox();
+            this.mkbTelefone = new System.Windows.Forms.MaskedTextBox();
+            this.mkbCpf = new System.Windows.Forms.MaskedTextBox();
+            this.mkbRg = new System.Windows.Forms.MaskedTextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -60,15 +57,13 @@
             this.cboEstado = new System.Windows.Forms.ComboBox();
             this.pbxImagem = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.nudSalario = new System.Windows.Forms.NumericUpDown();
+            this.txtNumero = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagem)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSalario)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtSalario
-            // 
-            this.txtSalario.Location = new System.Drawing.Point(131, 163);
-            this.txtSalario.Name = "txtSalario";
-            this.txtSalario.Size = new System.Drawing.Size(241, 20);
-            this.txtSalario.TabIndex = 7;
             // 
             // label15
             // 
@@ -82,14 +77,14 @@
             this.label15.TabIndex = 111;
             this.label15.Text = "Salário";
             // 
-            // txtCep
+            // mkbCep
             // 
-            this.txtCep.Location = new System.Drawing.Point(131, 212);
-            this.txtCep.Mask = "99999-999";
-            this.txtCep.Name = "txtCep";
-            this.txtCep.Size = new System.Drawing.Size(59, 20);
-            this.txtCep.TabIndex = 8;
-            this.txtCep.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCep_KeyUp);
+            this.mkbCep.Location = new System.Drawing.Point(131, 212);
+            this.mkbCep.Mask = "99999-999";
+            this.mkbCep.Name = "mkbCep";
+            this.mkbCep.Size = new System.Drawing.Size(59, 20);
+            this.mkbCep.TabIndex = 8;
+            this.mkbCep.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCep_KeyUp);
             // 
             // btnCadastrar
             // 
@@ -121,12 +116,13 @@
             this.txtComplemento.Size = new System.Drawing.Size(116, 20);
             this.txtComplemento.TabIndex = 13;
             // 
-            // txtRua
+            // txtEndereco
             // 
-            this.txtRua.Location = new System.Drawing.Point(350, 243);
-            this.txtRua.Name = "txtRua";
-            this.txtRua.Size = new System.Drawing.Size(170, 20);
-            this.txtRua.TabIndex = 12;
+            this.txtEndereco.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEndereco.Location = new System.Drawing.Point(80, 240);
+            this.txtEndereco.Name = "txtEndereco";
+            this.txtEndereco.Size = new System.Drawing.Size(288, 23);
+            this.txtEndereco.TabIndex = 12;
             // 
             // label13
             // 
@@ -158,7 +154,7 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label11.Location = new System.Drawing.Point(311, 242);
+            this.label11.Location = new System.Drawing.Point(48, 243);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(31, 17);
             this.label11.TabIndex = 105;
@@ -183,13 +179,6 @@
             this.txtCidade.Size = new System.Drawing.Size(171, 20);
             this.txtCidade.TabIndex = 10;
             // 
-            // txtBairro
-            // 
-            this.txtBairro.Location = new System.Drawing.Point(130, 242);
-            this.txtBairro.Name = "txtBairro";
-            this.txtBairro.Size = new System.Drawing.Size(158, 20);
-            this.txtBairro.TabIndex = 11;
-            // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -198,14 +187,14 @@
             this.panel1.Size = new System.Drawing.Size(433, 5);
             this.panel1.TabIndex = 103;
             // 
-            // mtbNasc
+            // mkbNascimento
             // 
-            this.mtbNasc.Location = new System.Drawing.Point(163, 101);
-            this.mtbNasc.Mask = "00/00/0000";
-            this.mtbNasc.Name = "mtbNasc";
-            this.mtbNasc.Size = new System.Drawing.Size(67, 20);
-            this.mtbNasc.TabIndex = 3;
-            this.mtbNasc.ValidatingType = typeof(System.DateTime);
+            this.mkbNascimento.Location = new System.Drawing.Point(163, 101);
+            this.mkbNascimento.Mask = "00/00/0000";
+            this.mkbNascimento.Name = "mkbNascimento";
+            this.mkbNascimento.Size = new System.Drawing.Size(67, 20);
+            this.mkbNascimento.TabIndex = 3;
+            this.mkbNascimento.ValidatingType = typeof(System.DateTime);
             // 
             // txtEmail
             // 
@@ -214,29 +203,29 @@
             this.txtEmail.Size = new System.Drawing.Size(241, 20);
             this.txtEmail.TabIndex = 2;
             // 
-            // mtbTelefone
+            // mkbTelefone
             // 
-            this.mtbTelefone.Location = new System.Drawing.Point(289, 101);
-            this.mtbTelefone.Mask = "(00)00000-0000";
-            this.mtbTelefone.Name = "mtbTelefone";
-            this.mtbTelefone.Size = new System.Drawing.Size(83, 20);
-            this.mtbTelefone.TabIndex = 4;
+            this.mkbTelefone.Location = new System.Drawing.Point(289, 101);
+            this.mkbTelefone.Mask = "(00)00000-0000";
+            this.mkbTelefone.Name = "mkbTelefone";
+            this.mkbTelefone.Size = new System.Drawing.Size(83, 20);
+            this.mkbTelefone.TabIndex = 4;
             // 
-            // mtbCpf
+            // mkbCpf
             // 
-            this.mtbCpf.Location = new System.Drawing.Point(117, 129);
-            this.mtbCpf.Mask = "000.000.000-00";
-            this.mtbCpf.Name = "mtbCpf";
-            this.mtbCpf.Size = new System.Drawing.Size(83, 20);
-            this.mtbCpf.TabIndex = 5;
+            this.mkbCpf.Location = new System.Drawing.Point(146, 129);
+            this.mkbCpf.Mask = "000.000.000-00";
+            this.mkbCpf.Name = "mkbCpf";
+            this.mkbCpf.Size = new System.Drawing.Size(83, 20);
+            this.mkbCpf.TabIndex = 5;
             // 
-            // mtbRg
+            // mkbRg
             // 
-            this.mtbRg.Location = new System.Drawing.Point(302, 127);
-            this.mtbRg.Mask = "00.000.000-0";
-            this.mtbRg.Name = "mtbRg";
-            this.mtbRg.Size = new System.Drawing.Size(70, 20);
-            this.mtbRg.TabIndex = 6;
+            this.mkbRg.Location = new System.Drawing.Point(302, 127);
+            this.mkbRg.Mask = "00.000.000-0";
+            this.mkbRg.Name = "mkbRg";
+            this.mkbRg.Size = new System.Drawing.Size(70, 20);
+            this.mkbRg.TabIndex = 6;
             // 
             // txtNome
             // 
@@ -244,18 +233,6 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(241, 20);
             this.txtNome.TabIndex = 1;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label9.Location = new System.Drawing.Point(84, 243);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(44, 17);
-            this.label9.TabIndex = 102;
-            this.label9.Text = "Bairro";
             // 
             // label8
             // 
@@ -323,7 +300,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(86, 131);
+            this.label3.Location = new System.Drawing.Point(115, 131);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 17);
             this.label3.TabIndex = 96;
@@ -377,6 +354,11 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.txtNumero);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.nudSalario);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.txtEndereco);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(26)))), ((int)(((byte)(82)))));
             this.groupBox1.Location = new System.Drawing.Point(51, 3);
@@ -387,6 +369,45 @@
             this.groupBox1.Text = "Cadastro de Funcionários";
             this.groupBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox1_Paint);
             // 
+            // nudSalario
+            // 
+            this.nudSalario.DecimalPlaces = 2;
+            this.nudSalario.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudSalario.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.nudSalario.Location = new System.Drawing.Point(83, 159);
+            this.nudSalario.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.nudSalario.Name = "nudSalario";
+            this.nudSalario.Size = new System.Drawing.Size(96, 23);
+            this.nudSalario.TabIndex = 7;
+            // 
+            // txtNumero
+            // 
+            this.txtNumero.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumero.Location = new System.Drawing.Point(404, 239);
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.Size = new System.Drawing.Size(66, 23);
+            this.txtNumero.TabIndex = 106;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label9.Location = new System.Drawing.Point(375, 242);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(24, 17);
+            this.label9.TabIndex = 107;
+            this.label9.Text = "Nº";
+            // 
             // frmCadastrarFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -394,28 +415,23 @@
             this.BackgroundImage = global::FamosoAça.Properties.Resources.Bachground_Famoso_Açaí;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.cboEstado);
-            this.Controls.Add(this.txtSalario);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.txtCep);
+            this.Controls.Add(this.mkbCep);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.cboDepto);
             this.Controls.Add(this.txtComplemento);
-            this.Controls.Add(this.txtRua);
             this.Controls.Add(this.pbxImagem);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtCidade);
-            this.Controls.Add(this.txtBairro);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.mtbNasc);
+            this.Controls.Add(this.mkbNascimento);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.mtbTelefone);
-            this.Controls.Add(this.mtbCpf);
-            this.Controls.Add(this.mtbRg);
+            this.Controls.Add(this.mkbTelefone);
+            this.Controls.Add(this.mkbCpf);
+            this.Controls.Add(this.mkbRg);
             this.Controls.Add(this.txtNome);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -430,35 +446,34 @@
             this.Name = "frmCadastrarFuncionario";
             this.Size = new System.Drawing.Size(596, 397);
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagem)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSalario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtSalario;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.MaskedTextBox txtCep;
+        private System.Windows.Forms.MaskedTextBox mkbCep;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.ComboBox cboDepto;
         private System.Windows.Forms.TextBox txtComplemento;
-        private System.Windows.Forms.TextBox txtRua;
+        private System.Windows.Forms.TextBox txtEndereco;
         private System.Windows.Forms.PictureBox pbxImagem;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtCidade;
-        private System.Windows.Forms.TextBox txtBairro;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.MaskedTextBox mtbNasc;
+        private System.Windows.Forms.MaskedTextBox mkbNascimento;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.MaskedTextBox mtbTelefone;
-        private System.Windows.Forms.MaskedTextBox mtbCpf;
-        private System.Windows.Forms.MaskedTextBox mtbRg;
+        private System.Windows.Forms.MaskedTextBox mkbTelefone;
+        private System.Windows.Forms.MaskedTextBox mkbCpf;
+        private System.Windows.Forms.MaskedTextBox mkbRg;
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -469,5 +484,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cboEstado;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.NumericUpDown nudSalario;
+        private System.Windows.Forms.TextBox txtNumero;
+        private System.Windows.Forms.Label label9;
     }
 }

@@ -302,6 +302,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Validacoes\ValidarCPF_CNPJ.cs" />
+    <Compile Include="Validacoes\ValidarData.cs" />
+    <Compile Include="Validacoes\ValidarEmail.cs" />
+    <Compile Include="Validacoes\ValidarTelefone.cs" />
     <EmbeddedResource Include="CustomExceptions\TelasException\frmAlert.resx">
       <DependentUpon>frmAlert.cs</DependentUpon>
     </EmbeddedResource>

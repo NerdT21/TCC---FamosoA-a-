@@ -13,6 +13,7 @@ using MySql.Data.MySqlClient;
 using FamosoAça.PlugIn;
 using FamosoAça.Classes.Estado;
 using FamosoAça.CustomExceptions.TelasException;
+using FamosoAça.CustomExceptions;
 
 namespace FamosoAça.Screens.Entregavel_I.Controle_de_Funcionários
 {
@@ -56,22 +57,23 @@ namespace FamosoAça.Screens.Entregavel_I.Controle_de_Funcionários
             try
             {
                 CargoDTO depto = cboDepto.SelectedItem as CargoDTO;
-                EstadoDTO dt = cboEstado.SelectedItem as EstadoDTO;
+                EstadoDTO estado = cboEstado.SelectedItem as EstadoDTO;
 
                 FuncionarioDTO dto = new FuncionarioDTO();
                 dto.Nome = txtNome.Text;
-                dto.Nascimento = mtbNasc.Text;
-                dto.Rg = mtbRg.Text;
-                dto.Cpf = mtbCpf.Text;
-                dto.Telefone = mtbTelefone.Text;
+                dto.Rg = mkbRg.Text;
+                dto.Salario = nudSalario.Value;
+                dto.Cpf = mkbCpf.Text;
+                dto.Telefone = mkbTelefone.Text;
                 dto.Email = txtEmail.Text;
                 dto.IdDepto = depto.Id;
                 dto.Cidade = txtCidade.Text;
-                dto.IdEstado = dt.IdEstado;
-                //dto.Bairro = txtBairro.Text;
-                dto.Salario = Convert.ToInt32(txtSalario.Text);
-                dto.Rua = txtRua.Text;
-                dto.Cep = txtCep.Text;
+                dto.IdEstado = estado.IdEstado;
+                dto.Cep = mkbCep.Text;
+                dto.Rua = txtEndereco.Text;
+                dto.Complemento = txtComplemento.Text;
+                dto.Numero = txtNumero.Text;
+
                 dto.Imagem = ImagemPlugIn.ConverterParaString(pbxImagem.Image);
 
                 FuncionariosBusiness buss = new FuncionariosBusiness();
@@ -80,18 +82,27 @@ namespace FamosoAça.Screens.Entregavel_I.Controle_de_Funcionários
                 frmMessage tela = new frmMessage();
                 tela.LoadScreen("Funcionário cadastrado com sucesso!");
                 tela.ShowDialog();
-
             }
-            catch (MySqlException ex)
+            catch (MySqlException mex)
             {
-                if (ex.Number == 1062)
+                if (mex.Number == 1062)
                 {
+                    string msg = "Funcionario já está cadastrado. Verifique se o CPF está corretamente preenchido ou se ele já esta no sistema.";
+
                     frmAlert tela = new frmAlert();
-                    tela.LoadScreen("Funcionario já está cadastrado.\nVerifique se o RG ou CPF estão corretamento preenchidos ou se ele já esta no sistema.");
+                    tela.LoadScreen(msg);
                     tela.ShowDialog();
                 }
             }
-            catch (Exception ex)
+            catch (ValidacaoException vex)
+            {
+                string msg = vex.Message;
+
+                frmAlert tela = new frmAlert();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }
+            catch (Exception)
             {
                 frmException tela = new frmException();
                 tela.LoadScreen("Ocorreu um erro.\nConsulte o administrador do sistema.");
@@ -132,13 +143,11 @@ namespace FamosoAça.Screens.Entregavel_I.Controle_de_Funcionários
                 try
                 {
                     var ws = new WSCorreios.AtendeClienteClient();
-                    //var ws = new WSCorreios.AtendeClienteClient();
-                    var resposta = ws.consultaCEP(txtCep.Text);
+                    var resposta = ws.consultaCEP(mkbCep.Text);
 
-                    txtRua.Text = resposta.end;
+                    txtEndereco.Text = resposta.end;
                     txtCidade.Text = resposta.cidade;
                     cboEstado.Text = resposta.uf;
-                    txtBairro.Text = resposta.bairro;
 
                 }
                 catch (Exception)

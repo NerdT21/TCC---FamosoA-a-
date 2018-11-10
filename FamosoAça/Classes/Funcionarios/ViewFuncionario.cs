@@ -38,6 +38,5 @@ namespace FamosoAça.Classes.Funcionarios
         public string Telefone { get; set; }
 
         public string Imagem { get; set; }
-
     }
 }

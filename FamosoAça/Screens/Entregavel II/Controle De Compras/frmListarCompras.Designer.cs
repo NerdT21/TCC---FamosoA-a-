@@ -144,6 +144,7 @@
             this.DoubleBuffered = true;
             this.Name = "frmListarCompras";
             this.Size = new System.Drawing.Size(596, 397);
+            this.Load += new System.EventHandler(this.frmListarCompras_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompra)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
