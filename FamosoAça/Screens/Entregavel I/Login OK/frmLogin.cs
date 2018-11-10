@@ -84,5 +84,15 @@ namespace FamosoAça.Login
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void pbxShow_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtPass.PasswordChar = '\0';
+        }
+
+        private void pbxShow_MouseUp(object sender, MouseEventArgs e)
+        {
+            txtPass.PasswordChar = '*';
+        }
     }
 }

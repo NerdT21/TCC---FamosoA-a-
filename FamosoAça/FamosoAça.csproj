@@ -705,6 +705,7 @@
     <None Include="Resources\icons8-produto-16.png" />
     <None Include="Resources\icons8-histórico-de-pagamento-32.png" />
     <None Include="Resources\fundo roxo.jpg" />
+    <None Include="Resources\icons8-invisible-filled-50.png" />
     <Content Include="Script.txt" />
   </ItemGroup>
   <ItemGroup>

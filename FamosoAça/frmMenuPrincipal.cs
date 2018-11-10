@@ -46,21 +46,49 @@ namespace FamosoAça
 
         void Permissoes()
         {
-            if (UserSession.UsuarioLogado.Adm == false)
+            if (UserSession.UsuarioLogado.PermissaoAdm == false)
             {
-                if (UserSession.UsuarioLogado.Cadastro == false)
+                if (UserSession.UsuarioLogado.PermissaoCaixa == false)
                 {
-                    cadastroToolStripMenuItem.Visible = false;
+                    cadastroToolStripMenuItem.Enabled = false;
+                    consultaToolStripMenuItem.Enabled = false;
+                    departamentosToolStripMenuItem.Enabled = false;
+                    finançasToolStripMenuItem.Enabled = false;
+                    compraEVendaToolStripMenuItem.Enabled = false;
+                    gastosAdicionaisToolStripMenuItem2.Enabled = false;
+                    verGastosAdicionaisToolStripMenuItem.Enabled = false;
                 }
 
-                if (UserSession.UsuarioLogado.Consulta == false)
+                if (UserSession.UsuarioLogado.PermissaoEstoque == false)
                 {
-                    consultaToolStripMenuItem.Visible = false;
+                    cadastroToolStripMenuItem.Enabled = false;
+                    consultaToolStripMenuItem.Enabled = false;
+                    departamentosToolStripMenuItem.Enabled = false;
+                    compraEVendaToolStripMenuItem.Enabled = false;
+                    folhaDePagamentoToolStripMenuItem.Enabled = false;
+                    verComprasToolStripMenuItem.Enabled = false;
+                    verVendasToolStripMenuItem.Enabled = false;
+                    gastosAdicionaisToolStripMenuItem2.Enabled = false;
+                    verGastosAdicionaisToolStripMenuItem.Enabled = false;
                 }
 
-                if (UserSession.UsuarioLogado.Contabilidade == false)
+                if (UserSession.UsuarioLogado.PermissaoFinanceiro == false)
                 {
-                    finançasToolStripMenuItem.Visible = false;
+                    cadastroToolStripMenuItem.Enabled = false;
+                    consultaToolStripMenuItem.Enabled = false;
+                    departamentosToolStripMenuItem.Enabled = false;
+                    compraEVendaToolStripMenuItem.Enabled = false;
+                }
+
+                if (UserSession.UsuarioLogado.PermissaoCadastros == false)
+                {
+                    departamentosToolStripMenuItem.Enabled = false;
+                    compraEVendaToolStripMenuItem.Enabled = false;
+                    folhaDePagamentoToolStripMenuItem.Enabled = false;
+                    verComprasToolStripMenuItem.Enabled = false;
+                    verVendasToolStripMenuItem.Enabled = false;
+                    gastosAdicionaisToolStripMenuItem2.Enabled = false;
+                    verGastosAdicionaisToolStripMenuItem.Enabled = false;
                 }
             }
         }
@@ -139,12 +167,6 @@ namespace FamosoAça
 
         }
 
-        private void comprasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmCompras tela = new frmCompras();
-            OpenScreen(tela);
-        }
-
         private void produtoToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -202,46 +224,57 @@ namespace FamosoAça
             OpenScreen(frm);
         }
 
-      
-          
-
-        private void vendaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmVenda frm = new frmVenda();
-            OpenScreen(frm);
-        }
-
-        private void vendaToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            FrmConsultarVenda frm = new FrmConsultarVenda();
-            OpenScreen(frm);
-        }
-
         private void verComprasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmListarCompras tela = new frmListarCompras();
+            OpenScreen(tela);
         }
-
-        
-
+      
         private void gastosAdicionaisToolStripMenuItem2_Click(object sender, EventArgs e)
         {
            
         }
 
-        private void gastosAdicionaisToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void consultaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ConsultarGastosAdicionais frm = new ConsultarGastosAdicionais();
+
+        }
+
+        private void finançasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comprasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmCompras tela = new frmCompras();
+            OpenScreen(tela);
+        }
+
+        private void vendasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmVenda frm = new frmVenda();
             OpenScreen(frm);
         }
 
-        private void gastosAdicionaisToolStripMenuItem_Click_1(object sender, EventArgs e)
+        private void verVendasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmConsultarVenda frm = new FrmConsultarVenda();
+            OpenScreen(frm);
+        }
+
+        private void compraEVendaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gastosAdicionaisToolStripMenuItem2_Click_1(object sender, EventArgs e)
         {
             frmGastosAdicionais frm = new frmGastosAdicionais();
             OpenScreen(frm);
         }
 
-        private void gastosAdicionaisToolStripMenuItem1_Click_1(object sender, EventArgs e)
+        private void verGastosAdicionaisToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ConsultarGastosAdicionais frm = new ConsultarGastosAdicionais();
             OpenScreen(frm);

@@ -120,19 +120,18 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pbxMinimize.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAABNSURBVFhH7c47CgAgDATR3P/S2kwfPxGCzOuEuExILY1H
-        mM9xX475HPfrHxLMGWCAAQYYYMB5AM9tfP8g4BZzBuwHVGM+x3055qVOIiacwe0vPycaVQAAAABJRU5E
-        rkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wgAADsIBFShKgAAAAE1JREFUWEftzjsKACAMBNHc/9LaTB8/EYLM64S4TEgtjUeYz3Ffjvkc9+sfEswZ
+        YIABBhhgwHkAz218/yDgFnMG7AdUYz7HfTnmpU4iJpzB7S8/JxpVAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="pbxClose.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAACdSURBVEhL7ZDRCYAwDES7hDta2nGdp5rIFbSGkJP65wOR
-        pncv0PRD01pb5VtwDKMd7eJoI4GyC/LfmCWQb+gWjJ8MwdASusMUmOyNSDGScfEE3h2FJbJmiL/DEM6T
-        d1TUxcpUufLpgqsc4nlPpIJRaM0Q5/BE3l2IiCCSMWGKTPaELghURy4rI+9oVjvoVoxtJJAZeQdLMo4/
-        UVI6AI1hGxeshH7SAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wgAADsIBFShKgAAAAJ1JREFUSEvtkNEJgDAMRLuEO1racZ2nmsgVtIaQk/rnA5Gmdy/Q9EPTWlvlW3AM
+        ox3t4mgjgbIL8t+YJZBv6BaMnwzB0BK6wxSY7I1IMZJx8QTeHYUlsmaIv8MQzpN3VNTFylS58umCqxzi
+        eU+kglFozRDn8ETeXYiIIJIxYYpM9oQuCFRHLisj72hWO+hWjG0kkBl5B0syjj9RUjoAjWEbF6yEftIA
+        AAAASUVORK5CYII=
 </value>
   </data>
 </root>
